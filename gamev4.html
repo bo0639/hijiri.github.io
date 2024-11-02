@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数字タップゲーム</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    #game-container {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-gap: 10px;
+    }
+    .number-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .clicked {
+        background-color: gray;
+        color: white;
+        cursor: default;
+    }
+    #message {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div>
+    <div id="game-container"></div>
+    <div id="message">スタートボタンを押して開始してください</div>
+    <button onclick="startGame()">スタート</button>
+</div>
+
+<!-- 音声ファイルの読み込み -->
+<audio id="correct-sound" src="correct.mp3"></audio>
+<audio id="error-sound" src="error.mp3"></audio>
+<audio id="clear-sound" src="clear.mp3"></audio>
+
+<script>
+let numbers = [];
+let currentNumber = 1;
+let startTime;
+let isPlaying = false;
+
+function startGame() {
+    // ゲームの初期化
+    numbers = Array.from({ length: 16 }, (_, i) => i + 1);
+    shuffle(numbers);
+    currentNumber = 1;
+    isPlaying = true;
+    startTime = Date.now();
+    document.getElementById("message").textContent = "1から順にタップしてください！";
+    renderButtons();
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function renderButtons() {
+    const container = document.getElementById("game-container");
+    container.innerHTML = "";
+    numbers.forEach(num => {
+        const button = document.createElement("button");
+        button.textContent = num;
+        button.className = "number-button";
+        button.onclick = () => checkNumber(button, num);
+        container.appendChild(button);
+    });
+}
+
+function checkNumber(button, num) {
+    if (!isPlaying) return;
+    const message = document.getElementById("message");
+    if (num === currentNumber) {
+        button.classList.add("clicked"); // 正しい順番ならグレーに変化
+        document.getElementById("correct-sound").play(); // 正解音を再生
+        currentNumber++;
+        message.textContent = "良い調子です！次の数字をタップしてください！";
+        if (currentNumber > 16) {
+            endGame();
+        }
+    } else {
+        document.getElementById("error-sound").play(); // エラー音を再生
+        message.innerHTML = "<span class='error'>間違いです！もう一度正しい数字をタップしてください。</span>";
+    }
+}
+
+function endGame() {
+    isPlaying = false;
+    const timeTaken = (Date.now() - startTime) / 1000;
+    document.getElementById("message").textContent = `クリア！タイム: ${timeTaken.toFixed(2)} 秒`;
+    document.getElementById("clear-sound").play(); // クリア音を再生
+}
+
+</script>
+</body>
+</html>
