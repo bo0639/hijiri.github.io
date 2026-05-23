@@ -185,23 +185,9 @@ const CATEGORIES = {
   'qa':        { label: 'Q&A',             emoji: '💬' },
 };
 
-const ISSUES = [
-  { id: '20260519', label: '2026年5月19日号', shortLabel: '5/19', date: '2026-05-19' },
-  { id: '20260512', label: '2026年5月12日号', shortLabel: '5/12', date: '2026-05-12' },
-  { id: '20260505', label: '2026年5月5日号',  shortLabel: '5/5',  date: '2026-05-05' },
-  { id: '20260428', label: '2026年4月28日号', shortLabel: '4/28', date: '2026-04-28' },
-  { id: '20260421', label: '2026年4月21日号', shortLabel: '4/21', date: '2026-04-21' },
-  { id: '20260414', label: '2026年4月14日号', shortLabel: '4/14', date: '2026-04-14' },
-  { id: '20260407', label: '2026年4月7日号',  shortLabel: '4/7',  date: '2026-04-07' },
-  { id: '20260331', label: '2026年3月31日号', shortLabel: '3/31', date: '2026-03-31' },
-  { id: '20260324', label: '2026年3月24日号', shortLabel: '3/24', date: '2026-03-24' },
-  { id: '20260317', label: '2026年3月17日号', shortLabel: '3/17', date: '2026-03-17' },
-  { id: '20260310', label: '2026年3月10日号', shortLabel: '3/10', date: '2026-03-10' },
-  { id: '20260303', label: '2026年3月3日号',  shortLabel: '3/3',  date: '2026-03-03' },
-  { id: '20260224', label: '2026年2月24日号', shortLabel: '2/24', date: '2026-02-24' },
-];
-
-const ARTICLES = [
+let ISSUES = [];
+let _lastUpdated = '';
+let ARTICLES = [
   // ── 2026-05-19号 ──
   {
     id: 1, issue: '20260519', cat: 'personal',
@@ -705,8 +691,25 @@ function closeModalDirect() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 
-// ── INIT ──
-render();
+// ── INIT: data.json から読み込む ──
+(async () => {
+  try {
+    const res = await fetch('./data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    ISSUES   = json.issues   || ISSUES;
+    ARTICLES = json.articles || ARTICLES;
+    _lastUpdated = json.lastUpdated || '';
+    // ヘッダーに最終更新日を表示
+    if (_lastUpdated) {
+      const el = document.getElementById('headerCount');
+      el.title = `最終更新: ${_lastUpdated}`;
+    }
+  } catch (e) {
+    console.warn('data.json の読み込みに失敗しました（埋め込みデータを使用）:', e);
+  }
+  render();
+})();
 </script>
 </body>
 </html>
