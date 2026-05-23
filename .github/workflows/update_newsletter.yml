@@ -28,7 +28,6 @@ jobs:
       - name: メルマガを取得・更新
         env:
           GMAIL_TOKEN: ${{ secrets.GMAIL_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/update_newsletter.py
 
       - name: 変更をコミット・プッシュ

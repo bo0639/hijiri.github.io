@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-週刊Life is beautiful メルマガ自動取得・分類スクリプト
+週刊Life is beautiful メルマガ自動取得・分類スクリプト（APIキー不要版）
 毎週火曜日にGitHub Actionsから実行される
 """
 import os
@@ -12,26 +12,69 @@ from datetime import datetime, timezone
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
-from anthropic import Anthropic
 from bs4 import BeautifulSoup
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 DATA_PATH = 'newsletter/data.json'
 SENDER = 'mailmag@mag2premium.com'
 
-CATEGORY_GUIDE = """
-カテゴリの選択肢（1つだけ選ぶ）:
-- ai-llm    : AI・LLM・言語モデル・Claude・ChatGPT・エージェント・Anthropic・OpenAI
-- software  : ソフトウェア開発・プログラミング・コーディング・アーキテクチャ・バイブコーディング
-- business  : ビジネス・企業・スタートアップ・経営・M&A・採用・人事
-- economy   : 経済・雇用・投資・市場・社会構造・労働問題
-- infra     : データセンター・半導体・電力・インフラ・ハードウェア・GPU・CPU・エネルギー
-- robot     : ロボット・ヒューマノイド・自動運転・フィジカルAI・ドローン
-- science   : 科学・医療・バイオテク・研究・長寿・創薬・ゲノム
-- policy    : 規制・政策・法律・政府・安全保障・地政学
-- personal  : 個人体験・旅行・コラム・ざっくばらん・音楽・スポーツ
-- qa        : 質問コーナー・Q&A（複数の質問をまとめて1記事として扱う）
-"""
+# ── キーワードによるカテゴリ分類 ──
+CATEGORY_KEYWORDS = {
+    'ai-llm':   ['AI', 'LLM', 'Claude', 'GPT', 'ChatGPT', 'Anthropic', 'OpenAI',
+                 'エージェント', '言語モデル', 'トークン', 'ニューラルネット', '機械学習',
+                 'Gemini', 'xAI', 'Grok', 'DeepSeek', 'バイブコーディング',
+                 'Kimi', 'スケーリング', 'フロンティアモデル', 'RLHF', 'RAG'],
+    'software': ['プログラム', 'コード', '開発', 'ソフトウェア', 'アーキテクチャ',
+                 'API', 'GitHub', 'Python', 'TypeScript', 'アプリ', 'SaaS',
+                 'MulmoClaude', 'MulmoChat', 'MulmoCast', 'Claude Code',
+                 'エンジニア', 'リファクタリング', 'データベース', 'サーバー'],
+    'business': ['企業', 'スタートアップ', 'CEO', 'CTO', 'M&A', '買収', '経営',
+                 'ビジネス', '株価', '投資家', 'VC', '上場', '時価総額',
+                 'リクルート', '採用', 'ユニコーン', '転職'],
+    'economy':  ['経済', '雇用', '労働', '賃金', '市場', '消費', 'GDP',
+                 'インフレ', '株式', '損失', '利益', 'billion', '兆円',
+                 '億ドル', '格差', '所得'],
+    'infra':    ['データセンター', '半導体', 'GPU', 'CPU', '電力', 'インフラ',
+                 'NVIDIA', 'AMD', 'エネルギー', '発電', 'クラウド', 'AWS',
+                 'Azure', 'Google Cloud', 'コンピュータ', 'メモリ', 'チップ'],
+    'robot':    ['ロボット', 'ヒューマノイド', '自動運転', 'ドローン', 'Figure',
+                 '人型', '機械', 'Physical AI', 'UUV', '水中'],
+    'science':  ['科学', '医療', 'バイオ', '研究', '論文', 'ゲノム', '細胞',
+                 'がん', '創薬', 'DNA', '長寿', 'ペプチド', 'iPS',
+                 '生物学', '進化', '遺伝子', 'Mayo Clinic', 'Altos Labs'],
+    'policy':   ['規制', '政策', '法律', '政府', '議会', '大統領', '安全保障',
+                 '地政学', '裁判', '判決', 'トランプ', '中国', '米中',
+                 '国防', 'ペンタゴン', '国家'],
+    'personal': ['旅行', 'コンサート', '食事', '散歩', '滞在', 'ゴルフ',
+                 'ざっくばらん', 'クルーズ', 'ハワイ', 'スペイン', 'モロッコ',
+                 'シアトル', '明治神宮', 'ラン・ラン'],
+    'qa':       ['質問コーナー', 'Q&A', '【質問】', '《回答》'],
+}
+
+
+def score_category(text):
+    """テキストに含まれるキーワード数でカテゴリを判定する"""
+    scores = {cat: 0 for cat in CATEGORY_KEYWORDS}
+    text_lower = text.lower()
+    for cat, keywords in CATEGORY_KEYWORDS.items():
+        for kw in keywords:
+            if kw.lower() in text_lower:
+                scores[cat] += 1
+    best = max(scores, key=scores.get)
+    return best if scores[best] > 0 else 'personal'
+
+
+def trim_text(text, max_chars=200):
+    """テキストを指定文字数で切り詰める"""
+    text = re.sub(r'\s+', ' ', text).strip()
+    if len(text) <= max_chars:
+        return text
+    # 句点・。で区切って自然に切る
+    for end in ['。', '．', '. ']:
+        pos = text.rfind(end, 0, max_chars)
+        if pos > max_chars // 2:
+            return text[:pos + len(end)]
+    return text[:max_chars] + '…'
 
 
 def get_gmail_service():
@@ -73,7 +116,6 @@ def get_message_body(service, message_id):
 
 
 def parse_issue_info(subject):
-    """件名から号IDと日付を取得する"""
     m = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日号', subject)
     if not m:
         return None
@@ -87,83 +129,133 @@ def parse_issue_info(subject):
     }
 
 
-def extract_articles_with_claude(html_body, issue_info, next_id):
-    """Claude APIを使ってメルマガからトピックを抽出・分類する"""
+def extract_articles(html_body, issue_info, next_id):
+    """HTMLを解析してトピックを抽出する（APIなし）"""
     soup = BeautifulSoup(html_body, 'html.parser')
-    # フッター以降を除去
+
+    # フッターを除去
     for tag in soup.select('table#mag2-pay-magazine-footer, hr'):
         tag.decompose()
-    text = soup.get_text(separator='\n', strip=True)[:9000]
 
-    client = Anthropic()
-    prompt = f"""以下は「週刊Life is beautiful {issue_info['label']}」のメルマガ全文です。
-
-{text}
-
-このメルマガに含まれるトピック・記事を全て抽出し、以下のJSON形式のみで出力してください。
-余分な説明文やコードブロック記号は不要です。
-
-{{
-  "articles": [
-    {{
-      "title": "記事タイトル（日本語・50文字以内・具体的に）",
-      "cat": "カテゴリ",
-      "summary": "2〜3文の日本語要約（具体的な数字・固有名詞を含めて）",
-      "detail": "さらに詳しい補足説明（あれば・なければ空文字）",
-      "url": "言及されている元記事のURL（なければ空文字）"
-    }}
-  ]
-}}
-
-{CATEGORY_GUIDE}
-
-抽出ルール:
-- 「今週のざっくばらん」セクション：各話題を personal カテゴリで個別に抽出
-- 「私の目に留まった記事」セクション：各リンク記事を個別に抽出
-- 「質問コーナー」セクション：qa カテゴリで1件としてまとめる（個別Q&Aは不要）
-- summaryには固有名詞・数字・具体的な主張を必ず含める
-- urlはメルマガ本文に明示されているリンクのみ記載
-"""
-
-    response = client.messages.create(
-        model='claude-sonnet-4-6',
-        max_tokens=4096,
-        messages=[{'role': 'user', 'content': prompt}],
-    )
-
-    content = response.content[0].text.strip()
-    # JSON部分だけ取り出す
-    m = re.search(r'\{[\s\S]*\}', content)
-    if not m:
-        raise ValueError(f"JSONが見つかりません: {content[:200]}")
-
-    data = json.loads(m.group())
     articles = []
-    for i, a in enumerate(data.get('articles', [])):
-        articles.append({
-            'id': next_id + i,
-            'issue': issue_info['id'],
-            'cat': a.get('cat', 'personal'),
-            'title': a.get('title', ''),
-            'summary': a.get('summary', ''),
-            'detail': a.get('detail', ''),
-            'url': a.get('url', ''),
-        })
+    current_id = next_id
+
+    # h1タグでセクションを区切る
+    sections = {}
+    current_h1 = None
+    for tag in soup.find_all(['h1', 'h2', 'p', 'a']):
+        if tag.name == 'h1':
+            current_h1 = tag.get_text(strip=True)
+            sections.setdefault(current_h1, [])
+        elif current_h1:
+            sections[current_h1].append(tag)
+
+    for h1_title, tags in sections.items():
+
+        # ── 質問コーナー（まとめて1件）──
+        if '質問' in h1_title or 'Q&A' in h1_title.upper():
+            # 最初の質問だけタイトルとして抜粋
+            q_texts = [t.get_text(strip=True) for t in tags
+                       if t.name == 'p' and '【質問】' in t.get_text()]
+            summary = '読者からの質問と中島氏の回答コーナー。'
+            if q_texts:
+                summary += '今号の質問テーマ：' + '、'.join(
+                    q[:20] for q in q_texts[:3]
+                )
+            articles.append({
+                'id': current_id,
+                'issue': issue_info['id'],
+                'cat': 'qa',
+                'title': f'質問コーナー（{issue_info["label"]}）',
+                'summary': summary,
+                'detail': '',
+                'url': '',
+            })
+            current_id += 1
+            continue
+
+        # ── 今週のざっくばらん ──
+        if 'ざっくばらん' in h1_title:
+            # h2タグがサブトピック
+            subtopics = []
+            current_sub = None
+            sub_paras = []
+            for tag in tags:
+                if tag.name == 'h2':
+                    if current_sub and sub_paras:
+                        subtopics.append((current_sub, sub_paras))
+                    current_sub = tag.get_text(strip=True)
+                    sub_paras = []
+                elif tag.name == 'p' and current_sub:
+                    text = tag.get_text(strip=True)
+                    if text:
+                        sub_paras.append(text)
+            if current_sub and sub_paras:
+                subtopics.append((current_sub, sub_paras))
+
+            for title, paras in subtopics:
+                body = ' '.join(paras)
+                articles.append({
+                    'id': current_id,
+                    'issue': issue_info['id'],
+                    'cat': score_category(title + ' ' + body),
+                    'title': title,
+                    'summary': trim_text(body, 200),
+                    'detail': trim_text(body, 500) if len(body) > 200 else '',
+                    'url': '',
+                })
+                current_id += 1
+            continue
+
+        # ── 私の目に留まった記事 ──
+        if '記事' in h1_title or '目に留まった' in h1_title:
+            # <p><a href="...">タイトル</a></p> + 後続段落が1記事
+            i = 0
+            while i < len(tags):
+                tag = tags[i]
+                link = tag.find('a') if tag.name == 'p' else None
+                if link and link.get('href', '').startswith('http'):
+                    url = link['href']
+                    title = link.get_text(strip=True)
+                    # 後続の段落を集める
+                    paras = []
+                    i += 1
+                    while i < len(tags):
+                        next_tag = tags[i]
+                        if next_tag.name == 'p' and next_tag.find('a') and \
+                           next_tag.find('a').get('href', '').startswith('http'):
+                            break  # 次の記事
+                        if next_tag.name == 'p':
+                            text = next_tag.get_text(strip=True)
+                            if text:
+                                paras.append(text)
+                        i += 1
+                    body = ' '.join(paras)
+                    articles.append({
+                        'id': current_id,
+                        'issue': issue_info['id'],
+                        'cat': score_category(title + ' ' + body),
+                        'title': title[:80],  # 80文字以内
+                        'summary': trim_text(body, 200),
+                        'detail': trim_text(body, 500) if len(body) > 200 else '',
+                        'url': url,
+                    })
+                    current_id += 1
+                else:
+                    i += 1
+
     return articles
 
 
 def main():
-    # 既存データ読み込み
     with open(DATA_PATH, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     existing_issue_ids = {i['id'] for i in data['issues']}
     next_id = max((a['id'] for a in data['articles']), default=0) + 1
 
-    # Gmail接続
     service = get_gmail_service()
 
-    # 直近8日以内の新着メルマガを検索
     results = service.users().messages().list(
         userId='me',
         q=f'from:{SENDER} subject:週刊Life is beautiful newer_than:8d',
@@ -192,21 +284,17 @@ def main():
             continue
 
         print(f'処理中: {issue_info["label"]}')
-        try:
-            articles = extract_articles_with_claude(html_body, issue_info, next_id)
-            new_articles.extend(articles)
-            new_issues.append(issue_info)
-            next_id += len(articles)
-            existing_issue_ids.add(issue_info['id'])
-            print(f'  → {len(articles)}件の記事を抽出')
-        except Exception as e:
-            print(f'  エラー: {e}')
+        articles = extract_articles(html_body, issue_info, next_id)
+        new_articles.extend(articles)
+        new_issues.append(issue_info)
+        next_id += len(articles)
+        existing_issue_ids.add(issue_info['id'])
+        print(f'  → {len(articles)}件の記事を抽出')
 
     if not new_articles:
         print('追加する記事はありません。')
         return
 
-    # データ更新（新しい号を先頭に）
     data['articles'] = new_articles + data['articles']
     data['issues'] = sorted(
         new_issues + data['issues'],
