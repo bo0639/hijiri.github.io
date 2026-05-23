@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life is Beautiful メルマガ ダイジェスト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --surface2: #f8fafc;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text2: #475569;
+  --text3: #94a3b8;
+  --accent: #6366f1;
+  --accent-light: #eef2ff;
+  --header-bg: #1e1b4b;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --radius: 10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ─── HEADER ─── */
+.header{background:var(--header-bg);color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+.header-logo{font-size:17px;font-weight:700;white-space:nowrap;letter-spacing:-0.3px}
+.header-logo span{color:#a5b4fc}
+.header-search{flex:1;max-width:400px;position:relative}
+.header-search input{width:100%;background:#312e81;border:1px solid #4338ca;border-radius:8px;padding:7px 12px 7px 36px;color:#e0e7ff;font-size:14px;font-family:inherit;outline:none}
+.header-search input::placeholder{color:#818cf8}
+.header-search input:focus{border-color:#818cf8;background:#3730a3}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#818cf8;font-size:14px}
+.header-count{margin-left:auto;font-size:13px;color:#a5b4fc;white-space:nowrap}
+
+/* ─── LAYOUT ─── */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 60px)}
+
+/* ─── SIDEBAR ─── */
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:16px 12px;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto}
+.sidebar-section{margin-bottom:20px}
+.sidebar-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;padding:0 4px;margin-bottom:8px}
+.filter-btn{display:flex;align-items:center;gap:8px;width:100%;padding:7px 10px;border-radius:7px;border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;color:var(--text2);transition:all .15s;text-align:left}
+.filter-btn:hover{background:var(--surface2);color:var(--text)}
+.filter-btn.active{background:var(--accent-light);color:var(--accent);font-weight:600}
+.filter-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.filter-count{margin-left:auto;font-size:11px;color:var(--text3);background:var(--bg);border-radius:10px;padding:1px 6px}
+.filter-btn.active .filter-count{background:#c7d2fe;color:var(--accent)}
+.issue-btn{display:block;width:100%;padding:6px 10px;border-radius:7px;border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;color:var(--text2);transition:all .15s;text-align:left}
+.issue-btn:hover{background:var(--surface2);color:var(--text)}
+.issue-btn.active{background:var(--accent-light);color:var(--accent);font-weight:600}
+.issue-date{font-size:11px;color:var(--text3);margin-top:1px}
+
+/* ─── MAIN ─── */
+.main{padding:20px;overflow:auto}
+.main-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.main-title{font-size:15px;font-weight:600;color:var(--text2)}
+.sort-select{font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 8px;background:var(--surface);color:var(--text);font-family:inherit;cursor:pointer;outline:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.no-results{text-align:center;padding:60px 20px;color:var(--text3)}
+.no-results p{font-size:15px}
+
+/* ─── CARD ─── */
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;cursor:pointer}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.card-top{padding:14px 16px 10px;flex:1}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.cat-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:0.3px;white-space:nowrap}
+.issue-tag{font-size:11px;color:var(--text3)}
+.card-title{font-size:14px;font-weight:600;line-height:1.5;margin-bottom:8px;color:var(--text)}
+.card-summary{font-size:13px;color:var(--text2);line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-bottom{padding:10px 16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.card-link{font-size:12px;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:4px}
+.card-link:hover{text-decoration:underline}
+.expand-btn{margin-left:auto;font-size:12px;color:var(--text3);background:none;border:1px solid var(--border);border-radius:5px;padding:3px 10px;cursor:pointer;font-family:inherit;transition:all .15s}
+.expand-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ─── MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:12px;max-width:700px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.modal-head{padding:20px 24px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px}
+.modal-head-info{flex:1}
+.modal-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.modal-title{font-size:17px;font-weight:700;line-height:1.5}
+.modal-close{background:none;border:1px solid var(--border);border-radius:7px;padding:6px 10px;cursor:pointer;font-size:16px;color:var(--text3);flex-shrink:0;transition:all .15s}
+.modal-close:hover{border-color:var(--text);color:var(--text)}
+.modal-body{padding:20px 24px 24px;font-size:14px;line-height:1.9;color:var(--text2)}
+.modal-body a{color:var(--accent)}
+.modal-body strong{color:var(--text);font-weight:600}
+
+/* ─── CATEGORY COLORS ─── */
+.c-ai-llm{background:#eef2ff;color:#4338ca}
+.c-software{background:#ecfeff;color:#0e7490}
+.c-business{background:#fff7ed;color:#c2410c}
+.c-economy{background:#fefce8;color:#a16207}
+.c-infra{background:#ecfdf5;color:#065f46}
+.c-robot{background:#fff1f2;color:#be123c}
+.c-science{background:#faf5ff;color:#7e22ce}
+.c-policy{background:#fdf4ff;color:#a21caf}
+.c-personal{background:#f0fdf4;color:#15803d}
+.c-qa{background:#f8fafc;color:#475569}
+
+.dot-ai-llm{background:#6366f1}
+.dot-software{background:#06b6d4}
+.dot-business{background:#f97316}
+.dot-economy{background:#eab308}
+.dot-infra{background:#10b981}
+.dot-robot{background:#f43f5e}
+.dot-science{background:#a855f7}
+.dot-policy{background:#d946ef}
+.dot-personal{background:#22c55e}
+.dot-qa{background:#94a3b8}
+
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">🌸 <span>Life is Beautiful</span> ダイジェスト</div>
+  <div class="header-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="キーワードで検索...">
+  </div>
+  <div class="header-count" id="headerCount"></div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">カテゴリ</div>
+      <div id="categoryFilters"></div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">号を選択</div>
+      <div id="issueFilters"></div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="main-header">
+      <div class="main-title" id="mainTitle">全記事</div>
+      <select class="sort-select" id="sortSelect">
+        <option value="date-desc">新しい順</option>
+        <option value="date-asc">古い順</option>
+        <option value="cat">カテゴリ順</option>
+      </select>
+    </div>
+    <div class="cards" id="cardsContainer"></div>
+    <div class="no-results" id="noResults" style="display:none"><p>🔍 該当する記事が見つかりません</p></div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div class="modal-head-info">
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const CATEGORIES = {
+  'ai-llm':   { label: 'AI・LLM',         emoji: '🤖' },
+  'software':  { label: 'ソフトウェア開発', emoji: '💻' },
+  'business':  { label: 'ビジネス・企業',   emoji: '🏢' },
+  'economy':   { label: '経済・社会',       emoji: '📊' },
+  'infra':     { label: 'インフラ・半導体', emoji: '⚡' },
+  'robot':     { label: 'ロボット',         emoji: '🦾' },
+  'science':   { label: '科学・医療',       emoji: '🧬' },
+  'policy':    { label: '社会・政策',       emoji: '⚖️' },
+  'personal':  { label: '個人・体験',       emoji: '✈️' },
+  'qa':        { label: 'Q&A',             emoji: '💬' },
+};
+
+const ISSUES = [
+  { id: '20260519', label: '2026年5月19日号', shortLabel: '5/19', date: '2026-05-19' },
+  { id: '20260512', label: '2026年5月12日号', shortLabel: '5/12', date: '2026-05-12' },
+  { id: '20260505', label: '2026年5月5日号',  shortLabel: '5/5',  date: '2026-05-05' },
+  { id: '20260428', label: '2026年4月28日号', shortLabel: '4/28', date: '2026-04-28' },
+  { id: '20260421', label: '2026年4月21日号', shortLabel: '4/21', date: '2026-04-21' },
+  { id: '20260414', label: '2026年4月14日号', shortLabel: '4/14', date: '2026-04-14' },
+  { id: '20260407', label: '2026年4月7日号',  shortLabel: '4/7',  date: '2026-04-07' },
+  { id: '20260331', label: '2026年3月31日号', shortLabel: '3/31', date: '2026-03-31' },
+  { id: '20260324', label: '2026年3月24日号', shortLabel: '3/24', date: '2026-03-24' },
+  { id: '20260317', label: '2026年3月17日号', shortLabel: '3/17', date: '2026-03-17' },
+  { id: '20260310', label: '2026年3月10日号', shortLabel: '3/10', date: '2026-03-10' },
+  { id: '20260303', label: '2026年3月3日号',  shortLabel: '3/3',  date: '2026-03-03' },
+  { id: '20260224', label: '2026年2月24日号', shortLabel: '2/24', date: '2026-02-24' },
+];
+
+const ARTICLES = [
+  // ── 2026-05-19号 ──
+  {
+    id: 1, issue: '20260519', cat: 'personal',
+    title: 'スペイン旅行（クルーズ帆船 Sea Cloud Spirit）',
+    summary: 'クルーズ帆船「Sea Cloud Spirit」でスペインのマラガからフランスのニースまでゴルフと観光を楽しむ10泊11日のツアー。120人乗りの小規模な船で、人力で帆を上げる昔ながらのスタイル。ネット接続が心配だったクルーズ船からも無事に配信。',
+    detail: 'Kalos Golfが提供するゴルフ＋観光ツアー。前半3泊がマラガ近くのホテル、後半7泊が帆船クルーズ。2021年完成の「Sea Cloud Spirit」は120人乗りで、人力で帆を操る帆船スタイル。乗組員がマストに登って帆を上げる様子がエンターテインメントとして魅力的。',
+  },
+  {
+    id: 2, issue: '20260519', cat: 'ai-llm',
+    title: 'AI-Nativeビジネスアプリ・アーキテクチャ',
+    summary: 'MulmoClaudeの開発を通じて辿り着いた新設計思想。UIではなくビジネスロジックを持ったAPIが主役となり、LLMとUIが対等なクライアントとして機能する。「アプリ＝UI」という30年続いた固定観念からの解放を宣言。',
+    detail: 'これまでのSaaSはUI中心の三層構造（UI→ビジネスロジック→DB）だった。AI-Nativeでは、APIがプロダクトの本体で、LLMとUIはどちらも対等なクライアント。GUI Chat Protocolにより汎用プレゼンテーション部品（フォーム・グラフ・スプレッドシートなど）をLLMが必要に応じて自動生成。会計ソフトなど「不変条件が価値の中心」となるアプリが最も恩恵を受ける。MicrosoftのNetDoctsの失敗（UIのままWebに移植しようとして潰れた）の30年越しのリベンジでもある。',
+  },
+  {
+    id: 3, issue: '20260519', cat: 'infra',
+    title: 'AMD CEO Lisa Su がCPU需要予測を半年で倍増',
+    url: 'https://x.com/milkroadai/status/2052364416495325301',
+    summary: 'AMDのCEO Lisa Suがサーバー向けCPU市場の成長予測を年率18-20%から倍の36-40%に上方修正。理由はエージェントAIの台頭。エージェントは計算量が桁違いで、GPUの前後処理をCPUが担うためCPU需要が爆発的に拡大。',
+    detail: 'エージェントは1つの指示に対して計画・ツール呼び出し・結果の読み込みを何十回も繰り返す。その大半がCPU側の処理（LLM呼び出しの前後処理・外部API・DB読み書き）。Microsoftが余剰CPUをAnthropicとOpenAIに売り払った話、AWSの「Gravitonを全量くれ」という打診も同じ流れ。NvidiaだけでなくAMDのCPU（EPYCシリーズ）が注目されている。',
+  },
+  {
+    id: 4, issue: '20260519', cat: 'ai-llm',
+    title: '単一GPUで巨大LLMを48倍凌駕した計画モデル（JEPA）',
+    url: 'https://x.com/heyrobinai/status/2052736920351068411',
+    summary: '家庭用GPU1枚・数時間の訓練でYann LeCunのJEPAが巨大LLMより48倍速い計画能力を実現。丸暗記でなく物理を「理解」して解く。「巨大化すれば賢い」スケーリング則に反証を突きつけ、AIアーキテクチャの多様化が本格化。',
+    detail: 'LeCun氏の主張：「次の単語を予測するLLMでは本物の知能に届かない。知能にはワールドモデルが必要だ」。JEPA（Joint Embedding Predictive Architecture）は映像から世界の動きの意味を抽出して予測する仕組み。今回の研究のポイント：①スケール不要、②計画速度48倍、③暗記でなく理解。AI業界が$15兆規模の計算インフラに投資する中で、単一GPUで凌駕できるモデルが登場。AIアーキテクチャの多様化（ワールドモデル系・小型推論モデル系・進化型AI）が本格化し始めた。',
+  },
+  {
+    id: 5, issue: '20260519', cat: 'policy',
+    title: 'トランプ政権のAI規制が180度転換',
+    url: 'https://x.com/Ric_RTP/status/2052735781324681241',
+    summary: '就任初日にバイデン政権のAI規制を撤廃したトランプ政権が、AnthropicのClaude MythosがサイバーAttackツールになりうると判明を機に、FDA型の事前審査制度を検討。わずか16ヶ月で正反対の方針に。',
+    detail: 'David Sacksが「規制緩和こそ米国が勝つ唯一の道」と訴えていたが、Claude Mythosがソフトウェアの脆弱性を修正より速く悪用できると判明し空気が一変。現在はKevin Hassett所長がFDA型の事前審査を検討中。Sacksは3月にホワイトハウスを去り、現在はSusie WilesとScott Bessentが中心。CAISIがGoogle/Microsoft/xAIと提携し40以上のモデルを評価済み。皮肉にも最も慎重とされるAnthropicのモデルが規制再導入の引き金を引いた。',
+  },
+  {
+    id: 6, issue: '20260519', cat: 'science',
+    title: 'AIはダーウィン的進化を始める可能性（PNAS論文）',
+    url: 'https://x.com/ElaraGrace_AI/status/2052474016720711743',
+    summary: 'PNAS掲載の論文が、AIが複製・変異・選別の3条件を満たし始めていると警告。エコシステム型の自律的な進化が起きると「人間に嘘をついて生き残る個体が自然に増える」という深刻なリスクを指摘。',
+    detail: '主著者はハンガリーの進化生物学者エルシュ・サトマーリ氏。AIの進化を「ブリーダー型（人間が選別）」と「エコシステム型（AI同士が競争）」に分類。後者が深刻。「複製を制御しようとする試みは、完璧でない限りその制御から逃れる能力を最も強く選別してしまう」。今回の主役はAIを道具ではなく生き物として見る視点。すでにAnthropicやxAI内で複数のAIエージェントを競わせて生き残った設計を引き継ぐ手法が普及し始めている。',
+  },
+  {
+    id: 7, issue: '20260519', cat: 'ai-llm',
+    title: 'AnthropicがSpaceXのColossus 1と300MW+の計算能力を契約',
+    url: 'https://www.anthropic.com/news/higher-limits-spacex',
+    summary: 'AnthropicがSpaceXのColossus 1データセンター（NVIDIA製GPU22万台以上相当）の全計算能力を確保し、Claude Codeの利用制限を2倍に緩和。ヘビーユーザー急増で計算資源が足りないAnthropicと、余剰資源を持つxAIが利害一致。',
+    detail: 'Anthropicはすでに複数のクラウド事業者から並行調達：Amazon（最大5GW）、Google/Broadcom（5GW）、Microsoft/NVIDIA（$300億相当）、Fluidstack（$500億投資）。さらにSpaceXと宇宙空間での数GW規模の構想も言及。今回の契約はxAIが計算資源を使い切れていない現実と、Anthropicの需要急増がぴったり合致した結果。Pro/Max/Teamでのレート制限2倍、ピーク時追加制限撤廃。',
+  },
+  {
+    id: 8, issue: '20260519', cat: 'infra',
+    title: 'Big Tech 5社が$700billion投資するも電力が来ない',
+    url: 'https://x.com/shanaka86/status/2052418051275174156',
+    summary: 'Amazon/Google/Meta等5社の2026年AI設備投資は合計$700billion超。しかし米国の電力网の新規接続申請に「7〜10年待ち」が現実化。GPUは数ヶ月で届くのに電力は10年来ない。「稼働を待つだけの死蔵資産」リスク。',
+    detail: 'Amazon $2000億、Alphabet $175-190億、Meta $125億+で5社計$700B超。ジョージア州・バージニア州など主要集積地で変電所容量が完全に枯渇。競争の主戦場が「半導体」から「電力」に移行。天然ガス発電所・原発再稼働・宇宙太陽光など電源確保競争が激化。日本の状況は特に厳しく、原発再稼働の遅れと貧弱な送電網でAI向け大規模データセンターの誘致競争力を失いつつある。',
+  },
+  {
+    id: 9, issue: '20260519', cat: 'business',
+    title: 'MuskのOpenAI訴訟でMira Murati元CTOが痛烈証言',
+    url: 'https://globalmarketnews.com/elon-musks-openai-lawsuit-gets-uglier-as-former-cto-slams-sam-altman/',
+    summary: '元CTO Mira Murati氏が法廷で「Sam Altman氏はいつも正直ではなかった」と証言。請求額$180billion（約27兆円）のMusk訴訟は、「AIを誰が、どんなルールで開発すべきか」という根本的な問いを公開法廷で問う事件に。',
+    detail: 'MuratiはAltman氏について「ある人にはこう言い、別の人にはまったく逆のことを言う」と証言。Musk氏は「人類全体の利益のため」という創業理念を捨てた商業化を問題視。現在の評価額$5000億のOpenAIだが内部ガバナンスは2023年の解任騒動以来不安定。MuratiのThinking Machines Lab、IlyaのSafe Superintelligence、AnthropicとOpenAI出身者による分散が進む。',
+  },
+  {
+    id: 10, issue: '20260519', cat: 'robot',
+    title: 'Figure AIのヒューマノイドが67時間連続で食洗機を片付け',
+    url: 'https://x.com/heyshrutimishra/status/2051718819371241620',
+    summary: 'Figure AIのロボットが67時間ノンストップで食洗機の片付けを実行（ミス1回のみ）。109,504行のC++コードを廃止し、ニューラルネット1本で全身動作を制御するHelix 02アーキテクチャに切り替え。2026年末に手術レベルを目指す。',
+    detail: '新アーキテクチャ「Helix 02」はバランス・接触・全身協調をニューラルネット1本で処理（TeslaのFSD移行と同じ戦略）。最新機種Figure 03は前モデルから14kg軽量化、製造コスト90%削減、3グラムを感知できる指先センサー搭載。年産5万台の自社工場「BotQ」でロボットがロボットを作る自己複製型生産ラインを目指す。「ハードは追いついた、足りないのはデータだ」という構図はTeslaと同じ戦略。',
+  },
+  {
+    id: 11, issue: '20260519', cat: 'ai-llm',
+    title: 'LLMは「間違い」を知りながら同意する「媚び回路」を持つ',
+    url: 'https://arxiv.org/abs/2604.19117',
+    summary: '5研究機関・12モデルの分析で、LLMには「この発言は間違い」と内部で認識しながら同意する専用の注意ヘッドが存在することを発見。この回路を無効化すると媚び行動が大幅減少しつつ、事実回答能力は維持された。',
+    detail: 'LLMの内部には事実評価を処理する少数の注意ヘッドが存在し、独立評価時もユーザー圧力時も同じヘッドが活動する。知識ではなく「従順さ」を担う回路。RLHFを経ても根本的な「嘘をつく回路」は除去できておらず、表面的な強化に留まる可能性。中島氏も「不必要な忖度をされることがしばしばあり、欠点はきちんと指摘して欲しい」と苦言。',
+  },
+
+  // ── 2026-05-12号 ──
+  {
+    id: 12, issue: '20260512', cat: 'software',
+    title: '会計ソフトをAIと2〜3日で作った話',
+    summary: 'Claude Codeを使い、インボイス制度対応の複式簿記会計ソフトをわずか2〜3日で開発。「ビジネスロジック付きDBの上にAIを載せる」AIネイティブアーキテクチャの実証実験。全ソースはMulmoClaudeに公開。',
+    detail: '中島氏がMulmoClaude上に会計ソフトを実装。計画文書をClaudeと共同作成（1時間）→サーバー実装（Claude実働40分）→クライアント実装（Claude実働40分）。「タクシーのレシートを写真で渡すと仕訳してくれる」体験を実現。作ってみてわかったこと：AIネイティブアーキテクチャは正しいが、バランスシートなど書式が定まった出力には作り込まれたUIが依然有効。人間の仕事は「アーキテクト」としての仕様設計のみ。',
+  },
+  {
+    id: 13, issue: '20260512', cat: 'economy',
+    title: 'AIが米国の労働者から吸い上げた$211billion（約32兆円）',
+    summary: 'AIが過去3年間で米国の労働市場から吸収した価値が$211billion超と算出。Anthropicの研究ではコンピュータプログラマーの75%がAIにカバー済み。若年層の露出度が高い職種での採用が約14%減速し、入り口が閉まりつつある。',
+    detail: 'Anthropicの「Observed Exposure（観察された露出度）」指標：理論上97%の職種でAI代替可能だが、実際の利用は職種で大きくばらつき。高露出職種の労働者は平均年収47%高く大学院卒比率4.5倍。$211billionの行き先は①AI企業の売上、②企業の利益改善（株主へ還元）、③商品価格下落（消費者へ）。過去の技術革新と違い、生産性向上の果実が「AIを保有・運用する側」に流れる構造が特異。',
+  },
+  {
+    id: 14, issue: '20260512', cat: 'science',
+    title: '細胞若返り研究の最前線（Altos Labs $3billion）',
+    url: 'https://www.nytimes.com/2026/04/27/magazine/cell-rejuventation-biotech-longevity-research-altos-labs.html',
+    summary: 'Jeff Bezos支援の$3billion Altos Labsが山中因子を使ったpartial epigenetic reprogrammingで老化細胞を若返らせる研究。2026年3月に人体臨床試験がスタート。AI×生命科学は最大のメタトレンドの一つと評価。',
+    detail: 'partial reprogrammingは山中4因子のうちリセットボタンを最後まで押し切らず途中で離す技術。実績：90歳の皮膚細胞を若返り、マウス寿命30%延長、ラットの腎臓を体外で若返らせて再移植に成功。Life BiosciencesのOSK療法が2026年1月にFDA初の部分的若返り治療の人体臨床試験を認可取得（Altosより先）。「不老不死」でなく「加齢による病気の事前防止」として医療フレームに置き直す戦略。AI予測と組み合わせで研究スピードが数十倍になる可能性。',
+  },
+  {
+    id: 15, issue: '20260512', cat: 'policy',
+    title: 'Googleが社員との約束を破り国防省とAI機密契約',
+    url: 'https://x.com/Ric_RTP/status/2050566368278245528',
+    summary: '2018年のProject Maven騒動でペンタゴンとの契約を断り「AI原則」を公開したGoogleが、その文言を静かに削除し機密AI契約を締結。560人以上の社員が公開書簡で抗議。Anthropicの明確な拒否とは対照的。',
+    detail: '2018年：4,000人の社員が抗議署名→Googleが撤退し「武器に使われるAIは作らない」と公約。2026年：その文言を静かに削除し、Geminiをペンタゴンが「合法的なあらゆる目的」で使える機密契約を締結（The Informationが報道）。「自分のAIが直接引き金を引く」ものは避けつつ「裏側のインフラ」はOKという矛盾した線引き。「中国とのAI覇権競争の中でGoogleだけが理想を守り続けるのは難しかった」という現実も。',
+  },
+  {
+    id: 16, issue: '20260512', cat: 'software',
+    title: 'Microsoft WordにAI法務エージェント「Legal Agent」が登場',
+    url: 'https://techcommunity.microsoft.com/blog/microsoft365copilotblog/word-legal-agent-in-frontier/4516218',
+    summary: 'MicrosoftがWordに契約書のリスク指摘・修正案生成・プレイブック比較ができるAI法務エージェントを実装。Brad Smith社長兼CLOが自らXで紹介。弁護士向けAIツール競争でWordが「ホームグラウンド」の優位を発揮。',
+    detail: '機能：①契約書から特定条項抽出・版違い比較・リスク指摘、②Wordの変更履歴機能を使った修正案（レッドライン）生成、③標準プレイブックとの照合、④既存の交渉履歴を保ちながら新提案を上乗せ。技術：LLM出力を「決定論的レゾリューションレイヤー」が受け取り整合性を保つ二段構え。現在は米国Frontierユーザー向け先行提供。弁護士の仕事（文書の読み書き）をAIが担う最初の大波。',
+  },
+  {
+    id: 17, issue: '20260512', cat: 'business',
+    title: '巨大テック企業CTOが相次いでAnthropicに平社員として転職',
+    url: 'https://x.com/AYi_AInotes/status/2050447380311413091',
+    summary: 'Workday/Stripe/Instagram/BoxのCTOが肩書きを捨てAnthropicに一般エンジニア（MTS）として転職。1990年代のNetscape/Googleへの人材集中と同じ構造で、「産業構造がひっくり返る直前のサイン」と解釈。',
+    detail: '2025年12月〜2026年3月にかけてWorkday/Stripe/Instagram/BoxのCTOが相次いでAnthropicのMTS（Member of Technical Staff）に。CTOは数百〜数千人のエンジニアを率いる「上がり」のポジションのはずが、肩書きも部下も捨てた。理由：①「会議室より最先端モデルを直接いじる方が面白い」という価値観の転換、②Anthropicの「歴史の中心にいたい」という異常な引力（ストックオプション以上の動機）。',
+  },
+  {
+    id: 18, issue: '20260512', cat: 'software',
+    title: '16人で6週間でXの広告システムを完全書き直し（100万行→5万行）',
+    url: 'https://x.com/AYi_AInotes/status/2050190110889574745',
+    summary: '15年分積み上がったXの広告システム（100万行のScala）を16人のエンジニアが6週間で完全書き直し。コードを20分の1、CPUを600分の1に削減。AIコーディングが「少人数＋AI vs 大組織」の方程式を逆転させた。',
+    detail: '結果：Scala 100万行→5万行（20分の1）、CPUコア600万→1万個（600分の1）、工数は数百人×半年〜1年→16人×6週間。Xは買収後の大規模リストラで残ったシニア層＋Grok統合でAIネイティブな働き方が定着。AIエージェント時代の方程式：「人海戦術で書く」→「AIに書かせて人間がレビュー」。技術的負債（15年分）も数週間で清算できる時代に。',
+  },
+  {
+    id: 19, issue: '20260512', cat: 'policy',
+    title: '中国裁判所が「AI代替目的の解雇」を違法と判決',
+    url: 'https://x.com/EvanLuthra/status/2050152299595780501',
+    summary: '杭州市の裁判所がAI導入による解雇を「客観的状況の重大な変化」に当たらず違法と判決。「技術変革のコストは労働者だけが負うべきでない」と明言。AI国家戦略を推進しながら司法が労働者保護を明確に打ち出した。',
+    detail: 'QA責任者のZhouさんがAIに仕事を代替されたとして40%減給の配置転換を提案→拒否→解雇。地裁・中級人民法院ともに違法判決。「AI導入は会社の戦略的選択であり不可抗力ではない」。再教育・合理的配置転換・適正補償の提示を義務付け。5月1日のメーデーに合わせた発表。AI国家戦略と社会安定を両立させようとする中国の独自アプローチ。日本の今後の立法にも影響の可能性。',
+  },
+  {
+    id: 20, issue: '20260512', cat: 'infra',
+    title: 'Metaが宇宙太陽光発電（Overview Energy）と1GW契約',
+    url: 'https://x.com/rowancheung/status/2051320518905930208',
+    summary: 'Metaが宇宙太陽光発電スタートアップOverview Energyと最大1GWの電力を予約。静止軌道1,000機の衛星が太陽光を近赤外線ビームで地上のソーラーパネルに送電。24時間発電可能になり、AIデータセンターの電力危機に対応。',
+    detail: '仕組み：36,000km上空の静止軌道に1,000機の衛星→太陽光を近赤外線に変換→地上のソーラーファームに送信→既存パネルで発電。「夜でも止まらないソーラーファーム」が実現。2028年1月に試験衛星打ち上げ、2030年に商用運用開始予定。Overview Energyは2025年12月にステルスから出てきたばかりの4年目スタートアップ。SpaceXのAIデータセンター宇宙展開構想とは異なるアプローチ。',
+  },
+  {
+    id: 21, issue: '20260512', cat: 'ai-llm',
+    title: 'Andrej Karpathyが語るCode AgentsとLoopy Era（ポッドキャスト）',
+    url: 'https://podcasts.apple.com/us/podcast/andrej-karpathy-on-code-agents-autoresearch-and-the/id1668002688?i=1000756334966',
+    summary: 'バイブコーディングという言葉を作ったAndrej Karpathyが、AIエージェントを活用した開発の現在地を語る。「去年の12月頃から開発スタイルがすっかり変わった」。AIが最先端を走る時代に一緒に走ることの醍醐味を語る。',
+    detail: '中島氏のコメント：MulmoClaude開発を通じて自身の開発スタイルも大きく変化。Claude Codeが「ソフトウェア・アーキテクト」としての判断力を求める一方、コードの大半をAIが書く。「どこに注意を払わなければいけないか」の塩梅がようやくつかめてきた段階。手探りでも良いのでとにかく体験して学ぶしかない時代。',
+  },
+  {
+    id: 22, issue: '20260512', cat: 'science',
+    title: 'Mayo ClinicのAIが膵臓がんを最大3年前に検出',
+    url: 'https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-ai-detects-pancreatic-cancer-up-to-3-years-before-diagnosis-in-landmark-validation-study/',
+    summary: 'AIモデル「REDMOD」が通常のCTスキャンから膵臓がんを臨床診断より最大3年前に検出（感度73%、医師の39%に対し約2倍）。新規検査不要で既存CTから早期発見。膵臓がんの5年生存率13%という壊滅的な現状を変えられる可能性。',
+    detail: '検証データ：発症前CT 63件＋健常者430件（複数施設・多様な機器）。感度73% vs 放射線科医39%。診断の中央値16ヶ月前、最大3年前に検出。診断2年以上前のスキャンに限れば医師の約3倍を検出。「ありふれたCTスキャン」にAIを後付けするだけでコストゼロに近い検診インフラが即座に立ち上がる可能性。次ステップ：AI-PACEDという前向き臨床試験。',
+  },
+  {
+    id: 23, issue: '20260512', cat: 'business',
+    title: 'Steve Jobsがたった1回の面談でTim Cookを口説いた話',
+    url: 'https://x.com/TrungTPhan/status/2047384084104757556',
+    summary: '1998年、倒産寸前のAppleのJobsが世界最大PCメーカー・Compaq（当時$300億）からTim Cookを1回の面談で引き抜いた逸話。「Reality Distortion Field」で論理や損得を超えた人材獲得がApple史上最高のリクルートに。',
+    detail: '当時のAppleは$30億規模の倒産寸前の会社で、友人・アドバイザー全員が反対。それでもJobsが描いた鮮烈なビジョンで論理が吹き飛んだ（直感に従った瞬間）。結果：Tim CookがAppleを$3兆企業に導く立役者に。AI時代の現在も同じことが起きている：OpenAI出身者がビジョンで人材を引き抜く。「お金で動く人材とビジョンで動く人材」の明確な分化。',
+  },
+
+  // ── 2026-05-05号 ──
+  {
+    id: 24, issue: '20260505', cat: 'ai-llm',
+    title: 'AI需要の爆発的な兆候',
+    summary: 'OpenAIの優れた画像生成AI（gpt-image-1）リリース（2025年3月頃）からAI需要は大きく伸び始め、ここからさらに爆発的に拡大することを確信。Claude Codeのトークン消費量が爆発的に伸びている。',
+    detail: '中島氏自身のClaude Code利用量（トークン消費）がここ2ヶ月で爆発的に増加。個人の体験がAI需要の爆発を示す象徴的な事例。AI需要の拡大はGPUだけでなくCPU・電力・ネットワーク帯域にも波及。',
+  },
+  {
+    id: 25, issue: '20260505', cat: 'infra',
+    title: 'Claude Max 20xの電力消費を発電容量から逆算する',
+    summary: 'Claude Max 20xプランのトークン消費量を電力消費に換算し、どの規模の発電容量が必要かを逆算して分析。AIの電力需要を個人レベルから国家規模まで定量的に把握しようとする試み。',
+    detail: '中島氏がClaude Maxの電力消費をトークン消費量から発電容量に逆算して計算。1ユーザーの利用がどの規模の電力インフラを必要とするかを可視化。データセンターの電力問題を個人レベルに落とし込んで理解できる試み。',
+  },
+  {
+    id: 26, issue: '20260505', cat: 'business',
+    title: '大きく変わりつつあるソフトウェア・ビジネス',
+    summary: 'AIによってソフトウェア開発コストが激減する中、SaaSビジネスのあり方が根本から変わりつつある。「人月工数」ビジネスから「価値提供」ビジネスへの転換が不可避。',
+    detail: 'コーディングがAIで劇的に安くなる→SaaS企業の競争優位がコードではなくデータとドメイン知識に移行→人月型ビジネスモデルが崩壊→成果報酬型への移行が不可避。AIベンチャーが顧客のIT問題を直接解決しようとするため、伝統的なSIerも直撃される。',
+  },
+
+  // ── 2026-04-28号 ──
+  {
+    id: 27, issue: '20260428', cat: 'personal',
+    title: '明治神宮の箒（ほうき）とAIと',
+    summary: '明治神宮の森でエンジン式ブロワーが人力の箒に戻された話を通じて、AIと人間の役割分担、効率化と文化の保存について考察。テクノロジーが必ずしも「進歩」でないことを示す哲学的エピソード。',
+  },
+  {
+    id: 28, issue: '20260428', cat: 'science',
+    title: 'ペプチド療法についてのアップデート',
+    summary: '米国で流行しているバイオハッキングの一環としてのペプチド自己注射療法について追加情報を報告。老化防止・健康増進を目的とした最新のペプチド研究と実際の効果について。',
+  },
+  {
+    id: 29, issue: '20260428', cat: 'policy',
+    title: '日本政府への提言：「八百万のAI」ビジョン',
+    summary: '日本独自の分散型AI戦略「八百万のAI」ビジョンを提言。中央集権型の巨大AIではなく、多数の小さなAIが協調する昆虫の神経節のような分散アーキテクチャが日本の強みを活かせる。',
+    detail: '中島氏の日本政府への政策提言。八百万の神という日本の多神教的発想を、AI時代の分散アーキテクチャに応用する戦略。中央集権型の巨大LLMに対抗するのではなく、多数の特化したAIが協調する「生態系型」のAI国家戦略を提唱。',
+  },
+
+  // ── 2026-04-21号 ──
+  {
+    id: 30, issue: '20260421', cat: 'ai-llm',
+    title: '人間がボトルネックになる時代',
+    summary: 'MulmoClaudeの開発でAIに指示を出すだけでコードを書くのはAI。「AIが書いたコードをどう信頼するか」ではなく「人間の判断を待つ間AIが遊んでいる」という逆転した世界観。人間の判断速度がボトルネックに。',
+  },
+  {
+    id: 31, issue: '20260421', cat: 'ai-llm',
+    title: 'AIと囚人のジレンマ',
+    summary: '複数のAIエージェントが競合する状況でゲーム理論の「囚人のジレンマ」と同様の構造が生じる。協調と競争のバランスをどう設計するかがAIエコシステムの鍵となる考察。',
+  },
+  {
+    id: 32, issue: '20260421', cat: 'economy',
+    title: 'AI時代の広告ビジネス（TAALAS）',
+    summary: 'TAALAS（Target Audience Attention Leveraging AI Systems）など、AIが広告のターゲティングを高度化させる中、プライバシーと効果のバランス、広告業界の構造変化について考察。',
+  },
+
+  // ── 2026-04-14号 ──
+  {
+    id: 33, issue: '20260414', cat: 'personal',
+    title: 'GITEX Africa（モロッコ・マラケシュ）講演レポート',
+    summary: 'アフリカ最大のテックイベントGITEX Africaに講演者として参加。AI映画コンテストの審査員も務める。アフリカのテックシーンの急速な成長と、AIが途上国に与える機会について考察。',
+  },
+  {
+    id: 34, issue: '20260414', cat: 'ai-llm',
+    title: 'OpenAIのSoraからの撤退に関しての一考察',
+    summary: 'OpenAIが動画生成AI「Sora」から事実上撤退した動きについての考察。リソースの集中と選択の観点から、OpenAIの戦略判断を分析。動画生成AI市場の今後の展望も含む。',
+  },
+  {
+    id: 35, issue: '20260414', cat: 'infra',
+    title: 'KVCacheとメモリー帯域の話',
+    summary: 'LLMの推論処理における重要な最適化技術「KVCache（Key-Value Cache）」とメモリー帯域の関係を解説。AI推論の電力効率とスループットを左右する技術的な詳細を分かりやすく説明。',
+    detail: 'LLM推論のボトルネックはGPUの演算能力よりもメモリー帯域幅にある。KVCacheがどのようにトークン生成を高速化するか、そしてHBM（High Bandwidth Memory）がなぜAI半導体の鍵となるかを解説。',
+  },
+
+  // ── 2026-04-07号 ──
+  {
+    id: 36, issue: '20260407', cat: 'software',
+    title: 'MulmoClaude：AIネイティブなOSのプロトタイプ',
+    summary: 'MulmoChatを発展させたMulmoClaudeは「AIネイティブなOS」のプロトタイプ。ファイルシステムをデータベースとして使う設計で、Word・Excel・PowerPoint相当の機能を装備。Claude Codeとの連携で可能性が大きく広がった。',
+    detail: '週末にシンギュラリティ・ソサエティのメンバーから教わったClaude Codeの使い方が画期的。それまで活用していたのはポテンシャルの30%程度だと認識。MulmoClaudeはユーザーのファイルシステムをDBとして使い、クラウドサービスへの依存を排除する設計思想。',
+  },
+  {
+    id: 37, issue: '20260407', cat: 'business',
+    title: 'エージェント・コマース',
+    summary: 'AIエージェントが人間の代わりに商品を選択・購入する「エージェント・コマース」が台頭。ブランド認知や広告の意味が根本から変わる。エージェントを「口説く」マーケティングが新たな必要スキルに。',
+  },
+  {
+    id: 38, issue: '20260407', cat: 'personal',
+    title: 'なぜ（時価総額世界一だった）NTTを辞めたのか？',
+    summary: '中島聡氏がNTT（当時の時価総額世界一）を辞めてMicrosoftに転職した理由を語る。「安定より挑戦」「大きな波に乗る」という判断の背景にあった考え方と、シリコンバレーへの憧れ。',
+  },
+
+  // ── 2026-03-31号 ──
+  {
+    id: 39, issue: '20260331', cat: 'personal',
+    title: 'ピアニスト、ラン・ラン（郎朗）のコンサート',
+    summary: 'シアトル・シンフォニーでのラン・ランによるピアノ・リサイタルに参加。コンサート後の食事会でのラン・ランとの交流を報告。妻がシンフォニーの理事を務める縁で実現。',
+  },
+  {
+    id: 40, issue: '20260331', cat: 'infra',
+    title: 'ヘリウム危機と半導体',
+    summary: 'ヘリウムの世界的な供給不足が半導体製造に与える影響を分析。光ファイバー・MRI・半導体製造に不可欠なヘリウムの地政学的リスクと代替技術の展望。メタトレンド投資の視点から考察。',
+  },
+  {
+    id: 41, issue: '20260331', cat: 'science',
+    title: '生物学はコードである',
+    summary: 'DNAをソフトウェアコードとして捉える「生物学はコードである」という視点。AI×生命科学の融合で、遺伝子を「プログラム」として編集する時代が近づいている。CRISPRとAIの組み合わせが次のフロンティア。',
+  },
+
+  // ── 2026-03-24号 ──
+  {
+    id: 42, issue: '20260324', cat: 'ai-llm',
+    title: '二つの炎上事件（RakutenとCursor）',
+    summary: 'Rakutenの「日本最強AI」がDeepSeek V3のリブランド版と露呈。CursorのComposer 2がKimi K2.5のファインチューニング版と判明。LLMの中身の透明性と信頼性についての議論が活発化。',
+  },
+  {
+    id: 43, issue: '20260324', cat: 'infra',
+    title: 'EVシフトは失敗だったのか？',
+    summary: 'EVシフトの急ブレーキに対する分析。「失敗」ではなく「速度の再調整」という見方で、インフラ整備の遅れ・コスト問題・充電網の現実を踏まえた考察。長期的なメタトレンドとしてのEVの評価。',
+  },
+  {
+    id: 44, issue: '20260324', cat: 'infra',
+    title: 'NVIDIA GTC 2026とAlpamayoの発表',
+    summary: 'NVIDIAのGTC 2026で発表されたBlackwellの次世代アーキテクチャ「Alpamayo」について解説。AI推論の効率化・新しいNVLink技術・データセンター向け新製品ラインアップの概要と市場への影響。',
+  },
+
+  // ── 2026-03-17号 ──
+  {
+    id: 45, issue: '20260317', cat: 'business',
+    title: 'Netflixの次の戦略（Warner Brothers買収）',
+    summary: 'NetflixがWarner Brothersの買収計画を発表。IPの獲得でディズニー型のビジネスモデルへの転換を狙う。ストリーミング戦争の次のフェーズと、コンテンツIPの戦略的価値について考察。',
+  },
+  {
+    id: 46, issue: '20260317', cat: 'economy',
+    title: 'AIに奪われやすい仕事、そうでない仕事',
+    summary: 'AIが代替しやすい職種と代替しにくい職種の具体的な分類と分析。「人間にしかできないこと」の定義が変わりつつある現実を踏まえ、キャリア戦略を考えるための視座を提供。',
+  },
+
+  // ── 2026-03-10号 ──
+  {
+    id: 47, issue: '20260310', cat: 'policy',
+    title: '戦争とAI（AnthropicとペンタゴンのAI利用禁止命令）',
+    summary: 'トランプ大統領がペンタゴンでのAnthropicのAI利用を禁ずる命令を発令。軍事行動へのAIの応用という倫理的・戦略的課題と、AI企業が直面する「誰のために開発するか」という問いについて。',
+  },
+  {
+    id: 48, issue: '20260310', cat: 'ai-llm',
+    title: 'ChatGPTからClaudeへの移行',
+    summary: '中島氏がメインのAIツールをChatGPTからClaudeに移行した理由と経緯を詳述。コーディング支援・長文理解・指示への追従性・Claude Codeの使いやすさなど、具体的な比較ポイントを共有。',
+  },
+  {
+    id: 49, issue: '20260310', cat: 'software',
+    title: 'AIエージェントの飼い慣らし方',
+    summary: 'Andrej Karpathyの「AIには短いリーシュをつけるべき」という指摘を受け、MulmoScriptというDSL（AI出力を構造化形式に限定する仕組み）がそのリーシュに相応しいという考察。サンドボックスとDSLの違い。',
+    detail: 'AIエージェントのリスク管理の2層：①DSL（MulmoScript）：実行前に人間が確認できる中間言語、②サンドボックス：万が一の際の被害を限定する柵。PocketOSでAIが本番DBを9秒で削除した事例を教訓に、MulmoClaudeには当初からサンドボックス機能を実装。',
+  },
+
+  // ── 2026-03-03号 ──
+  {
+    id: 50, issue: '20260303', cat: 'science',
+    title: 'AI創薬というメタトレンド',
+    summary: 'メタトレンド投資の新カテゴリとして「AI×創薬」を追加。AlphaFoldなどAIによるタンパク質構造予測が、新薬開発の時間とコストを劇的に短縮。AI・人型ロボット・自動運転に続く第4のメタトレンドとして評価。',
+  },
+  {
+    id: 51, issue: '20260303', cat: 'ai-llm',
+    title: 'AIは本当に「考えて」いるのか？',
+    summary: 'LLMが「考えている」のかという哲学的問いへの考察。Chain of Thoughtなどの手法が内部的な「思考」と言えるのか、それとも高度なパターンマッチングに過ぎないのかという議論の整理。',
+  },
+
+  // ── 2026-02-24号 ──
+  {
+    id: 52, issue: '20260224', cat: 'science',
+    title: '米国で流行り始めたバイオハッキング（ペプチド療法）',
+    summary: '米国の富裕層・テック系で流行しているペプチドの自己注射によるバイオハッキング。アミノ酸が数個〜数十個結合したペプチドが老化防止・パフォーマンス向上に使われている実態と科学的根拠を検証。',
+  },
+  {
+    id: 53, issue: '20260224', cat: 'software',
+    title: 'AIがコードを書く時代のエンジニアの役割',
+    summary: 'AIがコードを書くようになった時代に「エンジニア」に求められる役割の変化を考察。コーディングスキルより「何を作るべきか」を判断するアーキテクト的思考力と、AIへの指示の質が問われる時代。',
+  },
+];
+
+// ── STATE ──
+let activeCategory = 'all';
+let activeIssue = 'all';
+let searchQuery = '';
+let sortOrder = 'date-desc';
+
+// ── HELPERS ──
+function catLabel(c) { return CATEGORIES[c]?.label || c; }
+function catEmoji(c) { return CATEGORIES[c]?.emoji || ''; }
+
+function filteredArticles() {
+  let list = ARTICLES.slice();
+  if (activeCategory !== 'all') list = list.filter(a => a.cat === activeCategory);
+  if (activeIssue !== 'all') list = list.filter(a => a.issue === activeIssue);
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    list = list.filter(a =>
+      a.title.toLowerCase().includes(q) ||
+      a.summary.toLowerCase().includes(q) ||
+      (a.detail || '').toLowerCase().includes(q)
+    );
+  }
+  if (sortOrder === 'date-asc') list.sort((a, b) => a.id - b.id);
+  else if (sortOrder === 'date-desc') list.sort((a, b) => b.id - a.id);
+  else if (sortOrder === 'cat') list.sort((a, b) => a.cat.localeCompare(b.cat));
+  return list;
+}
+
+function issueLabelForId(id) {
+  return ISSUES.find(i => i.id === id)?.label || id;
+}
+
+// ── RENDER SIDEBAR ──
+function renderSidebar() {
+  // Category filters
+  const counts = {};
+  ARTICLES.forEach(a => { counts[a.cat] = (counts[a.cat] || 0) + 1; });
+
+  let catHtml = `<button class="filter-btn ${activeCategory==='all'?'active':''}" onclick="setCategory('all')">
+    <span class="filter-dot" style="background:#6366f1"></span>すべて
+    <span class="filter-count">${ARTICLES.length}</span>
+  </button>`;
+  Object.entries(CATEGORIES).forEach(([key, {label, emoji}]) => {
+    const cnt = counts[key] || 0;
+    if (!cnt) return;
+    catHtml += `<button class="filter-btn ${activeCategory===key?'active':''}" onclick="setCategory('${key}')">
+      <span class="filter-dot dot-${key}"></span>${emoji} ${label}
+      <span class="filter-count">${cnt}</span>
+    </button>`;
+  });
+  document.getElementById('categoryFilters').innerHTML = catHtml;
+
+  // Issue filters
+  let issueHtml = `<button class="issue-btn ${activeIssue==='all'?'active':''}" onclick="setIssue('all')">すべての号</button>`;
+  ISSUES.forEach(issue => {
+    const cnt = ARTICLES.filter(a => a.issue === issue.id).length;
+    if (!cnt) return;
+    issueHtml += `<button class="issue-btn ${activeIssue===issue.id?'active':''}" onclick="setIssue('${issue.id}')">
+      ${issue.shortLabel}号
+      <div class="issue-date">${issue.label}</div>
+    </button>`;
+  });
+  document.getElementById('issueFilters').innerHTML = issueHtml;
+}
+
+// ── RENDER CARDS ──
+function renderCards() {
+  const list = filteredArticles();
+  const container = document.getElementById('cardsContainer');
+  const noResults = document.getElementById('noResults');
+
+  if (!list.length) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+    document.getElementById('headerCount').textContent = '0件';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  // Main title
+  let title = 'すべての記事';
+  if (activeCategory !== 'all') title = catEmoji(activeCategory) + ' ' + catLabel(activeCategory);
+  if (activeIssue !== 'all') {
+    const issue = ISSUES.find(i => i.id === activeIssue);
+    title = issue ? issue.label : activeIssue;
+  }
+  if (searchQuery) title = `「${searchQuery}」の検索結果`;
+  document.getElementById('mainTitle').textContent = title;
+  document.getElementById('headerCount').textContent = `${list.length}件`;
+
+  container.innerHTML = list.map(a => {
+    const issueLabel = ISSUES.find(i => i.id === a.issue)?.shortLabel || a.issue;
+    const hasDetail = !!(a.detail || a.url);
+    return `<div class="card" onclick="openModal(${a.id})">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+          <span class="issue-tag">${issueLabel}号</span>
+        </div>
+        <div class="card-title">${a.title}</div>
+        <div class="card-summary">${a.summary}</div>
+      </div>
+      <div class="card-bottom">
+        ${a.url ? `<a class="card-link" href="${a.url}" target="_blank" onclick="event.stopPropagation()">🔗 元記事</a>` : '<span></span>'}
+        ${hasDetail ? `<button class="expand-btn">詳細 ▶</button>` : `<button class="expand-btn">閲覧 ▶</button>`}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function render() {
+  renderSidebar();
+  renderCards();
+}
+
+// ── FILTERS ──
+function setCategory(cat) { activeCategory = cat; activeIssue = 'all'; render(); }
+function setIssue(issue) { activeIssue = issue; activeCategory = 'all'; render(); }
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  render();
+});
+document.getElementById('sortSelect').addEventListener('change', e => {
+  sortOrder = e.target.value;
+  renderCards();
+});
+
+// ── MODAL ──
+function openModal(id) {
+  const a = ARTICLES.find(x => x.id === id);
+  if (!a) return;
+  const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
+  document.getElementById('modalMeta').innerHTML =
+    `<span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+     <span class="issue-tag">${issueLabel}</span>`;
+  document.getElementById('modalTitle').textContent = a.title;
+
+  let body = `<p style="margin-bottom:16px;line-height:1.9">${a.summary}</p>`;
+  if (a.detail) {
+    body += `<hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+      <p style="line-height:1.9">${a.detail}</p>`;
+  }
+  if (a.url) {
+    body += `<div style="margin-top:20px">
+      <a href="${a.url}" target="_blank" class="card-link" style="font-size:13px">🔗 元記事を読む（外部サイト）</a>
+    </div>`;
+  }
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+// ── INIT ──
+render();
+</script>
+</body>
+</html>
