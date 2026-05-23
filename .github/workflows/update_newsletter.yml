@@ -1,0 +1,44 @@
+name: 週刊メルマガ自動更新
+
+on:
+  schedule:
+    # 毎週火曜日 午前8時（JST）= 月曜日 23:00 UTC
+    - cron: '0 23 * * 1'
+  workflow_dispatch:
+    # 手動実行も可能
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 依存パッケージをインストール
+        run: pip install -r scripts/requirements.txt
+
+      - name: メルマガを取得・更新
+        env:
+          GMAIL_TOKEN: ${{ secrets.GMAIL_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/update_newsletter.py
+
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add newsletter/data.json
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "🤖 メルマガ自動更新: $(date '+%Y年%m月%d日')"
+            git push
+          fi
