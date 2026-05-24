@@ -131,10 +131,29 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 /* MAP VIEW */
 .map-view{display:none}
-.map-view.active{display:block}
-#map-container{height:calc(100vh - var(--hdr) - var(--tab) - 120px);width:100%;min-height:400px}
+.map-view.active{display:flex;flex-direction:column}
+#map-container{flex:1;width:100%;min-height:400px;height:calc(100vh - var(--hdr) - var(--tab) - 120px - 40px)}
 .list-view{display:block}
 .list-view.hidden-view{display:none}
+
+/* MAP TOOLBAR */
+.map-toolbar{height:40px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:8px;overflow-x:auto;flex-shrink:0}
+.legend-item{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--text-sub);white-space:nowrap;cursor:pointer}
+.legend-dot{width:11px;height:11px;border-radius:50%;display:inline-block;flex-shrink:0;border:1.5px solid rgba(0,0,0,.12)}
+.map-toolbar-sep{width:1px;height:20px;background:var(--border);flex-shrink:0}
+.btn-map-color{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:12px;font-weight:600;color:var(--text-sub);background:#fff;cursor:pointer;font-family:var(--font);margin-left:auto;flex-shrink:0;white-space:nowrap;transition:all .15s}
+.btn-map-color:hover{border-color:var(--navy-lt);color:var(--navy-lt)}
+
+/* COLOR SETTINGS MODAL */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.color-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--r-sm);background:var(--bg)}
+.color-swatch{width:20px;height:20px;border-radius:50%;border:2px solid rgba(0,0,0,.1);flex-shrink:0;cursor:pointer;position:relative;overflow:hidden}
+.color-swatch input[type=color]{position:absolute;inset:-4px;width:calc(100%+8px);height:calc(100%+8px);opacity:0;cursor:pointer;border:none;padding:0}
+.color-genre-name{font-size:12px;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.color-hex{font-size:11px;color:var(--text-lt);font-family:monospace}
+
+/* CUSTOM PIN */
+.map-pin-wrap{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
 
 /* MODAL */
 .overlay{position:fixed;inset:0;z-index:1000;background:rgba(10,25,56,.5);display:flex;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
@@ -325,7 +344,35 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 <!-- MAP VIEW -->
 <div class="map-view" id="map-view">
+  <div class="map-toolbar" id="map-toolbar">
+    <span style="font-size:11px;font-weight:700;color:var(--text-lt);white-space:nowrap">凡例:</span>
+    <div id="map-legend" style="display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;align-items:center"></div>
+    <div class="map-toolbar-sep"></div>
+    <button class="btn-map-color" onclick="openColorSettings()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+      カラー設定
+    </button>
+  </div>
   <div id="map-container"></div>
+</div>
+
+<!-- COLOR SETTINGS MODAL -->
+<div class="overlay hidden" id="modal-color">
+  <div class="mbox" style="max-width:520px">
+    <div class="mhdr">
+      <span class="mtitle">ジャンル別カラー設定</span>
+      <button class="mclose" onclick="closeColorSettings()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="mbody"><div class="color-grid" id="color-grid"></div></div>
+    <div class="mfoot">
+      <button class="btn btn-ghost" onclick="resetColors()">デフォルトに戻す</button>
+      <button class="btn btn-ghost" onclick="closeColorSettings()">キャンセル</button>
+      <button class="btn btn-navy" onclick="applyColors()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        適用
+      </button>
+    </div>
+  </div>
 </div>
 
 <!-- FORM MODAL -->
@@ -380,15 +427,32 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 const SCENES = ['接待','飲み会','ランチ','個室','大人数OK','女子会','デート','カジュアル'];
 const DEFAULT_GENRES = ['和食','寿司','焼肉','中華','イタリアン','フレンチ','韓国料理','ラーメン','居酒屋','バー','カフェ','その他'];
 const STORE = 'gourmet_v2';
+const COLOR_STORE = 'genre_colors_v1';
+const DEFAULT_GENRE_COLORS = {
+  '和食':    '#e05252',
+  '寿司':    '#e07b3c',
+  '焼肉':    '#c94a2a',
+  '中華':    '#d4a017',
+  'イタリアン':'#27ae60',
+  'フレンチ': '#8e44ad',
+  '韓国料理': '#e84393',
+  'ラーメン': '#e8a055',
+  '居酒屋':  '#3b7dd8',
+  'バー':    '#2c3e50',
+  'カフェ':  '#7c9e6e',
+  'その他':  '#8a9bb5',
+};
 
 // ── STATE ──────────────────────────────────────────────────
 let restaurants = [];
 let filters = {search:'',genre:'',scenes:[],budget:'',visited:'all'};
 let editingId = null, detailId = null;
 let formVisits = [];
-let leafMap = null, leafMarkers = [];
+let leafMap = null, leafMarkers = [], leafTileLayer = null;
 let fsaHandle = null, saveTimer = null;
 let currentTab = 'list';
+let genreColors = {...DEFAULT_GENRE_COLORS};
+let pendingColors = {};
 
 // ── STORAGE ────────────────────────────────────────────────
 function load() {
@@ -421,6 +485,15 @@ async function fetchSeed() {
     }
   } catch {}
 }
+
+function loadColors() {
+  try {
+    const raw = localStorage.getItem(COLOR_STORE);
+    if (raw) genreColors = {...DEFAULT_GENRE_COLORS, ...JSON.parse(raw)};
+  } catch {}
+}
+function saveColors() { localStorage.setItem(COLOR_STORE, JSON.stringify(genreColors)); }
+function getGenreColor(genre) { return genreColors[genre] || genreColors['その他'] || '#8a9bb5'; }
 
 function persist() {
   localStorage.setItem(STORE, JSON.stringify(restaurants));
@@ -622,12 +695,22 @@ function switchTab(tab) {
   if (tab==='map') { setTimeout(renderMap, 50); }
 }
 
+function createPinIcon(genre) {
+  const color = getGenreColor(genre);
+  const svg = `<div class="map-pin-wrap"><svg width="26" height="34" viewBox="0 0 26 34" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13 1C7.48 1 3 5.48 3 11c0 8 10 22 10 22s10-14 10-22C23 5.48 18.52 1 13 1z" fill="${color}" stroke="white" stroke-width="1.5"/>
+    <circle cx="13" cy="11" r="4.5" fill="white" opacity="0.85"/>
+  </svg></div>`;
+  return L.divIcon({ className:'', html:svg, iconSize:[26,34], iconAnchor:[13,34], popupAnchor:[0,-36] });
+}
+
 function renderMap() {
   if (!leafMap) {
-    leafMap = L.map('map-container').setView([35.6762,139.6503], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      attribution:'© <a href="https://openstreetmap.org">OpenStreetMap</a>'
-    }).addTo(leafMap);
+    leafMap = L.map('map-container', {zoomControl:true}).setView([35.6762,139.6503], 12);
+    leafTileLayer = L.tileLayer(
+      'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      { attribution:'© <a href="https://openstreetmap.org">OpenStreetMap</a> © <a href="https://carto.com">CARTO</a>', subdomains:'abcd', maxZoom:20 }
+    ).addTo(leafMap);
   }
   leafMarkers.forEach(m=>m.remove());
   leafMarkers=[];
@@ -635,24 +718,90 @@ function renderMap() {
   list.forEach(r=>{
     const lv = lastVisit(r);
     const vc = (r.visits||[]).length;
+    const color = getGenreColor(r.genre);
     const popHtml = `<div class="map-popup">
       <div class="pname">${esc(r.name)}</div>
-      <div class="pmeta">${r.genre?esc(r.genre)+'&nbsp;·&nbsp;':''}${vc>0?vc+'回訪問':'未訪問'}</div>
+      <div class="pmeta">${r.genre?`<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${color};margin-right:4px;vertical-align:middle"></span>${esc(r.genre)}&nbsp;·&nbsp;`:''} ${vc>0?vc+'回訪問':'未訪問'}</div>
       ${lv?`<div class="pmeta">最終: ${lv.date}</div>`:''}
       <button class="pbtn" onclick="openDet('${r.id}');document.querySelectorAll('.leaflet-popup-close-button').forEach(e=>e.click())">詳細を見る</button>
     </div>`;
-    const marker = L.marker([r.lat,r.lng]).bindPopup(popHtml).addTo(leafMap);
+    const marker = L.marker([r.lat,r.lng], {icon: createPinIcon(r.genre)}).bindPopup(popHtml).addTo(leafMap);
     leafMarkers.push(marker);
   });
   if (leafMarkers.length>0) {
     const fg = L.featureGroup(leafMarkers);
     leafMap.fitBounds(fg.getBounds().pad(0.15));
   }
+  renderLegend();
   const noGeo = getFiltered().filter(r=>!r.lat&&(r.address||r.station));
   if (noGeo.length) {
-    document.getElementById('stats').textContent += ` ／ 地図未取得 ${noGeo.length}件（バックグラウンドで取得中）`;
+    document.getElementById('stats').textContent += ` ／ 地図未取得 ${noGeo.length}件（取得中）`;
     noGeo.slice(0,5).forEach((r,i)=>setTimeout(()=>geocodeR(r.id), i*1100));
   }
+}
+
+function renderLegend() {
+  const plotted = getFiltered().filter(r=>r.lat&&r.lng);
+  const usedGenres = [...new Set(plotted.map(r=>r.genre||'不明'))];
+  const leg = document.getElementById('map-legend');
+  if (!leg) return;
+  if (usedGenres.length===0) { leg.innerHTML='<span style="font-size:11px;color:var(--text-lt)">プロット済みの店舗がありません</span>'; return; }
+  leg.innerHTML = usedGenres.map(g=>`
+    <span class="legend-item" onclick="filterByGenre('${esc(g)}')" title="クリックでフィルター">
+      <span class="legend-dot" style="background:${getGenreColor(g)}"></span>${esc(g)}
+    </span>`).join('');
+}
+
+function filterByGenre(g) {
+  switchTab('list');
+  filters.genre = g;
+  document.getElementById('s-genre').value = g;
+  render();
+}
+
+// ── COLOR SETTINGS ─────────────────────────────────────────
+function openColorSettings() {
+  pendingColors = {...genreColors};
+  renderColorGrid();
+  document.getElementById('modal-color').classList.remove('hidden');
+}
+function closeColorSettings() {
+  document.getElementById('modal-color').classList.add('hidden');
+}
+
+function renderColorGrid() {
+  const genres = getGenres();
+  document.getElementById('color-grid').innerHTML = genres.map(g => {
+    const color = pendingColors[g] || DEFAULT_GENRE_COLORS[g] || '#8a9bb5';
+    return `<div class="color-row">
+      <div class="color-swatch" style="background:${color}" id="swatch-${esc(g)}">
+        <input type="color" value="${color}" oninput="onColorInput('${esc(g)}',this.value)">
+      </div>
+      <span class="color-genre-name">${esc(g)}</span>
+      <span class="color-hex" id="hex-${esc(g)}">${color}</span>
+    </div>`;
+  }).join('');
+}
+
+function onColorInput(genre, color) {
+  pendingColors[genre] = color;
+  const sw = document.getElementById(`swatch-${genre}`);
+  const hx = document.getElementById(`hex-${genre}`);
+  if (sw) sw.style.background = color;
+  if (hx) hx.textContent = color;
+}
+
+function applyColors() {
+  genreColors = {...pendingColors};
+  saveColors();
+  closeColorSettings();
+  if (currentTab==='map') renderMap();
+  toast('カラーを更新しました','ok');
+}
+
+function resetColors() {
+  pendingColors = {...DEFAULT_GENRE_COLORS};
+  renderColorGrid();
 }
 
 // ── DETAIL MODAL ───────────────────────────────────────────
@@ -1023,6 +1172,7 @@ document.addEventListener('click',e=>{
   if(!e.target.closest('#btn-menu')&&!e.target.closest('#data-menu')) closeMenu();
   if(e.target===document.getElementById('modal-form')) closeForm();
   if(e.target===document.getElementById('modal-detail')) closeDet();
+  if(e.target===document.getElementById('modal-color')) closeColorSettings();
 });
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){ closeForm(); closeDet(); closeMenu(); }
@@ -1030,6 +1180,7 @@ document.addEventListener('keydown',e=>{
 });
 
 // ── INIT ───────────────────────────────────────────────────
+loadColors();
 load();
 paintPills();
 renderVisitsSection();
