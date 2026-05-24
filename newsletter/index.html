@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life is Beautiful メルマガ ダイジェスト</title>
+<title>中島聡メルマガ（Life is Beautiful）ダイジェスト</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -117,21 +117,38 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .dot-personal{background:#22c55e}
 .dot-qa{background:#94a3b8}
 
+/* ─── MOBILE FILTER DRAWER ─── */
+.mobile-filter-btn{display:none;align-items:center;gap:6px;background:#312e81;border:1px solid #4338ca;border-radius:8px;padding:6px 12px;color:#e0e7ff;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0}
+.mobile-filter-btn.has-filter{border-color:#a5b4fc;background:#3730a3}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:299;display:none}
+.drawer-overlay.open{display:block}
+.mobile-drawer{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,0.18);z-index:300;max-height:80vh;overflow-y:auto;transform:translateY(100%);transition:transform .3s ease}
+.mobile-drawer.open{transform:translateY(0)}
+.drawer-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:12px auto 4px}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border)}
+.drawer-head-title{font-size:14px;font-weight:600;color:var(--text)}
+.drawer-close-btn{background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:14px;cursor:pointer;color:var(--text3);font-family:inherit;transition:all .15s}
+.drawer-close-btn:hover{border-color:var(--text);color:var(--text)}
+.drawer-body{padding:12px}
+
 @media(max-width:768px){
   .layout{grid-template-columns:1fr}
   .sidebar{display:none}
   .cards{grid-template-columns:1fr}
+  .mobile-filter-btn{display:flex}
+  .header-count{display:none}
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-logo">🌸 <span>Life is Beautiful</span> ダイジェスト</div>
+  <div class="header-logo">中島聡メルマガ<span>（Life is Beautiful）</span>ダイジェスト</div>
   <div class="header-search">
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="キーワードで検索...">
   </div>
+  <button class="mobile-filter-btn" id="mobileFilterBtn" onclick="openDrawer()">≡ フィルター</button>
   <div class="header-count" id="headerCount"></div>
 </div>
 
@@ -158,6 +175,25 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div class="cards" id="cardsContainer"></div>
     <div class="no-results" id="noResults" style="display:none"><p>🔍 該当する記事が見つかりません</p></div>
   </main>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-head">
+    <span class="drawer-head-title">絞り込み</span>
+    <button class="drawer-close-btn" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="sidebar-section">
+      <div class="sidebar-label">カテゴリ</div>
+      <div id="drawerCategoryFilters"></div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">号を選択</div>
+      <div id="drawerIssueFilters"></div>
+    </div>
+  </div>
 </div>
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
@@ -188,16 +224,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 
 <script>
 const CATEGORIES = {
-  'ai-llm':   { label: 'AI・LLM',         emoji: '🤖' },
-  'software':  { label: 'ソフトウェア開発', emoji: '💻' },
-  'business':  { label: 'ビジネス・企業',   emoji: '🏢' },
-  'economy':   { label: '経済・社会',       emoji: '📊' },
-  'infra':     { label: 'インフラ・半導体', emoji: '⚡' },
-  'robot':     { label: 'ロボット',         emoji: '🦾' },
-  'science':   { label: '科学・医療',       emoji: '🧬' },
-  'policy':    { label: '社会・政策',       emoji: '⚖️' },
-  'personal':  { label: '個人・体験',       emoji: '✈️' },
-  'qa':        { label: 'Q&A',             emoji: '💬' },
+  'ai-llm':   { label: 'AI・LLM'         },
+  'software':  { label: 'ソフトウェア開発' },
+  'business':  { label: 'ビジネス・企業'   },
+  'economy':   { label: '経済・社会'       },
+  'infra':     { label: 'インフラ・半導体' },
+  'robot':     { label: 'ロボット'         },
+  'science':   { label: '科学・医療'       },
+  'policy':    { label: '社会・政策'       },
+  'personal':  { label: '個人・体験'       },
+  'qa':        { label: 'Q&A'             },
 };
 
 let ISSUES = [];
@@ -552,7 +588,6 @@ let sortOrder = 'date-desc';
 
 // ── HELPERS ──
 function catLabel(c) { return CATEGORIES[c]?.label || c; }
-function catEmoji(c) { return CATEGORIES[c]?.emoji || ''; }
 
 function filteredArticles() {
   let list = ARTICLES.slice();
@@ -578,7 +613,6 @@ function issueLabelForId(id) {
 
 // ── RENDER SIDEBAR ──
 function renderSidebar() {
-  // Category filters
   const counts = {};
   ARTICLES.forEach(a => { counts[a.cat] = (counts[a.cat] || 0) + 1; });
 
@@ -586,17 +620,18 @@ function renderSidebar() {
     <span class="filter-dot" style="background:#6366f1"></span>すべて
     <span class="filter-count">${ARTICLES.length}</span>
   </button>`;
-  Object.entries(CATEGORIES).forEach(([key, {label, emoji}]) => {
+  Object.entries(CATEGORIES).forEach(([key, {label}]) => {
     const cnt = counts[key] || 0;
     if (!cnt) return;
     catHtml += `<button class="filter-btn ${activeCategory===key?'active':''}" onclick="setCategory('${key}')">
-      <span class="filter-dot dot-${key}"></span>${emoji} ${label}
+      <span class="filter-dot dot-${key}"></span>${label}
       <span class="filter-count">${cnt}</span>
     </button>`;
   });
   document.getElementById('categoryFilters').innerHTML = catHtml;
+  const dc = document.getElementById('drawerCategoryFilters');
+  if (dc) dc.innerHTML = catHtml;
 
-  // Issue filters
   let issueHtml = `<button class="issue-btn ${activeIssue==='all'?'active':''}" onclick="setIssue('all')">すべての号</button>`;
   ISSUES.forEach(issue => {
     const cnt = ARTICLES.filter(a => a.issue === issue.id).length;
@@ -607,6 +642,8 @@ function renderSidebar() {
     </button>`;
   });
   document.getElementById('issueFilters').innerHTML = issueHtml;
+  const di = document.getElementById('drawerIssueFilters');
+  if (di) di.innerHTML = issueHtml;
 }
 
 // ── RENDER CARDS ──
@@ -625,7 +662,7 @@ function renderCards() {
 
   // Main title
   let title = 'すべての記事';
-  if (activeCategory !== 'all') title = catEmoji(activeCategory) + ' ' + catLabel(activeCategory);
+  if (activeCategory !== 'all') title = catLabel(activeCategory);
   if (activeIssue !== 'all') {
     const issue = ISSUES.find(i => i.id === activeIssue);
     title = issue ? issue.label : activeIssue;
@@ -641,7 +678,7 @@ function renderCards() {
     return `<div class="card" onclick="openModal(${a.id})">
       <div class="card-top">
         <div class="card-meta">
-          <span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+          <span class="cat-badge c-${a.cat}">${catLabel(a.cat)}</span>
           <span class="issue-tag">${issueLabel}号</span>
         </div>
         <div class="card-title">${a.title}</div>
@@ -664,8 +701,23 @@ function render() {
 }
 
 // ── FILTERS ──
-function setCategory(cat) { activeCategory = cat; activeIssue = 'all'; render(); }
-function setIssue(issue) { activeIssue = issue; activeCategory = 'all'; render(); }
+function setCategory(cat) { activeCategory = cat; activeIssue = 'all'; closeDrawer(); render(); }
+function setIssue(issue) { activeIssue = issue; activeCategory = 'all'; closeDrawer(); render(); }
+
+// ── DRAWER ──
+function openDrawer() {
+  document.getElementById('mobileDrawer').classList.add('open');
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  // フィルター適用中はボタンを強調
+  const btn = document.getElementById('mobileFilterBtn');
+  if (btn) btn.classList.toggle('has-filter', activeCategory !== 'all' || activeIssue !== 'all');
+}
 
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value.trim();
@@ -682,7 +734,7 @@ function openModal(id) {
   if (!a) return;
   const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
   document.getElementById('modalMeta').innerHTML =
-    `<span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+    `<span class="cat-badge c-${a.cat}">${catLabel(a.cat)}</span>
      <span class="issue-tag">${issueLabel}</span>`;
   document.getElementById('modalTitle').textContent = a.title;
 
@@ -715,7 +767,7 @@ function openFulltext(id) {
   if (!a || !a.fulltext) return;
   const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
   document.getElementById('fulltextMeta').innerHTML =
-    `<span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+    `<span class="cat-badge c-${a.cat}">${catLabel(a.cat)}</span>
      <span class="issue-tag">${issueLabel} — 原文</span>`;
   document.getElementById('fulltextTitle').textContent = a.title;
   document.getElementById('fulltextBody').textContent = a.fulltext;
@@ -734,6 +786,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeModalDirect();
     closeFulltextDirect();
+    closeDrawer();
   }
 });
 
