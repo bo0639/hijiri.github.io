@@ -164,6 +164,17 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   <div class="header-count" id="headerCount"></div>
 </div>
 
+<div class="filter-bar">
+  <div class="pill-row" id="catPills"></div>
+  <div class="filter-row2">
+    <select class="issue-select-m" id="issueSelectM"></select>
+    <div class="search-m">
+      <span class="search-m-icon">🔍</span>
+      <input type="text" id="searchInputM" placeholder="キーワードで検索...">
+    </div>
+  </div>
+</div>
+
 <div class="layout">
   <aside class="sidebar">
     <div class="sidebar-section">
@@ -187,17 +198,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div class="cards" id="cardsContainer"></div>
     <div class="no-results" id="noResults" style="display:none"><p>🔍 該当する記事が見つかりません</p></div>
   </main>
-</div>
-
-<div class="filter-bar">
-  <div class="pill-row" id="catPills"></div>
-  <div class="filter-row2">
-    <select class="issue-select-m" id="issueSelectM"></select>
-    <div class="search-m">
-      <span class="search-m-icon">🔍</span>
-      <input type="text" id="searchInputM" placeholder="キーワードで検索...">
-    </div>
-  </div>
 </div>
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
