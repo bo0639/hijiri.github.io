@@ -678,18 +678,6 @@ body {
     </div>
     <select class="filter-select" id="genre-select" onchange="onFilterChange()">
       <option value="">ジャンル: 全て</option>
-      <option value="和食">和食</option>
-      <option value="寿司">寿司</option>
-      <option value="焼肉">焼肉</option>
-      <option value="中華">中華</option>
-      <option value="イタリアン">イタリアン</option>
-      <option value="フレンチ">フレンチ</option>
-      <option value="韓国料理">韓国料理</option>
-      <option value="ラーメン">ラーメン</option>
-      <option value="居酒屋">居酒屋</option>
-      <option value="バー">バー</option>
-      <option value="カフェ">カフェ</option>
-      <option value="その他">その他</option>
     </select>
     <select class="filter-select" id="budget-select" onchange="onFilterChange()">
       <option value="">予算: 全て</option>
@@ -754,9 +742,14 @@ body {
 // ============================================================
 // CONSTANTS
 // ============================================================
-const SCENES  = ['接待', '飲み会', 'ランチ', '個室', '大人数OK', '女子会', 'デート', 'カジュアル'];
-const GENRES  = ['和食', '寿司', '焼肉', '中華', 'イタリアン', 'フレンチ', '韓国料理', 'ラーメン', '居酒屋', 'バー', 'カフェ', 'その他'];
+const SCENES        = ['接待', '飲み会', 'ランチ', '個室', '大人数OK', '女子会', 'デート', 'カジュアル'];
+const DEFAULT_GENRES = ['和食', '寿司', '焼肉', '中華', 'イタリアン', 'フレンチ', '韓国料理', 'ラーメン', '居酒屋', 'バー', 'カフェ', 'その他'];
 const STORAGE = 'gourmet_note_v1';
+
+function getGenres() {
+  const custom = restaurants.map(r => r.genre).filter(Boolean);
+  return [...new Set([...DEFAULT_GENRES, ...custom])];
+}
 
 // ============================================================
 // STATE
@@ -856,7 +849,15 @@ function filtered() {
 // ============================================================
 // RENDER
 // ============================================================
+function updateGenreFilter() {
+  const sel     = document.getElementById('genre-select');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">ジャンル: 全て</option>' +
+    getGenres().map(g => `<option value="${esc(g)}"${current === g ? ' selected' : ''}>${esc(g)}</option>`).join('');
+}
+
 function render() {
+  updateGenreFilter();
   const list = filtered();
   const grid  = document.getElementById('card-grid');
   const empty = document.getElementById('empty-state');
@@ -1026,21 +1027,20 @@ function renderForm(r) {
     return `<input type="checkbox" class="scene-cb" id="sc-${s}" name="scenes" value="${s}" ${ch}><label class="scene-cb-label" for="sc-${s}">${s}</label>`;
   }).join('');
 
-  const genreOpts = GENRES.map(g =>
-    `<option value="${g}"${v('genre') === g ? ' selected' : ''}>${g}</option>`
-  ).join('');
+  const genreDatalist = getGenres().map(g => `<option value="${esc(g)}">`).join('');
 
   return `
 <div class="form-section">
   <div class="form-section-title">基本情報</div>
+  <datalist id="genre-datalist">${genreDatalist}</datalist>
   <div class="form-row">
     <div class="form-group">
       <label class="form-label">店名 <span class="req">*</span></label>
       <input type="text" class="form-input" id="f-name" value="${esc(v('name'))}" placeholder="例: 鮨 はせべ">
     </div>
-    <div class="form-group" style="max-width:130px">
+    <div class="form-group" style="max-width:150px">
       <label class="form-label">ジャンル</label>
-      <select class="form-input" id="f-genre"><option value="">選択</option>${genreOpts}</select>
+      <input type="text" class="form-input" id="f-genre" list="genre-datalist" value="${esc(v('genre'))}" placeholder="和食、焼肉など">
     </div>
   </div>
   <div class="form-row">
