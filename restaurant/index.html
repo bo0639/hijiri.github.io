@@ -330,7 +330,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   <div class="filter-row" id="scene-pills"></div>
 </div>
 
-<div class="stats" id="stats"></div>
+<div class="stats" id="stats" style="display:flex;justify-content:space-between;align-items:center"><span id="stats-text"></span><span id="geo-status" style="font-size:11px;color:var(--navy-lt)"></span></div>
 
 <!-- LIST VIEW -->
 <div class="list-view" id="list-view">
@@ -571,20 +571,47 @@ function deleteR(id) { restaurants=restaurants.filter(r=>r.id!==id); persist(); 
 function byId(id) { return restaurants.find(r=>r.id===id); }
 
 // ── GEOCODING ──────────────────────────────────────────────
-async function geocodeR(id) {
+async function geocodeR(id, force = false) {
   const r = byId(id);
-  if (!r || r.lat) return;
+  if (!r) return false;
+  if (r.lat && !force) return false;
   const q = r.address || r.station;
-  if (!q) return;
+  if (!q) return false;
   try {
-    const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q+' 日本')}&format=json&limit=1`,
-      {headers:{'Accept-Language':'ja'}});
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q+' 日本')}&format=json&limit=1`,
+      {headers:{'Accept-Language':'ja'}}
+    );
     const d = await res.json();
     if (d.length) {
       updateR(id, {lat: parseFloat(d[0].lat), lng: parseFloat(d[0].lon)});
       if (currentTab === 'map') renderMap();
+      return true;
     }
   } catch {}
+  return false;
+}
+
+// Nominatim 利用規約: 1件/秒 でシーケンシャル処理
+async function geocodeAll() {
+  const targets = restaurants.filter(r => !r.lat && (r.address || r.station));
+  if (!targets.length) return;
+  updateGeoStatus(targets.length);
+  let done = 0;
+  for (const r of targets) {
+    await new Promise(res => setTimeout(res, done === 0 ? 0 : 1100));
+    const ok = await geocodeR(r.id);
+    if (ok) done++;
+    const remaining = restaurants.filter(r => !r.lat && (r.address || r.station)).length;
+    updateGeoStatus(remaining);
+  }
+  if (done > 0 && currentTab === 'map') renderMap();
+}
+
+function updateGeoStatus(remaining) {
+  const el = document.getElementById('geo-status');
+  if (!el) return;
+  el.textContent = remaining > 0 ? `📍 座標取得中… 残 ${remaining}件` : '';
 }
 
 // ── GENRES ─────────────────────────────────────────────────
@@ -626,7 +653,8 @@ function render() {
   const empty = document.getElementById('empty-state');
   const stats = document.getElementById('stats');
   const vc = list.filter(r=>(r.visits||[]).length>0).length;
-  stats.textContent = `${list.length}件表示 — 訪問済み ${vc}件 · 未訪問 ${list.length-vc}件`;
+  const statsText = document.getElementById('stats-text');
+  if (statsText) statsText.textContent = `${list.length}件表示 — 訪問済み ${vc}件 · 未訪問 ${list.length-vc}件`;
   if (list.length===0) { grid.innerHTML=''; empty.classList.remove('hidden'); }
   else { empty.classList.add('hidden'); grid.innerHTML=list.map(renderCard).join(''); }
   if (currentTab==='map') renderMap();
@@ -733,11 +761,6 @@ function renderMap() {
     leafMap.fitBounds(fg.getBounds().pad(0.15));
   }
   renderLegend();
-  const noGeo = getFiltered().filter(r=>!r.lat&&(r.address||r.station));
-  if (noGeo.length) {
-    document.getElementById('stats').textContent += ` ／ 地図未取得 ${noGeo.length}件（取得中）`;
-    noGeo.slice(0,5).forEach((r,i)=>setTimeout(()=>geocodeR(r.id), i*1100));
-  }
 }
 
 function renderLegend() {
@@ -1054,24 +1077,22 @@ function saveRestaurant() {
     rating:               ratingEl?parseInt(ratingEl.value):null,
     notes:                document.getElementById('f-notes').value.trim(),
   };
-  const isNew = !editingId;
   if (editingId) {
     const old = byId(editingId);
-    data.lat = old?.lat; data.lng = old?.lng;
+    const addrChanged = old.address !== data.address || old.station !== data.station;
+    if (!addrChanged) { data.lat = old?.lat; data.lng = old?.lng; }
     updateR(editingId, data);
     toast('保存しました','ok');
+    if (addrChanged) setTimeout(()=>geocodeR(editingId, true), 500);
   } else {
     addR(data);
     toast('店舗を追加しました','ok');
-  }
-  closeForm(); render();
-  // trigger geocoding if new address
-  if (isNew || !data.lat) {
     const newest = restaurants[0];
-    if (newest && !newest.lat && (newest.address||newest.station)) {
+    if (newest && (newest.address||newest.station)) {
       setTimeout(()=>geocodeR(newest.id), 500);
     }
   }
+  closeForm(); render();
 }
 
 function deleteEditing() {
@@ -1185,6 +1206,7 @@ load();
 paintPills();
 renderVisitsSection();
 render();
+setTimeout(geocodeAll, 1000); // 起動後に全店舗の座標をバックグラウンド取得
 </script>
 </body>
 </html>
