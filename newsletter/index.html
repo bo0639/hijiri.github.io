@@ -77,6 +77,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .card-link:hover{text-decoration:underline}
 .expand-btn{margin-left:auto;font-size:12px;color:var(--text3);background:none;border:1px solid var(--border);border-radius:5px;padding:3px 10px;cursor:pointer;font-family:inherit;transition:all .15s}
 .expand-btn:hover{border-color:var(--accent);color:var(--accent)}
+.fulltext-btn{font-size:12px;color:#059669;background:none;border:1px solid #6ee7b7;border-radius:5px;padding:3px 10px;cursor:pointer;font-family:inherit;transition:all .15s}
+.fulltext-btn:hover{border-color:#059669;background:#ecfdf5}
 
 /* ─── MODAL ─── */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
@@ -168,6 +170,19 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
       <button class="modal-close" onclick="closeModalDirect()">✕</button>
     </div>
     <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="fulltextOverlay" onclick="closeFulltext(event)">
+  <div class="modal" id="fulltextModal" style="max-width:800px">
+    <div class="modal-head">
+      <div class="modal-head-info">
+        <div class="modal-meta" id="fulltextMeta"></div>
+        <div class="modal-title" id="fulltextTitle" style="font-size:15px"></div>
+      </div>
+      <button class="modal-close" onclick="closeFulltextDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="fulltextBody" style="white-space:pre-wrap;font-size:13px;line-height:2"></div>
   </div>
 </div>
 
@@ -622,6 +637,7 @@ function renderCards() {
   container.innerHTML = list.map(a => {
     const issueLabel = ISSUES.find(i => i.id === a.issue)?.shortLabel || a.issue;
     const hasDetail = !!(a.detail || a.url);
+    const hasFulltext = !!a.fulltext;
     return `<div class="card" onclick="openModal(${a.id})">
       <div class="card-top">
         <div class="card-meta">
@@ -633,7 +649,10 @@ function renderCards() {
       </div>
       <div class="card-bottom">
         ${a.url ? `<a class="card-link" href="${a.url}" target="_blank" onclick="event.stopPropagation()">🔗 元記事</a>` : '<span></span>'}
-        ${hasDetail ? `<button class="expand-btn">詳細 ▶</button>` : `<button class="expand-btn">閲覧 ▶</button>`}
+        <div style="margin-left:auto;display:flex;gap:6px">
+          ${hasFulltext ? `<button class="fulltext-btn" onclick="event.stopPropagation();openFulltext(${a.id})">原文 📄</button>` : ''}
+          ${hasDetail ? `<button class="expand-btn">詳細 ▶</button>` : `<button class="expand-btn">閲覧 ▶</button>`}
+        </div>
       </div>
     </div>`;
   }).join('');
@@ -689,7 +708,34 @@ function closeModalDirect() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+// ── FULLTEXT MODAL ──
+function openFulltext(id) {
+  const a = ARTICLES.find(x => x.id === id);
+  if (!a || !a.fulltext) return;
+  const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
+  document.getElementById('fulltextMeta').innerHTML =
+    `<span class="cat-badge c-${a.cat}">${catEmoji(a.cat)} ${catLabel(a.cat)}</span>
+     <span class="issue-tag">${issueLabel} — 原文</span>`;
+  document.getElementById('fulltextTitle').textContent = a.title;
+  document.getElementById('fulltextBody').textContent = a.fulltext;
+  document.getElementById('fulltextOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFulltext(e) {
+  if (e.target === document.getElementById('fulltextOverlay')) closeFulltextDirect();
+}
+function closeFulltextDirect() {
+  document.getElementById('fulltextOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModalDirect();
+    closeFulltextDirect();
+  }
+});
 
 // ── INIT: data.json から読み込む ──
 (async () => {
