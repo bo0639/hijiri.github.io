@@ -68,7 +68,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .card-top{padding:14px 16px 10px;flex:1}
 .card-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.cat-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:0.3px;white-space:nowrap}
+.cat-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:1px;white-space:nowrap;text-transform:uppercase}
 .issue-tag{font-size:11px;color:var(--text3)}
 .card-title{font-size:14px;font-weight:600;line-height:1.5;margin-bottom:8px;color:var(--text)}
 .card-summary{font-size:13px;color:var(--text2);line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -117,26 +117,39 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .dot-personal{background:#22c55e}
 .dot-qa{background:#94a3b8}
 
-/* ─── MOBILE FILTER DRAWER ─── */
-.mobile-filter-btn{display:none;align-items:center;gap:6px;background:#312e81;border:1px solid #4338ca;border-radius:8px;padding:6px 12px;color:#e0e7ff;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0}
-.mobile-filter-btn.has-filter{border-color:#a5b4fc;background:#3730a3}
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:299;display:none}
-.drawer-overlay.open{display:block}
-.mobile-drawer{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,0.18);z-index:300;max-height:80vh;overflow-y:auto;transform:translateY(100%);transition:transform .3s ease}
-.mobile-drawer.open{transform:translateY(0)}
-.drawer-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:12px auto 4px}
-.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border)}
-.drawer-head-title{font-size:14px;font-weight:600;color:var(--text)}
-.drawer-close-btn{background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:14px;cursor:pointer;color:var(--text3);font-family:inherit;transition:all .15s}
-.drawer-close-btn:hover{border-color:var(--text);color:var(--text)}
-.drawer-body{padding:12px}
+/* ─── FILTER BAR (mobile sticky) ─── */
+.filter-bar{display:none;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:48px;z-index:90;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.pill-row{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.pill-row::-webkit-scrollbar{display:none}
+.cat-pill{display:inline-flex;align-items:center;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0;transition:all .15s;letter-spacing:.8px}
+.cat-pill.active{border-color:transparent;color:#fff}
+.cat-pill.active.p-all{background:#6366f1}
+.cat-pill.active.p-ai-llm{background:#6366f1}
+.cat-pill.active.p-software{background:#06b6d4}
+.cat-pill.active.p-business{background:#f97316}
+.cat-pill.active.p-economy{background:#eab308;color:#1e1b4b}
+.cat-pill.active.p-infra{background:#10b981}
+.cat-pill.active.p-robot{background:#f43f5e}
+.cat-pill.active.p-science{background:#a855f7}
+.cat-pill.active.p-policy{background:#d946ef}
+.cat-pill.active.p-personal{background:#22c55e}
+.cat-pill.active.p-qa{background:#94a3b8}
+.filter-row2{display:flex;gap:8px;padding:0 12px 8px;align-items:center}
+.issue-select-m{flex:1;padding:6px 8px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--surface);color:var(--text);outline:none;min-width:0}
+.search-m{flex:1;position:relative;min-width:0}
+.search-m input{width:100%;border:1px solid var(--border);border-radius:8px;padding:6px 10px 6px 28px;font-size:13px;font-family:inherit;background:var(--surface);color:var(--text);outline:none}
+.search-m-icon{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--text3);pointer-events:none}
 
 @media(max-width:768px){
-  .layout{grid-template-columns:1fr}
+  .header{height:48px;padding:0 16px;gap:12px}
+  .header-logo{font-size:13px}
+  .header-search{display:none}
+  .header-count{display:none}
+  .layout{grid-template-columns:1fr;min-height:calc(100vh - 48px - 76px)}
   .sidebar{display:none}
   .cards{grid-template-columns:1fr}
-  .mobile-filter-btn{display:flex}
-  .header-count{display:none}
+  .filter-bar{display:block}
+  .main{padding:12px}
 }
 </style>
 </head>
@@ -148,7 +161,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="キーワードで検索...">
   </div>
-  <button class="mobile-filter-btn" id="mobileFilterBtn" onclick="openDrawer()">≡ フィルター</button>
   <div class="header-count" id="headerCount"></div>
 </div>
 
@@ -177,21 +189,13 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   </main>
 </div>
 
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="drawer-handle"></div>
-  <div class="drawer-head">
-    <span class="drawer-head-title">絞り込み</span>
-    <button class="drawer-close-btn" onclick="closeDrawer()">✕</button>
-  </div>
-  <div class="drawer-body">
-    <div class="sidebar-section">
-      <div class="sidebar-label">カテゴリ</div>
-      <div id="drawerCategoryFilters"></div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">号を選択</div>
-      <div id="drawerIssueFilters"></div>
+<div class="filter-bar">
+  <div class="pill-row" id="catPills"></div>
+  <div class="filter-row2">
+    <select class="issue-select-m" id="issueSelectM"></select>
+    <div class="search-m">
+      <span class="search-m-icon">🔍</span>
+      <input type="text" id="searchInputM" placeholder="キーワードで検索...">
     </div>
   </div>
 </div>
@@ -224,16 +228,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 
 <script>
 const CATEGORIES = {
-  'ai-llm':   { label: 'AI・LLM'         },
-  'software':  { label: 'ソフトウェア開発' },
-  'business':  { label: 'ビジネス・企業'   },
-  'economy':   { label: '経済・社会'       },
-  'infra':     { label: 'インフラ・半導体' },
-  'robot':     { label: 'ロボット'         },
-  'science':   { label: '科学・医療'       },
-  'policy':    { label: '社会・政策'       },
-  'personal':  { label: '個人・体験'       },
-  'qa':        { label: 'Q&A'             },
+  'ai-llm':   { label: 'AI・LLM',         mono: 'AI'  },
+  'software':  { label: 'ソフトウェア開発', mono: 'SW'  },
+  'business':  { label: 'ビジネス・企業',   mono: 'BIZ' },
+  'economy':   { label: '経済・社会',       mono: 'ECO' },
+  'infra':     { label: 'インフラ・半導体', mono: 'INF' },
+  'robot':     { label: 'ロボット',         mono: 'ROB' },
+  'science':   { label: '科学・医療',       mono: 'SCI' },
+  'policy':    { label: '社会・政策',       mono: 'POL' },
+  'personal':  { label: '個人・体験',       mono: 'PRS' },
+  'qa':        { label: 'Q&A',             mono: 'Q&A' },
 };
 
 let ISSUES = [];
@@ -588,6 +592,7 @@ let sortOrder = 'date-desc';
 
 // ── HELPERS ──
 function catLabel(c) { return CATEGORIES[c]?.label || c; }
+function catMono(c)  { return CATEGORIES[c]?.mono  || c; }
 
 function filteredArticles() {
   let list = ARTICLES.slice();
@@ -629,8 +634,6 @@ function renderSidebar() {
     </button>`;
   });
   document.getElementById('categoryFilters').innerHTML = catHtml;
-  const dc = document.getElementById('drawerCategoryFilters');
-  if (dc) dc.innerHTML = catHtml;
 
   let issueHtml = `<button class="issue-btn ${activeIssue==='all'?'active':''}" onclick="setIssue('all')">すべての号</button>`;
   ISSUES.forEach(issue => {
@@ -642,8 +645,29 @@ function renderSidebar() {
     </button>`;
   });
   document.getElementById('issueFilters').innerHTML = issueHtml;
-  const di = document.getElementById('drawerIssueFilters');
-  if (di) di.innerHTML = issueHtml;
+}
+
+// ── RENDER FILTER BAR (mobile) ──
+function renderFilterBar() {
+  const counts = {};
+  ARTICLES.forEach(a => { counts[a.cat] = (counts[a.cat] || 0) + 1; });
+
+  let pillsHtml = `<button class="cat-pill p-all ${activeCategory==='all'?'active':''}" onclick="setCategory('all')">ALL</button>`;
+  Object.entries(CATEGORIES).forEach(([key, {mono}]) => {
+    if (!counts[key]) return;
+    pillsHtml += `<button class="cat-pill p-${key} ${activeCategory===key?'active':''}" onclick="setCategory('${key}')">${mono}</button>`;
+  });
+  const cp = document.getElementById('catPills');
+  if (cp) cp.innerHTML = pillsHtml;
+
+  const sel = document.getElementById('issueSelectM');
+  if (sel) {
+    const prev = sel.value;
+    sel.innerHTML = `<option value="all">すべての号</option>` +
+      ISSUES.filter(i => ARTICLES.some(a => a.issue === i.id))
+            .map(i => `<option value="${i.id}" ${activeIssue===i.id?'selected':''}>${i.shortLabel}号</option>`)
+            .join('');
+  }
 }
 
 // ── RENDER CARDS ──
@@ -697,32 +721,15 @@ function renderCards() {
 
 function render() {
   renderSidebar();
+  renderFilterBar();
   renderCards();
 }
 
 // ── FILTERS ──
-function setCategory(cat) { activeCategory = cat; activeIssue = 'all'; closeDrawer(); render(); }
-function setIssue(issue) { activeIssue = issue; activeCategory = 'all'; closeDrawer(); render(); }
+function setCategory(cat) { activeCategory = cat; activeIssue = 'all'; render(); }
+function setIssue(issue) { activeIssue = issue; activeCategory = 'all'; render(); }
 
-// ── DRAWER ──
-function openDrawer() {
-  document.getElementById('mobileDrawer').classList.add('open');
-  document.getElementById('drawerOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeDrawer() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('drawerOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-  // フィルター適用中はボタンを強調
-  const btn = document.getElementById('mobileFilterBtn');
-  if (btn) btn.classList.toggle('has-filter', activeCategory !== 'all' || activeIssue !== 'all');
-}
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value.trim();
-  render();
-});
 document.getElementById('sortSelect').addEventListener('change', e => {
   sortOrder = e.target.value;
   renderCards();
@@ -734,7 +741,7 @@ function openModal(id) {
   if (!a) return;
   const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
   document.getElementById('modalMeta').innerHTML =
-    `<span class="cat-badge c-${a.cat}">${catLabel(a.cat)}</span>
+    `<span class="cat-badge c-${a.cat}" title="${catLabel(a.cat)}">${catMono(a.cat)}</span>
      <span class="issue-tag">${issueLabel}</span>`;
   document.getElementById('modalTitle').textContent = a.title;
 
@@ -767,7 +774,7 @@ function openFulltext(id) {
   if (!a || !a.fulltext) return;
   const issueLabel = ISSUES.find(i => i.id === a.issue)?.label || a.issue;
   document.getElementById('fulltextMeta').innerHTML =
-    `<span class="cat-badge c-${a.cat}">${catLabel(a.cat)}</span>
+    `<span class="cat-badge c-${a.cat}" title="${catLabel(a.cat)}">${catMono(a.cat)}</span>
      <span class="issue-tag">${issueLabel} — 原文</span>`;
   document.getElementById('fulltextTitle').textContent = a.title;
   document.getElementById('fulltextBody').textContent = a.fulltext;
@@ -783,11 +790,24 @@ function closeFulltextDirect() {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeModalDirect();
-    closeFulltextDirect();
-    closeDrawer();
-  }
+  if (e.key === 'Escape') { closeModalDirect(); closeFulltextDirect(); }
+});
+
+document.getElementById('issueSelectM')?.addEventListener('change', e => {
+  setIssue(e.target.value);
+});
+document.getElementById('searchInputM')?.addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  // 同期：desktop search も更新
+  const ds = document.getElementById('searchInput');
+  if (ds) ds.value = searchQuery;
+  render();
+});
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  const ms = document.getElementById('searchInputM');
+  if (ms) ms.value = searchQuery;
+  render();
 });
 
 // ── INIT: data.json から読み込む ──
