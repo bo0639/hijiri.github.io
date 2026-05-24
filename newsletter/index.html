@@ -606,8 +606,8 @@ function filteredArticles() {
       (a.detail || '').toLowerCase().includes(q)
     );
   }
-  if (sortOrder === 'date-asc') list.sort((a, b) => a.id - b.id);
-  else if (sortOrder === 'date-desc') list.sort((a, b) => b.id - a.id);
+  if (sortOrder === 'date-asc') list.sort((a, b) => b.id - a.id);
+  else if (sortOrder === 'date-desc') list.sort((a, b) => a.id - b.id);
   else if (sortOrder === 'cat') list.sort((a, b) => a.cat.localeCompare(b.cat));
   return list;
 }
@@ -652,10 +652,10 @@ function renderFilterBar() {
   const counts = {};
   ARTICLES.forEach(a => { counts[a.cat] = (counts[a.cat] || 0) + 1; });
 
-  let pillsHtml = `<button class="cat-pill p-all ${activeCategory==='all'?'active':''}" onclick="setCategory('all')">ALL</button>`;
-  Object.entries(CATEGORIES).forEach(([key, {mono}]) => {
+  let pillsHtml = `<button class="cat-pill p-all ${activeCategory==='all'?'active':''}" onclick="setCategory('all')">すべて</button>`;
+  Object.entries(CATEGORIES).forEach(([key, {label}]) => {
     if (!counts[key]) return;
-    pillsHtml += `<button class="cat-pill p-${key} ${activeCategory===key?'active':''}" onclick="setCategory('${key}')">${mono}</button>`;
+    pillsHtml += `<button class="cat-pill p-${key} ${activeCategory===key?'active':''}" onclick="setCategory('${key}')">${label}</button>`;
   });
   const cp = document.getElementById('catPills');
   if (cp) cp.innerHTML = pillsHtml;
