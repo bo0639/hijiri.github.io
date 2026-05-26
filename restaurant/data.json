@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "name": "鳥茂 分店",
+    "genre": "焼き鳥",
+    "address": "東京都港区虎ノ門1-17-1 虎ノ門ヒルズ ビジネスタワー3F",
+    "station": "虎ノ門駅・3分",
+    "tabelog_url": "",
+    "maps_url": "",
+    "referrer": "貝原さん（DX戦略企画部／課長）",
+    "visits": [
+      {
+        "id": "65875551-4f16-45d4-baa6-5162896f6699",
+        "date": "2026-05-22",
+        "companions": "貝原さん、稲村さん",
+        "purpose": "チーム内懇親",
+        "notes": "ベイカレント社訪問後、組合（東京地区）との懇親までの間で使用。18時過ぎのタイミングで予約なしで入店ができたものの、18字30分ごろより予約客でいっぱい。"
+      }
+    ],
+    "scenes": [],
+    "private_room": false,
+    "requires_reservation": false,
+    "has_parking": false,
+    "smoking": "",
+    "lunch_budget": null,
+    "dinner_budget": null,
+    "rating": 4,
+    "notes": "新宿に本店を構える人気店の分店。串は１つで２本でかつ、１本が大きいサイズ感。",
+    "id": "d1666abf-a4e1-46a4-a16e-28b3415d25af",
+    "created_at": "2026-05-26T14:45:00.652Z",
+    "updated_at": "2026-05-26T14:45:00.652Z"
+  }
+]
