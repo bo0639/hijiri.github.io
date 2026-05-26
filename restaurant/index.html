@@ -530,11 +530,14 @@ async function syncFromGitHub() {
     const file = await res.json();
     fileSha = file.sha; saveSyncConfig();
     const data = JSON.parse(b64dec(file.content));
-    if (Array.isArray(data)) {
+    if (Array.isArray(data) && data.length > 0) {
+      // GitHubにデータがある場合のみローカルを上書き
       restaurants = data.map(migrate);
       localStorage.setItem(STORE,JSON.stringify(restaurants));
       updateSyncStatus('ok'); return true;
     }
+    // GitHubが空の場合はローカルデータを保持（上書きしない）
+    updateSyncStatus(''); return false;
   } catch(e) {
     console.error('sync error:',e); updateSyncStatus('err');
     toast('GitHub同期に失敗しました。トークンや権限を確認してください。','err');
