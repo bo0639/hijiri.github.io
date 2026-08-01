@@ -241,8 +241,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 <div class="toast" id="toast"></div>
 
 <script type="module">
-import * as pdfjsLib from './vendor/pdf.min.mjs';
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('./vendor/pdf.worker.min.mjs', import.meta.url).href;
+import * as pdfjsLib from './vendor/pdf.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('./vendor/pdf.worker.min.js', import.meta.url).href;
 
 const SETTINGS_KEY = 'pdfTranslatorSettings';
 const HISTORY_KEY = 'pdfTranslatorHistory';
