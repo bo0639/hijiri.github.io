@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDFレポート翻訳</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:    #1b3a6b;
+  --navy-dk: #0f2547;
+  --navy-lt: #2d5ca8;
+  --blue-tint:#e8f0fc;
+  --blue-pale:#f4f8ff;
+  --bg:      #f2f5fb;
+  --surface: #ffffff;
+  --border:  #d4dff0;
+  --shadow:  rgba(15,37,71,.1);
+  --text:    #0d1f3c;
+  --text-sub:#4a5c78;
+  --text-lt: #8fa3c0;
+  --success: #0d6b43;
+  --warn:    #9a5800;
+  --danger:  #b52828;
+  --hdr:     56px;
+  --r:8px;--r-lg:14px;--r-sm:5px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6}
+.hdr{position:sticky;top:0;z-index:100;height:var(--hdr);background:linear-gradient(135deg,var(--navy-dk) 0%,var(--navy) 100%);display:flex;align-items:center;padding:0 14px;gap:8px;box-shadow:0 2px 12px rgba(15,37,71,.25)}
+.hdr-title{font-size:17px;font-weight:700;color:#fff;letter-spacing:-.3px;flex:1;display:flex;align-items:center;gap:8px}
+.hdr-title small{font-size:11px;font-weight:400;opacity:.6;letter-spacing:.3px}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:var(--r-sm);font-size:13px;font-weight:600;cursor:pointer;border:none;transition:background .15s,transform .1s;line-height:1;white-space:nowrap;font-family:var(--font)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-white{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn-white:hover{background:rgba(255,255,255,.25)}
+.btn-accent{background:#fff;color:var(--navy)}
+.btn-accent:hover{background:#e8f0fc}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover:not(:disabled){background:var(--navy-dk)}
+.btn-ghost{background:transparent;color:var(--text-sub);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--navy-lt);color:var(--navy-lt)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#8b1f1f}
+.btn-sm{padding:6px 10px;font-size:12px}
+.icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.hidden{display:none!important}
+.wrap{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 1px 3px var(--shadow);padding:18px;margin-bottom:16px}
+.dropzone{border:2px dashed var(--border);border-radius:var(--r-lg);background:var(--blue-pale);padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+.dropzone:hover,.dropzone.drag{border-color:var(--navy-lt);background:var(--blue-tint)}
+.dropzone .icon{color:var(--navy-lt);margin-bottom:8px}
+.dropzone h3{font-size:15px;color:var(--text);margin-bottom:4px}
+.dropzone p{font-size:12.5px;color:var(--text-lt)}
+.doc-info{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.doc-meta{flex:1;min-width:200px}
+.doc-meta .fname{font-size:14.5px;font-weight:700;color:var(--text);word-break:break-all}
+.doc-meta .fsub{font-size:12px;color:var(--text-sub);margin-top:3px}
+.doc-warn{font-size:12px;color:var(--warn);margin-top:6px}
+.progress-wrap{margin-top:4px}
+.progress-bar{height:8px;border-radius:5px;background:var(--bg);overflow:hidden;border:1px solid var(--border)}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--navy-lt),var(--navy));width:0%;transition:width .25s}
+.progress-label{font-size:12px;color:var(--text-sub);margin-top:6px;display:flex;justify-content:space-between}
+.tabs{display:flex;gap:4px;border-bottom:1.5px solid var(--border);margin-bottom:14px}
+.tab-btn{padding:9px 14px;font-size:13px;font-weight:600;color:var(--text-lt);cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color .15s;font-family:var(--font)}
+.tab-btn.active{color:var(--navy);border-bottom-color:var(--navy)}
+.tab-btn:hover:not(.active){color:var(--navy-lt)}
+.panel-actions{display:flex;justify-content:flex-end;gap:6px;margin-bottom:10px}
+.result-text{white-space:pre-wrap;font-size:13.5px;line-height:1.85;color:var(--text)}
+.summary-body h2{font-size:16px;color:var(--navy);margin:16px 0 8px}
+.summary-body h2:first-child{margin-top:0}
+.summary-body h3{font-size:14.5px;color:var(--navy-lt);margin:14px 0 6px}
+.summary-body p{font-size:13.5px;margin-bottom:8px;color:var(--text)}
+.summary-body ul{margin:0 0 10px 20px}
+.summary-body li{font-size:13.5px;margin-bottom:6px;color:var(--text)}
+.section-title{font-size:13px;font-weight:700;color:var(--text-sub);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.hist-item{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;cursor:pointer;transition:border-color .15s,background .15s}
+.hist-item:hover{border-color:var(--navy-lt);background:var(--blue-pale)}
+.hist-item .hfname{font-size:13.5px;font-weight:600;color:var(--text);word-break:break-all}
+.hist-item .hmeta{font-size:11.5px;color:var(--text-lt);margin-top:2px}
+.hist-item .hdel{margin-left:auto;flex-shrink:0;color:var(--text-lt);background:none;border:none;cursor:pointer;padding:5px;border-radius:5px}
+.hist-item .hdel:hover{color:var(--danger);background:#fdecec}
+.empty-note{font-size:12.5px;color:var(--text-lt);padding:8px 2px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy-dk);color:#fff;padding:10px 18px;border-radius:var(--r);font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:500;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+.toast.err{background:var(--danger)}
+.overlay{position:fixed;inset:0;background:rgba(13,31,60,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal{background:var(--surface);border-radius:var(--r-lg);width:100%;max-width:420px;max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-hdr{display:flex;align-items:center;padding:16px 18px;border-bottom:1px solid var(--border)}
+.modal-hdr h2{font-size:15px;flex:1}
+.mclose{background:none;border:none;cursor:pointer;color:var(--text-lt);padding:4px;border-radius:5px}
+.mclose:hover{color:var(--text);background:var(--bg)}
+.modal-body{padding:16px 18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:var(--text-sub);margin-bottom:5px}
+.field input,.field select{width:100%;padding:9px 10px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:13px;background:var(--bg);color:var(--text);outline:none;font-family:var(--font)}
+.field input:focus,.field select:focus{border-color:var(--navy-lt);background:#fff}
+.fhint{font-size:11.5px;color:var(--text-lt);margin-top:5px;display:block;line-height:1.5}
+.fhint a{color:var(--navy-lt)}
+.modal-foot{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--border);justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-title">📄 PDFレポート翻訳<small>English → 日本語 + 要点整理</small></div>
+  <button class="btn btn-white" id="btn-settings" onclick="openSettings()">
+    <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    設定
+  </button>
+</div>
+
+<div class="wrap">
+
+  <div class="card" id="upload-card">
+    <div class="dropzone" id="dropzone">
+      <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
+      <h3>PDFをドラッグ＆ドロップ、またはクリックして選択</h3>
+      <p>英語のレポートPDFを日本語訳＋要点まとめに変換します</p>
+      <input type="file" id="file-input" accept="application/pdf" hidden>
+    </div>
+  </div>
+
+  <div class="card hidden" id="doc-card">
+    <div class="doc-info">
+      <div class="doc-meta">
+        <div class="fname" id="doc-fname"></div>
+        <div class="fsub" id="doc-fsub"></div>
+        <div class="doc-warn hidden" id="doc-warn"></div>
+      </div>
+      <button class="btn btn-navy" id="btn-translate" onclick="startTranslation()">
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        翻訳を開始
+      </button>
+      <button class="btn btn-ghost btn-sm" onclick="resetUpload()">別のPDFを選ぶ</button>
+    </div>
+    <div class="progress-wrap hidden" id="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-label">
+        <span id="progress-text">準備中…</span>
+        <button class="btn btn-ghost btn-sm hidden" id="btn-cancel" onclick="cancelTranslation()">中止</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card hidden" id="result-card">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="summary" onclick="showTab('summary')">要点まとめ</button>
+      <button class="tab-btn" data-tab="full" onclick="showTab('full')">全文翻訳</button>
+      <button class="tab-btn" data-tab="original" onclick="showTab('original')">原文</button>
+    </div>
+
+    <div class="panel" id="panel-summary">
+      <div class="panel-actions">
+        <button class="btn btn-ghost btn-sm" onclick="copyText('summary')">コピー</button>
+        <button class="btn btn-ghost btn-sm" onclick="downloadText('summary')">ダウンロード</button>
+      </div>
+      <div class="summary-body" id="summary-body"></div>
+    </div>
+
+    <div class="panel hidden" id="panel-full">
+      <div class="panel-actions">
+        <button class="btn btn-ghost btn-sm" onclick="copyText('full')">コピー</button>
+        <button class="btn btn-ghost btn-sm" onclick="downloadText('full')">ダウンロード</button>
+      </div>
+      <div class="result-text" id="full-body"></div>
+    </div>
+
+    <div class="panel hidden" id="panel-original">
+      <div class="panel-actions">
+        <button class="btn btn-ghost btn-sm" onclick="copyText('original')">コピー</button>
+      </div>
+      <div class="result-text" id="original-body"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">
+      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      履歴（この端末に保存）
+    </div>
+    <div id="history-list"></div>
+    <div class="empty-note hidden" id="history-empty">まだ翻訳履歴はありません。</div>
+  </div>
+
+</div>
+
+<div class="overlay hidden" id="modal-settings">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>設定</h2>
+      <button class="mclose" onclick="closeSettings()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Anthropic APIキー</label>
+        <input type="password" id="set-apikey" placeholder="sk-ant-..." autocomplete="off">
+        <span class="fhint">
+          ① <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a> でAPIキーを発行<br>
+          ② ここに貼り付けて保存<br>
+          APIキーはこの端末のlocalStorageにのみ保存され、翻訳時にAnthropic APIへ直接送信されます（サーバーには送信されません）。API利用料はご自身のAnthropicアカウントに課金されます。
+        </span>
+      </div>
+      <div class="field">
+        <label>使用モデル</label>
+        <select id="set-model">
+          <option value="claude-haiku-4-5-20251001">Haiku 4.5（高速・低コスト）</option>
+          <option value="claude-sonnet-5" selected>Sonnet 5（推奨・バランス）</option>
+          <option value="claude-opus-5">Opus 5（最高品質）</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="clearSettings()">キーを削除</button>
+      <button class="btn btn-navy" onclick="saveSettings()">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import * as pdfjsLib from './vendor/pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('./vendor/pdf.worker.min.mjs', import.meta.url).href;
+
+const SETTINGS_KEY = 'pdfTranslatorSettings';
+const HISTORY_KEY = 'pdfTranslatorHistory';
+const MAX_HISTORY = 8;
+const CHUNK_CHARS = 3500;
+
+const TRANSLATE_SYSTEM = `あなたはプロの英日翻訳者です。与えられた英語ドキュメントの一部を、情報を省略・要約せずに正確かつ自然な日本語に翻訳してください。見出し・箇条書き・段落構成はできる限り保持してください。数値・単位・固有名詞・専門用語は正確に訳してください。
+
+出力は次の形式に厳密に従い、説明や前置きは一切書かないでください:
+
+[TRANSLATION]
+(ここに翻訳全文)
+[KEYPOINTS]
+- (この部分の要点1)
+- (この部分の要点2)
+(重要な要点を3〜6個、簡潔な日本語の箇条書きで)`;
+
+const SYNTH_SYSTEM = `あなたは優秀なリサーチアシスタントです。英語レポートの各セクションから抽出された要点メモ（日本語）を統合し、レポート全体の要点を一目で把握できるようにまとめてください。
+
+出力はMarkdown形式で、以下の構成にしてください:
+## 概要
+(2〜4文でレポート全体の要旨)
+
+## 主要な要点
+- (重要度の高い順に、5〜10個の箇条書き)
+
+## 気になる数値・データ
+(本文中に具体的な数値・統計があれば箇条書きで。無ければこのセクション自体を省略)
+
+前置きや確認の言葉は書かず、上記の内容のみをMarkdownで出力してください。`;
+
+let currentFile = null;
+let currentPages = [];
+let cancelled = false;
+let activeController = null;
+let currentResult = null;
+
+// ---------- settings ----------
+function getSettings() {
+  try { return JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {}; } catch { return {}; }
+}
+function openSettings() {
+  const s = getSettings();
+  document.getElementById('set-apikey').value = s.apiKey || '';
+  document.getElementById('set-model').value = s.model || 'claude-sonnet-5';
+  document.getElementById('modal-settings').classList.remove('hidden');
+}
+function closeSettings() { document.getElementById('modal-settings').classList.add('hidden'); }
+function saveSettings() {
+  const apiKey = document.getElementById('set-apikey').value.trim();
+  const model = document.getElementById('set-model').value;
+  if (!apiKey) { toast('APIキーを入力してください', 'err'); return; }
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiKey, model }));
+  closeSettings();
+  toast('設定を保存しました');
+}
+function clearSettings() {
+  localStorage.removeItem(SETTINGS_KEY);
+  document.getElementById('set-apikey').value = '';
+  toast('APIキーを削除しました');
+}
+document.getElementById('modal-settings').addEventListener('click', e => {
+  if (e.target.id === 'modal-settings') closeSettings();
+});
+
+// ---------- toast ----------
+let toastTimer = null;
+function toast(msg, kind) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (kind === 'err' ? ' err' : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+// ---------- upload ----------
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('file-input');
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if (f) handleFile(f);
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files[0]) handleFile(fileInput.files[0]);
+});
+
+async function handleFile(file) {
+  if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+    toast('PDFファイルを選択してください', 'err');
+    return;
+  }
+  currentFile = file;
+  document.getElementById('doc-fname').textContent = file.name;
+  document.getElementById('doc-fsub').textContent = '読み込み中…';
+  document.getElementById('doc-card').classList.remove('hidden');
+  document.getElementById('result-card').classList.add('hidden');
+  document.getElementById('progress-wrap').classList.add('hidden');
+  document.getElementById('btn-translate').disabled = false;
+
+  try {
+    currentPages = await extractPdfText(file);
+    const totalChars = currentPages.reduce((n, p) => n + p.length, 0);
+    const chunks = chunkPages(currentPages, CHUNK_CHARS);
+    document.getElementById('doc-fsub').textContent =
+      `${currentPages.length}ページ / 約${totalChars.toLocaleString()}文字 / API呼び出し予定: ${chunks.length + 1}回`;
+    const warnEl = document.getElementById('doc-warn');
+    if (chunks.length > 25) {
+      warnEl.textContent = 'ページ数が多いため、翻訳完了まで時間がかかり、APIの利用料も大きくなる可能性があります。';
+      warnEl.classList.remove('hidden');
+    } else {
+      warnEl.classList.add('hidden');
+    }
+  } catch (err) {
+    console.error(err);
+    document.getElementById('doc-fsub').textContent = 'PDFの読み込みに失敗しました';
+    document.getElementById('btn-translate').disabled = true;
+    toast('PDFの読み込みに失敗しました: ' + err.message, 'err');
+  }
+}
+
+function resetUpload() {
+  currentFile = null;
+  currentPages = [];
+  fileInput.value = '';
+  document.getElementById('doc-card').classList.add('hidden');
+  document.getElementById('result-card').classList.add('hidden');
+}
+
+async function extractPdfText(file) {
+  const buf = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+  const pages = [];
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const text = content.items.map(it => ('str' in it ? it.str : '')).join(' ').replace(/[ \t]+/g, ' ').trim();
+    pages.push(text);
+  }
+  return pages;
+}
+
+function chunkPages(pages, maxChars) {
+  const chunks = [];
+  let cur = '', curPages = [];
+  for (let i = 0; i < pages.length; i++) {
+    const t = pages[i];
+    if (cur && cur.length + t.length > maxChars) {
+      chunks.push({ text: cur, pages: curPages });
+      cur = ''; curPages = [];
+    }
+    cur += (cur ? '\n\n' : '') + t;
+    curPages.push(i + 1);
+    if (cur.length > maxChars * 1.6) {
+      chunks.push({ text: cur, pages: curPages });
+      cur = ''; curPages = [];
+    }
+  }
+  if (cur) chunks.push({ text: cur, pages: curPages });
+  return chunks;
+}
+
+// ---------- translation pipeline ----------
+async function callClaude(system, userText, maxTokens) {
+  const { apiKey, model } = getSettings();
+  if (!apiKey) throw new Error('設定画面でAPIキーを入力してください');
+  activeController = new AbortController();
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    signal: activeController.signal,
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: model || 'claude-sonnet-5',
+      max_tokens: maxTokens,
+      system,
+      messages: [{ role: 'user', content: userText }]
+    })
+  });
+  if (!res.ok) {
+    let detail = '';
+    try { detail = (await res.json()).error?.message || ''; } catch {}
+    throw new Error(`APIエラー (${res.status}) ${detail}`);
+  }
+  const data = await res.json();
+  return (data.content || []).map(b => b.text || '').join('');
+}
+
+function parseChunkResponse(raw) {
+  const kIdx = raw.indexOf('[KEYPOINTS]');
+  let translation = raw, keypoints = [];
+  if (kIdx !== -1) {
+    translation = raw.slice(0, kIdx).replace('[TRANSLATION]', '').trim();
+    const kText = raw.slice(kIdx + '[KEYPOINTS]'.length);
+    keypoints = kText.split('\n').map(l => l.replace(/^[-*・]\s*/, '').trim()).filter(Boolean);
+  } else {
+    translation = raw.replace('[TRANSLATION]', '').trim();
+  }
+  return { translation, keypoints };
+}
+
+async function startTranslation() {
+  if (!currentFile || currentPages.length === 0) return;
+  const { apiKey } = getSettings();
+  if (!apiKey) { toast('先に設定画面でAPIキーを登録してください', 'err'); openSettings(); return; }
+
+  cancelled = false;
+  document.getElementById('btn-translate').disabled = true;
+  document.getElementById('progress-wrap').classList.remove('hidden');
+  document.getElementById('btn-cancel').classList.remove('hidden');
+  document.getElementById('result-card').classList.add('hidden');
+
+  const chunks = chunkPages(currentPages, CHUNK_CHARS);
+  const translatedParts = [];
+  const allKeypoints = [];
+
+  try {
+    for (let i = 0; i < chunks.length; i++) {
+      if (cancelled) throw new Error('__cancelled__');
+      setProgress(i, chunks.length + 1, `翻訳中… (${i + 1}/${chunks.length}チャンク)`);
+      const userMsg = `以下は英語レポートの一部です（パート ${i + 1}/${chunks.length}、原文ページ ${chunks[i].pages[0]}〜${chunks[i].pages[chunks[i].pages.length - 1]}）:\n\n${chunks[i].text}`;
+      const raw = await callClaude(TRANSLATE_SYSTEM, userMsg, 4096);
+      const { translation, keypoints } = parseChunkResponse(raw);
+      translatedParts.push(translation);
+      allKeypoints.push(...keypoints);
+    }
+
+    if (cancelled) throw new Error('__cancelled__');
+    setProgress(chunks.length, chunks.length + 1, '要点をまとめています…');
+    const keypointsText = allKeypoints.map((k, i) => `${i + 1}. ${k}`).join('\n');
+    const synthUser = `レポートのファイル名: ${currentFile.name}\n\n各セクションから抽出された要点メモ:\n${keypointsText}`;
+    const summaryMd = await callClaude(SYNTH_SYSTEM, synthUser, 2048);
+
+    setProgress(chunks.length + 1, chunks.length + 1, '完了');
+
+    const result = {
+      id: 'r' + Date.now(),
+      filename: currentFile.name,
+      date: new Date().toISOString(),
+      model: getSettings().model || 'claude-sonnet-5',
+      pageCount: currentPages.length,
+      summary: summaryMd.trim(),
+      translation: translatedParts.join('\n\n'),
+      original: currentPages.join('\n\n')
+    };
+    currentResult = result;
+    renderResult(result, true);
+    saveHistory(result);
+    toast('翻訳が完了しました');
+  } catch (err) {
+    if (err.message === '__cancelled__') {
+      toast('翻訳を中止しました');
+    } else {
+      console.error(err);
+      toast('エラーが発生しました: ' + err.message, 'err');
+    }
+  } finally {
+    document.getElementById('btn-translate').disabled = false;
+    document.getElementById('btn-cancel').classList.add('hidden');
+    setTimeout(() => document.getElementById('progress-wrap').classList.add('hidden'), 1200);
+  }
+}
+
+function cancelTranslation() {
+  cancelled = true;
+  if (activeController) activeController.abort();
+}
+
+function setProgress(done, total, label) {
+  const pct = Math.min(100, Math.round((done / total) * 100));
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = label;
+}
+
+// ---------- result rendering ----------
+function renderResult(r, hasOriginal) {
+  document.getElementById('result-card').classList.remove('hidden');
+  document.getElementById('summary-body').innerHTML = mdLite(r.summary || '(要点データがありません)');
+  document.getElementById('full-body').textContent = r.translation || '';
+  document.getElementById('original-body').textContent = hasOriginal
+    ? (r.original || '')
+    : 'この履歴項目の原文はこの端末に保存されていません（要点まとめと全文翻訳のみ保存されます）。';
+  showTab('summary');
+  document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  ['summary', 'full', 'original'].forEach(n => {
+    document.getElementById('panel-' + n).classList.toggle('hidden', n !== name);
+  });
+}
+window.showTab = showTab;
+
+function mdLite(md) {
+  const lines = md.split('\n');
+  let html = '', inList = false;
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  for (let line of lines) {
+    line = line.trim();
+    if (!line) { if (inList) { html += '</ul>'; inList = false; } continue; }
+    if (line.startsWith('## ')) { if (inList) { html += '</ul>'; inList = false; } html += `<h2>${inline(line.slice(3))}</h2>`; continue; }
+    if (line.startsWith('# ')) { if (inList) { html += '</ul>'; inList = false; } html += `<h2>${inline(line.slice(2))}</h2>`; continue; }
+    if (line.startsWith('- ') || line.startsWith('* ')) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inline(line.slice(2))}</li>`;
+      continue;
+    }
+    if (inList) { html += '</ul>'; inList = false; }
+    html += `<p>${inline(line)}</p>`;
+  }
+  if (inList) html += '</ul>';
+  return html;
+}
+
+// ---------- copy / download ----------
+function textFor(kind) {
+  if (kind === 'summary') return document.getElementById('summary-body').innerText;
+  if (kind === 'full') return document.getElementById('full-body').textContent;
+  return document.getElementById('original-body').textContent;
+}
+window.copyText = function (kind) {
+  navigator.clipboard.writeText(textFor(kind)).then(
+    () => toast('コピーしました'),
+    () => toast('コピーに失敗しました', 'err')
+  );
+};
+window.downloadText = function (kind) {
+  const base = (currentResult?.filename || 'document').replace(/\.pdf$/i, '');
+  const name = kind === 'summary' ? `${base}_要点まとめ.md` : `${base}_日本語訳.txt`;
+  const blob = new Blob([textFor(kind)], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+// ---------- history ----------
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
+}
+function saveHistory(result) {
+  let list = getHistory();
+  list.unshift({
+    id: result.id, filename: result.filename, date: result.date,
+    model: result.model, pageCount: result.pageCount,
+    summary: result.summary, translation: result.translation
+  });
+  list = list.slice(0, MAX_HISTORY);
+  while (list.length > 0) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(list)); break; }
+    catch { list.pop(); }
+  }
+  renderHistory();
+}
+function deleteHistory(id) {
+  const list = getHistory().filter(h => h.id !== id);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+  renderHistory();
+}
+window.deleteHistory = deleteHistory;
+
+function renderHistory() {
+  const list = getHistory();
+  const container = document.getElementById('history-list');
+  const empty = document.getElementById('history-empty');
+  container.innerHTML = '';
+  empty.classList.toggle('hidden', list.length > 0);
+  for (const h of list) {
+    const div = document.createElement('div');
+    div.className = 'hist-item';
+    const d = new Date(h.date);
+    const dateStr = isNaN(d) ? '' : d.toLocaleString('ja-JP');
+    div.innerHTML = `
+      <div>
+        <div class="hfname"></div>
+        <div class="hmeta">${dateStr} ・ ${h.pageCount || '?'}ページ ・ ${h.model || ''}</div>
+      </div>
+      <button class="hdel" title="削除"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>
+    `;
+    div.querySelector('.hfname').textContent = h.filename;
+    div.querySelector('.hdel').addEventListener('click', e => { e.stopPropagation(); deleteHistory(h.id); });
+    div.addEventListener('click', () => {
+      currentResult = h;
+      renderResult(h, false);
+    });
+    container.appendChild(div);
+  }
+}
+
+window.openSettings = openSettings;
+window.closeSettings = closeSettings;
+window.saveSettings = saveSettings;
+window.clearSettings = clearSettings;
+window.startTranslation = startTranslation;
+window.cancelTranslation = cancelTranslation;
+window.resetUpload = resetUpload;
+
+renderHistory();
+</script>
+</body>
+</html>
