@@ -160,10 +160,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .b-cancel{background:var(--st-cancel-bg);color:var(--st-cancel)}
 .tc-meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--text-sub);margin-bottom:7px}
 .tc-meta span{display:inline-flex;align-items:center;gap:4px}
-.who{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;flex-shrink:0}
-.who-bou{background:#dceaff;color:#1f5fbf}
-.who-zou{background:#ffe2ef;color:#b52a6d}
-.who-both{background:#e6e0ff;color:#5b3fbf}
+.whocols{display:inline-flex;gap:4px;flex-shrink:0}
+.whocol{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;
+  background:var(--surface-2);border:1px solid var(--border);color:var(--text-lt)}
+.whocol .mk{font-size:12px;line-height:1}
+.whocol.on.w-bou{background:#dceaff;border-color:#b9d4ff;color:#1f5fbf}
+.whocol.on.w-zou{background:#ffe2ef;border-color:#ffc9df;color:#b52a6d}
+.whotbl{border-collapse:collapse;font-size:13px}
+.whotbl th{background:var(--surface-2);color:var(--text-sub);font-size:11px;font-weight:700;padding:5px 20px;border:1px solid var(--border)}
+.whotbl td{text-align:center;padding:7px 20px;border:1px solid var(--border);font-size:16px;font-weight:800}
+.whotbl td.yes{color:var(--st-win)}
+.whotbl td.no{color:var(--text-lt)}
 .tc-dl{border-top:1px dashed var(--border);margin-top:2px;padding-top:8px;display:flex;flex-direction:column;gap:4px}
 .dl-line{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-sub)}
 .dl-line>svg{flex-shrink:0}
@@ -251,7 +258,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .seg.on.g-cancel{background:var(--st-cancel);border-color:var(--st-cancel)}
 .seg.on.g-bou{background:#1f5fbf;border-color:#1f5fbf}
 .seg.on.g-zou{background:#b52a6d;border-color:#b52a6d}
-.seg.on.g-both{background:#5b3fbf;border-color:#5b3fbf}
 
 /* ── DETAIL ────────────────────────────────────────────── */
 .dhero{background:linear-gradient(150deg,var(--gold-lt),var(--gold) 50%,var(--gold-dk));padding:4px;border-radius:var(--r-lg);margin-bottom:12px}
@@ -576,23 +582,40 @@ const STATUSES = [
   {v:'キャンセル',k:'cancel'}
 ];
 const STATUS_ORDER = {'抽選中':0,'当選':1,'受取済':2,'落選':3,'キャンセル':4};
-const WHOS = [{v:'ぼう',k:'bou'},{v:'ぞう',k:'zou'},{v:'ぼう・ぞう',k:'both'}];
+const WHOS = [{key:'bou',label:'ぼう'},{key:'zou',label:'ぞう'}];
 
 const statusKey = s => (STATUSES.find(x=>x.v===s)||{k:'wait'}).k;
-const whoKey    = w => (WHOS.find(x=>x.v===w)||{k:'bou'}).k;
 
 // ══════════ STATE ══════════
 let entries = [];
 let filters = {search:'', status:[], who:[], sort:'urgent'};
 let editingId = null, detailId = null;
 let syncConfig = null, fileSha = null, syncTimer = null, searchTimer = null;
-let formWho = 'ぼう', formStatus = '抽選中';
+let formWho = {bou:true, zou:false}, formStatus = '抽選中';
 let currentTab = 'list';
 
 // ══════════ UTILS ══════════
 const $  = id => document.getElementById(id);
 const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const uid = () => (crypto?.randomUUID?.() || Date.now().toString(36)+Math.random().toString(36).slice(2));
+
+/** iPhone / iPad か（iPadOSはMacintoshを名乗るためタッチ数でも判定）。 */
+function isIOS(){
+  const ua = navigator.userAgent || '';
+  return /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+}
+/** iOSならマップ.app、それ以外はGoogleマップで開くURL。 */
+function mapsUrl(addr){
+  const q = encodeURIComponent(addr);
+  return isIOS() ? `https://maps.apple.com/?q=${q}`
+                 : `https://www.google.com/maps/search/?api=1&query=${q}`;
+}
+/** 申込者の該当／非該当を2カラムで表示。 */
+function whoHTML(e){
+  return `<span class="whocols">${WHOS.map(w =>
+    `<span class="whocol w-${w.key}${e[w.key]?' on':''}">${w.label}<span class="mk">${e[w.key]?'○':'−'}</span></span>`
+  ).join('')}</span>`;
+}
 
 function fmtDT(v){
   if(!v) return '';
@@ -660,7 +683,11 @@ function load(){
 function migrate(e){
   if(!e.id) e.id = uid();
   if(!e.status) e.status = '抽選中';
-  if(!e.applicant) e.applicant = 'ぼう';
+  if(typeof e.bou !== 'boolean' || typeof e.zou !== 'boolean'){
+    const a = e.applicant || 'ぼう';
+    e.bou = a.includes('ぼう'); e.zou = a.includes('ぞう');
+  }
+  delete e.applicant;
   return e;
 }
 async function fetchSeed(){
@@ -683,6 +710,10 @@ function loadFilters(){
   try{
     const raw = localStorage.getItem(FILTER_STORE);
     if(raw) filters = {search:'',status:[],who:[],sort:'urgent', ...JSON.parse(raw)};
+    // 旧形式（'ぼう'/'ぼう・ぞう'）が残っていれば新しいキーへ整理
+    filters.who = (filters.who||[]).map(v => v==='ぞう' ? 'zou' : v==='ぼう' ? 'bou' : v)
+                                   .filter(v => WHOS.some(w=>w.key===v));
+    filters.who = [...new Set(filters.who)];
   }catch{}
   $('f-search').value = filters.search||'';
   $('f-sort').value   = filters.sort||'urgent';
@@ -798,7 +829,7 @@ function buildPills(){
   $('status-pills').innerHTML = STATUSES.map(s =>
     `<button class="pill p-${s.k}${filters.status.includes(s.v)?' on':''}" onclick="toggleStatus('${s.v}')">${s.v}</button>`).join('');
   $('who-pills').innerHTML = WHOS.map(w =>
-    `<button class="pill${filters.who.includes(w.v)?' on':''}" onclick="toggleWho('${w.v}')">${w.v}</button>`).join('');
+    `<button class="pill${filters.who.includes(w.key)?' on':''}" onclick="toggleWho('${w.key}')">${w.label}</button>`).join('');
 }
 function toggleStatus(v){
   const i = filters.status.indexOf(v);
@@ -825,9 +856,10 @@ function visible(){
   const q = (filters.search||'').trim().toLowerCase();
   let list = entries.filter(e=>{
     if(filters.status.length && !filters.status.includes(e.status)) return false;
-    if(filters.who.length    && !filters.who.includes(e.applicant)) return false;
+    if(filters.who.length    && !filters.who.some(k => e[k])) return false;
     if(q){
-      const hay = [e.shop,e.product,e.no,e.note,e.address,e.pickup_method,e.result_method,e.result_method_note,e.pickup_method_note]
+      const hay = [e.shop,e.product,e.no,e.note,e.address,e.pickup_method,e.result_method,e.result_method_note,e.pickup_method_note,
+        e.bou?'ぼう':'', e.zou?'ぞう':'']
         .filter(Boolean).join(' ').toLowerCase();
       if(!hay.includes(q)) return false;
     }
@@ -913,7 +945,7 @@ function cardHTML(e){
         <span class="badge b-${sk}">${esc(e.status)}</span>
       </div>
       <div class="tc-meta">
-        <span class="who who-${whoKey(e.applicant)}">${esc(e.applicant)}</span>
+        ${whoHTML(e)}
         ${meta.join('')}
       </div>
       ${dls.length?`<div class="tc-dl">${dls.join('')}</div>`:''}
@@ -957,7 +989,7 @@ function renderSummary(){
     </div>
     <div class="panel">
       <div class="panel-h">申込者別</div>
-      <div class="panel-b">${bars(group(e=>e.applicant))}</div>
+      <div class="panel-b">${bars(WHOS.map(w => [w.label, entries.filter(e=>e[w.key]).length]))}</div>
     </div>
     <div class="panel">
       <div class="panel-h">店舗別</div>
@@ -983,11 +1015,11 @@ function closeMenu(){ $('data-menu').classList.add('hidden'); }
 // ══════════ FORM ══════════
 function buildSegs(){
   $('seg-who').innerHTML = WHOS.map(w=>
-    `<button type="button" class="seg g-${w.k}${formWho===w.v?' on':''}" onclick="pickWho('${w.v}')">${w.v}</button>`).join('');
+    `<button type="button" class="seg g-${w.key}${formWho[w.key]?' on':''}" onclick="toggleFormWho('${w.key}')">${w.label} ${formWho[w.key]?'○':'−'}</button>`).join('');
   $('seg-status').innerHTML = STATUSES.map(s=>
     `<button type="button" class="seg g-${s.k}${formStatus===s.v?' on':''}" onclick="pickStatus('${s.v}')">${s.v}</button>`).join('');
 }
-function pickWho(v){ formWho = v; buildSegs(); }
+function toggleFormWho(k){ formWho[k] = !formWho[k]; buildSegs(); }
 function pickStatus(v){ formStatus = v; buildSegs(); }
 
 function refreshDatalists(){
@@ -1031,7 +1063,7 @@ function openForm(id){
   $('i-pmethod-etc').value = e?.pickup_method_note||'';
   $('i-address').value = e?.address||'';
   $('i-note').value    = e?.note||'';
-  formWho    = e?.applicant||'ぼう';
+  formWho    = e ? {bou:!!e.bou, zou:!!e.zou} : {bou:true, zou:false};
   formStatus = e?.status||'抽選中';
   buildSegs(); refreshDatalists();
   syncOther('i-rmethod','i-rmethod-etc'); onPickupMethodChange(); updateTotalHint();
@@ -1049,6 +1081,7 @@ function saveForm(){
   if(rf && rt && rf > rt){ toast('結果発表期間の開始が終了より後になっています','err'); return; }
   const pf = $('i-pfrom').value, pt = $('i-pto').value;
   if(pf && pt && pf > pt){ toast('受取開始日時が受取期限より後になっています','err'); return; }
+  if(!formWho.bou && !formWho.zou){ toast('申込者を1人以上選択してください','err'); return; }
 
   const now = new Date().toISOString();
   const data = {
@@ -1067,7 +1100,8 @@ function saveForm(){
     pickup_method: $('i-pmethod').value,
     pickup_method_note: $('i-pmethod-etc').value.trim(),
     address: $('i-address').value.trim(),
-    applicant: formWho,
+    bou: formWho.bou,
+    zou: formWho.zou,
     status: formStatus,
     note: $('i-note').value.trim(),
     updated_at: now
@@ -1098,8 +1132,7 @@ function openDetail(id){
   const links = [];
   if(e.url) links.push(`<a class="dlink" href="${esc(e.url)}" target="_blank" rel="noopener">申込ページ</a>`);
   if(e.result_url) links.push(`<a class="dlink" href="${esc(e.result_url)}" target="_blank" rel="noopener">結果を確認</a>`);
-  if(e.address) links.push(`<a class="dlink" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.address)}" target="_blank" rel="noopener">地図で開く</a>`);
-  if(e.no) links.push(`<button class="dlink" onclick="copyText('${esc(e.no).replace(/'/g,"\\'")}')">Noをコピー</button>`);
+  if(e.address) links.push(`<a class="dlink" href="${esc(mapsUrl(e.address))}" target="_blank" rel="noopener">${isIOS()?'マップで開く':'地図で開く'}</a>`);
 
   $('detail-body').innerHTML = `
     <div class="dhero s-${sk}"><div class="dhero-in">
@@ -1107,7 +1140,7 @@ function openDetail(id){
       ${e.product?`<div class="dhero-prod">${esc(e.product)}</div>`:''}
       <div class="dhero-row">
         <span class="badge b-${sk}">${esc(e.status)}</span>
-        <span class="who who-${whoKey(e.applicant)}">${esc(e.applicant)}</span>
+        ${whoHTML(e)}
         ${cd?`<span class="countdown ${cd.cls}">${d.kind}${d.kind==='受取'?'期限':''} ${cd.txt}</span>`:''}
       </div>
       ${links.length?`<div class="dlinks">${links.join('')}</div>`:''}
@@ -1120,7 +1153,8 @@ function openDetail(id){
       ${row('商品・弾名', esc(e.product))}
       ${row('No', e.no?`<span class="no-chip">${esc(e.no)}</span>`:'')}
       ${row('口数・金額', total||(e.qty?e.qty+'口':''))}
-      ${row('申込者', esc(e.applicant))}
+      ${row('申込者', `<table class="whotbl"><tr>${WHOS.map(w=>`<th>${w.label}</th>`).join('')}</tr>`+
+        `<tr>${WHOS.map(w=>`<td class="${e[w.key]?'yes':'no'}">${e[w.key]?'○':'−'}</td>`).join('')}</tr></table>`)}
     </div>
 
     <div class="fsec">
@@ -1167,11 +1201,6 @@ function deleteEntry(){
   entries = entries.filter(x=>x.id!==detailId);
   persist(); closeDetail(); render(); toast('削除しました');
 }
-async function copyText(t){
-  try{ await navigator.clipboard.writeText(t); toast('コピーしました','ok'); }
-  catch{ toast('コピーできませんでした','err'); }
-}
-
 // ══════════ IMPORT / EXPORT ══════════
 function exportJSON(){
   closeMenu();
