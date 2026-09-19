@@ -616,6 +616,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 const STORE        = 'pokeca_lottery_v1';
 const FILTER_STORE = 'pokeca_filters_v1';
 const SYNC_STORE   = 'pokeca_sync_v1';
+const DEL_STORE    = 'pokeca_deleted_v1';
 const DEFAULT_REPO = 'bo0639/hijiri.github.io';
 const DATA_PATH    = 'pokeca/data.json';
 
@@ -636,6 +637,7 @@ let entries = [];
 let filters = {search:'', status:[], who:[], sort:'urgent'};
 let editingId = null, detailId = null;
 let syncConfig = null, fileSha = null, syncTimer = null, searchTimer = null;
+let deletedIds = [];
 let formWho = {bou:true, zou:false}, formStatus = '抽選中';
 let currentTab = 'list';
 
@@ -725,9 +727,12 @@ function load(){
   try{
     const raw = localStorage.getItem(STORE);
     entries = raw ? JSON.parse(raw).map(migrate) : [];
-    if(!raw) fetchSeed();
   }catch{ entries = []; }
 }
+function loadDeleted(){
+  try{ deletedIds = JSON.parse(localStorage.getItem(DEL_STORE)||'[]'); }catch{ deletedIds = []; }
+}
+function saveDeleted(){ localStorage.setItem(DEL_STORE, JSON.stringify(deletedIds.slice(-500))); }
 function migrate(e){
   if(!e.id) e.id = uid();
   if(!e.status) e.status = '抽選中';
@@ -740,16 +745,33 @@ function migrate(e){
   if(e.apply_method_name === undefined) e.apply_method_name = '';
   return e;
 }
-async function fetchSeed(){
+/**
+ * リポジトリのdata.jsonを取り込む。端末側の編集を消さないよう、
+ * idごとに突き合わせて「未取得のものは追加」「data.jsonの方が新しければ更新」
+ * のみを行う。端末で削除した案件は戻さない。
+ */
+async function mergeSeed(){
   try{
-    const res = await fetch('./data.json'); if(!res.ok) return;
-    const data = await res.json();
-    if(Array.isArray(data) && data.length){
-      entries = data.map(migrate);
+    const res = await fetch('./data.json', {cache:'no-store'});
+    if(!res.ok) return false;
+    const seed = await res.json();
+    if(!Array.isArray(seed) || !seed.length) return false;
+    let added = 0, updated = 0;
+    seed.map(migrate).forEach(se => {
+      if(!se.id || deletedIds.includes(se.id)) return;
+      const i = entries.findIndex(x => x.id === se.id);
+      if(i < 0){ entries.push(se); added++; return; }
+      const sd = se.updated_at || '', ld = entries[i].updated_at || '';
+      if(sd && sd > ld){ entries[i] = se; updated++; }
+    });
+    if(added || updated){
       localStorage.setItem(STORE, JSON.stringify(entries));
-      render(); toast('初期データを読み込みました','ok');
+      const parts = [added && `${added}件を追加`, updated && `${updated}件を更新`].filter(Boolean);
+      toast(`共有データを反映しました（${parts.join('・')}）`,'ok');
+      return true;
     }
-  }catch{}
+  }catch(e){ console.error('seed merge error:', e); }
+  return false;
 }
 function persist(){
   localStorage.setItem(STORE, JSON.stringify(entries));
@@ -844,10 +866,15 @@ function scheduleSyncToGitHub(){
 }
 async function manualSync(){
   closeMenu();
-  if(!syncConfig?.token){ toast('先に同期設定を行ってください','err'); openSyncSettings(); return; }
-  const ok = await syncFromGitHub();
+  if(syncConfig?.token){
+    const ok = await syncFromGitHub();
+    render();
+    toast(ok ? '最新データを取得しました' : '取得できるデータがありませんでした', ok?'ok':'');
+    return;
+  }
+  const ok = await mergeSeed();
   render();
-  toast(ok ? '最新データを取得しました' : '取得できるデータがありませんでした', ok?'ok':'');
+  if(!ok) toast('新しい共有データはありませんでした');
 }
 function openSyncSettings(){
   closeMenu();
@@ -1269,6 +1296,7 @@ function editFromDetail(){ const id = detailId; closeDetail(); openForm(id); }
 function deleteEntry(){
   const e = entries.find(x=>x.id===detailId); if(!e) return;
   if(!confirm(`「${e.shop||'この申込'}」を削除しますか？`)) return;
+  if(!deletedIds.includes(detailId)){ deletedIds.push(detailId); saveDeleted(); }
   entries = entries.filter(x=>x.id!==detailId);
   persist(); closeDetail(); render(); toast('削除しました');
 }
@@ -1328,21 +1356,20 @@ document.addEventListener('keydown', e=>{
 });
 ['i-qty','i-price'].forEach(id=> $(id).addEventListener('input', updateTotalHint));
 document.addEventListener('visibilitychange', ()=>{
-  if(document.visibilityState==='visible' && syncConfig?.token){
-    syncFromGitHub().then(ok=>{ if(ok) render(); });
-  }
+  if(document.visibilityState!=='visible') return;
+  const p = syncConfig?.token ? syncFromGitHub() : mergeSeed();
+  p.then(ok=>{ if(ok) render(); });
 });
 
 // ══════════ INIT ══════════
 (async function init(){
   loadSyncConfig();
+  loadDeleted();
   load();
   loadFilters();
   render();
-  if(syncConfig?.token){
-    const ok = await syncFromGitHub();
-    if(ok) render();
-  }
+  const ok = syncConfig?.token ? await syncFromGitHub() : await mergeSeed();
+  if(ok) render();
 })();
 </script>
 </body>
