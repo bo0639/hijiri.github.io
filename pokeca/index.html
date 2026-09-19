@@ -120,6 +120,15 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .pill.on.p-lose{background:var(--st-lose);border-color:var(--st-lose)}
 .pill.on.p-done{background:var(--st-done);border-color:var(--st-done)}
 .pill.on.p-cancel{background:var(--st-cancel);border-color:var(--st-cancel)}
+.fgroup{display:flex;flex-direction:column;gap:6px}
+.fgroup-h{display:flex;align-items:center;gap:8px}
+.fgroup-t{font-size:11px;font-weight:800;color:var(--navy-lt);letter-spacing:.9px;display:flex;align-items:center;gap:5px}
+.fgroup-t::before{content:'';width:3px;height:11px;background:var(--gold);border-radius:2px}
+.fclear{margin-left:auto;background:#fff;border:1.5px solid var(--border);color:var(--text-lt);font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:20px;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:all .12s}
+.fclear:disabled{opacity:.35;cursor:default}
+.fclear:not(:disabled){color:var(--danger);border-color:#f2cccc}
+.fclear:not(:disabled):active{transform:scale(.95)}
 .frow2{display:flex;gap:7px;align-items:center}
 .frow2 .fsel{max-width:190px}
 .fsel{flex:1;padding:8px 10px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:13px;background:#fff;
@@ -166,8 +175,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .whocol .mk{font-size:12px;line-height:1}
 .whocol.on.w-bou{background:#dceaff;border-color:#b9d4ff;color:#1f5fbf}
 .whocol.on.w-zou{background:#ffe2ef;border-color:#ffc9df;color:#b52a6d}
+.whocol.sub{font-size:10px;padding:2px 7px;font-weight:700}
 .whotbl{border-collapse:collapse;font-size:13px}
-.whotbl th{background:var(--surface-2);color:var(--text-sub);font-size:11px;font-weight:700;padding:5px 20px;border:1px solid var(--border)}
+.whotbl th{background:var(--surface-2);color:var(--text-sub);font-size:11px;font-weight:700;padding:5px 18px;border:1px solid var(--border)}
+.whotbl th small{font-weight:600;opacity:.75}
 .whotbl td{text-align:center;padding:7px 20px;border:1px solid var(--border);font-size:16px;font-weight:800}
 .whotbl td.yes{color:var(--st-win)}
 .whotbl td.no{color:var(--text-lt)}
@@ -183,6 +194,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .cd-soon{background:#fff0c9;color:#8a6200}
 .cd-far{background:var(--surface-2);color:var(--text-lt)}
 .tc-note{font-size:11.5px;color:var(--text-lt);margin-top:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.src-chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;
+  background:var(--blue-pale,#f4f8ff);border:1px solid var(--border);color:var(--navy-lt)}
+.fcheck{display:flex;align-items:center;gap:9px;margin-top:9px;padding:10px 12px;border:1.5px solid var(--border);
+  border-radius:var(--r-sm);background:var(--surface-2);font-size:13px;font-weight:700;color:var(--text-sub);cursor:pointer;transition:all .12s}
+.fcheck input{width:18px;height:18px;accent-color:#b52a6d;flex-shrink:0;margin:0}
+.fcheck.on{border-color:#ffc9df;background:#fff5f9;color:#b52a6d}
+.fcheck small{font-weight:600;opacity:.8}
 .no-chip{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:var(--surface-2);
   border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--text-sub)}
 
@@ -354,10 +372,22 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
   <div class="filters">
     <div class="fsearch">
       <span class="si"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <input type="search" id="f-search" placeholder="店舗・商品・No・備考で検索" oninput="onSearch(this.value)">
+      <input type="search" id="f-search" placeholder="店舗・商品・No・申込方法・備考で検索" oninput="onSearch(this.value)">
     </div>
-    <div class="pillrow" id="status-pills"></div>
-    <div class="pillrow" id="who-pills"></div>
+    <div class="fgroup">
+      <div class="fgroup-h">
+        <span class="fgroup-t">ステータス</span>
+        <button class="fclear" id="fclear-status" onclick="clearFilterGroup('status')">クリア</button>
+      </div>
+      <div class="pillrow" id="status-pills"></div>
+    </div>
+    <div class="fgroup">
+      <div class="fgroup-h">
+        <span class="fgroup-t">名義</span>
+        <button class="fclear" id="fclear-who" onclick="clearFilterGroup('who')">クリア</button>
+      </div>
+      <div class="pillrow" id="who-pills"></div>
+    </div>
     <div class="frow2">
       <select class="fsel" id="f-sort" onchange="onSort(this.value)">
         <option value="urgent">期限が近い順</option>
@@ -366,7 +396,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
         <option value="shop">店舗名順</option>
         <option value="status">ステータス順</option>
       </select>
-      <button class="clear-btn" onclick="clearFilters()">クリア</button>
+      <button class="clear-btn" onclick="clearFilters()">すべてクリア</button>
     </div>
   </div>
   <div class="statrow" id="statrow"></div>
@@ -397,6 +427,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
           <datalist id="dl-shops"></datalist>
         </div>
         <div class="fg">
+          <label class="flabel" for="i-amethod">申込方法</label>
+          <select class="fselect" id="i-amethod" onchange="onApplyMethodChange()">
+            <option value="">未設定</option>
+            <option>抽選サイト</option><option>店舗ECサイト</option><option>公式アプリ</option>
+            <option>店頭</option><option>電話・ハガキ</option><option>その他</option>
+          </select>
+          <input type="text" class="finput" id="i-amethod-name" list="dl-amethods" style="margin-top:7px" placeholder="サイト・アプリ名（例：LivePocket）" autocomplete="off">
+          <datalist id="dl-amethods"></datalist>
+          <span class="fhint">抽選に使ったサイトやアプリの名称を入れておくと、次回から候補に出ます</span>
+        </div>
+        <div class="fg">
           <label class="flabel" for="i-product">商品名・弾名</label>
           <input type="text" class="finput" id="i-product" list="dl-products" placeholder="例：強化拡張パック メガブレイブ" autocomplete="off">
           <datalist id="dl-products"></datalist>
@@ -406,8 +447,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
           <input type="datetime-local" class="finput" id="i-applied">
         </div>
         <div class="fg">
-          <label class="flabel">申込者</label>
+          <label class="flabel">名義</label>
           <div class="segbtns" id="seg-who"></div>
+          <label class="fcheck" id="zou-check" for="i-zou">
+            <input type="checkbox" id="i-zou" onchange="onZouChange()">
+            <span>ぞうも申し込んでいる <small>（参考情報）</small></span>
+          </label>
         </div>
         <div class="frow">
           <div class="fg">
@@ -610,18 +655,21 @@ function mapsUrl(addr){
   return isIOS() ? `https://maps.apple.com/?q=${q}`
                  : `https://www.google.com/maps/search/?api=1&query=${q}`;
 }
-/** 申込者の該当／非該当を2カラムで表示。 */
+/** 名義の表示。ぼうを主に置き、ぞうは申込有無の参考表示にとどめる。 */
 function whoHTML(e){
-  return `<span class="whocols">${WHOS.map(w =>
-    `<span class="whocol w-${w.key}${e[w.key]?' on':''}">${w.label}<span class="mk">${e[w.key]?'○':'−'}</span></span>`
-  ).join('')}</span>`;
+  const bou = `<span class="whocol w-bou${e.bou?' on':''}">ぼう<span class="mk">${e.bou?'○':'−'}</span></span>`;
+  const zou = e.zou ? `<span class="whocol sub w-zou on">ぞうも<span class="mk">○</span></span>` : '';
+  return `<span class="whocols">${bou}${zou}</span>`;
 }
 
 function fmtDT(v){
   if(!v) return '';
   const d = new Date(v); if(isNaN(d)) return v;
   const w = '日月火水木金土'[d.getDay()];
-  return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}(${w}) ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+  const ymd = `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}(${w})`;
+  // 0:00は「日付だけ分かっている」データとみなし、時刻を表示しない
+  if(d.getHours()===0 && d.getMinutes()===0) return ymd;
+  return `${ymd} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
 }
 function fmtD(v){
   if(!v) return '';
@@ -688,6 +736,8 @@ function migrate(e){
     e.bou = a.includes('ぼう'); e.zou = a.includes('ぞう');
   }
   delete e.applicant;
+  if(e.apply_method === undefined) e.apply_method = '';
+  if(e.apply_method_name === undefined) e.apply_method_name = '';
   return e;
 }
 async function fetchSeed(){
@@ -825,7 +875,14 @@ function clearSyncConfig(){
 }
 
 // ══════════ FILTER UI ══════════
+function clearFilterGroup(g){
+  if(!filters[g]?.length) return;
+  filters[g] = [];
+  saveFilters(); buildPills(); render();
+}
 function buildPills(){
+  $('fclear-status').disabled = !filters.status.length;
+  $('fclear-who').disabled    = !filters.who.length;
   $('status-pills').innerHTML = STATUSES.map(s =>
     `<button class="pill p-${s.k}${filters.status.includes(s.v)?' on':''}" onclick="toggleStatus('${s.v}')">${s.v}</button>`).join('');
   $('who-pills').innerHTML = WHOS.map(w =>
@@ -859,7 +916,7 @@ function visible(){
     if(filters.who.length    && !filters.who.some(k => e[k])) return false;
     if(q){
       const hay = [e.shop,e.product,e.no,e.note,e.address,e.pickup_method,e.result_method,e.result_method_note,e.pickup_method_note,
-        e.bou?'ぼう':'', e.zou?'ぞう':'']
+        e.apply_method,e.apply_method_name, e.bou?'ぼう':'', e.zou?'ぞう':'']
         .filter(Boolean).join(' ').toLowerCase();
       if(!hay.includes(q)) return false;
     }
@@ -926,6 +983,8 @@ function cardHTML(e){
   const cd = d ? cdLabel(daysLeft(d.value)) : null;
   const meta = [];
   if(e.applied_at) meta.push(`<span>申込 ${esc(fmtDT(e.applied_at))}</span>`);
+  const src = e.apply_method_name || e.apply_method;
+  if(src) meta.push(`<span class="src-chip">${esc(src)}</span>`);
   if(e.no)  meta.push(`<span class="no-chip">No. ${esc(e.no)}</span>`);
   if(e.qty) meta.push(`<span>${esc(e.qty)}口</span>`);
   if(e.price) meta.push(`<span>${esc(yen(e.price*(e.qty||1)))}</span>`);
@@ -983,12 +1042,12 @@ function renderSummary(){
         <div class="kbox"><div class="n" style="color:var(--st-wait)">${cnt('抽選中')}</div><div class="l">抽選中</div></div>
         <div class="kbox"><div class="n" style="color:var(--st-win)">${wins}</div><div class="l">当選（受取済含む）</div></div>
         <div class="kbox"><div class="n" style="color:var(--st-lose)">${cnt('落選')}</div><div class="l">落選</div></div>
-        <div class="kbox"><div class="n">${rate===null?'—':rate+'%'}</div><div class="l">当選率</div></div>
+        <div class="kbox"><div class="n">${rate===null?'—':rate+'%'}</div><div class="l">当選率（確定分）</div></div>
         <div class="kbox"><div class="n" style="font-size:17px">${spend?yen(spend):'—'}</div><div class="l">当選分の金額</div></div>
       </div></div>
     </div>
     <div class="panel">
-      <div class="panel-h">申込者別</div>
+      <div class="panel-h">名義別</div>
       <div class="panel-b">${bars(WHOS.map(w => [w.label, entries.filter(e=>e[w.key]).length]))}</div>
     </div>
     <div class="panel">
@@ -1014,18 +1073,25 @@ function closeMenu(){ $('data-menu').classList.add('hidden'); }
 
 // ══════════ FORM ══════════
 function buildSegs(){
-  $('seg-who').innerHTML = WHOS.map(w=>
-    `<button type="button" class="seg g-${w.key}${formWho[w.key]?' on':''}" onclick="toggleFormWho('${w.key}')">${w.label} ${formWho[w.key]?'○':'−'}</button>`).join('');
+  $('seg-who').innerHTML =
+    `<button type="button" class="seg g-bou${formWho.bou?' on':''}" onclick="toggleFormWho('bou')">ぼう ${formWho.bou?'○':'−'}</button>`;
+  $('i-zou').checked = !!formWho.zou;
+  $('zou-check').classList.toggle('on', !!formWho.zou);
   $('seg-status').innerHTML = STATUSES.map(s=>
     `<button type="button" class="seg g-${s.k}${formStatus===s.v?' on':''}" onclick="pickStatus('${s.v}')">${s.v}</button>`).join('');
 }
 function toggleFormWho(k){ formWho[k] = !formWho[k]; buildSegs(); }
+function onZouChange(){ formWho.zou = $('i-zou').checked; buildSegs(); }
+function onApplyMethodChange(){
+  $('i-amethod-name').style.display = $('i-amethod').value ? '' : 'none';
+}
 function pickStatus(v){ formStatus = v; buildSegs(); }
 
 function refreshDatalists(){
   const uniq = f => [...new Set(entries.map(f).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ja'));
   $('dl-shops').innerHTML    = uniq(e=>e.shop).map(v=>`<option value="${esc(v)}">`).join('');
   $('dl-products').innerHTML = uniq(e=>e.product).map(v=>`<option value="${esc(v)}">`).join('');
+  $('dl-amethods').innerHTML = uniq(e=>e.apply_method_name).map(v=>`<option value="${esc(v)}">`).join('');
 }
 function syncOther(selId, etcId){
   const etc = $(etcId);
@@ -1047,6 +1113,8 @@ function openForm(id){
   $('form-title').textContent = e ? '抽選申込を編集' : '抽選申込を追加';
   $('i-shop').value    = e?.shop||'';
   $('i-product').value = e?.product||'';
+  $('i-amethod').value = e?.apply_method||'';
+  $('i-amethod-name').value = e?.apply_method_name||'';
   $('i-applied').value = e?.applied_at || (e?'':localNow());
   $('i-no').value      = e?.no||'';
   $('i-qty').value     = e?.qty ?? '';
@@ -1066,7 +1134,7 @@ function openForm(id){
   formWho    = e ? {bou:!!e.bou, zou:!!e.zou} : {bou:true, zou:false};
   formStatus = e?.status||'抽選中';
   buildSegs(); refreshDatalists();
-  syncOther('i-rmethod','i-rmethod-etc'); onPickupMethodChange(); updateTotalHint();
+  syncOther('i-rmethod','i-rmethod-etc'); onPickupMethodChange(); onApplyMethodChange(); updateTotalHint();
   $('modal-form').classList.remove('hidden');
   $('modal-form').querySelector('.mbody').scrollTop = 0;
 }
@@ -1081,12 +1149,14 @@ function saveForm(){
   if(rf && rt && rf > rt){ toast('結果発表期間の開始が終了より後になっています','err'); return; }
   const pf = $('i-pfrom').value, pt = $('i-pto').value;
   if(pf && pt && pf > pt){ toast('受取開始日時が受取期限より後になっています','err'); return; }
-  if(!formWho.bou && !formWho.zou){ toast('申込者を1人以上選択してください','err'); return; }
+  if(!formWho.bou && !formWho.zou){ toast('名義（ぼう／ぞう）のいずれかを選択してください','err'); return; }
 
   const now = new Date().toISOString();
   const data = {
     shop,
     product: $('i-product').value.trim(),
+    apply_method: $('i-amethod').value,
+    apply_method_name: $('i-amethod-name').value.trim(),
     applied_at: applied,
     no: $('i-no').value.trim(),
     qty:   $('i-qty').value   === '' ? null : Number($('i-qty').value),
@@ -1150,10 +1220,11 @@ function openDetail(id){
       <div class="fsec-t">申込情報</div>
       ${row('抽選申込日時', esc(fmtDT(e.applied_at)))}
       ${row('申込店舗', esc(e.shop))}
+      ${row('申込方法', esc([e.apply_method, e.apply_method_name && `（${e.apply_method_name}）`].filter(Boolean).join('')))}
       ${row('商品・弾名', esc(e.product))}
       ${row('No', e.no?`<span class="no-chip">${esc(e.no)}</span>`:'')}
       ${row('口数・金額', total||(e.qty?e.qty+'口':''))}
-      ${row('申込者', `<table class="whotbl"><tr>${WHOS.map(w=>`<th>${w.label}</th>`).join('')}</tr>`+
+      ${row('名義', `<table class="whotbl"><tr><th>ぼう</th><th>ぞう<small>（参考）</small></th></tr>`+
         `<tr>${WHOS.map(w=>`<td class="${e[w.key]?'yes':'no'}">${e[w.key]?'○':'−'}</td>`).join('')}</tr></table>`)}
     </div>
 
