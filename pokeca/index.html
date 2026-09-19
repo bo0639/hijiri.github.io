@@ -10,6 +10,12 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  /* ステータス別のカード枠（抽選中=ブルー／当選=金／落選・キャンセル=グレー／受取済=淡い金） */
+  --fr-wait:  linear-gradient(150deg,#a9d2f5 0%,#4a8fd8 45%,#1f57a0 100%);
+  --fr-win:   linear-gradient(150deg,#fff3b0 0%,#ffd447 40%,#e09a00 100%);
+  --fr-lose:  linear-gradient(150deg,#d9dde6 0%,#b9c0cf 60%,#98a1b3 100%);
+  --fr-done:  linear-gradient(150deg,#fbf2da 0%,#ecdcaa 50%,#c9b273 100%);
+  --fr-cancel:linear-gradient(150deg,#e6e8ec 0%,#ced2d9 60%,#b0b6c0 100%);
   /* card-back inspired palette */
   --navy-deep:#131c3f; --navy:#1b2559; --navy-lt:#2f3f8f; --navy-soft:#4557a8;
   --gold:#e8b923; --gold-lt:#f7d96b; --gold-dk:#a6800d;
@@ -147,13 +153,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .list{padding:2px 12px calc(96px + var(--safe-b));display:grid;grid-template-columns:1fr;gap:11px}
 .list .empty{grid-column:1/-1}
 @media(min-width:720px){.list{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}}
-.tcard{background:linear-gradient(150deg,var(--gold-lt) 0%,var(--gold) 45%,var(--gold-dk) 100%);
+.tcard{background:var(--fr-wait);
   padding:4px;border-radius:var(--r-lg);box-shadow:0 2px 8px var(--shadow);cursor:pointer;transition:transform .12s,box-shadow .18s;
   position:relative;overflow:hidden}
 .tcard:active{transform:scale(.985)}
 @media(hover:hover){.tcard:hover{box-shadow:0 7px 20px rgba(19,28,63,.2)}}
-.tcard.s-lose,.tcard.s-cancel{background:linear-gradient(150deg,#d9dde6,#b9c0cf 60%,#98a1b3);opacity:.86}
-.tcard.s-win{background:linear-gradient(150deg,#fff3b0,#ffd447 40%,#e09a00)}
+.tcard.s-wait{background:var(--fr-wait)}
+.tcard.s-win{background:var(--fr-win)}
+.tcard.s-lose{background:var(--fr-lose);opacity:.88}
+.tcard.s-done{background:var(--fr-done)}
+.tcard.s-cancel{background:var(--fr-cancel);opacity:.8}
 .tcard.s-win::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:var(--r-lg);
   background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);
   background-size:300% 100%;animation:holo 3.6s ease-in-out infinite}
@@ -278,9 +287,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .seg.on.g-zou{background:#b52a6d;border-color:#b52a6d}
 
 /* ── DETAIL ────────────────────────────────────────────── */
-.dhero{background:linear-gradient(150deg,var(--gold-lt),var(--gold) 50%,var(--gold-dk));padding:4px;border-radius:var(--r-lg);margin-bottom:12px}
-.dhero.s-win{background:linear-gradient(150deg,#fff3b0,#ffd447 40%,#e09a00)}
-.dhero.s-lose,.dhero.s-cancel{background:linear-gradient(150deg,#d9dde6,#b9c0cf 60%,#98a1b3)}
+.dhero{background:var(--fr-wait);padding:4px;border-radius:var(--r-lg);margin-bottom:12px}
+.dhero.s-wait{background:var(--fr-wait)}
+.dhero.s-win{background:var(--fr-win)}
+.dhero.s-lose{background:var(--fr-lose)}
+.dhero.s-done{background:var(--fr-done)}
+.dhero.s-cancel{background:var(--fr-cancel)}
 .dhero-in{background:#fff;border-radius:12px;padding:13px}
 .dhero-shop{font-size:18px;font-weight:900;line-height:1.3;word-break:break-word}
 .dhero-prod{font-size:13px;color:var(--navy-lt);font-weight:700;margin-top:3px;word-break:break-word}
