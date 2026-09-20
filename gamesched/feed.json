@@ -1,5 +1,845 @@
 {
-  "generated_at": "",
-  "items": [],
-  "status": []
+  "generated_at": "2026-09-20T09:44:25+09:00",
+  "items": [
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "アニメ モンスターストライク",
+      "url": "https://anime.monster-strike.com/",
+      "date": "2027-01-15",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "news",
+      "title": "【SD ガンダム ジージェネレーション エターナル】1.5周年 ロードマップ発表生配信",
+      "url": "https://www.youtube-nocookie.com/embed/Teuqv9M8Vr8?rel=0&autoplay=0&wmode=transparent;",
+      "date": "2027-01-05",
+      "time": "",
+      "source_label": "公式サイト",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "『ドラゴンクエストモンスターズ４ 枯れ木の国のビアンカ・フローラ』が 2026年12月3日(木)に発売決定＆本日より予約開始！",
+      "url": "https://www.dragonquest.jp/news/detail/4247/",
+      "date": "2026-12-03",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "東京シティ・フィルハーモニック管弦楽団による『ドラゴンクエストIII そして伝説へ…』のコンサートが、2026年11月15日（日）に埼玉県越谷市にて開催！",
+      "url": "https://www.dragonquest.jp/news/detail/4281/",
+      "date": "2026-11-15",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "『ドラゴンクエストのび～るモンスターズ』が小学館より10月30日（金）発売決定！",
+      "url": "https://www.dragonquest.jp/news/detail/4284/",
+      "date": "2026-10-30",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「7600万DL記念ログインスタンプ」実施中！9月25日(金)2:59まで",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8938&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-19",
+      "time": "02:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "球界一のオーナーを目指せ！イベント「稼げ！調子くんのオーナーライフ」開催！9月25日(金)12:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8914&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-18",
+      "time": "12:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "音から出会うモンスト。モンストのあの曲を演奏してみた！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=S6PD1hKB-xE",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「禁忌の獄」「禁忌の獄〜深淵〜」が9/21 12時より期間限定で登場！ イベント 2026.09.18 NEW",
+      "url": "https://www.monster-strike.com/news/20260918_3.html",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「グリーンファンタジー」9/21より開催！ イベント 2026.09.18 NEW",
+      "url": "https://www.monster-strike.com/news/20260918_2.html",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「STARLIGHT MIRAGE」9/19より開催！ イベント 2026.09.18 NEW",
+      "url": "https://www.monster-strike.com/news/20260918_1.html",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "LINEスタンプ「モンストPICK UP」シリーズに「エリス」が登場！ その他 2026.09.18 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260918_1.html",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「2026 Series2」選手が新登場！追加ポジションはSランク【先発】＆ Aランク【二塁手】！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8925&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「7600万DL記念福袋」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8916&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "自チーム新選手GETのビッグチャンス！「10連 超・自チームS狙い打ちスカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8934&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】平家物語、紅楼夢、マザーグース 使ってみた！貴重な組み合わせの4ギミック対応！強力な友情コンボも必見！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=6U6uDkjeyb8",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "空中界隈によるGRWM🏃#モンスト #モンフリ #空中界隈 #GRWM",
+      "url": "https://www.youtube.com/shorts/epujxDd88WI",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[9/17]新たな「超究極・傑」登場！「ホップ！ステップ！限定！ガチャ」開催！新イベントや新黎絶、MONST FREAK 2026の情報も！#とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/li8jvOLZrB4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[9/17]まもなくモンスト13周年！13周年記念クエストやFREAK開催情報、新超究極・傑、新イベント、新黎絶などモンストの最新情報を盛りだくさんでお届けします！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=k3Caw_jP5i4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "CHECK 超究極・傑クエスト（ララバイ）が9/18より出現！ イベント 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_5.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "CHECK 「ホップ！ステップ！限定！ガチャ」が9/19より開催！ イベント 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_4.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "新イベント「コード・ビブリア４～開かれし伝承～」9/18より開催！ イベント 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_7.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「紫式部」の獣神化・改が9/22に解禁！ アップデート 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_6.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "新黎絶クエスト（セレボラ）が9/26より初登場！「MONST FREAK 2026」でM4のステージも！ イベント 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_3.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "13周年記念クエスト（テンシュリー）が9/26より期間限定で登場！ イベント 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_2.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【もうすぐMONST FREAK 2026 開催記念！】「招待感謝バッジ」や「感謝の間」など9/18より盛りだくさんなキャンペーンを実施！ キャンペーン 2026.09.17 NEW",
+      "url": "https://www.monster-strike.com/news/20260917_1.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「MONST FREAK 2026 13th Anniversary Party」9/26、9/27にオンラインで開催決定！ イベント 2026.09.17 NEW 追加情報",
+      "url": "https://www.monster-strike.com/entertainment-news/20260917_1.html",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "イベント",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "（木）より「TOKYO GAME SHOW 2026」が開催！ スクウェア・エニックス特設サイトもオープンしています。",
+      "url": "https://www.dragonquest.jp/news/detail/4280/",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "news",
+      "title": "VIDEO 更新！",
+      "url": "https://gget.ggame.jp/jp/video/",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式サイト",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "無職転生×パワアドコラボCM【ルーデウス二度目の転生】篇",
+      "url": "https://www.youtube.com/watch?v=lGGpBPCmW_Y",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "無職転生×パワアドコラボCM【二度目の人生、二頭身から本気だす】篇",
+      "url": "https://www.youtube.com/watch?v=ZKvMF_DuTLU",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「プロスピA リーグ 2026シーズン オンライン予選」9月23日(水)14:59まで！！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8932&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-16",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンスト女子会第2弾！紫宮るなさん & 藍沢エマさんをゲストに迎え、黎絶クエストに挑戦だ！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=z76vkgbxwig",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "モンストWebショップで「au PAY」「d払い」が利用可能に！さらにモンパスが「Amazon Pay」で購入可能に Webショップ 2026.09.16 NEW",
+      "url": "https://www.monster-strike.com/news/20260916_1.html",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "ソフトウェアトークン／各種認証アプリのアプリ削除や機種変更を行う際のご注意(9/16)",
+      "url": "https://www.dragonquest.jp/news/detail/4282/",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦」第13回勝ち星ランキング開始！9月28日(月)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8911&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-14",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「第62回 最強決定戦 ～『セ・パ』タッグリーグ&12球団別リーグ～」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8857&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-14",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭】新限定キャラクター「サクリファイス」登場！【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/e7M-8rp2siI",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭登場！】サクリファイス SPECIAL MOVIE【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=3jcTEXSeLeg",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "『ドラゴンクエストウォーク』が2026年9月12日（土）で7周年を迎えました！",
+      "url": "https://www.dragonquest.jp/news/detail/4278/",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "引退・退団・移籍にともなう対応について：9月25日(金)予定",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8978&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-11",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "無料10連ガチャが日替わりで登場！「登場年ごとに10連！あの日巡りガチャ」を解説！",
+      "url": "https://www.youtube.com/shorts/53fn1K7V7nc",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：魔獣憑依 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/hjxv-dvH5fs",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：復讐代行 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/GDLYp901bjM",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス 使ってみた！新友情コンボ、新アビリティに注目！破界の星墓「ニギミタマの星墓」、「アヴァロンの星墓」で活躍！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=F1iuwBcY35w",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「ポイントで投票！第5回 ファンと創るモンストグッズ」が制作決定！モンストアにて投票受付開始！ グッズ 2026.09.10 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260910_1.html",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "news",
+      "title": "『トルネコの大冒険 不思議のダンジョン ちょっとステキなリマスター』が2026年9月10日（木）発売︕",
+      "url": "https://www.dragonquest.jp/news/detail/4276/",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "ドラクエ公式ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "リアルタイム対戦で意図しない打撃、投球の挙動が発生する(9月9日10:00追記)",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8921&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-09",
+      "time": "10:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "ダルビッシュ選手の選んだ珠玉の12選手が登場！ 2026ダルビッシュセレクション選手発表！【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=-ksz_M8XNRk",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026ダルビッシュセレクション開催記念特別企画！糸井嘉男の2026ダルセレ勝手に大予想！【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=o-KnNdRT-wI",
+      "date": "2026-09-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "2026年9月度「マンスリーパス」開催中！10月1日(木)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8912&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-01",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【重要】シルエットミキサーの実施について",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8944&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-08-28",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "CHECK 【まこと屋×モンスト】「まこと屋で旨さ運極！麺･獣神祭キャンペーン」を9/4より開催！ タイアップ 2026.08.27 NEW 追加情報",
+      "url": "https://www.monster-strike.com/entertainment-news/20260827_1.html",
+      "date": "2026-08-27",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "『パワプロアドベンチャーズ』4thシナリオ ブートレインアカデミー紹介",
+      "url": "https://www.youtube.com/watch?v=iRpne4N-gAI",
+      "date": "2026-08-26",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「モンストア出張所 in 吉備SA（上り線）」が9月17日（木）より期間限定で開催！ イベント 2026.08.20 NEW 追加情報",
+      "url": "https://www.monster-strike.com/entertainment-news/20260820_2.html",
+      "date": "2026-08-20",
+      "time": "",
+      "source_label": "イベント",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "～運極達成キャラクター限定～プレミアムキーホルダーが登場！ グッズ 2026.08.20 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260820_3.html",
+      "date": "2026-08-20",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "LINEスタンプ「モンストPICK UP」シリーズに「ジュゲム」が登場！ その他 2026.08.20 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260820_1.html",
+      "date": "2026-08-20",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026プロスピセレクション第3弾選手発表！プロスピA ニュース【スピニュース】",
+      "url": "https://www.youtube.com/watch?v=4laZugfQxTk",
+      "date": "2026-08-19",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "【ダルチャレ2026】GEMSTONE ダルビッシュチャレンジカップ 2026シーズン 決勝大会 #プロスピA",
+      "url": "https://www.youtube.com/watch?v=2749JXtYl_c",
+      "date": "2026-08-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "CHECK モンソニシティで大人気『無限の肉球』が東京・表参道でポップアップストアを開催！ モンソニ！ 2026.08.13 NEW",
+      "url": "https://monsoni.monster-strike.com/news/20260813_ev_01.html",
+      "date": "2026-08-13",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "モンストア5周年記念グッズを発売！Xのキャンペーンも実施！ グッズ 2026.08.06 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260806_1.html",
+      "date": "2026-08-06",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026プロスピセレクション選手発表！プロスピA ニュース【スピニュース】",
+      "url": "https://www.youtube.com/watch?v=H2XePoJRTNY",
+      "date": "2026-08-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "アサヒ飲料「ドデカミン」とモンストのコラボキャンペーンが7/21より開催！ タイアップ 2026.08.03 NEW",
+      "url": "https://www.asahiinryo.co.jp/entertainment/campaign/dodecamin/260721-260930/",
+      "date": "2026-08-03",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「モンストア ルーレットキャンペーン」を7/30より期間限定で実施！ グッズ 2026.07.30 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260730_1.html",
+      "date": "2026-07-30",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "【ロマン開花學園解説】ロマン全開！才能開花！【パワプロアプリ】",
+      "url": "https://www.youtube.com/watch?v=Ms1zfS7gSmo",
+      "date": "2026-07-30",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "行ってまえー！でホームランを打っていた糸井嘉男。パワーアピールでプロスピAの査定はどうなる！？ #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/ZUciQWTUMPQ",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "シーズン50HRも可能だった！？ナゴヤドームで31HRを記録した福留孝介のHRの打ち方とは #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/Xj9OJvTRgQs",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "相手のエースは調子のバロメーター！？対エース打率が高かった理由が明かされる #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/itu90VkGjYw",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！ イベント 2026.07.15 NEW",
+      "url": "https://www.monster-strike.com/entertainment-news/20260715_1.html",
+      "date": "2026-07-15",
+      "time": "",
+      "source_label": "イベント",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "news",
+      "title": "TITLES 更新！",
+      "url": "https://gget.ggame.jp/jp/titles/",
+      "date": "2026-06-30",
+      "time": "",
+      "source_label": "公式サイト",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "news",
+      "title": "DMM GAMES版公式サイト公開！",
+      "url": "https://gget.ggame.jp/jp/dmg/",
+      "date": "2026-06-24",
+      "time": "",
+      "source_label": "公式サイト",
+      "upcoming": false
+    }
+  ],
+  "status": [
+    {
+      "app": "monst",
+      "label": "モンスト / 公式YouTube（最新動画）",
+      "url": "https://www.youtube.com/channel/UCd9BXPj-KcMTh0HiB-Vlb8A",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "monst",
+      "label": "モンスト / 公式YouTube（配信予定）",
+      "url": "https://www.youtube.com/channel/UCd9BXPj-KcMTh0HiB-Vlb8A",
+      "ok": true,
+      "count": 0,
+      "error": ""
+    },
+    {
+      "app": "monst",
+      "label": "モンスト / ゲーム情報",
+      "url": "https://www.monster-strike.com/news/",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "monst",
+      "label": "モンスト / イベント",
+      "url": "https://www.monster-strike.com/event/",
+      "ok": true,
+      "count": 4,
+      "error": ""
+    },
+    {
+      "app": "monst",
+      "label": "モンスト / エンタメ情報",
+      "url": "https://www.monster-strike.com/entertainment-news/",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "smagro",
+      "label": "スマグロ / 公式YouTube",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "error": "@SquareEnixJP: HTTP Error 404: Not Found"
+    },
+    {
+      "app": "smagro",
+      "label": "スマグロ / お知らせ",
+      "url": "https://smashgrow.dragonquest.jp/news/",
+      "ok": false,
+      "count": 0,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "app": "smagro",
+      "label": "スマグロ / 公式サイト",
+      "url": "https://smashgrow.dragonquest.jp/",
+      "ok": true,
+      "count": 0,
+      "error": ""
+    },
+    {
+      "app": "smagro",
+      "label": "スマグロ / ドラクエ公式ニュース",
+      "url": "https://www.dragonquest.jp/news/",
+      "ok": true,
+      "count": 7,
+      "error": ""
+    },
+    {
+      "app": "ggene",
+      "label": "ジージェネ / 公式YouTube",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "error": "@BandaiNamcoEntertainmentJP: HTTP Error 404: Not Found"
+    },
+    {
+      "app": "ggene",
+      "label": "ジージェネ / ニュース",
+      "url": "https://gget.ggame.jp/jp/news/",
+      "ok": false,
+      "count": 0,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "app": "ggene",
+      "label": "ジージェネ / 公式サイト",
+      "url": "https://gget.ggame.jp/jp/",
+      "ok": true,
+      "count": 4,
+      "error": ""
+    },
+    {
+      "app": "prospi",
+      "label": "プロスピ / 公式YouTube（最新動画）",
+      "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "prospi",
+      "label": "プロスピ / 公式YouTube（配信予定）",
+      "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw",
+      "ok": true,
+      "count": 0,
+      "error": ""
+    },
+    {
+      "app": "prospi",
+      "label": "プロスピ / お知らせ",
+      "url": "https://prospia.konami.net/arb/main/news/index.php",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "prospi",
+      "label": "プロスピ / 公式サイト",
+      "url": "https://www.konami.com/games/prospi_a/",
+      "ok": true,
+      "count": 0,
+      "error": ""
+    }
+  ]
 }
