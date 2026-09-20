@@ -1,56 +1,6 @@
 {
-  "generated_at": "2026-09-20T09:44:25+09:00",
+  "generated_at": "2026-09-20T09:47:48+09:00",
   "items": [
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "アニメ モンスターストライク",
-      "url": "https://anime.monster-strike.com/",
-      "date": "2027-01-15",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "news",
-      "title": "【SD ガンダム ジージェネレーション エターナル】1.5周年 ロードマップ発表生配信",
-      "url": "https://www.youtube-nocookie.com/embed/Teuqv9M8Vr8?rel=0&autoplay=0&wmode=transparent;",
-      "date": "2027-01-05",
-      "time": "",
-      "source_label": "公式サイト",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "news",
-      "title": "『ドラゴンクエストモンスターズ４ 枯れ木の国のビアンカ・フローラ』が 2026年12月3日(木)に発売決定＆本日より予約開始！",
-      "url": "https://www.dragonquest.jp/news/detail/4247/",
-      "date": "2026-12-03",
-      "time": "",
-      "source_label": "ドラクエ公式ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "news",
-      "title": "東京シティ・フィルハーモニック管弦楽団による『ドラゴンクエストIII そして伝説へ…』のコンサートが、2026年11月15日（日）に埼玉県越谷市にて開催！",
-      "url": "https://www.dragonquest.jp/news/detail/4281/",
-      "date": "2026-11-15",
-      "time": "",
-      "source_label": "ドラクエ公式ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "news",
-      "title": "『ドラゴンクエストのび～るモンスターズ』が小学館より10月30日（金）発売決定！",
-      "url": "https://www.dragonquest.jp/news/detail/4284/",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "ドラクエ公式ニュース",
-      "upcoming": false
-    },
     {
       "app": "prospi",
       "kind": "news",
@@ -84,7 +34,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「禁忌の獄」「禁忌の獄〜深淵〜」が9/21 12時より期間限定で登場！ イベント 2026.09.18 NEW",
+      "title": "「禁忌の獄」「禁忌の獄〜深淵〜」が9/21 12時より期間限定で登場！",
       "url": "https://www.monster-strike.com/news/20260918_3.html",
       "date": "2026-09-18",
       "time": "",
@@ -94,7 +44,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "ガチャ「グリーンファンタジー」9/21より開催！ イベント 2026.09.18 NEW",
+      "title": "ガチャ「グリーンファンタジー」9/21より開催！",
       "url": "https://www.monster-strike.com/news/20260918_2.html",
       "date": "2026-09-18",
       "time": "",
@@ -104,7 +54,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "ガチャ「STARLIGHT MIRAGE」9/19より開催！ イベント 2026.09.18 NEW",
+      "title": "ガチャ「STARLIGHT MIRAGE」9/19より開催！",
       "url": "https://www.monster-strike.com/news/20260918_1.html",
       "date": "2026-09-18",
       "time": "",
@@ -114,11 +64,31 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "LINEスタンプ「モンストPICK UP」シリーズに「エリス」が登場！ その他 2026.09.18 NEW",
+      "title": "LINEスタンプ「モンストPICK UP」シリーズに「エリス」が登場！",
       "url": "https://www.monster-strike.com/entertainment-news/20260918_1.html",
       "date": "2026-09-18",
       "time": "",
       "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第31話｜ガンダムX【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=IQmDFVf3y20",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "『機動戦士ガンダム 光のともだち』冒頭映像｜【実物大νガンダム立像 新作壁面映像】9月19日(土)上映開始！",
+      "url": "https://www.youtube.com/watch?v=Q2r02L38US8",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -194,7 +164,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "CHECK 超究極・傑クエスト（ララバイ）が9/18より出現！ イベント 2026.09.17 NEW",
+      "title": "超究極・傑クエスト（ララバイ）が9/18より出現！",
       "url": "https://www.monster-strike.com/news/20260917_5.html",
       "date": "2026-09-17",
       "time": "",
@@ -204,7 +174,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "CHECK 「ホップ！ステップ！限定！ガチャ」が9/19より開催！ イベント 2026.09.17 NEW",
+      "title": "「ホップ！ステップ！限定！ガチャ」が9/19より開催！",
       "url": "https://www.monster-strike.com/news/20260917_4.html",
       "date": "2026-09-17",
       "time": "",
@@ -214,7 +184,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "新イベント「コード・ビブリア４～開かれし伝承～」9/18より開催！ イベント 2026.09.17 NEW",
+      "title": "新イベント「コード・ビブリア４～開かれし伝承～」9/18より開催！",
       "url": "https://www.monster-strike.com/news/20260917_7.html",
       "date": "2026-09-17",
       "time": "",
@@ -224,7 +194,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「紫式部」の獣神化・改が9/22に解禁！ アップデート 2026.09.17 NEW",
+      "title": "「紫式部」の獣神化・改が9/22に解禁！",
       "url": "https://www.monster-strike.com/news/20260917_6.html",
       "date": "2026-09-17",
       "time": "",
@@ -234,7 +204,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "新黎絶クエスト（セレボラ）が9/26より初登場！「MONST FREAK 2026」でM4のステージも！ イベント 2026.09.17 NEW",
+      "title": "新黎絶クエスト（セレボラ）が9/26より初登場！「MONST FREAK 2026」でM4のステージも！",
       "url": "https://www.monster-strike.com/news/20260917_3.html",
       "date": "2026-09-17",
       "time": "",
@@ -244,7 +214,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "13周年記念クエスト（テンシュリー）が9/26より期間限定で登場！ イベント 2026.09.17 NEW",
+      "title": "13周年記念クエスト（テンシュリー）が9/26より期間限定で登場！",
       "url": "https://www.monster-strike.com/news/20260917_2.html",
       "date": "2026-09-17",
       "time": "",
@@ -254,7 +224,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "【もうすぐMONST FREAK 2026 開催記念！】「招待感謝バッジ」や「感謝の間」など9/18より盛りだくさんなキャンペーンを実施！ キャンペーン 2026.09.17 NEW",
+      "title": "【もうすぐMONST FREAK 2026 開催記念！】「招待感謝バッジ」や「感謝の間」など9/18より盛りだくさんなキャンペーンを実施！",
       "url": "https://www.monster-strike.com/news/20260917_1.html",
       "date": "2026-09-17",
       "time": "",
@@ -272,13 +242,63 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "news",
-      "title": "（木）より「TOKYO GAME SHOW 2026」が開催！ スクウェア・エニックス特設サイトもオープンしています。",
-      "url": "https://www.dragonquest.jp/news/detail/4280/",
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第30話｜ガンダムAGE【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=68AEvu3hEkE",
       "date": "2026-09-17",
       "time": "",
-      "source_label": "ドラクエ公式ニュース",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "U.C. ENGAGEの今がわかる！ガンダムUCE 情報局#51",
+      "url": "https://www.youtube.com/watch?v=9oZFay6ZUQc",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第12話｜SDガンダム三国伝【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=dWVgLPQqeus",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "PHASE-25｜SEED DESTINY【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=8mHa5XuVY0g",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第32話｜ガンダムAGE【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=6HL0h4DXCMw",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第41話｜Vガンダム【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=d_QP1AysZgU",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -288,7 +308,7 @@
       "url": "https://gget.ggame.jp/jp/video/",
       "date": "2026-09-17",
       "time": "",
-      "source_label": "公式サイト",
+      "source_label": "ニュース",
       "upcoming": false
     },
     {
@@ -334,7 +354,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "モンストWebショップで「au PAY」「d払い」が利用可能に！さらにモンパスが「Amazon Pay」で購入可能に Webショップ 2026.09.16 NEW",
+      "title": "モンストWebショップで「au PAY」「d払い」が利用可能に！さらにモンパスが「Amazon Pay」で購入可能に Webショップ",
       "url": "https://www.monster-strike.com/news/20260916_1.html",
       "date": "2026-09-16",
       "time": "",
@@ -342,13 +362,33 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "news",
-      "title": "ソフトウェアトークン／各種認証アプリのアプリ削除や機種変更を行う際のご注意(9/16)",
-      "url": "https://www.dragonquest.jp/news/detail/4282/",
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "PHASE-23｜SEED DESTINY【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=IeG8ZT_bAa0",
       "date": "2026-09-16",
       "time": "",
-      "source_label": "ドラクエ公式ニュース",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "『機動戦士ガンダム00F』ジージェネエターナル PLAY to WATCH‼【SDガンダム ジージェネレーション エターナル】",
+      "url": "https://www.youtube.com/watch?v=KALihpt22oA",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第10話｜SDガンダム三国伝【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=Nx-Do4p_hTg",
+      "date": "2026-09-15",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -359,6 +399,16 @@
       "date": "2026-09-14",
       "time": "14:59",
       "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "第13話｜ガンダムΖΖ【ガンチャン】",
+      "url": "https://www.youtube.com/watch?v=pKiTrPbLBzU",
+      "date": "2026-09-14",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -392,13 +442,13 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
+      "app": "monst",
       "kind": "news",
-      "title": "『ドラゴンクエストウォーク』が2026年9月12日（土）で7周年を迎えました！",
-      "url": "https://www.dragonquest.jp/news/detail/4278/",
-      "date": "2026-09-12",
+      "title": "期間限定イベント「未開の幻洞」が9/14より登場！",
+      "url": "https://www.monster-strike.com/news/20260911_3.html",
+      "date": "2026-09-11",
       "time": "",
-      "source_label": "ドラクエ公式ニュース",
+      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -454,21 +504,11 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「ポイントで投票！第5回 ファンと創るモンストグッズ」が制作決定！モンストアにて投票受付開始！ グッズ 2026.09.10 NEW",
+      "title": "「ポイントで投票！第5回 ファンと創るモンストグッズ」が制作決定！モンストアにて投票受付開始！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260910_1.html",
       "date": "2026-09-10",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "news",
-      "title": "『トルネコの大冒険 不思議のダンジョン ちょっとステキなリマスター』が2026年9月10日（木）発売︕",
-      "url": "https://www.dragonquest.jp/news/detail/4276/",
-      "date": "2026-09-10",
-      "time": "",
-      "source_label": "ドラクエ公式ニュース",
       "upcoming": false
     },
     {
@@ -479,6 +519,26 @@
       "date": "2026-09-09",
       "time": "10:00",
       "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#010 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=VCUZbDw7gU8",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #010 | News & Updates",
+      "url": "https://www.youtube.com/watch?v=F5f23fJSY7Q",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -524,7 +584,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "CHECK 【まこと屋×モンスト】「まこと屋で旨さ運極！麺･獣神祭キャンペーン」を9/4より開催！ タイアップ 2026.08.27 NEW 追加情報",
+      "title": "【まこと屋×モンスト】「まこと屋で旨さ運極！麺･獣神祭キャンペーン」を9/4より開催！ タイアップ 2026.08.27 NEW 追加情報",
       "url": "https://www.monster-strike.com/entertainment-news/20260827_1.html",
       "date": "2026-08-27",
       "time": "",
@@ -554,7 +614,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "～運極達成キャラクター限定～プレミアムキーホルダーが登場！ グッズ 2026.08.20 NEW",
+      "title": "～運極達成キャラクター限定～プレミアムキーホルダーが登場！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260820_3.html",
       "date": "2026-08-20",
       "time": "",
@@ -564,7 +624,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "LINEスタンプ「モンストPICK UP」シリーズに「ジュゲム」が登場！ その他 2026.08.20 NEW",
+      "title": "LINEスタンプ「モンストPICK UP」シリーズに「ジュゲム」が登場！",
       "url": "https://www.monster-strike.com/entertainment-news/20260820_1.html",
       "date": "2026-08-20",
       "time": "",
@@ -582,6 +642,26 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#009 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=n-96qNgbDdU",
+      "date": "2026-08-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #009 | News & Updates",
+      "url": "https://www.youtube.com/watch?v=pJws-dol5lE",
+      "date": "2026-08-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
       "app": "prospi",
       "kind": "youtube",
       "title": "【ダルチャレ2026】GEMSTONE ダルビッシュチャレンジカップ 2026シーズン 決勝大会 #プロスピA",
@@ -594,7 +674,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "CHECK モンソニシティで大人気『無限の肉球』が東京・表参道でポップアップストアを開催！ モンソニ！ 2026.08.13 NEW",
+      "title": "モンソニシティで大人気『無限の肉球』が東京・表参道でポップアップストアを開催！ モンソニ！",
       "url": "https://monsoni.monster-strike.com/news/20260813_ev_01.html",
       "date": "2026-08-13",
       "time": "",
@@ -604,7 +684,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "モンストア5周年記念グッズを発売！Xのキャンペーンも実施！ グッズ 2026.08.06 NEW",
+      "title": "モンストア5周年記念グッズを発売！Xのキャンペーンも実施！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260806_1.html",
       "date": "2026-08-06",
       "time": "",
@@ -624,7 +704,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "アサヒ飲料「ドデカミン」とモンストのコラボキャンペーンが7/21より開催！ タイアップ 2026.08.03 NEW",
+      "title": "アサヒ飲料「ドデカミン」とモンストのコラボキャンペーンが7/21より開催！ タイアップ",
       "url": "https://www.asahiinryo.co.jp/entertainment/campaign/dodecamin/260721-260930/",
       "date": "2026-08-03",
       "time": "",
@@ -632,9 +712,29 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#008 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=dN0XujknK9Q",
+      "date": "2026-08-03",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #008  | News & Updates",
+      "url": "https://www.youtube.com/watch?v=oEiqQuN-71o",
+      "date": "2026-08-03",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "news",
-      "title": "「モンストア ルーレットキャンペーン」を7/30より期間限定で実施！ グッズ 2026.07.30 NEW",
+      "title": "「モンストア ルーレットキャンペーン」を7/30より期間限定で実施！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260730_1.html",
       "date": "2026-07-30",
       "time": "",
@@ -649,6 +749,36 @@
       "date": "2026-07-30",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#007 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=jE3IpqDEAMY",
+      "date": "2026-07-20",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #007  | News & Updates",
+      "url": "https://www.youtube.com/watch?v=5I2kFNwjP4w",
+      "date": "2026-07-20",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "LINEスタンプ「モンストPICK UP」シリーズに「ニケ」が登場！",
+      "url": "https://www.monster-strike.com/entertainment-news/20260717_1.html",
+      "date": "2026-07-17",
+      "time": "",
+      "source_label": "エンタメ情報",
       "upcoming": false
     },
     {
@@ -684,11 +814,31 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！ イベント 2026.07.15 NEW",
+      "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！",
       "url": "https://www.monster-strike.com/entertainment-news/20260715_1.html",
       "date": "2026-07-15",
       "time": "",
       "source_label": "イベント",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#006 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=GIUQg3_b_Fk",
+      "date": "2026-07-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #006 | News & Updates",
+      "url": "https://www.youtube.com/watch?v=EA6Co09FRGA",
+      "date": "2026-07-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -698,7 +848,7 @@
       "url": "https://gget.ggame.jp/jp/titles/",
       "date": "2026-06-30",
       "time": "",
-      "source_label": "公式サイト",
+      "source_label": "ニュース",
       "upcoming": false
     },
     {
@@ -708,7 +858,27 @@
       "url": "https://gget.ggame.jp/jp/dmg/",
       "date": "2026-06-24",
       "time": "",
-      "source_label": "公式サイト",
+      "source_label": "ニュース",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#005 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=Jt9X4UKLz3Q",
+      "date": "2026-06-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "DQSG Classified Report #005  | News & Updates",
+      "url": "https://www.youtube.com/watch?v=gWpnmBtyMZo",
+      "date": "2026-06-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     }
   ],
@@ -742,7 +912,7 @@
       "label": "モンスト / イベント",
       "url": "https://www.monster-strike.com/event/",
       "ok": true,
-      "count": 4,
+      "count": 3,
       "error": ""
     },
     {
@@ -755,23 +925,23 @@
     },
     {
       "app": "smagro",
-      "label": "スマグロ / 公式YouTube",
-      "url": "",
-      "ok": false,
+      "label": "スマグロ / 公式YouTube（最新動画）",
+      "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "smagro",
+      "label": "スマグロ / 公式YouTube（配信予定）",
+      "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
+      "ok": true,
       "count": 0,
-      "error": "@SquareEnixJP: HTTP Error 404: Not Found"
+      "error": ""
     },
     {
       "app": "smagro",
       "label": "スマグロ / お知らせ",
-      "url": "https://smashgrow.dragonquest.jp/news/",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "app": "smagro",
-      "label": "スマグロ / 公式サイト",
       "url": "https://smashgrow.dragonquest.jp/",
       "ok": true,
       "count": 0,
@@ -782,31 +952,31 @@
       "label": "スマグロ / ドラクエ公式ニュース",
       "url": "https://www.dragonquest.jp/news/",
       "ok": true,
-      "count": 7,
+      "count": 0,
       "error": ""
     },
     {
       "app": "ggene",
-      "label": "ジージェネ / 公式YouTube",
-      "url": "",
-      "ok": false,
+      "label": "ジージェネ / 公式YouTube（最新動画）",
+      "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
+      "ok": true,
+      "count": 12,
+      "error": ""
+    },
+    {
+      "app": "ggene",
+      "label": "ジージェネ / 公式YouTube（配信予定）",
+      "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
+      "ok": true,
       "count": 0,
-      "error": "@BandaiNamcoEntertainmentJP: HTTP Error 404: Not Found"
+      "error": ""
     },
     {
       "app": "ggene",
       "label": "ジージェネ / ニュース",
-      "url": "https://gget.ggame.jp/jp/news/",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "app": "ggene",
-      "label": "ジージェネ / 公式サイト",
       "url": "https://gget.ggame.jp/jp/",
       "ok": true,
-      "count": 4,
+      "count": 3,
       "error": ""
     },
     {
@@ -831,14 +1001,6 @@
       "url": "https://prospia.konami.net/arb/main/news/index.php",
       "ok": true,
       "count": 12,
-      "error": ""
-    },
-    {
-      "app": "prospi",
-      "label": "プロスピ / 公式サイト",
-      "url": "https://www.konami.com/games/prospi_a/",
-      "ok": true,
-      "count": 0,
       "error": ""
     }
   ]
