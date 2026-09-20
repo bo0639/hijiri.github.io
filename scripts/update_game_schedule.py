@@ -35,6 +35,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 TIMEOUT = 25
 MAX_ITEMS_PER_SOURCE = 12
+YT_PAUSE = 3                  # YouTubeへの連続アクセスを避けるための待ち時間（秒）
 NEWS_KEEP_DAYS = 120          # これより古い見出しは捨てる
 FUTURE_LIMIT_DAYS = 400       # 明らかに誤抽出の未来日付を弾く
 NEWS_FUTURE_DAYS = 30         # 一覧の掲載日としてありえない未来日付を弾く
@@ -554,6 +555,7 @@ def collect() -> dict:
             channel_id, resolve_error = resolve_channel_id(yt.get("handles") or [])
         yt_match = re.compile(yt["match"]) if yt.get("match") else None
         if channel_id:
+            time.sleep(YT_PAUSE)
             for label, fn in (("公式YouTube（最新動画）", youtube_feed),
                               ("公式YouTube（配信予定）", youtube_upcoming)):
                 note = ""

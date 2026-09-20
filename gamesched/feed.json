@@ -482,6 +482,17 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "音から出会うモンスト。モンストのあの曲を演奏してみた！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=S6PD1hKB-xE",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "ggene",
       "kind": "guide",
       "title": "「機動戦士ガンダムOOFイベント」が開催しました。イベント限定のユニットやキャラが入手できるため、イベント期間中に忘れずに入手しておきましょう。",
@@ -632,6 +643,50 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】平家物語、紅楼夢、マザーグース 使ってみた！貴重な組み合わせの4ギミック対応！強力な友情コンボも必見！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=6U6uDkjeyb8",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "空中界隈によるGRWM🏃#モンスト #モンフリ #空中界隈 #GRWM",
+      "url": "https://www.youtube.com/shorts/epujxDd88WI",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[9/17]新たな「超究極・傑」登場！「ホップ！ステップ！限定！ガチャ」開催！新イベントや新黎絶、MONST FREAK 2026の情報も！#とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/li8jvOLZrB4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[9/17]まもなくモンスト13周年！13周年記念クエストやFREAK開催情報、新超究極・傑、新イベント、新黎絶などモンストの最新情報を盛りだくさんでお届けします！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=k3Caw_jP5i4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "prospi",
       "kind": "guide",
       "title": "ピースをねらえ 2023年 09/16 15:00 〜 09/20 14:59",
@@ -670,6 +725,28 @@
       "time": "",
       "source_label": "ゲーム情報",
       "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンスト女子会第2弾！紫宮るなさん & 藍沢エマさんをゲストに迎え、黎絶クエストに挑戦だ！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=z76vkgbxwig",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "『機動戦士ガンダム00F』ジージェネエターナル PLAY to WATCH‼【SDガンダム ジージェネレーション エターナル】",
+      "url": "https://www.youtube.com/watch?v=KALihpt22oA",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "prospi",
@@ -733,6 +810,28 @@
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭】新限定キャラクター「サクリファイス」登場！【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/e7M-8rp2siI",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭登場！】サクリファイス SPECIAL MOVIE【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=3jcTEXSeLeg",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
       "kind": "news",
       "title": "期間限定イベント「未開の幻洞」が9/14より登場！",
       "url": "https://www.monster-strike.com/news/20260911_3.html",
@@ -770,6 +869,50 @@
       "time": "",
       "source_label": "Game8 モンストニュース速報",
       "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "無料10連ガチャが日替わりで登場！「登場年ごとに10連！あの日巡りガチャ」を解説！",
+      "url": "https://www.youtube.com/shorts/53fn1K7V7nc",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：魔獣憑依 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/hjxv-dvH5fs",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：復讐代行 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/GDLYp901bjM",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス 使ってみた！新友情コンボ、新アビリティに注目！破界の星墓「ニギミタマの星墓」、「アヴァロンの星墓」で活躍！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=F1iuwBcY35w",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "prospi",
@@ -852,6 +995,28 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#010 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=VCUZbDw7gU8",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "ダルビッシュ選手の選んだ珠玉の12選手が登場！ 2026ダルビッシュセレクション選手発表！【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=-ksz_M8XNRk",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "prospi",
       "kind": "guide",
       "title": "プロスピラビリンス 2023年 09/06 15:00 〜 09/11 14:59",
@@ -860,6 +1025,17 @@
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
       "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026ダルビッシュセレクション開催記念特別企画！糸井嘉男の2026ダルセレ勝手に大予想！【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=o-KnNdRT-wI",
+      "date": "2026-09-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "prospi",
@@ -1012,6 +1188,17 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026プロスピセレクション第3弾選手発表！プロスピA ニュース【スピニュース】",
+      "url": "https://www.youtube.com/watch?v=4laZugfQxTk",
+      "date": "2026-08-19",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "smagro",
       "kind": "guide",
       "title": "夏イベント「スマグロサマー2026 波打ち際のスイカパニック！」が2026/8/18(火)12:00より開催されます。イベントを進めてスイカ料理を作り、イベント限定冒険スキルを解放して戦闘を有利に進めることが可能です。",
@@ -1040,6 +1227,28 @@
       "time": "11:59",
       "source_label": "Game8 イベント最新情報",
       "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#009 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=n-96qNgbDdU",
+      "date": "2026-08-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "【ダルチャレ2026】GEMSTONE ダルビッシュチャレンジカップ 2026シーズン 決勝大会 #プロスピA",
+      "url": "https://www.youtube.com/watch?v=2749JXtYl_c",
+      "date": "2026-08-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "prospi",
@@ -1122,6 +1331,17 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "2026プロスピセレクション選手発表！プロスピA ニュース【スピニュース】",
+      "url": "https://www.youtube.com/watch?v=H2XePoJRTNY",
+      "date": "2026-08-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "smagro",
       "kind": "guide",
       "title": "大魔王デスタムーア 2026/8/4(火)〜9/1(火)11:59",
@@ -1140,6 +1360,17 @@
       "time": "",
       "source_label": "エンタメ情報",
       "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#008 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=dN0XujknK9Q",
+      "date": "2026-08-03",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "monst",
@@ -1172,6 +1403,17 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#007 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=jE3IpqDEAMY",
+      "date": "2026-07-20",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "monst",
       "kind": "news",
       "title": "LINEスタンプ「モンストPICK UP」シリーズに「ニケ」が登場！",
@@ -1182,6 +1424,61 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "行ってまえー！でホームランを打っていた糸井嘉男。パワーアピールでプロスピAの査定はどうなる！？ #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/ZUciQWTUMPQ",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "シーズン50HRも可能だった！？ナゴヤドームで31HRを記録した福留孝介のHRの打ち方とは #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/Xj9OJvTRgQs",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "相手のエースは調子のバロメーター！？対エース打率が高かった理由が明かされる #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/itu90VkGjYw",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "スローイング58Dは低すぎ！？衝撃の12pt UPで新・糸井嘉男がプロスピAに登場 #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/247d-HbnyI8",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "福留孝介・糸井嘉男の新能力公開！ 福留×糸井 ホンネ！俺の実力話しますSP 後編【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=sX8nl6eCua0",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
       "app": "monst",
       "kind": "news",
       "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！",
@@ -1190,6 +1487,28 @@
       "time": "",
       "source_label": "イベント",
       "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "トーク内容を基に能力アップ！？ 福留×糸井 ホンネ！俺の実力話しますSP 前編【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=QakGxA8TR_s",
+      "date": "2026-07-15",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#006 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=GIUQg3_b_Fk",
+      "date": "2026-07-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     },
     {
       "app": "ggene",
@@ -1210,6 +1529,39 @@
       "time": "",
       "source_label": "ニュース",
       "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#005 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=Jt9X4UKLz3Q",
+      "date": "2026-06-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#004 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=3RqxiHILXpg",
+      "date": "2026-06-08",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#003  『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=Wd92JT5sljo",
+      "date": "2026-05-26",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false,
+      "stale": true
     }
   ],
   "status": [
@@ -1219,7 +1571,8 @@
       "url": "https://www.youtube.com/channel/UCd9BXPj-KcMTh0HiB-Vlb8A",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
+      "kept": 12
     },
     {
       "app": "monst",
@@ -1291,7 +1644,8 @@
       "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
+      "kept": 8
     },
     {
       "app": "smagro",
@@ -1347,7 +1701,8 @@
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
+      "kept": 1
     },
     {
       "app": "ggene",
@@ -1395,7 +1750,8 @@
       "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
+      "kept": 11
     },
     {
       "app": "prospi",
