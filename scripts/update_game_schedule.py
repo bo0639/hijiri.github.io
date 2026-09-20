@@ -161,18 +161,20 @@ def resolve_channel_id(handles: list[str]) -> tuple[str, str]:
     return "", last_err
 
 
-def youtube_feed(channel_id: str, app_key: str) -> list[dict]:
+def youtube_feed(channel_id: str, app_key: str, match: "re.Pattern | None" = None) -> list[dict]:
     url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
     body = fetch(url, accept="application/atom+xml")
     root = ET.fromstring(body)
     ns = {"a": "http://www.w3.org/2005/Atom", "m": "http://search.yahoo.com/mrss/"}
     items = []
-    for entry in root.findall("a:entry", ns)[:MAX_ITEMS_PER_SOURCE]:
+    for entry in root.findall("a:entry", ns):
+        if len(items) >= MAX_ITEMS_PER_SOURCE:
+            break
         title = (entry.findtext("a:title", default="", namespaces=ns) or "").strip()
         link_el = entry.find("a:link", ns)
         link = link_el.get("href") if link_el is not None else ""
         published = (entry.findtext("a:published", default="", namespaces=ns) or "")[:19]
-        if not title or not link:
+        if not title or not link or (match and not match.search(title)):
             continue
         items.append({
             "app": app_key,
@@ -199,7 +201,7 @@ def _walk(node, found: list):
             _walk(value, found)
 
 
-def youtube_upcoming(channel_id: str, app_key: str) -> list[dict]:
+def youtube_upcoming(channel_id: str, app_key: str, match: "re.Pattern | None" = None) -> list[dict]:
     body = fetch(f"https://www.youtube.com/channel/{channel_id}/streams")
     m = re.search(r"ytInitialData\s*=\s*(\{.*?\})\s*;\s*</script>", body, re.S)
     if not m:
@@ -224,7 +226,7 @@ def youtube_upcoming(channel_id: str, app_key: str) -> list[dict]:
             if runs:
                 title = runs[0].get("text", "")
             title = title or title_node.get("simpleText", "")
-        if not start or not title:
+        if not start or not title or (match and not match.search(title)):
             continue
         try:
             when = dt.datetime.fromtimestamp(int(start), JST)
@@ -365,11 +367,12 @@ def collect() -> dict:
         resolve_error = ""
         if not channel_id:
             channel_id, resolve_error = resolve_channel_id(yt.get("handles") or [])
+        yt_match = re.compile(yt["match"]) if yt.get("match") else None
         if channel_id:
             for label, fn in (("公式YouTube（最新動画）", youtube_feed),
                               ("公式YouTube（配信予定）", youtube_upcoming)):
                 try:
-                    got = fn(channel_id, key)
+                    got = fn(channel_id, key, yt_match)
                     items.extend(got)
                     status.append({"app": key, "label": f"{short} / {label}",
                                    "url": f"https://www.youtube.com/channel/{channel_id}",
