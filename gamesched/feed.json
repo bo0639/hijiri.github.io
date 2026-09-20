@@ -1,194 +1,44 @@
 {
-  "generated_at": "2026-09-20T10:26:13+09:00",
+  "generated_at": "2026-09-20T10:28:12+09:00",
   "items": [
     {
-      "app": "prospi",
+      "app": "ggene",
       "kind": "guide",
-      "title": "〜03月05日 スカウティングナイン",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-02-27",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
+      "title": "ポケットの中の戦争イベント 【 開催期間 】 2025/12/24(水)12:00 〜 2026/1/9(金)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-12-24",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "〜03月05日 再臨OBセレクション セレクトガチャ",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-02-27",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
+      "title": "俺の球場飯 2023年 12/22 15:00 〜 12/29 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-12-22",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
-      "app": "prospi",
+      "app": "ggene",
       "kind": "guide",
-      "title": "〜02月27日 必勝アリーナ",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-02-20",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
+      "title": "大規模攻略戦イベントvol.1 【 開催期間 】 2025/12/08(月)12:00 〜 12/24(水)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-12-08",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
-      "app": "prospi",
+      "app": "ggene",
       "kind": "guide",
-      "title": "〜02月27日 OBセレクション 3ステップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-02-20",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月20日 スペシャルミッション",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-02-17",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月20日 チャレンジスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-02-16",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月19日 プロスピコロシアム",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-02-13",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月20日 DL記念10連福袋 グレードアップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-02-13",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月13日 育星ストリート",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-02-06",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月13日 ベストナイン第3弾 新選手一本釣りスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-02-06",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月06日 ベースボールマネージャー",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-01-30",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜02月06日 ベストナイン第2弾 ベストナイン第3弾 自チームOB狙い打ち グレードアップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-01-30",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月30日 バッティングトラベラー",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-01-23",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月30日 OBセレクション 戦力強化スカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-01-23",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月23日 オーナーライフ",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-01-16",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月23日 超プロセレクション 超自チームS狙い打ち",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-01-16",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月16日 プロスピパーク",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-01-09",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月16日 再臨！WSセレクション グレードアップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2027-01-09",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "〜01月09日 ホームランダービー",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2027-01-02",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
+      "title": "変革者たち 【 開催期間 】 2025/11/30(日)12:00 〜 2026/5/31(日)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-11-30",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -202,33 +52,33 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
+      "app": "ggene",
       "kind": "guide",
-      "title": "シーズン5ステージ1 開催期間 10/18(日) 11:59 まで 弱点 炎 風",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-18",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "スーパーまものラッシュシーズン5が10月18日まで開催中です。期間中にハイスコアを目指して「スーパーまものラッシュメダル」を集め、 交換所 で豪華アイテムを手に入れましょう。",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-18",
-      "time": "",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "シーズン5ステージ③ 10/6(火) 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-06",
+      "title": "ブルーディスティニーイベント 【 開催期間 】 2025/11/11(火)12:00 〜 11/30(日)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-11-11",
       "time": "12:00",
-      "source_label": "GameWith イベント一覧",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ルーレットヒッター 2023年 10/13 15:00 〜 10/16 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-10-13",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "0083スターダストメモリーイベント第2弾 【 開催期間 】 2025/10/10(金)12:00 〜 10/31(金)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-10",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -424,6 +274,16 @@
     {
       "app": "ggene",
       "kind": "guide",
+      "title": "ハーフアニバーサリーイベント 【 開催期間 】 2025/9/24(水)12:00 〜 10/31(金)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-09-24",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
       "title": "放送日 9/23(水)20:00~",
       "url": "https://gamewith.jp/ggene-eternal/519980",
       "date": "2026-09-23",
@@ -475,6 +335,36 @@
       "app": "smagro",
       "kind": "guide",
       "title": "マリンスライム 開催期間 9/22(火) 11:59 まで 弱点 風 氷 主な報酬 マリンスライム",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-09-22",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スイカ防衛戦 開催期間 9/22(火) 11:59 まで 弱点 風 炎 氷 主な報酬 目隠しおおきづち",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-09-22",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "キングスイカ岩 開催期間 9/22(火) 11:59 まで 弱点 風 主な報酬 キングスイカ岩",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-09-22",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "開催期間 開催中〜9/22(火) 11:59",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
       "date": "2026-09-22",
       "time": "11:59",
@@ -624,7 +514,7 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "〜09月25日 オーナーライフ",
+      "title": "オーナーライフ",
       "url": "https://game8.jp/prospi_a/754177",
       "date": "2026-09-18",
       "time": "",
@@ -644,7 +534,7 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "〜09月25日 ダウンロード記念福袋【9月】 超自チームS狙い打ち",
+      "title": "ダウンロード記念福袋【9月】 超自チームS狙い打ち",
       "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-09-18",
       "time": "",
@@ -813,12 +703,32 @@
     },
     {
       "app": "prospi",
+      "kind": "guide",
+      "title": "ピースをねらえ 2023年 09/16 15:00 〜 09/20 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-09-16",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
       "kind": "news",
       "title": "「プロスピA リーグ 2026シーズン オンライン予選」9月23日(水)14:59まで！！",
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8932&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-09-16",
       "time": "14:59",
       "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "鉄血のオルフェンズ 月鋼イベント 【 開催期間 】 2025/9/16(火)12:00 〜 9/30(火)11:59",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-09-16",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -843,6 +753,16 @@
     },
     {
       "app": "prospi",
+      "kind": "guide",
+      "title": "ファンレターミッション",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2026-09-15",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
       "kind": "news",
       "title": "「リアルタイム対戦」第13回勝ち星ランキング開始！9月28日(月)14:59まで！",
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8911&dpid=&user_id1=&user_id2=&user_id3=",
@@ -862,12 +782,12 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
+      "app": "prospi",
       "kind": "guide",
-      "title": "機動戦士ガンダムZZのチャレンジ 追加",
-      "url": "https://game8.jp/ggene-eternal/684154",
+      "title": "プロスピ交流戦 2024年 09/12 15:00 〜 09/18 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
       "date": "2026-09-12",
-      "time": "",
+      "time": "15:00",
       "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
@@ -909,6 +829,16 @@
       "date": "2026-09-10",
       "time": "",
       "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ミリオンマネジメント 2020年 09/09 15:00 〜 09/15 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-09-09",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -972,6 +902,26 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "スカウティングナイン",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2026-09-08",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ダルビッシュセレクション グレードアップスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-09-08",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
       "app": "smagro",
       "kind": "guide",
       "title": "のマル秘レポート",
@@ -979,36 +929,6 @@
       "date": "2026-09-07",
       "time": "",
       "source_label": "GameWith スマグロレポート",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "マスターリーグ シーズン15.5",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-09-07",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピタワー 09/05 15:00 〜 09/11 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-05",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ベースボールマネージャー 09/01 15:00 〜 09/08 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-01",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -1032,63 +952,23 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
+      "app": "prospi",
       "kind": "guide",
-      "title": "EASTタワーが復刻開催",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-08-31",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "ジェネレーションタワーEASTが復刻開催しました。今回の開催は過去に開催したイベントの復刻開催となっており、新階層の追加はありません。",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-08-31",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "ジェネレーションタワーEASTイベント 【 開催期間 】 2026/8/31(月)12:00 〜 2026/10/5(月)11:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-08-31",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "強敵襲来イベント 【 開催期間 】 2026/8/31(月)12:00 〜 2026/9/17(木)11:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-08-31",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "強敵襲来イベント 開催 ・ EASTタワー 復刻開催 ・ エターナルロード に試作機追加 ・ZとZZシリーズの一部機体とキャラの性能調整",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-08-31",
+      "title": "ベースボールマネージャー",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2026-09-01",
       "time": "",
-      "source_label": "Game8 イベント最新情報",
+      "source_label": "Game8 イベントスケジュール",
       "upcoming": false
     },
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "調子くんのアイテム工房 08/28 15:00 〜 09/01 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-08-28",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
+      "title": "ワールドスターセレクション WSドラフトスカウト 再臨TSセレクション 新選手一本釣りスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-09-01",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1099,6 +979,26 @@
       "date": "2026-08-28",
       "time": "",
       "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "調子くんのアイテム工房",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2026-08-28",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "戦力強化スカウト ヒートアップスカウト改",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-08-28",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1124,11 +1024,21 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "アニバーサリー総選挙 08/21 15:00 〜 08/28 12:59",
-      "url": "https://game8.jp/prospi_a/37363",
+      "title": "アニバーサリー総選挙",
+      "url": "https://game8.jp/prospi_a/754177",
       "date": "2026-08-21",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "セレクション第3弾 4連福袋 パワプロの日記念福袋 超自チームS狙い打ち",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-08-21",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1214,11 +1124,21 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "ドリームキャラバン 08/14 15:00 〜 08/21 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
+      "title": "ドリームキャラバン",
+      "url": "https://game8.jp/prospi_a/754177",
       "date": "2026-08-14",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "セレクション第2弾 セレクトガチャ リアタイピックアップガチャ グレードアップスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-08-14",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1239,6 +1159,26 @@
       "date": "2026-08-11",
       "time": "11:59",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "プロスピ野球盤",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2026-08-07",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "セレクション第1弾 3ステップスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-08-07",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1269,16 +1209,6 @@
       "date": "2026-07-30",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "Gジェネエターナルの生放送を記念してダイヤ1,000個が配布されました。受け取り期間は7/24(金)23:59までとなっています。",
-      "url": "https://gamewith.jp/ggene-eternal/519980",
-      "date": "2026-07-24",
-      "time": "23:59",
-      "source_label": "GameWith 生放送まとめ",
       "upcoming": false
     },
     {
@@ -1319,26 +1249,6 @@
       "date": "2026-06-24",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "20時より生放送が配信！",
-      "url": "https://gamewith.jp/ggene-eternal/519980",
-      "date": "2026-06-24",
-      "time": "",
-      "source_label": "GameWith 生放送まとめ",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "のスマグロレポート",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-05-26",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     }
   ],
@@ -1421,7 +1331,7 @@
       "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": "HTTP Error 500: Internal Server Error"
     },
     {
       "app": "smagro",
@@ -1452,7 +1362,7 @@
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
       "ok": true,
-      "count": 8,
+      "count": 2,
       "error": ""
     },
     {
@@ -1477,7 +1387,7 @@
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 500: Internal Server Error"
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "app": "ggene",
@@ -1500,7 +1410,7 @@
       "label": "ジージェネ / GameWith 生放送まとめ",
       "url": "https://gamewith.jp/ggene-eternal/519980",
       "ok": true,
-      "count": 5,
+      "count": 3,
       "error": ""
     },
     {
@@ -1548,7 +1458,7 @@
       "label": "プロスピ / Game8 イベントスケジュール",
       "url": "https://game8.jp/prospi_a/754177",
       "ok": true,
-      "count": 12,
+      "count": 9,
       "error": ""
     },
     {
@@ -1564,7 +1474,7 @@
       "label": "プロスピ / Game8 ガチャスケジュール",
       "url": "https://game8.jp/prospi_a/754178",
       "ok": true,
-      "count": 12,
+      "count": 9,
       "error": ""
     }
   ]
