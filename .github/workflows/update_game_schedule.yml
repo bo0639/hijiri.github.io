@@ -1,0 +1,38 @@
+name: ゲーム公式情報の自動収集
+
+on:
+  schedule:
+    # 毎日 07:00 / 19:00（JST）= 22:00 / 10:00（UTC）
+    - cron: '0 22,10 * * *'
+  workflow_dispatch:
+    # 手動実行も可能
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 公式サイト・公式YouTubeの情報を収集
+        run: python scripts/update_game_schedule.py
+
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gamesched/feed.json
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "🤖 ゲーム公式情報の自動収集: $(date '+%Y年%m月%d日 %H:%M')"
+            git push
+          fi

@@ -1,0 +1,93 @@
+{
+  "_comment": "アプリ定義と自動収集ソースの設定。channel_id / news URL は scripts/update_game_schedule.py が参照します。誤っている場合はここを直せばOK（アプリ側の表示リンクも同じ定義を使用）。",
+  "apps": [
+    {
+      "key": "monst",
+      "name": "モンスターストライク",
+      "short": "モンスト",
+      "color": "#e8482c",
+      "site": "https://www.monster-strike.com/",
+      "links": [
+        { "label": "公式サイト", "url": "https://www.monster-strike.com/" },
+        { "label": "ゲーム情報", "url": "https://www.monster-strike.com/news/" },
+        { "label": "イベント", "url": "https://www.monster-strike.com/event/" },
+        { "label": "公式YouTube", "url": "https://www.youtube.com/@monsterstrike" },
+        { "label": "公式X", "url": "https://x.com/monst_mixi" }
+      ],
+      "youtube": {
+        "channel_id": "UCd9BXPj-KcMTh0HiB-Vlb8A",
+        "handles": ["@monsterstrike"]
+      },
+      "news": [
+        { "label": "ゲーム情報", "url": "https://www.monster-strike.com/news/" },
+        { "label": "イベント", "url": "https://www.monster-strike.com/event/" },
+        { "label": "エンタメ情報", "url": "https://www.monster-strike.com/entertainment-news/" }
+      ]
+    },
+    {
+      "key": "smagro",
+      "name": "ドラゴンクエスト スマッシュグロウ",
+      "short": "スマグロ",
+      "color": "#1f7ae0",
+      "site": "https://smashgrow.dragonquest.jp/",
+      "links": [
+        { "label": "公式サイト", "url": "https://smashgrow.dragonquest.jp/" },
+        { "label": "お知らせ", "url": "https://smashgrow.dragonquest.jp/news/" },
+        { "label": "ドラクエ公式ニュース", "url": "https://www.dragonquest.jp/news/" },
+        { "label": "公式X", "url": "https://x.com/DQSG_JP" },
+        { "label": "スクエニ公式YouTube", "url": "https://www.youtube.com/@SquareEnixJP" }
+      ],
+      "youtube": {
+        "channel_id": "",
+        "handles": ["@DQSG_JP", "@SquareEnixJP"]
+      },
+      "news": [
+        { "label": "お知らせ", "url": "https://smashgrow.dragonquest.jp/news/" },
+        { "label": "公式サイト", "url": "https://smashgrow.dragonquest.jp/" },
+        { "label": "ドラクエ公式ニュース", "url": "https://www.dragonquest.jp/news/" }
+      ]
+    },
+    {
+      "key": "ggene",
+      "name": "SDガンダム ジージェネレーション エターナル",
+      "short": "ジージェネ",
+      "color": "#0a8f6a",
+      "site": "https://gget.ggame.jp/jp/",
+      "links": [
+        { "label": "公式サイト", "url": "https://gget.ggame.jp/jp/" },
+        { "label": "ニュース", "url": "https://gget.ggame.jp/jp/news/" },
+        { "label": "公式X", "url": "https://x.com/ggene_eternal" },
+        { "label": "バンナム公式YouTube", "url": "https://www.youtube.com/@BandaiNamcoEntertainmentJP" }
+      ],
+      "youtube": {
+        "channel_id": "",
+        "handles": ["@ggene_eternal", "@BandaiNamcoEntertainmentJP"]
+      },
+      "news": [
+        { "label": "ニュース", "url": "https://gget.ggame.jp/jp/news/" },
+        { "label": "公式サイト", "url": "https://gget.ggame.jp/jp/" }
+      ]
+    },
+    {
+      "key": "prospi",
+      "name": "プロ野球スピリッツA",
+      "short": "プロスピ",
+      "color": "#d6a419",
+      "site": "https://www.konami.com/games/prospi_a/",
+      "links": [
+        { "label": "公式サイト", "url": "https://www.konami.com/games/prospi_a/" },
+        { "label": "お知らせ", "url": "https://prospia.konami.net/arb/main/news/index.php" },
+        { "label": "公式X", "url": "https://x.com/prospi_a" },
+        { "label": "パワプロ・プロスピ公式YouTube", "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw" }
+      ],
+      "youtube": {
+        "channel_id": "UCWzEh28vj3mQKpe0fzVTOUw",
+        "handles": ["@pawapuro_prospi"]
+      },
+      "news": [
+        { "label": "お知らせ", "url": "https://prospia.konami.net/arb/main/news/index.php" },
+        { "label": "公式サイト", "url": "https://www.konami.com/games/prospi_a/" }
+      ]
+    }
+  ]
+}
