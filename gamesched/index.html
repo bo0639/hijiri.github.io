@@ -960,7 +960,7 @@ function renderFeed(){
       +'</div>';
   };
   const stamp=feed.generated_at
-    ? '<div class="fhint" style="margin-bottom:8px">最終収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（GitHub Actionsが1日2回更新）</div>'
+    ? '<div class="fhint" style="margin-bottom:8px">最終収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（月・水・金・土の19時に自動更新）</div>'
     : '<div class="empty">自動収集はまだ実行されていません。<br>GitHubの Actions で「ゲーム公式情報の自動収集」を実行すると、<br>公式サイトのお知らせと公式YouTubeの配信予定がここに並びます。</div>';
   $('view-feed').innerHTML=stamp
     +(upcoming.length?secHTML('配信予定（公式YouTube）',upcoming.length,upcoming.map(card).join('')):'')

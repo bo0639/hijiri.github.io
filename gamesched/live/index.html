@@ -485,7 +485,7 @@ function renderLinks(){
       +'<div class="linkrow">'+ls.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')+'</div></div>';
   }).join('');
   $('s-links').innerHTML='<div class="sec-title"><span class="bar"></span>情報発信チャンネル</div>'+cards;
-  $('foot').innerHTML=(feed.generated_at?'自動収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（1日2回更新）<br>':'')
+  $('foot').innerHTML=(feed.generated_at?'自動収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（月・水・金・土の19時に更新）<br>':'')
     +'公式の告知と攻略まとめ（GameWith / Game8）を合わせて表示しています。<br>'
     +'日時は変更されることがあるため、配信前に公式で確認してください。';
 }

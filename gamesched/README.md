@@ -39,7 +39,7 @@
 | `sources.json` | アプリ定義（名前・色・公式リンク）と自動収集の設定 |
 | `feed.json` | 自動収集の結果。GitHub Actions が更新する（手で編集しない） |
 | `../scripts/update_game_schedule.py` | 収集スクリプト（標準ライブラリのみ） |
-| `../.github/workflows/update_game_schedule.yml` | 毎日 07:00 / 19:00（JST）に実行 |
+| `../.github/workflows/update_game_schedule.yml` | 月・水・金・土の19:00（JST）に実行 |
 
 ## 自動収集について
 
