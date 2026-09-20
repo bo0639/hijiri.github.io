@@ -334,6 +334,14 @@ LEAD_TIME_RE = re.compile(r"^\s*\d{1,2}\s*[:時]\s*\d{2}\s*(?:[〜~\-–]\s*(?:\
 LEAD_JOIN_RE = re.compile(r"^\s*(?:より|から|に|は|、|・)\s*")
 
 
+JUNK_WORDS_RE = re.compile(r"開催期間|開催中|まで|更新|放送日|次回|配信日時|【|】|[\d\s:：〜~()（）月日分時/,、。]")
+
+
+def is_junk_title(title: str) -> bool:
+    """「開催期間 開催中〜9/22(火) 11:59」のような、中身の無い行を弾く。"""
+    return len(JUNK_WORDS_RE.sub("", title)) < 5
+
+
 def clean_title(text: str) -> str:
     """一覧やまとめ記事の文字列から、日付・時刻・カテゴリ・NEWバッジを取り除く。"""
     out = TAIL_RE.sub("", text).strip()
@@ -413,7 +421,7 @@ def parse_guide_html(body: str, url: str, app_key: str, label: str,
             continue
         title = clean_title(text)
         key = (date, title)
-        if not title or key in seen:
+        if not title or key in seen or is_junk_title(title):
             continue
         seen.add(key)
         items.append({
