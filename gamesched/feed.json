@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:28:12+09:00",
+  "generated_at": "2026-09-20T10:29:32+09:00",
   "items": [
     {
       "app": "ggene",
@@ -62,6 +62,16 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スーパーまものラッシュシーズン5が10月18日まで開催中です。期間中にハイスコアを目指して「スーパーまものラッシュメダル」を集め、 交換所 で豪華アイテムを手に入れましょう。",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-10-18",
+      "time": "",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
       "app": "prospi",
       "kind": "guide",
       "title": "ルーレットヒッター 2023年 10/13 15:00 〜 10/16 14:59",
@@ -79,6 +89,16 @@
       "date": "2026-10-10",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン5ステージ③ 10/6(火) 12:00",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-10-06",
+      "time": "12:00",
+      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -104,16 +124,6 @@
     {
       "app": "ggene",
       "kind": "guide",
-      "title": "開催期間 ~9/30(水)10:59",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
-      "date": "2026-09-30",
-      "time": "10:59",
-      "source_label": "GameWith イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
       "title": "機動戦士ガンダム00F 【開催期間】 ~9/30(水)10:59",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "date": "2026-09-30",
@@ -129,16 +139,6 @@
       "date": "2026-09-30",
       "time": "",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "開催期間 開催中〜9/29(火) 11:59",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-09-29",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -214,31 +214,11 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "次回の配信日時は2026/9/26(土),9/27(日)19:30〜",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-09-26",
-      "time": "19:30",
-      "source_label": "Game8 モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
       "title": "次回のモンストニュースの配信日時は9/26(土)と9/27(日)19:30〜モンスト公式YouTubeにて配信が決定しています。",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-09-26",
       "time": "19:30",
       "source_label": "Game8 モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "配信日時：9/26(土)・9/27(日)",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
       "upcoming": false
     },
     {
@@ -262,16 +242,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "【09/25更新】",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-25",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "ggene",
       "kind": "guide",
       "title": "ハーフアニバーサリーイベント 【 開催期間 】 2025/9/24(水)12:00 〜 10/31(金)11:59",
@@ -279,16 +249,6 @@
       "date": "2026-09-24",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "放送日 9/23(水)20:00~",
-      "url": "https://gamewith.jp/ggene-eternal/519980",
-      "date": "2026-09-23",
-      "time": "20:00",
-      "source_label": "GameWith 生放送まとめ",
       "upcoming": false
     },
     {
@@ -355,16 +315,6 @@
       "app": "smagro",
       "kind": "guide",
       "title": "キングスイカ岩 開催期間 9/22(火) 11:59 まで 弱点 風 主な報酬 キングスイカ岩",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-09-22",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "開催期間 開催中〜9/22(火) 11:59",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
       "date": "2026-09-22",
       "time": "11:59",
@@ -524,31 +474,11 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "開催期間：2026/09/18 〜 09/25",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
       "title": "ダウンロード記念福袋【9月】 超自チームS狙い打ち",
       "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-09-18",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "開催期間 2026/9/17(木)12:00〜9/30(水)10:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-09-17",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -792,6 +722,16 @@
       "upcoming": false
     },
     {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "機動戦士ガンダムZZのチャレンジ 追加",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "news",
       "title": "期間限定イベント「未開の幻洞」が9/14より登場！",
@@ -874,26 +814,6 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "登場日時 2026/9/8(火)12:00〜10/6(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-08",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "開催日時 2026/9/8(火)〜9/29(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-08",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
       "title": "スカルゴン 2026/9/8(火)〜9/29(火)11:59",
       "url": "https://game8.jp/dqsmashgrow/729660",
       "date": "2026-09-08",
@@ -929,6 +849,26 @@
       "date": "2026-09-07",
       "time": "",
       "source_label": "GameWith スマグロレポート",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "プロスピラビリンス 2023年 09/06 15:00 〜 09/11 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-09-06",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "プロスピタワー 09/05 15:00 〜 09/11 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-09-05",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -1094,26 +1034,6 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "開催日時 2026/8/18(火)〜9/22(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-08-18",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "登場日時 2026/8/18(火)〜9/29(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-08-18",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
       "title": "マリンスライム 2026/8/18(火)〜9/22(火)11:59",
       "url": "https://game8.jp/dqsmashgrow/729660",
       "date": "2026-08-18",
@@ -1162,6 +1082,16 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スーパーまものラッシュ4 2026/8/7(金)〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-08-07",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
       "app": "prospi",
       "kind": "guide",
       "title": "プロスピ野球盤",
@@ -1192,6 +1122,16 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "大魔王デスタムーア 2026/8/4(火)〜9/1(火)11:59",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-08-04",
+      "time": "11:59",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "news",
       "title": "アサヒ飲料「ドデカミン」とモンストのコラボキャンペーンが7/21より開催！ タイアップ",
@@ -1209,6 +1149,26 @@
       "date": "2026-07-30",
       "time": "",
       "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "デュラン 2026/7/28(火)〜9/1(火)11:59",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-07-28",
+      "time": "11:59",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "ムドー 2026/7/21(火)12:00〜9/1(火)11:59",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-07-21",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -1298,7 +1258,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 5,
+      "count": 4,
       "error": ""
     },
     {
@@ -1314,7 +1274,7 @@
       "label": "モンスト / Game8 モンストニュース速報",
       "url": "https://game8.jp/monst/110254",
       "ok": true,
-      "count": 6,
+      "count": 5,
       "error": ""
     },
     {
@@ -1331,7 +1291,7 @@
       "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
       "ok": false,
       "count": 0,
-      "error": "HTTP Error 500: Internal Server Error"
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "app": "smagro",
@@ -1410,7 +1370,7 @@
       "label": "ジージェネ / GameWith 生放送まとめ",
       "url": "https://gamewith.jp/ggene-eternal/519980",
       "ok": true,
-      "count": 3,
+      "count": 2,
       "error": ""
     },
     {
@@ -1418,7 +1378,7 @@
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "ok": true,
-      "count": 5,
+      "count": 4,
       "error": ""
     },
     {
