@@ -93,6 +93,34 @@ def _build_date(y: int, mo: int, d: int, today: dt.date) -> str | None:
     return date.isoformat()
 
 
+def parse_date_near(text: str, today: dt.date, back: int = 45, fwd: int = 100) -> str | None:
+    """年が明記されていない日付を、今日に最も近い年に寄せて解釈する。
+
+    攻略まとめの年間スケジュール表は「02月27日〜03月05日」のように年を書かない。
+    月だけで年を推定すると前シーズンの行が翌年の予定として並ぶため、
+    今日から back〜fwd 日の窓に入るものだけを採用する（既定は前45日〜先100日）。
+    """
+    explicit = parse_date(text, today, with_year_only=True)
+    if explicit:
+        return explicit
+    m = DATE_PATTERNS[1].search(text)
+    if not m:
+        return None
+    nums = [x for x in m.groups() if x]
+    mo, d = int(nums[0]), int(nums[1])
+    best = None
+    for year in (today.year - 1, today.year, today.year + 1):
+        try:
+            cand = dt.date(year, mo, d)
+        except ValueError:
+            continue
+        if best is None or abs((cand - today).days) < abs((best - today).days):
+            best = cand
+    if best is None or not (today - dt.timedelta(days=back) <= best <= today + dt.timedelta(days=fwd)):
+        return None
+    return best.isoformat()
+
+
 def parse_date(text: str, today: dt.date, with_year_only: bool = False) -> str | None:
     """テキストから日付を拾って YYYY-MM-DD で返す。年が無ければ推定する。"""
     m = DATE_PATTERNS[0].search(text)
@@ -295,7 +323,7 @@ SKIP_TEXT = {"", "TOP", "トップ", "一覧", "もっと見る", "next", "prev"
              "お知らせ", "ニュース", "ホーム", "詳細", "詳しくはこちら"}
 CAT_WORDS = "お知らせ|イベント|アップデート|キャンペーン|ニュース|その他|重要|メンテナンス|ガチャ"
 LEAD_RE = re.compile(r"^\s*(CHECK|NEW|新着|PICKUP)\s+", re.I)
-LEAD_DATE_RE = re.compile(r"^\s*(20\d{2}\s*[./\-年]\s*)?\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
+LEAD_DATE_RE = re.compile(r"^\s*[〜～\-–]?\s*(20\d{2}\s*[./\-年]\s*)?\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
                           r"\s*(\([月火水木金土日]\))?\s*")
 TAIL_RE = re.compile(r"\s*(?:" + CAT_WORDS + r")?\s*20\d{2}\s*[./\-年]\s*\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
                      r"\s*(?:NEW|新着)?\s*$", re.I)
@@ -309,7 +337,11 @@ LEAD_JOIN_RE = re.compile(r"^\s*(?:より|から|に|は|、|・)\s*")
 def clean_title(text: str) -> str:
     """一覧やまとめ記事の文字列から、日付・時刻・カテゴリ・NEWバッジを取り除く。"""
     out = TAIL_RE.sub("", text).strip()
-    out = LEAD_DATE_RE.sub("", out).strip()
+    for _ in range(3):                      # 「MM月DD日〜MM月DD日 見出し」に対応
+        stripped = LEAD_DATE_RE.sub("", out).strip()
+        if stripped == out:
+            break
+        out = stripped
     out = LEAD_TIME_RE.sub("", out).strip()
     out = LEAD_RE.sub("", out).strip()
     out = LEAD_JOIN_RE.sub("", out).strip()
@@ -374,7 +406,7 @@ def parse_guide_html(body: str, url: str, app_key: str, label: str,
         text = strip_tags(m.group(2))
         if len(text) < 8 or len(text) > 120:
             continue
-        date = parse_date(text, today)
+        date = parse_date_near(text, today)
         if not date:
             continue
         if programs_only and not PROGRAM_RE.search(text):
@@ -394,9 +426,14 @@ def parse_guide_html(body: str, url: str, app_key: str, label: str,
             "source_label": label,
             "upcoming": False,
         })
-    # 直近・これからの予定を優先する
-    items.sort(key=lambda x: x["date"], reverse=True)
+    # これから起きることを優先し、次に直近の過去を残す
+    iso_today = today.isoformat()
+    items.sort(key=lambda x: (x["date"] < iso_today, abs_days(x["date"], iso_today)))
     return items[:MAX_ITEMS_PER_SOURCE]
+
+
+def abs_days(a: str, b: str) -> int:
+    return abs((dt.date.fromisoformat(a) - dt.date.fromisoformat(b)).days)
 
 
 # ── メイン ───────────────────────────────────────────────────────
