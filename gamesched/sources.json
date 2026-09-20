@@ -1,5 +1,5 @@
 {
-  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。 youtube.match を書くと、共用チャンネル（パワプロ・プロスピ公式、ガンダムチャンネルなど）からそのアプリの動画だけを残す。",
+  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。 youtube.match を書くと、共用チャンネル（パワプロ・プロスピ公式、ガンダムチャンネルなど）からそのアプリの動画だけを残す。 guides は攻略まとめ（二次情報）の記事。programs_only を true にすると生放送・番組に関する行だけ残す。",
   "apps": [
     {
       "key": "monst",
@@ -27,6 +27,14 @@
         {
           "label": "公式X",
           "url": "https://x.com/monst_mixi"
+        },
+        {
+          "label": "GameWith(モンスト)",
+          "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926"
+        },
+        {
+          "label": "Game8(モンスト)",
+          "url": "https://game8.jp/monst/110254"
         }
       ],
       "youtube": {
@@ -54,6 +62,28 @@
             "https://www.monster-strike.com/entertainment-news/"
           ]
         }
+      ],
+      "guides": [
+        {
+          "label": "GameWith モンストニュース速報",
+          "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+          "programs_only": true
+        },
+        {
+          "label": "GameWith モンスト特番",
+          "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
+          "programs_only": true
+        },
+        {
+          "label": "Game8 モンストニュース速報",
+          "url": "https://game8.jp/monst/110254",
+          "programs_only": true
+        },
+        {
+          "label": "Game8 モンスト特番",
+          "url": "https://game8.jp/monst/775220",
+          "programs_only": true
+        }
       ]
     },
     {
@@ -78,6 +108,14 @@
         {
           "label": "ドラクエ公式ニュース",
           "url": "https://www.dragonquest.jp/news/"
+        },
+        {
+          "label": "GameWith(スマグロ)",
+          "url": "https://gamewith.jp/dq-smashgrow/558661"
+        },
+        {
+          "label": "Game8(スマグロ)",
+          "url": "https://game8.jp/dqsmashgrow/729660"
         }
       ],
       "youtube": {
@@ -106,6 +144,21 @@
           ],
           "match": "スマッシュグロウ|スマグロ"
         }
+      ],
+      "guides": [
+        {
+          "label": "GameWith スマグロレポート",
+          "url": "https://gamewith.jp/dq-smashgrow/558661",
+          "programs_only": true
+        },
+        {
+          "label": "GameWith イベント一覧",
+          "url": "https://gamewith.jp/dq-smashgrow/559152"
+        },
+        {
+          "label": "Game8 イベント最新情報",
+          "url": "https://game8.jp/dqsmashgrow/729660"
+        }
       ]
     },
     {
@@ -126,6 +179,14 @@
         {
           "label": "DMM GAMES版",
           "url": "https://gget.ggame.jp/jp/dmg/"
+        },
+        {
+          "label": "GameWith(ジージェネ)",
+          "url": "https://gamewith.jp/ggene-eternal/519980"
+        },
+        {
+          "label": "Game8(ジージェネ)",
+          "url": "https://game8.jp/ggene-eternal/684154"
         }
       ],
       "youtube": {
@@ -145,6 +206,21 @@
             "https://gget.ggame.jp/jp/information/",
             "https://gget.ggame.jp/jp/"
           ]
+        }
+      ],
+      "guides": [
+        {
+          "label": "GameWith 生放送まとめ",
+          "url": "https://gamewith.jp/ggene-eternal/519980",
+          "programs_only": true
+        },
+        {
+          "label": "GameWith イベントスケジュール",
+          "url": "https://gamewith.jp/ggene-eternal/522839"
+        },
+        {
+          "label": "Game8 イベント最新情報",
+          "url": "https://game8.jp/ggene-eternal/684154"
         }
       ]
     },
@@ -170,6 +246,10 @@
         {
           "label": "パワプロ・プロスピ公式YouTube",
           "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw"
+        },
+        {
+          "label": "Game8(プロスピ)",
+          "url": "https://game8.jp/prospi_a/754177"
         }
       ],
       "youtube": {
@@ -186,6 +266,20 @@
             "https://prospia.konami.net/arb/main/news/index.php",
             "https://www.konami.com/games/prospi_a/"
           ]
+        }
+      ],
+      "guides": [
+        {
+          "label": "Game8 イベントスケジュール",
+          "url": "https://game8.jp/prospi_a/754177"
+        },
+        {
+          "label": "Game8 イベント最新情報",
+          "url": "https://game8.jp/prospi_a/37363"
+        },
+        {
+          "label": "Game8 ガチャスケジュール",
+          "url": "https://game8.jp/prospi_a/754178"
         }
       ]
     }

@@ -36,6 +36,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 .brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.15}
 .brand-main{font-size:16px;font-weight:900;color:#fff;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand-sub{font-size:9.5px;color:rgba(255,255,255,.55);letter-spacing:1.6px;font-weight:600}
+.hdr-link{font-size:11px;font-weight:800;color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 9px;text-decoration:none;white-space:nowrap}
 .sync-status{font-size:10.5px;color:rgba(255,255,255,.72);display:flex;align-items:center;gap:4px;white-space:nowrap}
 .sync-status.ok{color:#7ff0bb}.sync-status.pending{color:#ffd970}.sync-status.err{color:#ff9d92}
 .sdot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
@@ -131,7 +133,7 @@ a.btn{text-decoration:none}
 .cal-dow div{text-align:center;font-size:10.5px;font-weight:800;color:var(--text-lt);padding:3px 0}
 .cal-dow div:nth-child(6){color:#2b6fd0}.cal-dow div:nth-child(7){color:#c62828}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.cell{aspect-ratio:1/1.06;border-radius:var(--r-sm);background:var(--surface-2);padding:3px 2px 2px;
+.cell{min-height:56px;border-radius:var(--r-sm);background:var(--surface-2);padding:3px 2px 2px;
   display:flex;flex-direction:column;align-items:center;cursor:pointer;border:1.5px solid transparent;min-width:0}
 .cell.out{opacity:.35}
 .cell.today{border-color:var(--accent);background:#eaefff}
@@ -140,6 +142,10 @@ a.btn{text-decoration:none}
 .cell.sat .d{color:#2b6fd0}.cell.sun .d{color:#c62828}
 .cell .dots{display:flex;flex-wrap:wrap;gap:1.5px;justify-content:center;margin-top:2px}
 .cell .dots i{width:5px;height:5px;border-radius:50%}
+.cell .mini{width:100%;margin-top:2px;display:flex;flex-direction:column;gap:1.5px;align-items:stretch}
+.cell .mini i{font-style:normal;font-size:8.5px;font-weight:800;color:#fff;border-radius:3px;padding:1px 2px;
+  text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.35}
+.cell .mini i.cont{height:4px;padding:0;opacity:.55;border-radius:2px}
 .cell .more{font-size:8.5px;color:var(--text-lt);font-weight:800}
 
 /* ── LIST FILTERS ───────────────────────────────────── */
@@ -252,6 +258,7 @@ a.btn{text-decoration:none}
     <div class="brand-main">ゲーム情報スケジュール</div>
     <div class="brand-sub" id="brand-sub">MONST / SMAGRO / GGENE / PROSPI</div>
   </div>
+  <a class="hdr-link" href="./live/">番組 →</a>
   <div class="sync-status" id="sync-status"><span class="sdot"></span><span id="sync-text">ローカル</span></div>
   <button class="icon-btn" id="btn-menu" aria-label="メニュー">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
@@ -848,12 +855,21 @@ function renderCal(){
     const items=byDay[key]||[];
     const colors=[];
     items.forEach(o=>{ const c=app(o.app).color; if(!colors.includes(c)) colors.push(c); });
+    /* その日の内容が一目で分かるよう、時刻（終日・期間ものは種別）のチップを出す */
+    const chips=items.slice(0,2).map(o=>{
+      const a=app(o.app);
+      /* 開始日は時刻、期間イベントの継続日は細いバーで表す */
+      return ymd(o._start)===key
+        ? '<i style="background:'+a.color+'" title="'+esc(o.title)+'">'+esc(hm(o._start))+'</i>'
+        : '<i class="cont" style="background:'+a.color+'" title="'+esc(o.title)+'"></i>';
+    }).join('');
     cells+='<div class="cell'+(d.getMonth()!==first.getMonth()?' out':'')
       +(key===todayKey?' today':'')+(key===selectedDay?' sel':'')
       +(d.getDay()===0?' sun':'')+(d.getDay()===6?' sat':'')+'" data-day="'+key+'">'
       +'<span class="d">'+d.getDate()+'</span>'
-      +(colors.length?'<span class="dots">'+colors.slice(0,4).map(c=>'<i style="background:'+c+'"></i>').join('')+'</span>':'')
-      +(items.length>4?'<span class="more">+'+(items.length-4)+'</span>':'')
+      +(chips?'<span class="mini">'+chips+'</span>'
+             :(colors.length?'<span class="dots">'+colors.slice(0,4).map(c=>'<i style="background:'+c+'"></i>').join('')+'</span>':''))
+      +(items.length>2?'<span class="more">+'+(items.length-2)+'</span>':'')
       +'</div>';
   }
   const sel=parseDT(selectedDay)||new Date();
@@ -1252,7 +1268,8 @@ $('btn-menu').onclick=e=>{
   const old=document.querySelector('.menu'); if(old){ old.remove(); return; }
   const m=document.createElement('div');
   m.className='menu';
-  m.innerHTML='<button class="menu-item" data-act="reload">🔄 最新データを取得</button>'
+  m.innerHTML='<a class="menu-item" href="./live/" style="text-decoration:none">📺 番組・配信スケジュール</a>'
+    +'<button class="menu-item" data-act="reload">🔄 最新データを取得</button>'
     +'<button class="menu-item" data-act="ics">📅 ICSを書き出す</button>'
     +'<button class="menu-item" data-act="sync">⚙️ 設定・GitHub同期</button>'
     +'<hr class="menu-sep">'

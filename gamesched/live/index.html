@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#161d3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>番組・配信スケジュール</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect x='4' y='10' width='40' height='27' rx='4' fill='white' stroke='%23161d3a' stroke-width='3'/><path d='M20 19l10 7-10 7z' fill='%23e8482c'/><path d='M16 42h16' stroke='%23161d3a' stroke-width='3' stroke-linecap='round'/></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --monst:#e8482c; --smagro:#1f7ae0; --ggene:#0a8f6a; --prospi:#d6a419;
+  --navy-deep:#0f1530; --navy:#161d3a; --navy-lt:#2b3566; --accent:#5b7cfa;
+  --bg:#eef1f7; --surface:#fff; --surface-2:#f6f8fc;
+  --border:#dbe1ee; --shadow:rgba(15,21,48,.12);
+  --text:#151a30; --text-sub:#5b6480; --text-lt:#949cb4;
+  --live:#c62828; --live-bg:#ffe5e2; --soon:#b45309; --soon-bg:#fff2d6;
+  --done:#8a90a2; --done-bg:#eef0f5; --ok:#0f7a42;
+  --hdr:54px; --r:10px; --r-lg:16px; --r-sm:6px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans','Noto Sans JP',sans-serif;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.55;
+  min-height:100vh;-webkit-tap-highlight-color:transparent;padding-bottom:calc(24px + var(--safe-b))}
+a{color:inherit}
+
+.hdr{position:sticky;top:0;z-index:100;min-height:var(--hdr);
+  background:linear-gradient(120deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-lt) 100%);
+  display:flex;align-items:center;gap:9px;padding:0 12px;box-shadow:0 2px 12px rgba(15,21,48,.28)}
+.hdr-ico{width:26px;height:26px;flex-shrink:0}
+.brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.15}
+.brand-main{font-size:16px;font-weight:900;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-sub{font-size:9.5px;color:rgba(255,255,255,.55);letter-spacing:1.4px;font-weight:600}
+.hdr-link{font-size:11.5px;font-weight:800;color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 11px;text-decoration:none;white-space:nowrap}
+.appbar{height:4px;display:flex}
+.appbar i{flex:1}
+.appbar i:nth-child(1){background:var(--monst)}.appbar i:nth-child(2){background:var(--smagro)}
+.appbar i:nth-child(3){background:var(--ggene)}.appbar i:nth-child(4){background:var(--prospi)}
+
+.appchips{display:flex;gap:6px;padding:9px 12px 7px;overflow-x:auto;scrollbar-width:none;background:var(--surface);
+  border-bottom:1px solid var(--border);position:sticky;top:var(--hdr);z-index:95}
+.appchips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:6px 12px;border-radius:999px;border:1.5px solid var(--border);background:#fff;
+  font-size:12.5px;font-weight:700;color:var(--text-sub);cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:5px}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.chip.on{color:#fff;border-color:transparent}
+.chip.on.c-all{background:var(--navy)}
+.chip.on.c-monst{background:var(--monst)}.chip.on.c-smagro{background:var(--smagro)}
+.chip.on.c-ggene{background:var(--ggene)}.chip.on.c-prospi{background:var(--prospi)}
+.chip .cnt{font-size:10.5px;opacity:.75;font-weight:800}
+
+.wrap{padding:12px 12px 20px;display:flex;flex-direction:column;gap:16px}
+.sec-title{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;color:var(--text-sub);
+  letter-spacing:.4px;margin-bottom:8px}
+.sec-title .bar{width:3px;height:14px;border-radius:2px;background:var(--accent)}
+.sec-title .n{margin-left:auto;font-size:11px;color:var(--text-lt);font-weight:700}
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--r);padding:18px 14px;
+  text-align:center;color:var(--text-lt);font-size:12.5px}
+
+/* ── NEXT（次の番組） ─────────────────────────────── */
+.hero{border-radius:var(--r-lg);padding:16px 15px;color:#fff;position:relative;overflow:hidden;
+  box-shadow:0 6px 20px rgba(15,21,48,.22);cursor:pointer}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
+.hero .lbl{font-size:10.5px;font-weight:800;letter-spacing:2px;opacity:.85}
+.hero .ttl{font-size:19px;font-weight:900;line-height:1.35;margin:7px 0 9px;word-break:break-word}
+.hero .when{font-size:13px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.hero .cd{background:rgba(0,0,0,.24);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:900}
+.hero .sum{margin-top:10px;font-size:12.5px;line-height:1.55;background:rgba(0,0,0,.18);border-radius:var(--r-sm);
+  padding:8px 10px;white-space:pre-wrap}
+.hero .acts{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}
+.hero .acts a{font-size:11.5px;font-weight:800;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;padding:6px 11px;text-decoration:none;position:relative;z-index:1}
+
+/* ── 番組カード ──────────────────────────────────── */
+.pcard{background:var(--surface);border-radius:var(--r);box-shadow:0 1px 4px var(--shadow);display:flex;
+  overflow:hidden;margin-bottom:8px}
+.pcard .side{width:5px;flex-shrink:0}
+.pcard .body{flex:1;min-width:0;padding:10px 11px}
+.ptop{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.tag{font-size:10px;font-weight:800;padding:2.5px 7px;border-radius:999px;color:#fff}
+.tag-cat{background:var(--surface-2);color:var(--text-sub);border:1px solid var(--border)}
+.tag-live{background:var(--live-bg);color:var(--live)}
+.tag-soon{background:var(--soon-bg);color:var(--soon)}
+.tag-done{background:var(--done-bg);color:var(--done)}
+.tag-conf{background:#fff5d9;color:#8a6200;border:1px solid #f0dca6}
+.tag-2nd{background:#eef0f5;color:#6b7280;border:1px solid #dcdfe8}
+.ptitle{font-size:14px;font-weight:700;line-height:1.4;word-break:break-word}
+.pmeta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px;font-size:11.5px;color:var(--text-sub)}
+.pmeta b{font-weight:800;color:var(--text)}
+.cd-s{font-weight:800}.cd-s.now{color:var(--live)}.cd-s.soon{color:var(--soon)}.cd-s.past{color:var(--text-lt)}
+.psum{margin-top:6px;font-size:11.5px;color:var(--text-sub);background:var(--surface-2);border-radius:var(--r-sm);
+  padding:6px 8px;white-space:pre-wrap;word-break:break-word}
+.plinks{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.plinks a{font-size:11px;font-weight:700;color:var(--navy-lt);background:var(--surface-2);border:1px solid var(--border);
+  border-radius:999px;padding:5px 10px;text-decoration:none}
+
+/* ── カレンダー（月グリッド＋アジェンダ） ───────────── */
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.cal-title{font-size:16px;font-weight:900}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:7px 12px;border-radius:var(--r-sm);
+  font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--text-sub);
+  font-family:var(--font);line-height:1}
+.btn:active{transform:scale(.96)}
+.cal{background:var(--surface);border-radius:var(--r);padding:8px;box-shadow:0 1px 4px var(--shadow)}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:3px}
+.cal-dow div{text-align:center;font-size:10.5px;font-weight:800;color:var(--text-lt);padding:3px 0}
+.cal-dow div:nth-child(6){color:#2b6fd0}.cal-dow div:nth-child(7){color:#c62828}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cell{min-height:56px;border-radius:var(--r-sm);background:var(--surface-2);padding:3px 2px 2px;
+  display:flex;flex-direction:column;align-items:center;cursor:pointer;border:1.5px solid transparent;min-width:0}
+.cell.out{opacity:.34}
+.cell.today{border-color:var(--accent);background:#eaefff}
+.cell.sel{border-color:var(--navy);background:#e6e9f5}
+.cell .d{font-size:11.5px;font-weight:800;line-height:1.2}
+.cell.sat .d{color:#2b6fd0}.cell.sun .d{color:#c62828}
+.cell .mini{width:100%;margin-top:2px;display:flex;flex-direction:column;gap:1.5px;align-items:stretch}
+.cell .mini i{font-style:normal;font-size:8.5px;font-weight:800;color:#fff;border-radius:3px;padding:1px 2px;
+  text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.35}
+.cell .more{font-size:8px;color:var(--text-lt);font-weight:800;margin-top:1px}
+
+.agenda{margin-top:10px;display:flex;flex-direction:column;gap:7px}
+.aday{display:flex;gap:9px;background:var(--surface);border-radius:var(--r);box-shadow:0 1px 3px var(--shadow);
+  padding:9px 10px;cursor:pointer}
+.aday.today{outline:2px solid var(--accent)}
+.adate{width:52px;flex-shrink:0;text-align:center;border-right:1px solid var(--border);padding-right:8px}
+.adate .dd{font-size:17px;font-weight:900;line-height:1.1}
+.adate .dw{font-size:10.5px;font-weight:800;color:var(--text-sub)}
+.adate.sat .dd,.adate.sat .dw{color:#2b6fd0}.adate.sun .dd,.adate.sun .dw{color:#c62828}
+.aitems{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.aitem{display:flex;gap:7px;align-items:flex-start;min-width:0}
+.aitem .bar{width:3px;border-radius:2px;flex-shrink:0;align-self:stretch}
+.aitem .txt{flex:1;min-width:0}
+.aitem .txt>span{display:block}
+.aitem .t1{font-size:12.5px;font-weight:700;line-height:1.35;word-break:break-word}
+.aitem .t2{font-size:10.5px;color:var(--text-sub);font-weight:700;margin-top:2px}
+.aitem .t3{font-size:11px;color:var(--text-sub);margin-top:3px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ── 情報カード（フィード） ─────────────────────── */
+.fitem{background:var(--surface);border-radius:var(--r);padding:10px 11px;box-shadow:0 1px 4px var(--shadow);
+  margin-bottom:8px;border-left:4px solid var(--border)}
+.fitem .ft{font-size:12.5px;font-weight:700;line-height:1.4;word-break:break-word}
+.fitem .fm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px;font-size:10.5px;color:var(--text-sub)}
+.fitem .fm a{font-weight:800;color:var(--navy-lt);text-decoration:none}
+.linkcard{background:var(--surface);border-radius:var(--r);box-shadow:0 1px 4px var(--shadow);
+  padding:10px 11px;margin-bottom:8px;border-left:4px solid var(--border)}
+.linkcard h4{font-size:13px;font-weight:800;margin-bottom:7px}
+.linkrow{display:flex;gap:6px;flex-wrap:wrap}
+.linkrow a{font-size:11.5px;font-weight:700;color:var(--navy-lt);background:var(--surface-2);
+  border:1px solid var(--border);border-radius:999px;padding:5px 10px;text-decoration:none}
+.foot{text-align:center;font-size:11px;color:var(--text-lt);padding:4px 0 10px;line-height:1.7}
+.ov{position:fixed;inset:0;background:rgba(15,21,48,.5);z-index:400;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--surface);width:100%;max-width:620px;max-height:88vh;border-radius:var(--r-lg) var(--r-lg) 0 0;
+  display:flex;flex-direction:column;overflow:hidden}
+.sheet-hd{display:flex;align-items:center;gap:9px;padding:13px 14px;border-bottom:1px solid var(--border)}
+.sheet-hd h3{font-size:15px;font-weight:900;flex:1;min-width:0}
+.sheet-bd{padding:13px 14px calc(16px + var(--safe-b));overflow-y:auto}
+.icon-btn{background:var(--surface-2);border:1px solid var(--border);color:var(--text-sub);
+  width:32px;height:32px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <svg class="hdr-ico" viewBox="0 0 48 48" aria-hidden="true">
+    <rect x="4" y="10" width="40" height="27" rx="4" fill="#fff"/>
+    <path d="M20 19l10 7-10 7z" fill="#e8482c"/>
+  </svg>
+  <div class="brand">
+    <div class="brand-main">番組・配信スケジュール</div>
+    <div class="brand-sub">公式生放送 / 特番 / 情報番組</div>
+  </div>
+  <a class="hdr-link" href="../">予定管理 →</a>
+</header>
+<div class="appbar"><i></i><i></i><i></i><i></i></div>
+<div class="appchips" id="appchips"></div>
+
+<main class="wrap">
+  <section id="s-next"></section>
+  <section id="s-upcoming"></section>
+  <section id="s-cal"></section>
+  <section id="s-feed"></section>
+  <section id="s-links"></section>
+  <div class="foot" id="foot"></div>
+</main>
+
+<div class="ov hidden" id="ov">
+  <div class="sheet">
+    <div class="sheet-hd">
+      <h3 id="ov-title">詳細</h3>
+      <button class="icon-btn" id="ov-close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="sheet-bd" id="ov-body"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ═══════════════════════════════════════════════════════════════
+   番組・配信スケジュール（情報発信に特化した閲覧専用ページ）
+   データは予定管理ツールと共有: ../data.json / ../feed.json / ../sources.json
+   ═══════════════════════════════════════════════════════════════ */
+const FILTER_STORE='gs_live_filter';
+/* 「情報発信」とみなす種別 */
+const PROGRAM_CATS=['生放送','動画','生配信イベント'];
+/* フィードの見出しから番組らしいものを拾うための語 */
+const PROGRAM_WORDS=/生放送|生配信|配信|番組|特番|ニュース|レポート|発表|公開|放送|PV|トレーラー|FREAK|フリーク/i;
+const DOW=['日','月','火','水','木','金','土'];
+const FALLBACK_APPS=[
+  {key:'monst',name:'モンスターストライク',short:'モンスト',color:'#e8482c',links:[]},
+  {key:'smagro',name:'ドラゴンクエスト スマッシュグロウ',short:'スマグロ',color:'#1f7ae0',links:[]},
+  {key:'ggene',name:'SDガンダム ジージェネレーション エターナル',short:'ジージェネ',color:'#0a8f6a',links:[]},
+  {key:'prospi',name:'プロ野球スピリッツA',short:'プロスピ',color:'#d6a419',links:[]}
+];
+let APPS=FALLBACK_APPS.slice();
+let events=[], feed={generated_at:'',items:[],status:[]};
+let picked=[];                       /* 絞り込み中のアプリ */
+let calCursor=startOfMonth(new Date()), selectedDay=ymd(new Date());
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ── 日付ユーティリティ（端末のローカル時刻＝日本時間前提） ── */
+function pad(n){ return String(n).padStart(2,'0'); }
+function ymd(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+function hm(d){ return pad(d.getHours())+':'+pad(d.getMinutes()); }
+function parseDT(s){
+  if(!s) return null;
+  const m=String(s).match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{1,2}):(\d{2}))?/);
+  return m ? new Date(+m[1],+m[2]-1,+m[3],m[4]?+m[4]:0,m[5]?+m[5]:0,0,0) : null;
+}
+function startOfMonth(d){ return new Date(d.getFullYear(),d.getMonth(),1); }
+function startOfDay(d){ return new Date(d.getFullYear(),d.getMonth(),d.getDate()); }
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function addMonths(d,n){ const x=new Date(d); x.setMonth(x.getMonth()+n); return x; }
+function fmtDay(d){ return (d.getMonth()+1)+'/'+d.getDate()+'('+DOW[d.getDay()]+')'; }
+function fmtFull(d){ return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日('+DOW[d.getDay()]+') '+hm(d); }
+function dayLabel(d){
+  const diff=Math.round((startOfDay(d)-startOfDay(new Date()))/86400000);
+  return diff===0?'今日':diff===1?'明日':diff===2?'明後日':'';
+}
+function untilText(d){
+  const ms=d-new Date();
+  if(ms<0){
+    const p=-ms;
+    if(p<3600000) return Math.floor(p/60000)+'分経過';
+    if(p<86400000) return Math.floor(p/3600000)+'時間経過';
+    return Math.floor(p/86400000)+'日前';
+  }
+  if(ms<3600000) return 'あと'+Math.max(1,Math.floor(ms/60000))+'分';
+  if(ms<86400000) return 'あと'+Math.floor(ms/3600000)+'時間'+Math.floor(ms%3600000/60000)+'分';
+  return 'あと'+Math.floor(ms/86400000)+'日';
+}
+function app(key){ return APPS.find(a=>a.key===key)||{key:key,short:key,name:key,color:'#8a90a2',links:[]}; }
+function shown(key){ return !picked.length||picked.includes(key); }
+
+/* ── 読み込み ─────────────────────────────────────── */
+async function loadJSON(path,fallback){
+  try{
+    const res=await fetch(path+'?t='+Date.now(),{cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    return await res.json();
+  }catch(e){ return fallback; }
+}
+async function loadAll(){
+  const [src,data,fd]=await Promise.all([
+    loadJSON('../sources.json',null), loadJSON('../data.json',[]), loadJSON('../feed.json',null)]);
+  if(src&&Array.isArray(src.apps)&&src.apps.length) APPS=src.apps;
+  events=Array.isArray(data)?data:[];
+  if(fd) feed={generated_at:fd.generated_at||'',items:fd.items||[],status:fd.status||[]};
+  /* 端末で追加・編集した予定（予定管理ツールのlocalStorage）も読む */
+  try{
+    const local=JSON.parse(localStorage.getItem('gs_events')||'[]');
+    if(Array.isArray(local)&&local.length){
+      const byId={};
+      events.concat(local).forEach(e=>{
+        const prev=byId[e.id];
+        if(!prev||(e.updated_at||'')>(prev.updated_at||'')) byId[e.id]=e;
+      });
+      events=Object.values(byId);
+    }
+  }catch(e){}
+  try{ picked=JSON.parse(localStorage.getItem(FILTER_STORE)||'[]'); }catch(e){ picked=[]; }
+}
+
+/* ── 番組の抽出（繰り返しを実体化して一覧にする） ── */
+function occurrences(ev,from,to){
+  const start=parseDT(ev.start); if(!start) return [];
+  const end=parseDT(ev.end);
+  const dur=end&&end>start?end-start:0;
+  const until=parseDT(ev.repeat_until)||addMonths(to,1);
+  const out=[];
+  const push=s=>{
+    const e=dur?new Date(s.getTime()+dur):null;
+    if((e||s)<from||s>to) return;
+    out.push(Object.assign({},ev,{_start:s,_end:e,_iid:ev.id+'@'+ymd(s)}));
+  };
+  const rep=ev.repeat||'none';
+  if(rep==='none'){ push(start); return out; }
+  const step=rep==='weekly'?7:rep==='biweekly'?14:0;
+  let cur=new Date(start), guard=0;
+  while(cur<=to&&cur<=until&&guard++<400){ push(cur); cur=step?addDays(cur,step):addMonths(cur,1); }
+  return out;
+}
+function programs(from,to){
+  const list=[];
+  events.filter(e=>PROGRAM_CATS.includes(e.category)&&shown(e.app))
+        .forEach(ev=>occurrences(ev,from,to).forEach(o=>list.push(o)));
+  /* 公式YouTubeの配信予定（feed.json）も番組として扱う */
+  feed.items.filter(it=>it.upcoming&&shown(it.app)).forEach(it=>{
+    const d=parseDT(it.date+(it.time?'T'+it.time:''));
+    if(!d||d<from||d>to) return;
+    if(list.some(o=>o.title===it.title&&ymd(o._start)===ymd(d))) return;
+    list.push({id:'feed-'+it.url,app:it.app,category:'生放送',title:it.title,channel:'YouTube',
+      url:it.url,source:it.url,confidence:'確定',note:'公式YouTubeの配信予約から自動取得',
+      _start:d,_end:null,_iid:'feed@'+it.url,_auto:true});
+  });
+  list.sort((a,b)=>a._start-b._start);
+  return list;
+}
+function stateOf(o,now){
+  now=now||new Date();
+  if(o._end&&o._start<=now&&now<=o._end) return 'live';
+  if((o._end||o._start)<now) return 'past';
+  if(o._start-now<=24*3600000) return 'soon';
+  return 'upcoming';
+}
+function guideLinks(key){
+  return (app(key).links||[]).filter(l=>/GameWith|Game8/i.test(l.label));
+}
+
+/* ── 描画 ─────────────────────────────────────────── */
+function stateTag(st){
+  return st==='live'?'<span class="tag tag-live">配信中</span>'
+       : st==='soon'?'<span class="tag tag-soon">まもなく</span>'
+       : st==='past'?'<span class="tag tag-done">終了</span>':'';
+}
+function cdClass(st){ return st==='live'?'now':st==='soon'?'soon':st==='past'?'past':''; }
+
+function renderNext(){
+  const now=new Date();
+  const list=programs(addDays(now,-2),addDays(now,180));
+  const next=list.find(o=>stateOf(o,now)==='live')||list.find(o=>o._start>=now);
+  if(!next){ $('s-next').innerHTML='<div class="empty">予定されている番組がありません</div>'; return; }
+  const a=app(next.app), st=stateOf(next,now);
+  const gl=guideLinks(next.app);
+  $('s-next').innerHTML=
+     '<div class="sec-title"><span class="bar"></span>次の番組</div>'
+    +'<div class="hero" style="background:linear-gradient(130deg,'+a.color+' 0%,'+shade(a.color,-28)+' 100%)" data-iid="'+esc(next._iid)+'">'
+      +'<div class="lbl">'+esc(a.short)+' ・ '+esc(next.category||'生放送')+(next.confidence&&next.confidence!=='確定'?' ・ '+esc(next.confidence):'')+'</div>'
+      +'<div class="ttl">'+esc(next.title)+'</div>'
+      +'<div class="when">'+esc(fmtFull(next._start))+(dayLabel(next._start)?' ・'+dayLabel(next._start):'')
+        +'<span class="cd">'+(st==='live'?'配信中':esc(untilText(next._start)))+'</span></div>'
+      +(next.note?'<div class="sum">'+esc(next.note)+'</div>':'')
+      +'<div class="acts">'
+        +(next.url?'<a href="'+esc(next.url)+'" target="_blank" rel="noopener">配信ページ ↗</a>':'')
+        +gl.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')
+      +'</div>'
+    +'</div>';
+}
+function shade(hex,amt){
+  const n=parseInt(hex.slice(1),16);
+  const c=[(n>>16)&255,(n>>8)&255,n&255].map(v=>Math.max(0,Math.min(255,v+amt)));
+  return '#'+c.map(v=>v.toString(16).padStart(2,'0')).join('');
+}
+function programCard(o){
+  const a=app(o.app), st=stateOf(o);
+  const gl=guideLinks(o.app);
+  return '<article class="pcard" data-iid="'+esc(o._iid)+'">'
+    +'<div class="side" style="background:'+a.color+'"></div><div class="body">'
+    +'<div class="ptop"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+      +'<span class="tag tag-cat">'+esc(o.category||'生放送')+'</span>'+stateTag(st)
+      +(o.confidence&&o.confidence!=='確定'?'<span class="tag tag-conf">'+esc(o.confidence)+'</span>':'')
+      +(o._auto?'<span class="tag tag-cat">自動取得</span>':'')+'</div>'
+    +'<div class="ptitle">'+esc(o.title)+'</div>'
+    +'<div class="pmeta"><b>'+esc(fmtDay(o._start)+' '+hm(o._start))+'</b>'
+      +'<span class="cd-s '+cdClass(st)+'">'+(st==='live'?'配信中':esc(untilText(o._start)))+'</span>'
+      +(o.channel?'<span>'+esc(o.channel)+'</span>':'')+'</div>'
+    +(o.note?'<div class="psum">'+esc(o.note)+'</div>':'')
+    +'<div class="plinks">'
+      +(o.url?'<a href="'+esc(o.url)+'" target="_blank" rel="noopener">配信・告知ページ ↗</a>':'')
+      +gl.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')
+    +'</div></div></article>';
+}
+function renderUpcoming(){
+  const now=new Date();
+  const list=programs(now,addDays(now,90)).filter(o=>(o._end||o._start)>=now);
+  $('s-upcoming').innerHTML='<div class="sec-title"><span class="bar"></span>今後の番組'
+    +'<span class="n">'+list.length+'件</span></div>'
+    +(list.length?list.slice(0,20).map(programCard).join('')
+      :'<div class="empty">90日以内に予定されている番組はありません</div>');
+}
+
+/* カレンダー: 月グリッド（時刻チップ）＋日別アジェンダ（概要つき） */
+function renderCal(){
+  const first=startOfMonth(calCursor);
+  const gridStart=addDays(first,-first.getDay());
+  const gridEnd=addDays(gridStart,42);
+  const list=programs(gridStart,gridEnd);
+  const byDay={};
+  list.forEach(o=>{ (byDay[ymd(o._start)]=byDay[ymd(o._start)]||[]).push(o); });
+
+  const todayKey=ymd(new Date());
+  let cells='';
+  for(let i=0;i<42;i++){
+    const d=addDays(gridStart,i), key=ymd(d), items=(byDay[key]||[]);
+    const chips=items.slice(0,2).map(o=>{
+      const a=app(o.app);
+      return '<i style="background:'+a.color+'" title="'+esc(o.title)+'">'+esc(hm(o._start))+'</i>';
+    }).join('');
+    cells+='<div class="cell'+(d.getMonth()!==first.getMonth()?' out':'')
+      +(key===todayKey?' today':'')+(key===selectedDay?' sel':'')
+      +(d.getDay()===0?' sun':'')+(d.getDay()===6?' sat':'')+'" data-day="'+key+'">'
+      +'<span class="d">'+d.getDate()+'</span>'
+      +(chips?'<span class="mini">'+chips+'</span>':'')
+      +(items.length>2?'<span class="more">+'+(items.length-2)+'</span>':'')
+      +'</div>';
+  }
+  /* アジェンダ: 番組がある日だけを、概要つきで縦に並べる */
+  const days=Object.keys(byDay).filter(k=>{
+    const d=parseDT(k);
+    return d>=first&&d<addMonths(first,1);
+  }).sort();
+  const agenda=days.map(k=>{
+    const d=parseDT(k), items=byDay[k].slice().sort((x,y)=>x._start-y._start);
+    const dowCls=d.getDay()===0?' sun':d.getDay()===6?' sat':'';
+    return '<div class="aday'+(k===todayKey?' today':'')+'" data-day="'+k+'">'
+      +'<div class="adate'+dowCls+'"><div class="dd">'+d.getDate()+'</div><div class="dw">'+DOW[d.getDay()]+'</div></div>'
+      +'<div class="aitems">'+items.map(o=>{
+          const a=app(o.app);
+          const sum=(o.note||'').split('\n')[0];
+          return '<div class="aitem" data-iid="'+esc(o._iid)+'">'
+            +'<span class="bar" style="background:'+a.color+'"></span>'
+            +'<span class="txt"><span class="t1">'+esc(o.title)+'</span>'
+            +'<span class="t2">'+esc(hm(o._start))+' ・ '+esc(a.short)+' ・ '+esc(o.channel||'YouTube')
+            +(o.confidence&&o.confidence!=='確定'?' ・ '+esc(o.confidence):'')+'</span>'
+            +(sum?'<span class="t3">'+esc(sum)+'</span>':'')
+            +'</span></div>';
+        }).join('')+'</div></div>';
+  }).join('');
+
+  $('s-cal').innerHTML='<div class="sec-title"><span class="bar"></span>カレンダー'
+      +'<span class="n">'+days.length+'日に番組</span></div>'
+    +'<div class="cal-head"><button class="btn" id="cal-prev">‹ 前月</button>'
+      +'<div class="cal-title">'+first.getFullYear()+'年'+(first.getMonth()+1)+'月</div>'
+      +'<button class="btn" id="cal-next">翌月 ›</button></div>'
+    +'<div class="cal"><div class="cal-dow">'+DOW.map(x=>'<div>'+x+'</div>').join('')+'</div>'
+      +'<div class="cal-grid">'+cells+'</div></div>'
+    +'<div class="agenda">'+(agenda||'<div class="empty">この月に予定されている番組はありません</div>')+'</div>'
+    +'<div style="margin-top:8px"><button class="btn" id="cal-today" style="width:100%">今月へ戻る</button></div>';
+  $('cal-prev').onclick=()=>{ calCursor=addMonths(calCursor,-1); renderCal(); };
+  $('cal-next').onclick=()=>{ calCursor=addMonths(calCursor,1); renderCal(); };
+  $('cal-today').onclick=()=>{ calCursor=startOfMonth(new Date()); selectedDay=ymd(new Date()); renderCal(); };
+}
+
+/* 番組に関する最新情報（公式＋二次情報） */
+function renderFeed(){
+  const items=feed.items.filter(it=>shown(it.app)&&!it.upcoming&&PROGRAM_WORDS.test(it.title)).slice(0,24);
+  const card=it=>{
+    const a=app(it.app), second=it.kind==='guide';
+    return '<div class="fitem" style="border-left-color:'+a.color+'">'
+      +'<div class="ft">'+esc(it.title)+'</div>'
+      +'<div class="fm"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+      +(second?'<span class="tag tag-2nd">二次情報</span>':'')
+      +(it.date?'<b>'+esc(it.date)+(it.time?' '+esc(it.time):'')+'</b>':'')
+      +'<span>'+esc(it.source_label||'')+'</span>'
+      +'<a href="'+esc(it.url)+'" target="_blank" rel="noopener">開く ↗</a></div></div>';
+  };
+  $('s-feed').innerHTML='<div class="sec-title"><span class="bar"></span>番組に関する最新情報'
+    +'<span class="n">'+items.length+'件</span></div>'
+    +(items.length?items.map(card).join('')
+      :'<div class="empty">該当する情報がまだ集まっていません</div>');
+}
+function renderLinks(){
+  const cards=APPS.filter(a=>shown(a.key)).map(a=>{
+    const ls=a.links||[];
+    if(!ls.length) return '';
+    return '<div class="linkcard" style="border-left-color:'+a.color+'"><h4>'+esc(a.name)+'</h4>'
+      +'<div class="linkrow">'+ls.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')+'</div></div>';
+  }).join('');
+  $('s-links').innerHTML='<div class="sec-title"><span class="bar"></span>情報発信チャンネル</div>'+cards;
+  $('foot').innerHTML=(feed.generated_at?'自動収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（1日2回更新）<br>':'')
+    +'公式の告知と攻略まとめ（GameWith / Game8）を合わせて表示しています。<br>'
+    +'日時は変更されることがあるため、配信前に公式で確認してください。';
+}
+function renderChips(){
+  const now=new Date(), to=addDays(now,60);
+  const counts={};
+  const saved=picked.slice(); picked=[];
+  programs(now,to).forEach(o=>{ counts[o.app]=(counts[o.app]||0)+1; });
+  picked=saved;
+  let html='<button class="chip c-all'+(picked.length?'':' on')+'" data-app="">すべて</button>';
+  APPS.forEach(a=>{
+    const on=picked.includes(a.key);
+    html+='<button class="chip c-'+a.key+(on?' on':'')+'" data-app="'+a.key+'" style="'+(on?'':'color:'+a.color)+'">'
+      +'<span class="dot" style="background:'+(on?'#fff':a.color)+'"></span>'+esc(a.short)
+      +'<span class="cnt">'+(counts[a.key]||0)+'</span></button>';
+  });
+  $('appchips').innerHTML=html;
+  $('appchips').querySelectorAll('[data-app]').forEach(b=>b.onclick=()=>{
+    const k=b.dataset.app;
+    if(!k) picked=[];
+    else{ const i=picked.indexOf(k); i<0?picked.push(k):picked.splice(i,1); }
+    localStorage.setItem(FILTER_STORE,JSON.stringify(picked));
+    render();
+  });
+}
+function render(){ renderChips(); renderNext(); renderUpcoming(); renderCal(); renderFeed(); renderLinks(); }
+
+/* ── 詳細シート ───────────────────────────────────── */
+function findOcc(iid){
+  const now=new Date();
+  return programs(addDays(now,-370),addDays(now,400)).find(o=>o._iid===iid)||null;
+}
+function openDetail(iid){
+  const o=findOcc(iid); if(!o) return;
+  const a=app(o.app), st=stateOf(o);
+  const row=(k,v)=>v?'<div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px">'
+    +'<div style="width:82px;flex-shrink:0;color:var(--text-sub);font-weight:700;font-size:12px">'+k+'</div>'
+    +'<div style="flex:1;min-width:0;word-break:break-word">'+v+'</div></div>':'';
+  const link=u=>u?'<a href="'+esc(u)+'" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">'
+    +esc(u.replace(/^https?:\/\//,'').slice(0,50))+' ↗</a>':'';
+  $('ov-title').textContent=o.title;
+  $('ov-body').innerHTML=
+     '<div class="ptop" style="margin-bottom:10px"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+      +'<span class="tag tag-cat">'+esc(o.category||'生放送')+'</span>'+stateTag(st)
+      +(o.confidence&&o.confidence!=='確定'?'<span class="tag tag-conf">'+esc(o.confidence)+'</span>':'')+'</div>'
+    +row('アプリ',esc(a.name))
+    +row('日時',esc(fmtFull(o._start))+(o._end?' 〜 '+esc(fmtFull(o._end)):''))
+    +row('残り',st==='live'?'配信中':esc(untilText(o._start)))
+    +row('配信先',esc(o.channel||''))
+    +row('概要',o.note?'<span style="white-space:pre-wrap">'+esc(o.note)+'</span>':'')
+    +row('配信ページ',link(o.url))
+    +row('出典',link(o.source))
+    +'<div class="plinks" style="margin-top:12px">'
+      +guideLinks(o.app).map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')
+      +'<a href="../">予定管理ツールで開く →</a></div>';
+  $('ov').classList.remove('hidden');
+}
+document.addEventListener('click',e=>{
+  const item=e.target.closest('[data-iid]');
+  if(item&&!e.target.closest('a')){ openDetail(item.dataset.iid); return; }
+  const day=e.target.closest('[data-day]');
+  if(day){ selectedDay=day.dataset.day; renderCal(); return; }
+});
+$('ov-close').onclick=()=>$('ov').classList.add('hidden');
+$('ov').addEventListener('click',e=>{ if(e.target.id==='ov') $('ov').classList.add('hidden'); });
+
+/* ── 初期化 ───────────────────────────────────────── */
+(async function init(){
+  await loadAll();
+  render();
+  setInterval(()=>{ renderNext(); renderUpcoming(); },60000);
+  document.addEventListener('visibilitychange',async()=>{ if(!document.hidden){ await loadAll(); render(); } });
+})();
+</script>
+</body>
+</html>
