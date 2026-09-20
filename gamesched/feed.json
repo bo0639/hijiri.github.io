@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:37:51+09:00",
+  "generated_at": "2026-09-20T23:04:37+09:00",
   "items": [
     {
       "app": "ggene",
@@ -393,6 +393,16 @@
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "音から出会うモンスト。モンストのあの曲を演奏してみた！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=S6PD1hKB-xE",
+      "date": "2026-09-18",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
       "kind": "news",
       "title": "「禁忌の獄」「禁忌の獄〜深淵〜」が9/21 12時より期間限定で登場！",
       "url": "https://www.monster-strike.com/news/20260918_3.html",
@@ -482,17 +492,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "音から出会うモンスト。モンストのあの曲を演奏してみた！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=S6PD1hKB-xE",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
       "app": "ggene",
       "kind": "guide",
       "title": "「機動戦士ガンダムOOFイベント」が開催しました。イベント限定のユニットやキャラが入手できるため、イベント期間中に忘れずに入手しておきましょう。",
@@ -510,6 +509,46 @@
       "date": "2026-09-17",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】平家物語、紅楼夢、マザーグース 使ってみた！貴重な組み合わせの4ギミック対応！強力な友情コンボも必見！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=6U6uDkjeyb8",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "空中界隈によるGRWM🏃#モンスト #モンフリ #空中界隈 #GRWM",
+      "url": "https://www.youtube.com/shorts/epujxDd88WI",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[9/17]新たな「超究極・傑」登場！「ホップ！ステップ！限定！ガチャ」開催！新イベントや新黎絶、MONST FREAK 2026の情報も！#とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/li8jvOLZrB4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[9/17]まもなくモンスト13周年！13周年記念クエストやFREAK開催情報、新超究極・傑、新イベント、新黎絶などモンストの最新情報を盛りだくさんでお届けします！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=k3Caw_jP5i4",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -643,50 +682,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【新キャラ】平家物語、紅楼夢、マザーグース 使ってみた！貴重な組み合わせの4ギミック対応！強力な友情コンボも必見！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=6U6uDkjeyb8",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "空中界隈によるGRWM🏃#モンスト #モンフリ #空中界隈 #GRWM",
-      "url": "https://www.youtube.com/shorts/epujxDd88WI",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "[9/17]新たな「超究極・傑」登場！「ホップ！ステップ！限定！ガチャ」開催！新イベントや新黎絶、MONST FREAK 2026の情報も！#とにかくみじかくモンストニュース",
-      "url": "https://www.youtube.com/shorts/li8jvOLZrB4",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンストニュース[9/17]まもなくモンスト13周年！13周年記念クエストやFREAK開催情報、新超究極・傑、新イベント、新黎絶などモンストの最新情報を盛りだくさんでお届けします！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=k3Caw_jP5i4",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "ピースをねらえ 2023年 09/16 15:00 〜 09/20 14:59",
@@ -718,6 +713,16 @@
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "モンスト女子会第2弾！紫宮るなさん & 藍沢エマさんをゲストに迎え、黎絶クエストに挑戦だ！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=z76vkgbxwig",
+      "date": "2026-09-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
       "kind": "news",
       "title": "モンストWebショップで「au PAY」「d払い」が利用可能に！さらにモンパスが「Amazon Pay」で購入可能に Webショップ",
       "url": "https://www.monster-strike.com/news/20260916_1.html",
@@ -727,17 +732,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンスト女子会第2弾！紫宮るなさん & 藍沢エマさんをゲストに迎え、黎絶クエストに挑戦だ！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=z76vkgbxwig",
-      "date": "2026-09-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
       "app": "ggene",
       "kind": "youtube",
       "title": "『機動戦士ガンダム00F』ジージェネエターナル PLAY to WATCH‼【SDガンダム ジージェネレーション エターナル】",
@@ -745,8 +739,7 @@
       "date": "2026-09-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -799,16 +792,6 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "機動戦士ガンダムZZのチャレンジ 追加",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-09-12",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "youtube",
       "title": "【激・獣神祭】新限定キャラクター「サクリファイス」登場！【モンスト公式】",
@@ -816,8 +799,7 @@
       "date": "2026-09-12",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -827,8 +809,17 @@
       "date": "2026-09-12",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "機動戦士ガンダムZZのチャレンジ 追加",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-09-12",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -852,6 +843,46 @@
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "無料10連ガチャが日替わりで登場！「登場年ごとに10連！あの日巡りガチャ」を解説！",
+      "url": "https://www.youtube.com/shorts/53fn1K7V7nc",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：魔獣憑依 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/hjxv-dvH5fs",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス：復讐代行 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/GDLYp901bjM",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【激・獣神祭新限定キャラ】サクリファイス 使ってみた！新友情コンボ、新アビリティに注目！破界の星墓「ニギミタマの星墓」、「アヴァロンの星墓」で活躍！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=F1iuwBcY35w",
+      "date": "2026-09-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
       "kind": "news",
       "title": "「ポイントで投票！第5回 ファンと創るモンストグッズ」が制作決定！モンストアにて投票受付開始！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260910_1.html",
@@ -869,50 +900,6 @@
       "time": "",
       "source_label": "Game8 モンストニュース速報",
       "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "無料10連ガチャが日替わりで登場！「登場年ごとに10連！あの日巡りガチャ」を解説！",
-      "url": "https://www.youtube.com/shorts/53fn1K7V7nc",
-      "date": "2026-09-10",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【激・獣神祭新限定キャラ】サクリファイス：魔獣憑依 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/hjxv-dvH5fs",
-      "date": "2026-09-10",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【激・獣神祭新限定キャラ】サクリファイス：復讐代行 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/GDLYp901bjM",
-      "date": "2026-09-10",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【激・獣神祭新限定キャラ】サクリファイス 使ってみた！新友情コンボ、新アビリティに注目！破界の星墓「ニギミタマの星墓」、「アヴァロンの星墓」で活躍！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=F1iuwBcY35w",
-      "date": "2026-09-10",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
     },
     {
       "app": "prospi",
@@ -986,6 +973,16 @@
     },
     {
       "app": "smagro",
+      "kind": "youtube",
+      "title": "#010 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=VCUZbDw7gU8",
+      "date": "2026-09-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
       "kind": "guide",
       "title": "のマル秘レポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
@@ -995,17 +992,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "#010 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
-      "url": "https://www.youtube.com/watch?v=VCUZbDw7gU8",
-      "date": "2026-09-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "ダルビッシュ選手の選んだ珠玉の12選手が登場！ 2026ダルビッシュセレクション選手発表！【プロスピA】",
@@ -1013,8 +999,7 @@
       "date": "2026-09-07",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1034,8 +1019,7 @@
       "date": "2026-09-06",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1195,8 +1179,7 @@
       "date": "2026-08-19",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -1236,8 +1219,7 @@
       "date": "2026-08-17",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1247,8 +1229,7 @@
       "date": "2026-08-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1338,8 +1319,7 @@
       "date": "2026-08-05",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -1369,8 +1349,7 @@
       "date": "2026-08-03",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -1410,8 +1389,7 @@
       "date": "2026-07-20",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -1431,8 +1409,7 @@
       "date": "2026-07-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1442,8 +1419,7 @@
       "date": "2026-07-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1453,8 +1429,7 @@
       "date": "2026-07-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1464,8 +1439,7 @@
       "date": "2026-07-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -1475,8 +1449,7 @@
       "date": "2026-07-16",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -1496,8 +1469,7 @@
       "date": "2026-07-15",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -1507,8 +1479,7 @@
       "date": "2026-07-06",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -1538,8 +1509,7 @@
       "date": "2026-06-22",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -1549,8 +1519,7 @@
       "date": "2026-06-08",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -1560,8 +1529,7 @@
       "date": "2026-05-26",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     }
   ],
   "status": [
@@ -1569,10 +1537,9 @@
       "app": "monst",
       "label": "モンスト / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UCd9BXPj-KcMTh0HiB-Vlb8A",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
-      "kept": 12
+      "ok": true,
+      "count": 12,
+      "error": ""
     },
     {
       "app": "monst",
@@ -1642,10 +1609,9 @@
       "app": "smagro",
       "label": "スマグロ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
-      "kept": 8
+      "ok": true,
+      "count": 8,
+      "error": ""
     },
     {
       "app": "smagro",
@@ -1699,10 +1665,9 @@
       "app": "ggene",
       "label": "ジージェネ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
-      "kept": 1
+      "ok": true,
+      "count": 1,
+      "error": ""
     },
     {
       "app": "ggene",
@@ -1748,10 +1713,9 @@
       "app": "prospi",
       "label": "プロスピ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 404: Not Found / 前回の結果を表示中",
-      "kept": 11
+      "ok": true,
+      "count": 11,
+      "error": ""
     },
     {
       "app": "prospi",
