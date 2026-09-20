@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -54,14 +55,22 @@ TIME_RE = re.compile(r"(\d{1,2})\s*[:時]\s*(\d{2})")
 
 # ── 共通ユーティリティ ────────────────────────────────────────────
 
-def fetch(url: str, accept: str = "text/html,application/xhtml+xml,application/xml") -> str:
+def fetch(url: str, accept: str = "text/html,application/xhtml+xml,application/xml",
+          retries: int = 0) -> str:
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
         "Accept": accept,
         "Accept-Language": "ja,en;q=0.8",
     })
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as res:
-        raw = res.read()
+    for attempt in range(retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as res:
+                raw = res.read()
+            break
+        except Exception:  # noqa: BLE001 - 一時的な拒否はリトライする
+            if attempt >= retries:
+                raise
+            time.sleep(5 * (attempt + 1))
     charset = None
     m = re.search(rb"charset=[\"']?([\w\-]+)", raw[:4096], re.I)
     if m:
@@ -191,7 +200,8 @@ def resolve_channel_id(handles: list[str]) -> tuple[str, str]:
 
 def youtube_feed(channel_id: str, app_key: str, match: "re.Pattern | None" = None) -> list[dict]:
     url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-    body = fetch(url, accept="application/atom+xml")
+    # YouTube は連続アクセスで一時的に404を返すことがあるため数回試す
+    body = fetch(url, accept="application/atom+xml", retries=2)
     root = ET.fromstring(body)
     ns = {"a": "http://www.w3.org/2005/Atom", "m": "http://search.yahoo.com/mrss/"}
     items = []
@@ -446,9 +456,19 @@ def abs_days(a: str, b: str) -> int:
 
 # ── メイン ───────────────────────────────────────────────────────
 
+def load_previous() -> dict:
+    try:
+        with open(FEED_PATH, encoding="utf-8") as f:
+            prev = json.load(f)
+        return prev if isinstance(prev, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
 def collect() -> dict:
     with open(SOURCES_PATH, encoding="utf-8") as f:
         config = json.load(f)
+    previous = load_previous()
     today = dt.datetime.now(JST).date()
     items: list[dict] = []
     status: list[dict] = []
@@ -529,6 +549,21 @@ def collect() -> dict:
             except Exception as exc:  # noqa: BLE001
                 status.append({"app": key, "label": label, "url": url,
                                "ok": False, "count": 0, "error": str(exc)[:200]})
+
+    # 取得に失敗したソースは、前回集めた内容をそのまま残す（情報が消えないように）
+    ok_keys = {(st["app"], st["label"].split(" / ", 1)[-1]) for st in status if st["ok"]}
+    for st in status:
+        if st["ok"]:
+            continue
+        raw_label = st["label"].split(" / ", 1)[-1]
+        if (st["app"], raw_label) in ok_keys:
+            continue
+        kept = [dict(it, stale=True) for it in previous.get("items", [])
+                if it.get("app") == st["app"] and it.get("source_label") == raw_label]
+        if kept:
+            items.extend(kept)
+            st["kept"] = len(kept)
+            st["error"] = (st["error"] + " / 前回の結果を表示中") if st["error"] else "前回の結果を表示中"
 
     # URL重複を排除（配信予定を優先して残す）
     merged: dict[tuple, dict] = {}
