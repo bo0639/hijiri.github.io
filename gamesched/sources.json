@@ -1,5 +1,5 @@
 {
-  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。",
+  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。 youtube.match を書くと、共用チャンネル（パワプロ・プロスピ公式、ガンダムチャンネルなど）からそのアプリの動画だけを残す。",
   "apps": [
     {
       "key": "monst",
@@ -86,7 +86,8 @@
           "@DQSG_Official",
           "@DQSG_JP",
           "https://www.youtube.com/watch?v=dN0XujknK9Q"
-        ]
+        ],
+        "match": "スマグロ|スマッシュグロウ"
       },
       "news": [
         {
@@ -133,7 +134,8 @@
           "https://www.youtube.com/live/Teuqv9M8Vr8",
           "https://www.youtube.com/watch?v=Hz3UWLv9wY0",
           "@ggene_eternal"
-        ]
+        ],
+        "match": "ジージェネ|ジージェネレーション|G ?GENERATION|GGENE"
       },
       "news": [
         {
@@ -174,7 +176,8 @@
         "channel_id": "UCWzEh28vj3mQKpe0fzVTOUw",
         "handles": [
           "@pawapuro_prospi"
-        ]
+        ],
+        "match": "プロスピ|プロ野球スピリッツ"
       },
       "news": [
         {
