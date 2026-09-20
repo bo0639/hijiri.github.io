@@ -3,7 +3,9 @@
 モンスト／スマグロ／ジージェネ／プロスピの「公式の生放送・動画・イベント」の予定を
 1か所でまとめて確認するための個人用スケジュールツール。
 
-公開URL: `https://bo0639.github.io/gamesched/`
+公開URL: `https://bo0639.github.io/hijiri.github.io/gamesched/`
+（リポジトリ名が `hijiri.github.io` でオーナーが `bo0639` のため、
+ユーザーページではなくプロジェクトページとして配信される）
 
 ## できること
 
