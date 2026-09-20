@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T09:47:48+09:00",
+  "generated_at": "2026-09-20T09:49:52+09:00",
   "items": [
     {
       "app": "prospi",
@@ -69,26 +69,6 @@
       "date": "2026-09-18",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第31話｜ガンダムX【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=IQmDFVf3y20",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "『機動戦士ガンダム 光のともだち』冒頭映像｜【実物大νガンダム立像 新作壁面映像】9月19日(土)上映開始！",
-      "url": "https://www.youtube.com/watch?v=Q2r02L38US8",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -243,92 +223,12 @@
     },
     {
       "app": "ggene",
-      "kind": "youtube",
-      "title": "第30話｜ガンダムAGE【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=68AEvu3hEkE",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "U.C. ENGAGEの今がわかる！ガンダムUCE 情報局#51",
-      "url": "https://www.youtube.com/watch?v=9oZFay6ZUQc",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第12話｜SDガンダム三国伝【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=dWVgLPQqeus",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "PHASE-25｜SEED DESTINY【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=8mHa5XuVY0g",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第32話｜ガンダムAGE【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=6HL0h4DXCMw",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第41話｜Vガンダム【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=d_QP1AysZgU",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
       "kind": "news",
       "title": "VIDEO 更新！",
       "url": "https://gget.ggame.jp/jp/video/",
       "date": "2026-09-17",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "youtube",
-      "title": "無職転生×パワアドコラボCM【ルーデウス二度目の転生】篇",
-      "url": "https://www.youtube.com/watch?v=lGGpBPCmW_Y",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "youtube",
-      "title": "無職転生×パワアドコラボCM【二度目の人生、二頭身から本気だす】篇",
-      "url": "https://www.youtube.com/watch?v=ZKvMF_DuTLU",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -364,29 +264,9 @@
     {
       "app": "ggene",
       "kind": "youtube",
-      "title": "PHASE-23｜SEED DESTINY【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=IeG8ZT_bAa0",
-      "date": "2026-09-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
       "title": "『機動戦士ガンダム00F』ジージェネエターナル PLAY to WATCH‼【SDガンダム ジージェネレーション エターナル】",
       "url": "https://www.youtube.com/watch?v=KALihpt22oA",
       "date": "2026-09-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第10話｜SDガンダム三国伝【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=Nx-Do4p_hTg",
-      "date": "2026-09-15",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
@@ -399,16 +279,6 @@
       "date": "2026-09-14",
       "time": "14:59",
       "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "第13話｜ガンダムΖΖ【ガンチャン】",
-      "url": "https://www.youtube.com/watch?v=pKiTrPbLBzU",
-      "date": "2026-09-14",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -532,16 +402,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "DQSG Classified Report #010 | News & Updates",
-      "url": "https://www.youtube.com/watch?v=F5f23fJSY7Q",
-      "date": "2026-09-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "ダルビッシュ選手の選んだ珠玉の12選手が登場！ 2026ダルビッシュセレクション選手発表！【プロスピA】",
@@ -592,16 +452,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "youtube",
-      "title": "『パワプロアドベンチャーズ』4thシナリオ ブートレインアカデミー紹介",
-      "url": "https://www.youtube.com/watch?v=iRpne4N-gAI",
-      "date": "2026-08-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「モンストア出張所 in 吉備SA（上り線）」が9月17日（木）より期間限定で開催！ イベント 2026.08.20 NEW 追加情報",
@@ -646,16 +496,6 @@
       "kind": "youtube",
       "title": "#009 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
       "url": "https://www.youtube.com/watch?v=n-96qNgbDdU",
-      "date": "2026-08-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "DQSG Classified Report #009 | News & Updates",
-      "url": "https://www.youtube.com/watch?v=pJws-dol5lE",
       "date": "2026-08-17",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -722,16 +562,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "DQSG Classified Report #008  | News & Updates",
-      "url": "https://www.youtube.com/watch?v=oEiqQuN-71o",
-      "date": "2026-08-03",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「モンストア ルーレットキャンペーン」を7/30より期間限定で実施！ グッズ",
@@ -742,30 +572,10 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "youtube",
-      "title": "【ロマン開花學園解説】ロマン全開！才能開花！【パワプロアプリ】",
-      "url": "https://www.youtube.com/watch?v=Ms1zfS7gSmo",
-      "date": "2026-07-30",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "youtube",
       "title": "#007 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
       "url": "https://www.youtube.com/watch?v=jE3IpqDEAMY",
-      "date": "2026-07-20",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "DQSG Classified Report #007  | News & Updates",
-      "url": "https://www.youtube.com/watch?v=5I2kFNwjP4w",
       "date": "2026-07-20",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -812,6 +622,26 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "スローイング58Dは低すぎ！？衝撃の12pt UPで新・糸井嘉男がプロスピAに登場 #プロスピa #プロ野球",
+      "url": "https://www.youtube.com/shorts/247d-HbnyI8",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "福留孝介・糸井嘉男の新能力公開！ 福留×糸井 ホンネ！俺の実力話しますSP 後編【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=sX8nl6eCua0",
+      "date": "2026-07-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "news",
       "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！",
@@ -822,11 +652,11 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
+      "app": "prospi",
       "kind": "youtube",
-      "title": "#006 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
-      "url": "https://www.youtube.com/watch?v=GIUQg3_b_Fk",
-      "date": "2026-07-06",
+      "title": "トーク内容を基に能力アップ！？ 福留×糸井 ホンネ！俺の実力話しますSP 前編【プロスピA】",
+      "url": "https://www.youtube.com/watch?v=QakGxA8TR_s",
+      "date": "2026-07-15",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
@@ -834,8 +664,8 @@
     {
       "app": "smagro",
       "kind": "youtube",
-      "title": "DQSG Classified Report #006 | News & Updates",
-      "url": "https://www.youtube.com/watch?v=EA6Co09FRGA",
+      "title": "#006 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=GIUQg3_b_Fk",
       "date": "2026-07-06",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -874,9 +704,19 @@
     {
       "app": "smagro",
       "kind": "youtube",
-      "title": "DQSG Classified Report #005  | News & Updates",
-      "url": "https://www.youtube.com/watch?v=gWpnmBtyMZo",
-      "date": "2026-06-22",
+      "title": "#004 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=3RqxiHILXpg",
+      "date": "2026-06-08",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#003  『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=Wd92JT5sljo",
+      "date": "2026-05-26",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
@@ -928,7 +768,7 @@
       "label": "スマグロ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UCitOU_hyYxPwI5gtYm-9m7A",
       "ok": true,
-      "count": 12,
+      "count": 8,
       "error": ""
     },
     {
@@ -960,7 +800,7 @@
       "label": "ジージェネ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": true,
-      "count": 12,
+      "count": 1,
       "error": ""
     },
     {
@@ -984,7 +824,7 @@
       "label": "プロスピ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw",
       "ok": true,
-      "count": 12,
+      "count": 11,
       "error": ""
     },
     {
