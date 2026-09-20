@@ -448,8 +448,15 @@ a.btn{text-decoration:none}
 const STORE='gs_events', DEL_STORE='gs_deleted', SYNC_STORE='gs_sync',
       FILTER_STORE='gs_filters', WATCH_STORE='gs_watched', NOTIFY_STORE='gs_notified';
 const DATA_PATH='gamesched/data.json';
-const DEFAULT_REPO=(location.hostname.endsWith('github.io')
-  ? location.hostname.split('.')[0]+'/'+location.hostname : 'bo0639/hijiri.github.io');
+/* このページのURLから同期先リポジトリを推定する。
+   プロジェクトページ  https://<owner>.github.io/<repo>/gamesched/ → <owner>/<repo>
+   ユーザーページ      https://<owner>.github.io/gamesched/       → <owner>/<owner>.github.io */
+const DEFAULT_REPO=(function(){
+  const host=location.hostname;
+  if(!host.endsWith('github.io')) return 'bo0639/hijiri.github.io';
+  const seg=location.pathname.split('/').filter(Boolean);
+  return host.split('.')[0]+'/'+(seg.length>1?seg[0]:host);
+})();
 
 /* sources.json が読めない場合のフォールバック定義 */
 const FALLBACK_APPS=[
