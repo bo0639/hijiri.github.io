@@ -4,6 +4,13 @@ on:
   schedule:
     # 毎日 07:00 / 19:00（JST）= 22:00 / 10:00（UTC）
     - cron: '0 22,10 * * *'
+  push:
+    # 収集ソースや収集ロジックを変えたら、その場で収集し直す
+    branches: [main]
+    paths:
+      - 'gamesched/sources.json'
+      - 'scripts/update_game_schedule.py'
+      - '.github/workflows/update_game_schedule.yml'
   workflow_dispatch:
     # 手動実行も可能
 
