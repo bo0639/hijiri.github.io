@@ -227,6 +227,81 @@ def youtube_feed(channel_id: str, app_key: str, match: "re.Pattern | None" = Non
     return items
 
 
+REL_JA_RE = re.compile(r"(\d+)\s*(分|時間|日|週間|か月|ヶ月|年)前")
+REL_EN_RE = re.compile(r"(\d+)\s*(minute|hour|day|week|month|year)s?\s+ago", re.I)
+REL_DAYS = {"分": 0, "時間": 0, "日": 1, "週間": 7, "か月": 30, "ヶ月": 30, "年": 365,
+            "minute": 0, "hour": 0, "day": 1, "week": 7, "month": 30, "year": 365}
+
+
+def relative_date(text: str, today: dt.date) -> str | None:
+    """「3 日前」「2 weeks ago」のような相対表記を日付に直す（概算）。"""
+    m = REL_JA_RE.search(text) or REL_EN_RE.search(text)
+    if not m:
+        return None
+    unit = m.group(2).lower()
+    return (today - dt.timedelta(days=int(m.group(1)) * REL_DAYS.get(unit, 0))).isoformat()
+
+
+def yt_initial_data(body: str) -> dict | None:
+    m = re.search(r"ytInitialData\s*=\s*(\{.*?\})\s*;\s*</script>", body, re.S)
+    if not m:
+        return None
+    try:
+        return json.loads(m.group(1))
+    except json.JSONDecodeError:
+        return None
+
+
+def _walk_videos(node, found: list):
+    """チャンネルページから動画（videoId + タイトル + 公開時期）を拾う。"""
+    if isinstance(node, dict):
+        if "videoId" in node and "title" in node and "publishedTimeText" in node:
+            found.append(node)
+        for value in node.values():
+            _walk_videos(value, found)
+    elif isinstance(node, list):
+        for value in node:
+            _walk_videos(value, found)
+
+
+def youtube_videos_page(channel_id: str, app_key: str, today: dt.date,
+                        match: "re.Pattern | None" = None) -> list[dict]:
+    """RSSが使えないときに、チャンネルの動画ページから最新動画を拾う。"""
+    data = yt_initial_data(fetch(f"https://www.youtube.com/channel/{channel_id}/videos"))
+    if not data:
+        return []
+    found: list = []
+    _walk_videos(data, found)
+    items, seen = [], set()
+    for node in found:
+        vid = node.get("videoId")
+        if not vid or vid in seen:
+            continue
+        title_node = node.get("title") or {}
+        runs = title_node.get("runs") or [] if isinstance(title_node, dict) else []
+        title = (runs[0].get("text") if runs else "") or (
+            title_node.get("simpleText", "") if isinstance(title_node, dict) else "")
+        published = node.get("publishedTimeText") or {}
+        when = published.get("simpleText", "") if isinstance(published, dict) else ""
+        if not title or (match and not match.search(title)):
+            continue
+        seen.add(vid)
+        items.append({
+            "app": app_key,
+            "kind": "youtube",
+            "title": title,
+            "url": f"https://www.youtube.com/watch?v={vid}",
+            "date": relative_date(when, today) or "",
+            "time": "",
+            "source_label": "公式YouTube（最新動画）",
+            "upcoming": False,
+            "approx": True,
+        })
+        if len(items) >= MAX_ITEMS_PER_SOURCE:
+            break
+    return items
+
+
 def _walk(node, found: list):
     """ytInitialData から配信予定（upcomingEventData付き）を再帰的に拾う。"""
     if isinstance(node, dict):
@@ -240,13 +315,8 @@ def _walk(node, found: list):
 
 
 def youtube_upcoming(channel_id: str, app_key: str, match: "re.Pattern | None" = None) -> list[dict]:
-    body = fetch(f"https://www.youtube.com/channel/{channel_id}/streams")
-    m = re.search(r"ytInitialData\s*=\s*(\{.*?\})\s*;\s*</script>", body, re.S)
-    if not m:
-        return []
-    try:
-        data = json.loads(m.group(1))
-    except json.JSONDecodeError:
+    data = yt_initial_data(fetch(f"https://www.youtube.com/channel/{channel_id}/streams"))
+    if not data:
         return []
     found: list = []
     _walk(data, found)
@@ -486,16 +556,23 @@ def collect() -> dict:
         if channel_id:
             for label, fn in (("公式YouTube（最新動画）", youtube_feed),
                               ("公式YouTube（配信予定）", youtube_upcoming)):
+                note = ""
                 try:
                     got = fn(channel_id, key, yt_match)
-                    items.extend(got)
-                    status.append({"app": key, "label": f"{short} / {label}",
-                                   "url": f"https://www.youtube.com/channel/{channel_id}",
-                                   "ok": True, "count": len(got), "error": ""})
                 except Exception as exc:  # noqa: BLE001
-                    status.append({"app": key, "label": f"{short} / {label}",
-                                   "url": f"https://www.youtube.com/channel/{channel_id}",
-                                   "ok": False, "count": 0, "error": str(exc)[:200]})
+                    got, note = [], str(exc)[:160]
+                    if fn is youtube_feed:
+                        # RSSが拒否されることがあるので、チャンネルページから拾い直す
+                        try:
+                            got = youtube_videos_page(channel_id, key, today, yt_match)
+                            if got:
+                                note += " / チャンネルページから取得（公開日は概算）"
+                        except Exception as exc2:  # noqa: BLE001
+                            note += f" / 代替取得も失敗: {str(exc2)[:80]}"
+                items.extend(got)
+                status.append({"app": key, "label": f"{short} / {label}",
+                               "url": f"https://www.youtube.com/channel/{channel_id}",
+                               "ok": bool(got) or not note, "count": len(got), "error": note})
         else:
             status.append({"app": key, "label": f"{short} / 公式YouTube", "url": "",
                            "ok": False, "count": 0,
