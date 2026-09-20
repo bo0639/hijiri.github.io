@@ -33,8 +33,15 @@
 「日付＋見出し」を総当たりで抽出）と、公式YouTubeチャンネルの最新動画・配信予定を集めます。
 
 取得に失敗したソースは `feed.json` の `status` に理由が残り、アプリの「情報」タブと
-設定画面に赤い印で表示されます。URLやチャンネルIDが変わったときは `sources.json` を直せば
-そのまま次回の実行から反映されます（`youtube.channel_id` が空の場合は `handles` から自動解決を試みます）。
+設定画面に赤い印で表示されます。URLやチャンネルIDが変わったときは `sources.json` を直せば、
+main への push をきっかけにその場で収集し直します。
+
+`sources.json` の書き方:
+
+- `news[].urls` — 上から順に試し、最初に見出しが取れたURLを採用する（サイト改装でパスが変わっても拾える）
+- `news[].match` — 正規表現に一致する見出しだけ残す（ドラクエ公式ニュースからスマグロ分だけ拾う、など）
+- `youtube.channel_id` — 空なら `handles` から解決する。`@ハンドル` のほか、チャンネルURLや
+  公式動画のURLでも可（動画ページからそのチャンネルIDを取り出す）
 
 手動で実行する場合は GitHub の Actions から「ゲーム公式情報の自動収集」を Run workflow、
 ローカルなら `python scripts/update_game_schedule.py`。

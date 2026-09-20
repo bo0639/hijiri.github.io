@@ -1,5 +1,5 @@
 {
-  "_comment": "アプリ定義と自動収集ソースの設定。channel_id / news URL は scripts/update_game_schedule.py が参照します。誤っている場合はここを直せばOK（アプリ側の表示リンクも同じ定義を使用）。",
+  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。",
   "apps": [
     {
       "key": "monst",
@@ -8,20 +8,52 @@
       "color": "#e8482c",
       "site": "https://www.monster-strike.com/",
       "links": [
-        { "label": "公式サイト", "url": "https://www.monster-strike.com/" },
-        { "label": "ゲーム情報", "url": "https://www.monster-strike.com/news/" },
-        { "label": "イベント", "url": "https://www.monster-strike.com/event/" },
-        { "label": "公式YouTube", "url": "https://www.youtube.com/@monsterstrike" },
-        { "label": "公式X", "url": "https://x.com/monst_mixi" }
+        {
+          "label": "公式サイト",
+          "url": "https://www.monster-strike.com/"
+        },
+        {
+          "label": "ゲーム情報",
+          "url": "https://www.monster-strike.com/news/"
+        },
+        {
+          "label": "イベント",
+          "url": "https://www.monster-strike.com/event/"
+        },
+        {
+          "label": "公式YouTube",
+          "url": "https://www.youtube.com/@monsterstrike"
+        },
+        {
+          "label": "公式X",
+          "url": "https://x.com/monst_mixi"
+        }
       ],
       "youtube": {
         "channel_id": "UCd9BXPj-KcMTh0HiB-Vlb8A",
-        "handles": ["@monsterstrike"]
+        "handles": [
+          "@monsterstrike"
+        ]
       },
       "news": [
-        { "label": "ゲーム情報", "url": "https://www.monster-strike.com/news/" },
-        { "label": "イベント", "url": "https://www.monster-strike.com/event/" },
-        { "label": "エンタメ情報", "url": "https://www.monster-strike.com/entertainment-news/" }
+        {
+          "label": "ゲーム情報",
+          "urls": [
+            "https://www.monster-strike.com/news/"
+          ]
+        },
+        {
+          "label": "イベント",
+          "urls": [
+            "https://www.monster-strike.com/event/"
+          ]
+        },
+        {
+          "label": "エンタメ情報",
+          "urls": [
+            "https://www.monster-strike.com/entertainment-news/"
+          ]
+        }
       ]
     },
     {
@@ -31,20 +63,48 @@
       "color": "#1f7ae0",
       "site": "https://smashgrow.dragonquest.jp/",
       "links": [
-        { "label": "公式サイト", "url": "https://smashgrow.dragonquest.jp/" },
-        { "label": "お知らせ", "url": "https://smashgrow.dragonquest.jp/news/" },
-        { "label": "ドラクエ公式ニュース", "url": "https://www.dragonquest.jp/news/" },
-        { "label": "公式X", "url": "https://x.com/DQSG_JP" },
-        { "label": "スクエニ公式YouTube", "url": "https://www.youtube.com/@SquareEnixJP" }
+        {
+          "label": "公式サイト",
+          "url": "https://smashgrow.dragonquest.jp/"
+        },
+        {
+          "label": "公式X",
+          "url": "https://x.com/DQSG_JP"
+        },
+        {
+          "label": "公式YouTube",
+          "url": "https://www.youtube.com/@DQSG_Official"
+        },
+        {
+          "label": "ドラクエ公式ニュース",
+          "url": "https://www.dragonquest.jp/news/"
+        }
       ],
       "youtube": {
         "channel_id": "",
-        "handles": ["@DQSG_JP", "@SquareEnixJP"]
+        "handles": [
+          "@DQSG_Official",
+          "@DQSG_JP",
+          "https://www.youtube.com/watch?v=dN0XujknK9Q"
+        ]
       },
       "news": [
-        { "label": "お知らせ", "url": "https://smashgrow.dragonquest.jp/news/" },
-        { "label": "公式サイト", "url": "https://smashgrow.dragonquest.jp/" },
-        { "label": "ドラクエ公式ニュース", "url": "https://www.dragonquest.jp/news/" }
+        {
+          "label": "お知らせ",
+          "urls": [
+            "https://smashgrow.dragonquest.jp/news/",
+            "https://smashgrow.dragonquest.jp/information/",
+            "https://smashgrow.dragonquest.jp/topics/",
+            "https://smashgrow.dragonquest.jp/"
+          ]
+        },
+        {
+          "label": "ドラクエ公式ニュース",
+          "urls": [
+            "https://www.dragonquest.jp/news/"
+          ],
+          "match": "スマッシュグロウ|スマグロ"
+        }
       ]
     },
     {
@@ -54,18 +114,36 @@
       "color": "#0a8f6a",
       "site": "https://gget.ggame.jp/jp/",
       "links": [
-        { "label": "公式サイト", "url": "https://gget.ggame.jp/jp/" },
-        { "label": "ニュース", "url": "https://gget.ggame.jp/jp/news/" },
-        { "label": "公式X", "url": "https://x.com/ggene_eternal" },
-        { "label": "バンナム公式YouTube", "url": "https://www.youtube.com/@BandaiNamcoEntertainmentJP" }
+        {
+          "label": "公式サイト",
+          "url": "https://gget.ggame.jp/jp/"
+        },
+        {
+          "label": "公式X",
+          "url": "https://x.com/ggene_eternal"
+        },
+        {
+          "label": "DMM GAMES版",
+          "url": "https://gget.ggame.jp/jp/dmg/"
+        }
       ],
       "youtube": {
         "channel_id": "",
-        "handles": ["@ggene_eternal", "@BandaiNamcoEntertainmentJP"]
+        "handles": [
+          "https://www.youtube.com/live/Teuqv9M8Vr8",
+          "https://www.youtube.com/watch?v=Hz3UWLv9wY0",
+          "@ggene_eternal"
+        ]
       },
       "news": [
-        { "label": "ニュース", "url": "https://gget.ggame.jp/jp/news/" },
-        { "label": "公式サイト", "url": "https://gget.ggame.jp/jp/" }
+        {
+          "label": "ニュース",
+          "urls": [
+            "https://gget.ggame.jp/jp/news/",
+            "https://gget.ggame.jp/jp/information/",
+            "https://gget.ggame.jp/jp/"
+          ]
+        }
       ]
     },
     {
@@ -75,18 +153,37 @@
       "color": "#d6a419",
       "site": "https://www.konami.com/games/prospi_a/",
       "links": [
-        { "label": "公式サイト", "url": "https://www.konami.com/games/prospi_a/" },
-        { "label": "お知らせ", "url": "https://prospia.konami.net/arb/main/news/index.php" },
-        { "label": "公式X", "url": "https://x.com/prospi_a" },
-        { "label": "パワプロ・プロスピ公式YouTube", "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw" }
+        {
+          "label": "公式サイト",
+          "url": "https://www.konami.com/games/prospi_a/"
+        },
+        {
+          "label": "お知らせ",
+          "url": "https://prospia.konami.net/arb/main/news/index.php"
+        },
+        {
+          "label": "公式X",
+          "url": "https://x.com/prospi_a"
+        },
+        {
+          "label": "パワプロ・プロスピ公式YouTube",
+          "url": "https://www.youtube.com/channel/UCWzEh28vj3mQKpe0fzVTOUw"
+        }
       ],
       "youtube": {
         "channel_id": "UCWzEh28vj3mQKpe0fzVTOUw",
-        "handles": ["@pawapuro_prospi"]
+        "handles": [
+          "@pawapuro_prospi"
+        ]
       },
       "news": [
-        { "label": "お知らせ", "url": "https://prospia.konami.net/arb/main/news/index.php" },
-        { "label": "公式サイト", "url": "https://www.konami.com/games/prospi_a/" }
+        {
+          "label": "お知らせ",
+          "urls": [
+            "https://prospia.konami.net/arb/main/news/index.php",
+            "https://www.konami.com/games/prospi_a/"
+          ]
+        }
       ]
     }
   ]

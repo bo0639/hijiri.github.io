@@ -36,6 +36,7 @@ TIMEOUT = 25
 MAX_ITEMS_PER_SOURCE = 12
 NEWS_KEEP_DAYS = 120          # これより古い見出しは捨てる
 FUTURE_LIMIT_DAYS = 400       # 明らかに誤抽出の未来日付を弾く
+NEWS_FUTURE_DAYS = 30         # 一覧の掲載日としてありえない未来日付を弾く
 
 TAG_RE = re.compile(r"<[^>]+>")
 ANCHOR_RE = re.compile(r"<a\b[^>]*?href=[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", re.I | re.S)
@@ -44,8 +45,9 @@ RSS_LINK_RE = re.compile(
 HREF_RE = re.compile(r"href=[\"']([^\"']+)[\"']", re.I)
 
 DATE_PATTERNS = [
-    re.compile(r"(20\d{2})\s*[./\-年]\s*(\d{1,2})\s*[./\-月]\s*(\d{1,2})"),
-    re.compile(r"(\d{1,2})\s*[./月]\s*(\d{1,2})\s*日?"),
+    re.compile(r"(20\d{2})\s*[./\-年]\s*(\d{1,2})\s*[./\-月]\s*(\d{1,2})(?!\d)"),
+    # 「1.5周年」「2.5次元」を日付と誤読しないよう、区切りは / と 月 のみ
+    re.compile(r"(?<!\d)(\d{1,2})\s*[/／]\s*(\d{1,2})(?!\d)|(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日"),
 ]
 TIME_RE = re.compile(r"(\d{1,2})\s*[:時]\s*(\d{2})")
 
@@ -102,7 +104,8 @@ def parse_date(text: str, today: dt.date, with_year_only: bool = False) -> str |
     m = DATE_PATTERNS[1].search(text)
     if not m:
         return None
-    mo, d = (int(x) for x in m.groups())
+    nums = [x for x in m.groups() if x]
+    mo, d = int(nums[0]), int(nums[1])
     y = today.year
     # 年をまたいだ直後は前年表記の可能性が高い
     if mo - today.month > 6:
@@ -288,6 +291,20 @@ def parse_feed_xml(body: str, app_key: str, label: str, today: dt.date) -> list[
 
 SKIP_TEXT = {"", "TOP", "トップ", "一覧", "もっと見る", "next", "prev", "前へ", "次へ",
              "お知らせ", "ニュース", "ホーム", "詳細", "詳しくはこちら"}
+CAT_WORDS = "お知らせ|イベント|アップデート|キャンペーン|ニュース|その他|重要|メンテナンス|ガチャ"
+LEAD_RE = re.compile(r"^\s*(CHECK|NEW|新着|PICKUP)\s+", re.I)
+LEAD_DATE_RE = re.compile(r"^\s*(20\d{2}\s*[./\-年]\s*)?\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
+                          r"\s*(\([月火水木金土日]\))?\s*")
+TAIL_RE = re.compile(r"\s*(?:" + CAT_WORDS + r")?\s*20\d{2}\s*[./\-年]\s*\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
+                     r"\s*(?:NEW|新着)?\s*$", re.I)
+
+
+def clean_title(text: str) -> str:
+    """一覧のリンク文字列から、日付・カテゴリ・NEWバッジを取り除く。"""
+    out = TAIL_RE.sub("", text).strip()
+    out = LEAD_DATE_RE.sub("", out).strip()
+    out = LEAD_RE.sub("", out).strip()
+    return out or text
 
 
 def parse_news_html(body: str, base: str, app_key: str, label: str,
@@ -309,15 +326,13 @@ def parse_news_html(body: str, base: str, app_key: str, label: str,
                 or parse_date(text, today, with_year_only=True)
                 or parse_date(window, today)
                 or parse_date(text, today))
-        if not date:
+        if not date or date > (today + dt.timedelta(days=NEWS_FUTURE_DAYS)).isoformat():
             continue
         url = absolute(base, html.unescape(href))
         if url in seen or url.startswith("javascript"):
             continue
         seen.add(url)
-        # 見出しの先頭に付いた日付表記は落とす
-        clean = re.sub(r"^\s*(20\d{2}\s*[./\-年]\s*)?\d{1,2}\s*[./\-月]\s*\d{1,2}\s*日?"
-                       r"\s*(\([月火水木金土日]\))?\s*", "", text).strip()
+        clean = clean_title(text)
         items.append({
             "app": app_key,
             "kind": "news",
@@ -370,25 +385,38 @@ def collect() -> dict:
 
         # --- 公式サイトのニュース ---
         for src in app.get("news", []):
-            url, label = src["url"], f"{short} / {src.get('label', 'ニュース')}"
-            try:
-                body = fetch(url)
+            src_label = src.get("label", "ニュース")
+            label = f"{short} / {src_label}"
+            candidates = src.get("urls") or [src["url"]]
+            match = re.compile(src["match"]) if src.get("match") else None
+            got: list[dict] = []
+            used, errors = "", []
+            for url in candidates:
+                try:
+                    body = fetch(url)
+                except Exception as exc:  # noqa: BLE001 - 次の候補URLへ
+                    errors.append(f"{url}: {exc}")
+                    continue
                 feed_url = discover_feed(body, url)
-                got: list[dict] = []
+                found: list[dict] = []
                 if feed_url:
                     try:
-                        got = parse_feed_xml(fetch(feed_url, accept="application/rss+xml"),
-                                             key, src.get("label", "ニュース"), today)
+                        found = parse_feed_xml(fetch(feed_url, accept="application/rss+xml"),
+                                               key, src_label, today)
                     except Exception:  # noqa: BLE001 - RSSが壊れていればHTMLへ
-                        got = []
-                if not got:
-                    got = parse_news_html(body, url, key, src.get("label", "ニュース"), today)
-                items.extend(got)
-                status.append({"app": key, "label": label, "url": url,
-                               "ok": True, "count": len(got), "error": ""})
-            except Exception as exc:  # noqa: BLE001
-                status.append({"app": key, "label": label, "url": url,
-                               "ok": False, "count": 0, "error": str(exc)[:200]})
+                        found = []
+                if not found:
+                    found = parse_news_html(body, url, key, src_label, today)
+                if match:
+                    found = [x for x in found if match.search(x["title"])]
+                used = url
+                if found:
+                    got = found
+                    break
+            items.extend(got)
+            status.append({"app": key, "label": label, "url": used or (candidates[0] if candidates else ""),
+                           "ok": bool(used), "count": len(got),
+                           "error": "" if used else "; ".join(errors)[:200]})
 
     # URL重複を排除（配信予定を優先して残す）
     merged: dict[str, dict] = {}
