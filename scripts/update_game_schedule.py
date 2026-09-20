@@ -301,11 +301,18 @@ TAIL_RE = re.compile(r"\s*(?:" + CAT_WORDS + r")?\s*20\d{2}\s*[./\-年]\s*\d{1,2
                      r"\s*(?:NEW|新着)?\s*$", re.I)
 
 
+LEAD_TIME_RE = re.compile(r"^\s*\d{1,2}\s*[:時]\s*\d{2}\s*(?:[〜~\-–]\s*(?:\d{1,2}\s*[:時]\s*\d{2})?)?\s*"
+                          r"(?:より|から|開始)?\s*")
+LEAD_JOIN_RE = re.compile(r"^\s*(?:より|から|に|は|、|・)\s*")
+
+
 def clean_title(text: str) -> str:
-    """一覧のリンク文字列から、日付・カテゴリ・NEWバッジを取り除く。"""
+    """一覧やまとめ記事の文字列から、日付・時刻・カテゴリ・NEWバッジを取り除く。"""
     out = TAIL_RE.sub("", text).strip()
     out = LEAD_DATE_RE.sub("", out).strip()
+    out = LEAD_TIME_RE.sub("", out).strip()
     out = LEAD_RE.sub("", out).strip()
+    out = LEAD_JOIN_RE.sub("", out).strip()
     return out or text
 
 
@@ -345,6 +352,49 @@ def parse_news_html(body: str, base: str, app_key: str, label: str,
             "source_label": label,
             "upcoming": False,
         })
+    items.sort(key=lambda x: x["date"], reverse=True)
+    return items[:MAX_ITEMS_PER_SOURCE]
+
+
+BLOCK_RE = re.compile(r"<(tr|li|p|h2|h3|h4|dt|td)\b[^>]*>(.*?)</\1>", re.I | re.S)
+SCRIPT_RE = re.compile(r"<(script|style|noscript)\b[^>]*>.*?</\1>", re.I | re.S)
+PROGRAM_RE = re.compile(r"生放送|配信|番組|特番|ニュース|レポート|発表|公開|放送|生配信")
+
+
+def parse_guide_html(body: str, url: str, app_key: str, label: str,
+                     today: dt.date, programs_only: bool) -> list[dict]:
+    """攻略まとめ記事の本文から、日付を含む行（表やリスト）を拾う。
+
+    一次情報ではないため、個別URLは持たせず記事URLを指す。
+    programs_only が真なら、生放送・番組らしい行だけを残す。
+    """
+    body = SCRIPT_RE.sub(" ", body)
+    items, seen = [], set()
+    for m in BLOCK_RE.finditer(body):
+        text = strip_tags(m.group(2))
+        if len(text) < 8 or len(text) > 120:
+            continue
+        date = parse_date(text, today)
+        if not date:
+            continue
+        if programs_only and not PROGRAM_RE.search(text):
+            continue
+        title = clean_title(text)
+        key = (date, title)
+        if not title or key in seen:
+            continue
+        seen.add(key)
+        items.append({
+            "app": app_key,
+            "kind": "guide",
+            "title": title,
+            "url": url,
+            "date": date,
+            "time": parse_time(text) or "",
+            "source_label": label,
+            "upcoming": False,
+        })
+    # 直近・これからの予定を優先する
     items.sort(key=lambda x: x["date"], reverse=True)
     return items[:MAX_ITEMS_PER_SOURCE]
 
@@ -421,12 +471,27 @@ def collect() -> dict:
                            "ok": bool(used), "count": len(got),
                            "error": "" if used else "; ".join(errors)[:200]})
 
+        # --- 攻略まとめ（二次情報） ---
+        for src in app.get("guides", []):
+            url = src["url"]
+            label = f"{short} / {src.get('label', 'まとめ')}"
+            try:
+                got = parse_guide_html(fetch(url), url, key, src.get("label", "まとめ"),
+                                       today, bool(src.get("programs_only")))
+                items.extend(got)
+                status.append({"app": key, "label": label, "url": url,
+                               "ok": True, "count": len(got), "error": ""})
+            except Exception as exc:  # noqa: BLE001
+                status.append({"app": key, "label": label, "url": url,
+                               "ok": False, "count": 0, "error": str(exc)[:200]})
+
     # URL重複を排除（配信予定を優先して残す）
-    merged: dict[str, dict] = {}
+    merged: dict[tuple, dict] = {}
     for item in items:
-        prev = merged.get(item["url"])
+        dedup_key = (item["url"], item["title"]) if item["kind"] == "guide" else (item["url"], "")
+        prev = merged.get(dedup_key)
         if prev is None or (item["upcoming"] and not prev["upcoming"]):
-            merged[item["url"]] = item
+            merged[dedup_key] = item
     result = sorted(merged.values(),
                     key=lambda x: (x["date"] or "0000-00-00", x["time"]), reverse=True)
 
