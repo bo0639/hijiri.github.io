@@ -252,7 +252,7 @@ const FALLBACK_APPS=[
 let APPS=FALLBACK_APPS.slice();
 let events=[], feed={generated_at:'',items:[],status:[]};
 let picked=[];                       /* 絞り込み中のアプリ */
-let viewMode='list', hidden=[];
+let viewMode='list', hidden=[], lastFetch=0;
 let calCursor=startOfMonth(new Date()), selectedDay=ymd(new Date());
 
 const $=id=>document.getElementById(id);
@@ -352,6 +352,7 @@ async function loadAll(){
   try{ picked=JSON.parse(localStorage.getItem(FILTER_STORE)||'[]'); }catch(e){ picked=[]; }
   try{ hidden=JSON.parse(localStorage.getItem(HIDE_STORE)||'[]'); }catch(e){ hidden=[]; }
   viewMode=localStorage.getItem(VIEW_STORE)==='cal'?'cal':'list';
+  lastFetch=Date.now();
 }
 
 /* ── 保存とGitHub同期（予定管理ツールと同じ場所を使う） ── */
@@ -622,7 +623,8 @@ function renderLinks(){
       +'<div class="linkrow">'+ls.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')+'</div></div>';
   }).join('');
   $('s-links').innerHTML='<div class="sec-title"><span class="bar"></span>情報発信チャンネル</div>'+cards;
-  $('foot').innerHTML=(feed.generated_at?'自動収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))+'（月・水・金・土の19時に更新）<br>':'')
+  $('foot').innerHTML=(feed.generated_at?'自動収集: '+esc(feed.generated_at.replace('T',' ').slice(0,16))
+      +'（月・水・金・土の19時に更新）／この端末での取得: '+(lastFetch?hm(new Date(lastFetch)):'—')+'<br>':'')
     +'公式の告知と攻略まとめ（GameWith / Game8）を合わせて表示しています。<br>'
     +'日時は変更されることがあるため、配信前に公式で確認してください。';
 }
@@ -720,8 +722,16 @@ $('ov').addEventListener('click',e=>{ if(e.target.id==='ov') closeDetail(); });
 (async function init(){
   await loadAll();
   render();
-  setInterval(()=>{ renderNext(); renderUpcoming(); },60000);
-  document.addEventListener('visibilitychange',async()=>{ if(!document.hidden){ await loadAll(); render(); } });
+  /* 1分ごとに残り時間を更新し、30分以上取得していなければデータも取り直す */
+  setInterval(async()=>{
+    if(Date.now()-lastFetch>30*60000){ await loadAll(); render(); return; }
+    renderNext();
+    if(viewMode==='list') renderUpcoming();
+  },60000);
+  /* 別アプリから戻ってきたときは最新データを取り直す */
+  document.addEventListener('visibilitychange',async()=>{
+    if(!document.hidden){ await loadAll(); render(); }
+  });
 })();
 </script>
 </body>
