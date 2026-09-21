@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-21T20:57:59+09:00",
+  "generated_at": "2026-09-22T01:18:40+09:00",
   "items": [
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "教官からの試練 【 開催期間 】 2025/12/31(水)12:00 〜 常設",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-12-31",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
     {
       "app": "ggene",
       "kind": "guide",
@@ -872,16 +882,6 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "機動戦士ガンダムZZのチャレンジ 追加",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-09-12",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "news",
       "title": "引退・退団・移籍にともなう対応について：9月25日(金)予定",
@@ -1322,26 +1322,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピ野球盤",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2026-08-07",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "セレクション第1弾 3ステップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-08-07",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "モンストア5周年記念グッズを発売！Xのキャンペーンも実施！ グッズ",
@@ -1768,7 +1748,7 @@
       "label": "プロスピ / Game8 イベントスケジュール",
       "url": "https://game8.jp/prospi_a/754177",
       "ok": true,
-      "count": 9,
+      "count": 8,
       "error": ""
     },
     {
@@ -1784,7 +1764,7 @@
       "label": "プロスピ / Game8 ガチャスケジュール",
       "url": "https://game8.jp/prospi_a/754178",
       "ok": true,
-      "count": 9,
+      "count": 8,
       "error": ""
     }
   ]
