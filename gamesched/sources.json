@@ -1,5 +1,5 @@
 {
-  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。 youtube.match を書くと、共用チャンネル（パワプロ・プロスピ公式、ガンダムチャンネルなど）からそのアプリの動画だけを残す。 guides は攻略まとめ（二次情報）の記事。programs_only を true にすると生放送・番組に関する行だけ残す。",
+  "_comment": "アプリ定義と自動収集ソースの設定。news の urls は上から順に試し、最初に見出しが取れたURLを採用する。match を書くとその正規表現に一致する見出しだけを残す。youtube.channel_id が空なら handles（@ハンドル／チャンネルURL／公式動画URLでも可）から解決する。 youtube.match を書くと、共用チャンネル（パワプロ・プロスピ公式、ガンダムチャンネルなど）からそのアプリの動画だけを残す。 guides は攻略まとめ（二次情報）の記事。programs_only を true にすると生放送・番組に関する行だけ残す。 icon はアプリ識別用のアイコン名（アプリ内蔵のSVG）。",
   "apps": [
     {
       "key": "monst",
@@ -84,7 +84,8 @@
           "url": "https://game8.jp/monst/775220",
           "programs_only": true
         }
-      ]
+      ],
+      "icon": "monst"
     },
     {
       "key": "smagro",
@@ -159,7 +160,8 @@
           "label": "Game8 イベント最新情報",
           "url": "https://game8.jp/dqsmashgrow/729660"
         }
-      ]
+      ],
+      "icon": "smagro"
     },
     {
       "key": "ggene",
@@ -222,7 +224,8 @@
           "label": "Game8 イベント最新情報",
           "url": "https://game8.jp/ggene-eternal/684154"
         }
-      ]
+      ],
+      "icon": "ggene"
     },
     {
       "key": "prospi",
@@ -281,7 +284,8 @@
           "label": "Game8 ガチャスケジュール",
           "url": "https://game8.jp/prospi_a/754178"
         }
-      ]
+      ],
+      "icon": "prospi"
     }
   ]
 }
