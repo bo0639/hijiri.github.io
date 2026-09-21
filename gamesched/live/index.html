@@ -52,6 +52,10 @@ a{color:inherit}
 .chip.on.c-ggene{background:var(--ggene)}.chip.on.c-prospi{background:var(--prospi)}
 .chip .cnt{font-size:10.5px;opacity:.75;font-weight:800}
 
+.viewseg{display:flex;gap:6px;padding:8px 12px;background:var(--surface);border-bottom:1px solid var(--border)}
+.vbtn{flex:1;padding:8px 10px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:#fff;
+  font-size:12.5px;font-weight:800;color:var(--text-sub);cursor:pointer;font-family:var(--font)}
+.vbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .wrap{padding:12px 12px 20px;display:flex;flex-direction:column;gap:16px}
 .sec-title{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;color:var(--text-sub);
   letter-spacing:.4px;margin-bottom:8px}
@@ -64,7 +68,7 @@ a{color:inherit}
 .hero{border-radius:var(--r-lg);padding:16px 15px;color:#fff;position:relative;overflow:hidden;
   box-shadow:0 6px 20px rgba(15,21,48,.22);cursor:pointer}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
-.hero .lbl{font-size:10.5px;font-weight:800;letter-spacing:2px;opacity:.85}
+.hero .lbl{font-size:10.5px;font-weight:800;letter-spacing:1.4px;opacity:.9;display:flex;align-items:center;gap:5px}
 .hero .ttl{font-size:19px;font-weight:900;line-height:1.35;margin:7px 0 9px;word-break:break-word}
 .hero .when{font-size:13px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .hero .cd{background:rgba(0,0,0,.24);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:900}
@@ -82,6 +86,7 @@ a{color:inherit}
 .ptop{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
 .tag{font-size:10px;font-weight:800;padding:2.5px 7px;border-radius:999px;color:#fff}
 .tag-cat{background:var(--surface-2);color:var(--text-sub);border:1px solid var(--border)}
+.tag-app{display:inline-flex;align-items:center;gap:4px;padding-left:4px}
 .tag-live{background:var(--live-bg);color:var(--live)}
 .tag-soon{background:var(--soon-bg);color:var(--soon)}
 .tag-done{background:var(--done-bg);color:var(--done)}
@@ -118,7 +123,8 @@ a{color:inherit}
 .cell.sat .d{color:#2b6fd0}.cell.sun .d{color:#c62828}
 .cell .mini{width:100%;margin-top:2px;display:flex;flex-direction:column;gap:1.5px;align-items:stretch}
 .cell .mini i{font-style:normal;font-size:8.5px;font-weight:800;color:#fff;border-radius:3px;padding:1px 2px;
-  text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.35}
+  display:flex;align-items:center;justify-content:center;gap:1.5px;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.35}
 .cell .more{font-size:8px;color:var(--text-lt);font-weight:800;margin-top:1px}
 
 .agenda{margin-top:10px;display:flex;flex-direction:column;gap:7px}
@@ -135,6 +141,7 @@ a{color:inherit}
 .aitem .txt{flex:1;min-width:0}
 .aitem .txt>span{display:block}
 .aitem .t1{font-size:12.5px;font-weight:700;line-height:1.35;word-break:break-word}
+.aitem .t1 .aicon{vertical-align:-3px;margin-right:4px}
 .aitem .t2{font-size:10.5px;color:var(--text-sub);font-weight:700;margin-top:2px}
 .aitem .t3{font-size:11px;color:var(--text-sub);margin-top:3px;line-height:1.45;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -147,20 +154,30 @@ a{color:inherit}
 .fitem .fm a{font-weight:800;color:var(--navy-lt);text-decoration:none}
 .linkcard{background:var(--surface);border-radius:var(--r);box-shadow:0 1px 4px var(--shadow);
   padding:10px 11px;margin-bottom:8px;border-left:4px solid var(--border)}
-.linkcard h4{font-size:13px;font-weight:800;margin-bottom:7px}
+.linkcard h4{font-size:13px;font-weight:800;margin-bottom:7px;display:flex;align-items:center;gap:6px}
 .linkrow{display:flex;gap:6px;flex-wrap:wrap}
 .linkrow a{font-size:11.5px;font-weight:700;color:var(--navy-lt);background:var(--surface-2);
   border:1px solid var(--border);border-radius:999px;padding:5px 10px;text-decoration:none}
 .foot{text-align:center;font-size:11px;color:var(--text-lt);padding:4px 0 10px;line-height:1.7}
-.ov{position:fixed;inset:0;background:rgba(15,21,48,.5);z-index:400;display:flex;align-items:flex-end;justify-content:center}
-.sheet{background:var(--surface);width:100%;max-width:620px;max-height:88vh;border-radius:var(--r-lg) var(--r-lg) 0 0;
-  display:flex;flex-direction:column;overflow:hidden}
+.ov{position:fixed;inset:0;background:rgba(15,21,48,.5);z-index:400;display:flex;align-items:center;justify-content:center;padding:12px}
+.sheet{background:var(--surface);width:100%;max-width:600px;max-height:78vh;border-radius:var(--r-lg);
+  display:flex;flex-direction:column;overflow:hidden;box-shadow:0 18px 50px rgba(15,21,48,.4);
+  animation:pop .16s ease}
+@keyframes pop{from{transform:scale(.96);opacity:.5}to{transform:none;opacity:1}}
+.sheet-ft{display:flex;gap:8px;padding:11px 14px;border-top:1px solid var(--border);background:var(--surface-2);flex-wrap:wrap}
+.sheet-ft .btn{flex:1;min-width:120px}
+.btn-danger{background:var(--live);color:#fff;border-color:var(--live)}
+.btn-warn{background:#fff3d6;color:#8a5a00;border-color:#efd9a6}
 .sheet-hd{display:flex;align-items:center;gap:9px;padding:13px 14px;border-bottom:1px solid var(--border)}
 .sheet-hd h3{font-size:15px;font-weight:900;flex:1;min-width:0}
-.sheet-bd{padding:13px 14px calc(16px + var(--safe-b));overflow-y:auto}
+.sheet-bd{padding:13px 14px;overflow-y:auto}
 .icon-btn{background:var(--surface-2);border:1px solid var(--border);color:var(--text-sub);
   width:32px;height:32px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
 .hidden{display:none!important}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(24px + var(--safe-b));z-index:500;
+  background:var(--navy);color:#fff;padding:11px 18px;border-radius:var(--r);font-size:13px;font-weight:700;
+  box-shadow:0 6px 20px rgba(15,21,48,.34);max-width:88vw;text-align:center}
+.toast.err{background:var(--live)}.toast.ok{background:var(--ok)}
 </style>
 </head>
 <body>
@@ -178,6 +195,10 @@ a{color:inherit}
 </header>
 <div class="appbar"><i></i><i></i><i></i><i></i></div>
 <div class="appchips" id="appchips"></div>
+<div class="viewseg" id="viewseg">
+  <button class="vbtn on" data-view="list">リスト</button>
+  <button class="vbtn" data-view="cal">カレンダー</button>
+</div>
 
 <main class="wrap">
   <section id="s-next"></section>
@@ -197,6 +218,7 @@ a{color:inherit}
       </button>
     </div>
     <div class="sheet-bd" id="ov-body"></div>
+    <div class="sheet-ft" id="ov-actions"></div>
   </div>
 </div>
 
@@ -206,7 +228,16 @@ a{color:inherit}
    番組・配信スケジュール（情報発信に特化した閲覧専用ページ）
    データは予定管理ツールと共有: ../data.json / ../feed.json / ../sources.json
    ═══════════════════════════════════════════════════════════════ */
-const FILTER_STORE='gs_live_filter';
+const FILTER_STORE='gs_live_filter', VIEW_STORE='gs_live_view', HIDE_STORE='gs_live_hidden';
+/* 予定管理ツールと共有する保存領域 */
+const STORE='gs_events', DEL_STORE='gs_deleted', SYNC_STORE='gs_sync';
+const DATA_PATH='gamesched/data.json';
+const DEFAULT_REPO=(function(){
+  const host=location.hostname;
+  if(!host.endsWith('github.io')) return 'bo0639/hijiri.github.io';
+  const seg=location.pathname.split('/').filter(Boolean);
+  return host.split('.')[0]+'/'+(seg.length>1?seg[0]:host);
+})();
 /* 「情報発信」とみなす種別 */
 const PROGRAM_CATS=['生放送','動画','生配信イベント'];
 /* フィードの見出しから番組らしいものを拾うための語 */
@@ -221,10 +252,42 @@ const FALLBACK_APPS=[
 let APPS=FALLBACK_APPS.slice();
 let events=[], feed={generated_at:'',items:[],status:[]};
 let picked=[];                       /* 絞り込み中のアプリ */
+let viewMode='list', hidden=[];
 let calCursor=startOfMonth(new Date()), selectedDay=ymd(new Date());
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ── アプリアイコン（SYM=図形の色, BG=背景の色） ───────── */
+const APP_ICONS={
+  /* モンスト: 弾と、ひっぱって弾いた軌道 */
+  monst:'<circle cx="9.6" cy="14.4" r="4.2" fill="SYM"/>'
+       +'<path d="M13.8 10.9 19.5 5.2M15.8 4.6h4.4v4.4" stroke="SYM" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+  /* スマグロ: スライム */
+  smagro:'<path d="M12 4.6c4.1 0 7.2 4.4 7.2 8.5 0 2.1-1.1 3.4-2.6 3.4H7.4c-1.5 0-2.6-1.3-2.6-3.4C4.8 9 7.9 4.6 12 4.6z" fill="SYM"/>'
+        +'<circle cx="9.9" cy="11.6" r="1.15" fill="BG"/><circle cx="14.1" cy="11.6" r="1.15" fill="BG"/>'
+        +'<path d="M10.1 14.3c1.1.9 2.7.9 3.8 0" stroke="BG" stroke-width="1.1" fill="none" stroke-linecap="round"/>',
+  /* ジージェネ: V字アンテナとバイザー */
+  ggene:'<path d="M12 3.2 9.2 7.6h5.6z" fill="SYM"/>'
+       +'<path d="M6.6 8.6h10.8v6.1c0 2.9-2 5.1-4.4 5.1h-2c-2.4 0-4.4-2.2-4.4-5.1z" fill="SYM"/>'
+       +'<rect x="8.2" y="10.7" width="2.7" height="2.3" rx=".7" fill="BG"/>'
+       +'<rect x="13.1" y="10.7" width="2.7" height="2.3" rx=".7" fill="BG"/>',
+  /* プロスピ: 野球ボール */
+  prospi:'<circle cx="12" cy="12" r="8.2" fill="SYM"/>'
+        +'<path d="M7.1 6.2c2.4 2.8 2.4 8.8 0 11.6M16.9 6.2c-2.4 2.8-2.4 8.8 0 11.6" stroke="BG" stroke-width="1.6" fill="none" stroke-linecap="round"/>'
+};
+function appIconSVG(key,color,size,invert){
+  const sym=invert?color:'#fff', bg=invert?'#fff':color;
+  const inner=(APP_ICONS[key]||'<circle cx="12" cy="12" r="6.5" fill="SYM"/>')
+    .replace(/SYM/g,sym).replace(/BG/g,bg);
+  return '<svg class="aicon" width="'+size+'" height="'+size+'" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0">'
+    +'<circle cx="12" cy="12" r="12" fill="'+bg+'"/>'+inner+'</svg>';
+}
+function appTag(key,size){
+  const a=app(key);
+  return '<span class="tag tag-app" style="background:'+a.color+'">'+appIconSVG(a.icon||a.key,a.color,size||13,true)
+    +esc(a.short)+'</span>';
+}
 
 /* ── 日付ユーティリティ（端末のローカル時刻＝日本時間前提） ── */
 function pad(n){ return String(n).padStart(2,'0'); }
@@ -287,6 +350,76 @@ async function loadAll(){
     }
   }catch(e){}
   try{ picked=JSON.parse(localStorage.getItem(FILTER_STORE)||'[]'); }catch(e){ picked=[]; }
+  try{ hidden=JSON.parse(localStorage.getItem(HIDE_STORE)||'[]'); }catch(e){ hidden=[]; }
+  viewMode=localStorage.getItem(VIEW_STORE)==='cal'?'cal':'list';
+}
+
+/* ── 保存とGitHub同期（予定管理ツールと同じ場所を使う） ── */
+function saveEvents(){ try{ localStorage.setItem(STORE,JSON.stringify(events)); }catch(e){} }
+function syncConfig(){
+  try{ return JSON.parse(localStorage.getItem(SYNC_STORE)||'null'); }catch(e){ return null; }
+}
+function b64(str){ return btoa(String.fromCharCode.apply(null,new TextEncoder().encode(str))); }
+async function pushToGitHub(msg){
+  const cfg=syncConfig();
+  if(!cfg||!cfg.token) return false;
+  const url='https://api.github.com/repos/'+((cfg.repo||DEFAULT_REPO))+'/contents/'+DATA_PATH;
+  const head={'Authorization':'Bearer '+cfg.token,'Accept':'application/vnd.github+json'};
+  try{
+    let sha=cfg.sha||null;
+    const cur=await fetch(url,{headers:head});
+    if(cur.ok){ sha=(await cur.json()).sha; }
+    const body={message:msg,content:b64(JSON.stringify(events,null,2)+'\n')};
+    if(sha) body.sha=sha;
+    const res=await fetch(url,{method:'PUT',headers:Object.assign({'Content-Type':'application/json'},head),
+      body:JSON.stringify(body)});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const j=await res.json();
+    localStorage.setItem(SYNC_STORE,JSON.stringify(Object.assign({},cfg,{sha:(j.content&&j.content.sha)||null})));
+    return true;
+  }catch(e){ toast('GitHubへの保存に失敗しました','err'); return false; }
+}
+function closeDetail(){ $('ov').classList.add('hidden'); }
+function toast(msg,cls){
+  const old=document.querySelector('.toast'); if(old) old.remove();
+  const el=document.createElement('div');
+  el.className='toast'+(cls?' '+cls:''); el.textContent=msg;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),2800);
+}
+/* 繰り返しのうち、その回だけ休止にする */
+function skipOccurrence(o){
+  const ev=events.find(e=>e.id===o.id);
+  if(!ev){ hideAuto(o); return; }
+  const day=ymd(o._start);
+  ev.skips=Array.isArray(ev.skips)?ev.skips:[];
+  if(!ev.skips.includes(day)) ev.skips.push(day);
+  ev.updated_at=new Date().toISOString();
+  saveEvents(); closeDetail(); render();
+  toast(fmtDay(o._start)+'の回を休止にしました','ok');
+  pushToGitHub('休止に設定: '+ev.title+' '+day);
+}
+/* 番組そのものを削除する */
+function deleteProgram(o){
+  const ev=events.find(e=>e.id===o.id);
+  if(!ev){ hideAuto(o); return; }
+  if(!confirm('「'+ev.title+'」を削除しますか？\n繰り返しの予定はすべて消えます。')) return;
+  events=events.filter(e=>e.id!==ev.id);
+  let del=[];
+  try{ del=JSON.parse(localStorage.getItem(DEL_STORE)||'[]'); }catch(e){}
+  if(!del.includes(ev.id)) del.push(ev.id);
+  try{ localStorage.setItem(DEL_STORE,JSON.stringify(del.slice(-500))); }catch(e){}
+  saveEvents(); closeDetail(); render();
+  toast('削除しました','ok');
+  pushToGitHub('予定を削除: '+ev.title);
+}
+/* 自動取得した配信予約は、この端末で非表示にする */
+function hideAuto(o){
+  const key=o.url||o._iid;
+  if(!hidden.includes(key)) hidden.push(key);
+  try{ localStorage.setItem(HIDE_STORE,JSON.stringify(hidden.slice(-300))); }catch(e){}
+  closeDetail(); render();
+  toast('この端末で非表示にしました','ok');
 }
 
 /* ── 番組の抽出（繰り返しを実体化して一覧にする） ── */
@@ -295,10 +428,12 @@ function occurrences(ev,from,to){
   const end=parseDT(ev.end);
   const dur=end&&end>start?end-start:0;
   const until=parseDT(ev.repeat_until)||addMonths(to,1);
+  const skips=Array.isArray(ev.skips)?ev.skips:[];
   const out=[];
   const push=s=>{
     const e=dur?new Date(s.getTime()+dur):null;
     if((e||s)<from||s>to) return;
+    if(skips.includes(ymd(s))) return;   /* 休止回は出さない */
     out.push(Object.assign({},ev,{_start:s,_end:e,_iid:ev.id+'@'+ymd(s)}));
   };
   const rep=ev.repeat||'none';
@@ -313,7 +448,7 @@ function programs(from,to){
   events.filter(e=>PROGRAM_CATS.includes(e.category)&&shown(e.app))
         .forEach(ev=>occurrences(ev,from,to).forEach(o=>list.push(o)));
   /* 公式YouTubeの配信予定（feed.json）も番組として扱う */
-  feed.items.filter(it=>it.upcoming&&shown(it.app)).forEach(it=>{
+  feed.items.filter(it=>it.upcoming&&shown(it.app)&&!hidden.includes(it.url)).forEach(it=>{
     const d=parseDT(it.date+(it.time?'T'+it.time:''));
     if(!d||d<from||d>to) return;
     if(list.some(o=>o.title===it.title&&ymd(o._start)===ymd(d))) return;
@@ -353,7 +488,7 @@ function renderNext(){
   $('s-next').innerHTML=
      '<div class="sec-title"><span class="bar"></span>次の番組</div>'
     +'<div class="hero" style="background:linear-gradient(130deg,'+a.color+' 0%,'+shade(a.color,-28)+' 100%)" data-iid="'+esc(next._iid)+'">'
-      +'<div class="lbl">'+esc(a.short)+' ・ '+esc(next.category||'生放送')+(next.confidence&&next.confidence!=='確定'?' ・ '+esc(next.confidence):'')+'</div>'
+      +'<div class="lbl">'+appIconSVG(a.icon||a.key,a.color,15,true)+esc(a.short)+' ・ '+esc(next.category||'生放送')+(next.confidence&&next.confidence!=='確定'?' ・ '+esc(next.confidence):'')+'</div>'
       +'<div class="ttl">'+esc(next.title)+'</div>'
       +'<div class="when">'+esc(fmtFull(next._start))+(dayLabel(next._start)?' ・'+dayLabel(next._start):'')
         +'<span class="cd">'+(st==='live'?'配信中':esc(untilText(next._start)))+'</span></div>'
@@ -374,7 +509,7 @@ function programCard(o){
   const gl=guideLinks(o.app);
   return '<article class="pcard" data-iid="'+esc(o._iid)+'">'
     +'<div class="side" style="background:'+a.color+'"></div><div class="body">'
-    +'<div class="ptop"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+    +'<div class="ptop">'+appTag(o.app)
       +'<span class="tag tag-cat">'+esc(o.category||'生放送')+'</span>'+stateTag(st)
       +(o.confidence&&o.confidence!=='確定'?'<span class="tag tag-conf">'+esc(o.confidence)+'</span>':'')
       +(o._auto?'<span class="tag tag-cat">自動取得</span>':'')+'</div>'
@@ -412,7 +547,8 @@ function renderCal(){
     const d=addDays(gridStart,i), key=ymd(d), items=(byDay[key]||[]);
     const chips=items.slice(0,2).map(o=>{
       const a=app(o.app);
-      return '<i style="background:'+a.color+'" title="'+esc(o.title)+'">'+esc(hm(o._start))+'</i>';
+      return '<i style="background:'+a.color+'" title="'+esc(o.title)+'">'
+        +appIconSVG(a.icon||a.key,a.color,9,true)+esc(hm(o._start))+'</i>';
     }).join('');
     cells+='<div class="cell'+(d.getMonth()!==first.getMonth()?' out':'')
       +(key===todayKey?' today':'')+(key===selectedDay?' sel':'')
@@ -437,7 +573,7 @@ function renderCal(){
           const sum=(o.note||'').split('\n')[0];
           return '<div class="aitem" data-iid="'+esc(o._iid)+'">'
             +'<span class="bar" style="background:'+a.color+'"></span>'
-            +'<span class="txt"><span class="t1">'+esc(o.title)+'</span>'
+            +'<span class="txt"><span class="t1">'+appIconSVG(a.icon||a.key,a.color,14)+esc(o.title)+'</span>'
             +'<span class="t2">'+esc(hm(o._start))+' ・ '+esc(a.short)+' ・ '+esc(o.channel||'YouTube')
             +(o.confidence&&o.confidence!=='確定'?' ・ '+esc(o.confidence):'')+'</span>'
             +(sum?'<span class="t3">'+esc(sum)+'</span>':'')
@@ -466,7 +602,7 @@ function renderFeed(){
     const a=app(it.app), second=it.kind==='guide';
     return '<div class="fitem" style="border-left-color:'+a.color+'">'
       +'<div class="ft">'+esc(it.title)+'</div>'
-      +'<div class="fm"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+      +'<div class="fm">'+appTag(it.app,12)
       +(second?'<span class="tag tag-2nd">二次情報</span>':'')
       +(it.date?'<b>'+esc(it.date)+(it.time?' '+esc(it.time):'')+'</b>':'')
       +'<span>'+esc(it.source_label||'')+'</span>'
@@ -481,7 +617,8 @@ function renderLinks(){
   const cards=APPS.filter(a=>shown(a.key)).map(a=>{
     const ls=a.links||[];
     if(!ls.length) return '';
-    return '<div class="linkcard" style="border-left-color:'+a.color+'"><h4>'+esc(a.name)+'</h4>'
+    return '<div class="linkcard" style="border-left-color:'+a.color+'">'
+      +'<h4>'+appIconSVG(a.icon||a.key,a.color,16)+esc(a.name)+'</h4>'
       +'<div class="linkrow">'+ls.map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')+'</div></div>';
   }).join('');
   $('s-links').innerHTML='<div class="sec-title"><span class="bar"></span>情報発信チャンネル</div>'+cards;
@@ -499,7 +636,7 @@ function renderChips(){
   APPS.forEach(a=>{
     const on=picked.includes(a.key);
     html+='<button class="chip c-'+a.key+(on?' on':'')+'" data-app="'+a.key+'" style="'+(on?'':'color:'+a.color)+'">'
-      +'<span class="dot" style="background:'+(on?'#fff':a.color)+'"></span>'+esc(a.short)
+      +appIconSVG(a.icon||a.key,a.color,16,on)+esc(a.short)
       +'<span class="cnt">'+(counts[a.key]||0)+'</span></button>';
   });
   $('appchips').innerHTML=html;
@@ -511,7 +648,22 @@ function renderChips(){
     render();
   });
 }
-function render(){ renderChips(); renderNext(); renderUpcoming(); renderCal(); renderFeed(); renderLinks(); }
+function renderViewSeg(){
+  document.querySelectorAll('#viewseg .vbtn').forEach(b=>b.classList.toggle('on',b.dataset.view===viewMode));
+  $('s-upcoming').classList.toggle('hidden',viewMode!=='list');
+  $('s-cal').classList.toggle('hidden',viewMode!=='cal');
+}
+function render(){
+  renderChips(); renderNext(); renderViewSeg();
+  if(viewMode==='list') renderUpcoming(); else renderCal();
+  renderFeed(); renderLinks();
+}
+document.querySelectorAll('#viewseg .vbtn').forEach(b=>b.onclick=()=>{
+  viewMode=b.dataset.view;
+  localStorage.setItem(VIEW_STORE,viewMode);
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
 
 /* ── 詳細シート ───────────────────────────────────── */
 function findOcc(iid){
@@ -528,7 +680,7 @@ function openDetail(iid){
     +esc(u.replace(/^https?:\/\//,'').slice(0,50))+' ↗</a>':'';
   $('ov-title').textContent=o.title;
   $('ov-body').innerHTML=
-     '<div class="ptop" style="margin-bottom:10px"><span class="tag" style="background:'+a.color+'">'+esc(a.short)+'</span>'
+     '<div class="ptop" style="margin-bottom:10px">'+appTag(o.app)
       +'<span class="tag tag-cat">'+esc(o.category||'生放送')+'</span>'+stateTag(st)
       +(o.confidence&&o.confidence!=='確定'?'<span class="tag tag-conf">'+esc(o.confidence)+'</span>':'')+'</div>'
     +row('アプリ',esc(a.name))
@@ -541,6 +693,18 @@ function openDetail(iid){
     +'<div class="plinks" style="margin-top:12px">'
       +guideLinks(o.app).map(l=>'<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' ↗</a>').join('')
       +'<a href="../">予定管理ツールで開く →</a></div>';
+  /* 休止・削除の操作 */
+  const repeating=o.repeat&&o.repeat!=='none';
+  $('ov-actions').innerHTML=o._auto
+    ? '<button class="btn btn-warn" data-act="hide">この配信を非表示</button>'
+    : (repeating?'<button class="btn btn-warn" data-act="skip">この回を休止</button>':'')
+      +'<button class="btn btn-danger" data-act="delete">'+(repeating?'番組ごと削除':'この予定を削除')+'</button>';
+  $('ov-actions').querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{
+    const act=b.dataset.act;
+    if(act==='hide') hideAuto(o);
+    if(act==='skip') skipOccurrence(o);
+    if(act==='delete') deleteProgram(o);
+  });
   $('ov').classList.remove('hidden');
 }
 document.addEventListener('click',e=>{
@@ -549,8 +713,8 @@ document.addEventListener('click',e=>{
   const day=e.target.closest('[data-day]');
   if(day){ selectedDay=day.dataset.day; renderCal(); return; }
 });
-$('ov-close').onclick=()=>$('ov').classList.add('hidden');
-$('ov').addEventListener('click',e=>{ if(e.target.id==='ov') $('ov').classList.add('hidden'); });
+$('ov-close').onclick=closeDetail;
+$('ov').addEventListener('click',e=>{ if(e.target.id==='ov') closeDetail(); });
 
 /* ── 初期化 ───────────────────────────────────────── */
 (async function init(){
