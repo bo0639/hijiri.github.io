@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T23:04:37+09:00",
+  "generated_at": "2026-09-21T20:57:59+09:00",
   "items": [
     {
       "app": "ggene",
@@ -62,16 +62,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "スーパーまものラッシュシーズン5が10月18日まで開催中です。期間中にハイスコアを目指して「スーパーまものラッシュメダル」を集め、 交換所 で豪華アイテムを手に入れましょう。",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-18",
-      "time": "",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "ルーレットヒッター 2023年 10/13 15:00 〜 10/16 14:59",
@@ -92,16 +82,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "シーズン5ステージ③ 10/6(火) 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-06",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
       "app": "ggene",
       "kind": "guide",
       "title": "GENERATION TOWER EAST 【開催期間】 ~10/5(月)11:59 キャラ報酬 ラクス ミオリネ",
@@ -119,6 +99,16 @@
       "date": "2026-10-05",
       "time": "11:59",
       "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "次回のスマグロレポートは、10/5(月)に更新される可能性が高いです。スマグロレポートでは新ガチャやイベント情報などが公開されるので、気になる方はチェックしましょう。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-10-05",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -194,7 +184,27 @@
     {
       "app": "monst",
       "kind": "guide",
+      "title": "ニュース後半 9/27(日)19:30頃〜",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-27",
+      "time": "19:30",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
       "title": "次回ニュース日 ①9/26(土)19:30〜 ②9/27(日)19:30〜 ▶13周年イベントの最新情報はこちら",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-26",
+      "time": "19:30",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "ニュース前半 9/26(土)19:30頃〜",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-09-26",
       "time": "19:30",
@@ -324,11 +334,61 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "次回のスマグロレポートは、9/21(月)に更新予定です。新ガチャやイベント情報などが公開されるので、気になる方はチェックしましょう。",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "title": "期間 2026年9/22(火)～",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-09-22",
+      "time": "",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "、新イベント「遺跡に潜む巨大魔物の謎」が開催されます。 イベントクエストは全15階層で、挑戦する度に各フロアがランダムに変化する ダンジョンです。",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-09-22",
+      "time": "",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「モンコレDX」9/22より開催！",
+      "url": "https://www.monster-strike.com/news/20260921_1.html",
       "date": "2026-09-21",
       "time": "",
-      "source_label": "GameWith スマグロレポート",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#011 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=0wPs4qqOp7g",
+      "date": "2026-09-21",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "プロスピAマンスリー感謝祭：『Sランク選手1人確定10連プレゼントスカウト』開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8945&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-21",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【チャレンジカップ】カップ戦変更のお知らせ／「470カップ」は今週が最終回です",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8877&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-21",
+      "time": "",
+      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -634,6 +694,16 @@
     {
       "app": "monst",
       "kind": "guide",
+      "title": "のニュース内容",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-17",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
       "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-09-17",
@@ -773,16 +843,6 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "「第62回 最強決定戦 ～『セ・パ』タッグリーグ&12球団別リーグ～」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8857&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-14",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "プロスピ交流戦 2024年 09/12 15:00 〜 09/18 14:59",
       "url": "https://game8.jp/prospi_a/37363",
@@ -819,16 +879,6 @@
       "date": "2026-09-12",
       "time": "",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "期間限定イベント「未開の幻洞」が9/14より登場！",
-      "url": "https://www.monster-strike.com/news/20260911_3.html",
-      "date": "2026-09-11",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1069,16 +1119,6 @@
       "date": "2026-09-01",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【重要】シルエットミキサーの実施について",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8944&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-08-28",
-      "time": "",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1520,16 +1560,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "#003  『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
-      "url": "https://www.youtube.com/watch?v=Wd92JT5sljo",
-      "date": "2026-05-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
     }
   ],
   "status": [
@@ -1578,7 +1608,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 4,
+      "count": 7,
       "error": ""
     },
     {
@@ -1642,7 +1672,7 @@
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
       "ok": true,
-      "count": 2,
+      "count": 3,
       "error": ""
     },
     {
