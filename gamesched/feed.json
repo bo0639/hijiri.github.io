@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-26T23:12:33+09:00",
+  "generated_at": "2026-09-29T03:00:38+09:00",
   "items": [
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストのアニメ新シリーズが、2027年1月5日より放送開始となる。今回紹介されたのは主人公「メラ」と、ヒロイン「サーティーン」の2人だ。",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2027-01-05",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "放送開始日：2027/1/5(火)〜",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2027-01-05",
+      "time": "",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -302,6 +322,16 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回ニュース日 10/1(木)16:00〜",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-01",
+      "time": "16:00",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
       "app": "ggene",
       "kind": "guide",
       "title": "強敵襲来 【開催予定日】 9/30(水)12:00~ 【イベント内容】 ・「リグ・リング」が追加",
@@ -319,6 +349,16 @@
       "date": "2026-09-30",
       "time": "10:59",
       "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "ブライダルαキャラの獣神化改が発表された。 実装は9/30(水)12時より3体同時となる。",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-30",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
       "upcoming": false
     },
     {
@@ -383,12 +423,372 @@
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "【真獣神化】ダルタニャン 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/kJIx78fmNJQ",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】ダルタニャン 真獣神化！SSとの相性抜群なアシストスキルに注目！アルセーヌ以来2体目の「ワイドパワードライブ」！ショットスキルで回復も可能！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=IeEyBDH379Y",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【ユーザー参加型】みんなで絆のカケラを集めて報酬GET！守護獣の使用回数ランキングも初公開！【TVアニメ『Re:ゼロから始める異世界生活』コラボ第2弾記念｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=LJB3vrzdzFM",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【真獣神化】オセロー SPECIAL MOVIE【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=Yharsa7KD4Y",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【獣神化・改】ビナー SPECIAL MOVIE【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=jH87vOeC1BA",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[9/27]天下五剣シリーズ、ビナー獣神化・改！ダルタニャンやオセローの真獣神化も！13周年大カーン謝祭キャンペーンやアプデ等、モンフリ後半の発表内容を #とにかくみじかくモンストニュース でお届け！",
+      "url": "https://www.youtube.com/shorts/1GL_1KqWMXI",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「超・獣神祭」9/29より開催！",
+      "url": "https://www.monster-strike.com/news/20260928_3.html",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "シールガチャ「シールオブジェネシス 第3弾」が10/2より開催！",
+      "url": "https://www.monster-strike.com/news/20260928_2.html",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "2026年後期「ストライカーレコード」開催！",
+      "url": "https://www.monster-strike.com/news/20260928_1.html",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦」2026第3期ランク戦 / 球団対抗ランク戦がスタート！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8864&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦 プロスピA リーグ 2026シーズン オンライン予選」ランキング報酬配布に関するお知らせ",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8933&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-28",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
       "kind": "guide",
-      "title": "次回ニュース日 ①9/26(土)19:30〜 ②9/27(日)19:30〜 ▶13周年イベントの最新情報はこちら",
+      "title": "Aランク以上確定スカウト 09/27 15:00 〜 10/02 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-09-27",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "自チーム確定スカウト 09/27 15:00 〜 10/02 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-09-27",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "2017『リアル版 十二支再競争』ハイライト【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=RKA1cXco_TM",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "集めて使って！オーブバックチャレンジ｜『赤ちゃん版 十三支再競争』予告編【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=YEslkOmztOE",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】オセロー 真獣神化！渾身発動時のSSの威力に注目！友情ブーストELの効果が乗る「超絶ラウンドフラッシュ」も強力！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=HVUc_7tracI",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【獣神化・改】ビナー 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/fFIX4oFxU7Q",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】ビナー 獣神化・改！破界の星墓「アラミタマの星墓」で活躍！新友情コンボ「超強乱回復弾」の高い回復力とリザレクションバリアとの相性抜群！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=W4hJWcxqa1s",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【獣神化・改】天下五剣 SPECIAL MOVIE 【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=R-bgax3CibU",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「集結、天下五剣」10/1より開催！1回無料確定ガチャも登場！",
+      "url": "https://www.monster-strike.com/news/20260927_6.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「モンコレDX 〜ビナー編〜」9/28より開催！",
+      "url": "https://www.monster-strike.com/news/20260927_3.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「MONST FREAK 2026」で発表した情報まとめ！",
+      "url": "https://www.monster-strike.com/news/20260927_7.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "天下五剣「鬼丸国綱」「童子切安綱」「三日月宗近」「大典太光世」「数珠丸恒次」の獣神化・改が本日（9/27）22時解禁！",
+      "url": "https://www.monster-strike.com/news/20260927_5.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「モンストジェネレーション2015 〜ダルタニャン編〜」9/29より開催！",
+      "url": "https://www.monster-strike.com/news/20260927_4.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「ダルタニャン」「オセロー」の真獣神化＆「ビナー」等4体の獣神化・改が解禁！",
+      "url": "https://www.monster-strike.com/news/20260927_2.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【13周年感謝キャンペーン】「集めて使って！オーブバックチャレンジ」「13周年轟絶感謝マルチガチャ」開催！",
+      "url": "https://www.monster-strike.com/news/20260927_1.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「天下五剣」獣神化・改を記念した新グッズなどが発売！ グッズ",
+      "url": "https://www.monster-strike.com/entertainment-news/20260927_3.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「モンスト13周年 TikTokコンテスト」を10/1から開催！",
+      "url": "https://www.monster-strike.com/entertainment-news/20260927_2.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「メタスト」のオンラインライブ「メタストフェス SYNC WAVE」が11/1に開催！ メタスト",
+      "url": "https://www.monster-strike.com/entertainment-news/20260927_1.html",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース内容 41656",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-09-26",
-      "time": "19:30",
+      "date": "2026-09-27",
+      "time": "",
       "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "発表された内容",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュース速報まとめ【9/27(日)更新】 4",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュース速報まとめ【9/27(日)更新】 4",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "GameWith モンスト特番",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース最新情報",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "購入3回目、7回目、10回目はAランク以上確定！「自チーム確定スカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8931&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "5回目は自チーム選手確定！「Aランク以上確定スカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8937&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "Aランク以上確定スカウト 自チーム確定スカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-09-27",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -409,106 +809,6 @@
       "date": "2026-09-26",
       "time": "15:00",
       "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】獣神化・改 エミリア 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/3_DhgE0t2bQ",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】獣神化・改 ラム 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/UzRo9ZszeDU",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】獣神化・改 レム 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/UBIPMF4PYEs",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】エミリア、ラム、レム 獣神化・改！破界の星墓「アヴァロンの星墓」、轟絶「ペディオ」で活躍！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=_pMFI2EYGwE",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "MONST FREAK 2026 [9.26]【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=i2PaLdvSESY",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "[9/26]TVアニメ『Re:ゼロから始める異世界生活』コラボ第2弾！2021登場のブライダルαが獣神化・改！大黒天も獣神化！モンフリ前半の発表内容を #とにかくみじかくモンストニュース でお届け！",
-      "url": "https://www.youtube.com/shorts/cEwXl55TvAY",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】ラインハルト 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/6CzmhZQEw5Q",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】ラム＆レム 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/nVZi0iOcpYE",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】スバル＆エミリア 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/IJaj99GinsM",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【TVアニメ『Re:ゼロから始める異世界生活』×モンスト】スバル＆エミリア、ラム＆レム、ラインハルト、ユリウス&アナスタシア、オットー 登場！高難易度クエストで活躍【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=UMObmy5GCLQ",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -549,56 +849,6 @@
       "date": "2026-09-26",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "の注目ニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のニュースおさらい",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "モンストニュース速報まとめ【9/26(土)更新】 1",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "モンストニュース速報まとめ【9/26(土)更新】 1",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "GameWith モンスト特番",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース最新情報",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
     {
@@ -644,7 +894,7 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "OBセレクション 09/25 15:00 〜 10/02 12:59",
+      "title": "OBセレクション 09/25 15:00 〜 10/02 14:59",
       "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-09-25",
       "time": "15:00",
@@ -654,7 +904,7 @@
     {
       "app": "prospi",
       "kind": "guide",
-      "title": "新選手一本釣りスカウト 09/25 15:00 〜 10/02 12:59",
+      "title": "新選手一本釣りスカウト 09/25 15:00 〜 10/02 14:59",
       "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-09-25",
       "time": "15:00",
@@ -679,56 +929,6 @@
       "date": "2026-09-25",
       "time": "12:00",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「食欲の秋ログインボーナス」実施中！10月8日(木)2:59まで",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8935&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-25",
-      "time": "02:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【Jumping Dark LIVE!!登場！】アンダーワールド・トラベラーズ SPECIAL MOVIE【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=UkCt3DmxFhw",
-      "date": "2026-09-25",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【Jumping Dark LIVE!!】新限定キャラクター「アンダーワールド・トラベラーズ」登場！【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/0clpLPf2wJU",
-      "date": "2026-09-25",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「絶級トーナメント」が9/26 12時より期間限定で登場！",
-      "url": "https://www.monster-strike.com/news/20260925_2.html",
-      "date": "2026-09-25",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「破界の星墓」が9/27より期間限定で登場！「MONST FREAK 2026」開催記念ミッションも！",
-      "url": "https://www.monster-strike.com/news/20260925_1.html",
-      "date": "2026-09-25",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -804,16 +1004,6 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "ガチャ「Jumping Dark LIVE!!」9/26より開催！新限定「アンダーワールド・トラベラーズ」登場！",
-      "url": "https://www.monster-strike.com/news/20260924_1.html",
-      "date": "2026-09-24",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
       "title": "モンソニ！新ユニット「 アンダーワールド・トラベラーズ 」が登場！ モンソニ！",
       "url": "https://monsoni.monster-strike.com/units/underworldtravelers.html",
       "date": "2026-09-24",
@@ -859,16 +1049,6 @@
       "date": "2026-09-24",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【予告】「プロスピ交流戦」9月30日(水)15:00よりエントリー開始！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8871&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-23",
-      "time": "15:00",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -933,26 +1113,6 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "イベント「プロスピシナリオプレイ」開催！10月16日(金)2:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8915&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-22",
-      "time": "02:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「オリエンタル・トラベラーズ」9/23より開催！",
-      "url": "https://www.monster-strike.com/news/20260922_1.html",
-      "date": "2026-09-22",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "スペシャルミッション",
       "url": "https://game8.jp/prospi_a/754177",
@@ -972,16 +1132,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「モンコレDX」9/22より開催！",
-      "url": "https://www.monster-strike.com/news/20260921_1.html",
-      "date": "2026-09-21",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "youtube",
       "title": "#011 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
@@ -989,16 +1139,6 @@
       "date": "2026-09-21",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【チャレンジカップ】カップ戦変更のお知らせ／「470カップ」は今週が最終回です",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8877&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-21",
-      "time": "",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1014,51 +1154,11 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「禁忌の獄」「禁忌の獄〜深淵〜」が9/21 12時より期間限定で登場！",
-      "url": "https://www.monster-strike.com/news/20260918_3.html",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「グリーンファンタジー」9/21より開催！",
-      "url": "https://www.monster-strike.com/news/20260918_2.html",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「STARLIGHT MIRAGE」9/19より開催！",
-      "url": "https://www.monster-strike.com/news/20260918_1.html",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
       "title": "LINEスタンプ「モンストPICK UP」シリーズに「エリス」が登場！",
       "url": "https://www.monster-strike.com/entertainment-news/20260918_1.html",
       "date": "2026-09-18",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "youtube",
-      "title": "ジージェネエターナル1.5周年『機動戦士Vガンダム』参戦記念！お祝いですよ！カテジナさん！阪口大助アニバーサリーSP",
-      "url": "https://www.youtube.com/watch?v=JtpoBk0byCA",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -1079,26 +1179,6 @@
       "date": "2026-09-18",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "13周年記念クエスト（テンシュリー）が9/26より期間限定で登場！",
-      "url": "https://www.monster-strike.com/news/20260917_2.html",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "新イベント「コード・ビブリア４～開かれし伝承～」9/18より開催！",
-      "url": "https://www.monster-strike.com/news/20260917_7.html",
-      "date": "2026-09-17",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1382,16 +1462,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "LINEスタンプ「モンストPICK UP」シリーズに「ジュゲム」が登場！",
-      "url": "https://www.monster-strike.com/entertainment-news/20260820_1.html",
-      "date": "2026-08-20",
-      "time": "",
-      "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "2026プロスピセレクション第3弾選手発表！プロスピA ニュース【スピニュース】",
@@ -1442,36 +1512,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ドリームキャラバン",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2026-08-14",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "セレクション第2弾 セレクトガチャ リアタイピックアップガチャ グレードアップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-08-14",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "モンソニシティで大人気『無限の肉球』が東京・表参道でポップアップストアを開催！ モンソニ！",
-      "url": "https://monsoni.monster-strike.com/news/20260813_ev_01.html",
-      "date": "2026-08-13",
-      "time": "",
-      "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "デスタムーア殲滅戦 2026/8/11(火)〜9/1(火)11:59",
@@ -1479,16 +1519,6 @@
       "date": "2026-08-11",
       "time": "11:59",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "モンストア5周年記念グッズを発売！Xのキャンペーンも実施！ グッズ",
-      "url": "https://www.monster-strike.com/entertainment-news/20260806_1.html",
-      "date": "2026-08-06",
-      "time": "",
-      "source_label": "エンタメ情報",
       "upcoming": false
     },
     {
@@ -1678,7 +1708,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 4,
+      "count": 8,
       "error": ""
     },
     {
@@ -1694,7 +1724,7 @@
       "label": "モンスト / Game8 モンストニュース速報",
       "url": "https://game8.jp/monst/110254",
       "ok": true,
-      "count": 5,
+      "count": 7,
       "error": ""
     },
     {
@@ -1766,7 +1796,7 @@
       "label": "ジージェネ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": true,
-      "count": 5,
+      "count": 4,
       "error": ""
     },
     {
@@ -1838,7 +1868,7 @@
       "label": "プロスピ / Game8 イベントスケジュール",
       "url": "https://game8.jp/prospi_a/754177",
       "ok": true,
-      "count": 11,
+      "count": 10,
       "error": ""
     },
     {
@@ -1854,7 +1884,7 @@
       "label": "プロスピ / Game8 ガチャスケジュール",
       "url": "https://game8.jp/prospi_a/754178",
       "ok": true,
-      "count": 10,
+      "count": 12,
       "error": ""
     }
   ]
