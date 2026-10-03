@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ff5a7a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>ガチャ入荷カレンダー</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='21' fill='white' stroke='%23432c4a' stroke-width='3'/><path d='M3 24a21 21 0 0 1 42 0Z' fill='%23ff5a7a' stroke='%23432c4a' stroke-width='3'/><path d='M3 24h42' stroke='%23432c4a' stroke-width='3'/></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#ff5a7a; --pink-dk:#e23d5f; --pink-lt:#ffe3ea;
+  --teal:#18b5a4; --teal-lt:#d9f6f2; --ink:#432c4a; --ink-2:#6b5874; --ink-3:#a596ad;
+  --bg:#fff8f1; --surface:#fff; --surface-2:#fdf3ea; --border:#f0dfd2; --shadow:rgba(67,44,74,.12);
+  /* 優先度 */
+  --p-must:#ef476f; --p-must-bg:#ffe0e8;
+  --p-want:#f08c00; --p-want-bg:#fff0d6;
+  --p-maybe:#3d7be0; --p-maybe-bg:#e0ecff;
+  /* 状態 */
+  --s-got:#0f9a6e; --s-got-bg:#d8f5ea; --s-skip:#9aa0a6; --s-skip-bg:#eef0f2;
+  /* 調査結果 */
+  --r-before:#8d99ae; --r-stock:#0f9a6e; --r-low:#f08c00; --r-soldout:#ef476f; --r-none:#b5bcc4; --r-played:#7b2cbf; --r-unk:#d8ccd9;
+  --danger:#d43a3a;
+  --hdr:54px; --nav:60px;
+  --r:12px; --r-sm:8px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans','Noto Sans JP',sans-serif;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55;min-height:100vh;
+  padding-bottom:calc(var(--nav) + var(--safe-b) + 16px);-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+button{font-family:inherit;color:inherit}
+a{color:var(--pink-dk)}
+
+/* ── HEADER ── */
+.hdr{position:sticky;top:0;z-index:100;height:var(--hdr);display:flex;align-items:center;gap:10px;padding:0 12px;
+  background:linear-gradient(120deg,#ff5a7a 0%,#ff8a5c 55%,#ffb347 100%);color:#fff;box-shadow:0 2px 12px rgba(226,61,95,.3)}
+.hdr svg{width:30px;height:30px;flex-shrink:0;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
+.brand{flex:1;min-width:0;line-height:1.15}
+.brand b{display:block;font-size:17px;font-weight:900;letter-spacing:.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{font-size:10px;opacity:.85;letter-spacing:1.5px}
+.sync{font-size:11px;display:none;align-items:center;gap:4px;white-space:nowrap;background:rgba(255,255,255,.2);padding:3px 8px;border-radius:20px}
+.sync.on{display:flex}
+.sdot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.sdot.spin{animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.25}}
+.iconbtn{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.2);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.menu{position:absolute;top:calc(var(--hdr) - 4px);right:10px;background:#fff;color:var(--ink);border-radius:var(--r);box-shadow:0 8px 28px var(--shadow);
+  min-width:220px;padding:6px;z-index:120;display:none}
+.menu.open{display:block}
+.menu button{display:block;width:100%;text-align:left;padding:10px 12px;border:none;background:none;border-radius:8px;font-size:14px;cursor:pointer}
+.menu button:hover{background:var(--surface-2)}
+
+/* ── BOTTOM NAV ── */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;background:#fff;border-top:1px solid var(--border);
+  padding-bottom:var(--safe-b);box-shadow:0 -2px 12px var(--shadow)}
+.nav button{flex:1;height:var(--nav);border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:10.5px;font-weight:700;color:var(--ink-3);position:relative}
+.nav button .ic{font-size:20px;line-height:1}
+.nav button.on{color:var(--pink-dk)}
+.nav button.on::before{content:'';position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:var(--pink)}
+.nav .badge{position:absolute;top:6px;left:calc(50% + 6px);background:var(--pink);color:#fff;font-size:10px;min-width:17px;height:17px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;padding:0 4px}
+
+/* ── LAYOUT ── */
+.page{max-width:980px;margin:0 auto;padding:14px 16px}
+.view{display:none}.view.on{display:block}
+.sec{margin-bottom:20px}
+.sec-h{display:flex;align-items:center;gap:8px;margin:0 2px 8px;font-size:15px;font-weight:900}
+.sec-h .cnt{font-size:12px;font-weight:700;background:var(--ink);color:#fff;border-radius:10px;padding:0 8px}
+.sec-h .sub{font-size:11.5px;font-weight:500;color:var(--ink-2);margin-left:auto}
+.hint{font-size:12px;color:var(--ink-2);margin:-4px 2px 8px}
+.empty{background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--r);padding:18px;text-align:center;color:var(--ink-2);font-size:13px}
+.card{background:var(--surface);border-radius:var(--r);box-shadow:0 1px 6px var(--shadow);border:1px solid var(--border)}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.tile{background:var(--surface);border-radius:var(--r);padding:10px 8px;text-align:center;border:1px solid var(--border);cursor:pointer;box-shadow:0 1px 4px var(--shadow)}
+.tile b{display:block;font-size:24px;font-weight:900;line-height:1.1}
+.tile span{font-size:10.5px;font-weight:700;color:var(--ink-2)}
+.tile.t-now b{color:var(--pink-dk)}.tile.t-soon b{color:var(--p-want)}.tile.t-vague b{color:var(--p-maybe)}.tile.t-new b{color:var(--teal)}
+@media(max-width:420px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+/* item row */
+.items{display:grid;gap:8px}
+@media(min-width:720px){.items.two{grid-template-columns:1fr 1fr}}
+.it{display:flex;gap:10px;padding:10px;cursor:pointer;position:relative;overflow:hidden}
+.it::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pc,var(--ink-3))}
+.it.got{opacity:.72}.it.skip{opacity:.5}
+.thumb{width:56px;height:56px;border-radius:10px;flex-shrink:0;background:var(--surface-2);overflow:hidden;display:flex;align-items:center;justify-content:center;margin-left:4px}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb .cap{width:34px;height:34px}
+.it-body{flex:1;min-width:0}
+.it-name{font-weight:800;font-size:14px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.it.skip .it-name{text-decoration:line-through}
+.it-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin-top:4px;font-size:11.5px;color:var(--ink-2)}
+.chip{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:800;padding:1px 7px;border-radius:10px;white-space:nowrap;line-height:1.6}
+.c-must{background:var(--p-must-bg);color:var(--p-must)}.c-want{background:var(--p-want-bg);color:var(--p-want)}.c-maybe{background:var(--p-maybe-bg);color:var(--p-maybe)}
+.c-got{background:var(--s-got-bg);color:var(--s-got)}.c-skip{background:var(--s-skip-bg);color:var(--s-skip)}
+.c-now{background:var(--pink);color:#fff}.c-late{background:#ffd2dc;color:var(--pink-dk)}.c-soon{background:#ffe9c2;color:#a65d00}
+.c-future{background:#eee6f0;color:var(--ink-2)}.c-over{background:#e7e7e7;color:#666}
+.c-new{background:var(--teal);color:#fff}.c-chg{background:#fff1a8;color:#7a5b00}
+.c-arr{background:var(--surface-2);color:var(--ink);border:1px solid var(--border)}
+.c-fuzzy{border-style:dashed}
+.dots{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.dot{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:700;padding:1px 6px 1px 3px;border-radius:9px;background:var(--surface-2);color:var(--ink-2)}
+.dot i{width:15px;height:15px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:9px;font-weight:900}
+
+/* survey matrix */
+.mx-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r)}
+.mx{border-collapse:separate;border-spacing:0;width:100%;font-size:12px;background:var(--surface)}
+.mx th,.mx td{border-bottom:1px solid var(--border);padding:6px 4px;text-align:center}
+.mx thead th{background:var(--surface-2);font-size:11px;font-weight:800;color:var(--ink-2);white-space:nowrap;max-width:90px;overflow:hidden;text-overflow:ellipsis;position:sticky;top:0}
+.mx th.nm{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1;min-width:130px;max-width:190px;font-weight:700;cursor:pointer;border-right:1px solid var(--border)}
+.mx thead th.nm{background:var(--surface-2);z-index:2}
+.mx th.nm small{display:block;font-weight:600;color:var(--ink-3);font-size:10.5px}
+.mx th.nm span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cell{width:38px;height:30px;border-radius:8px;border:none;cursor:pointer;font-weight:900;font-size:13px;color:#fff;display:inline-flex;align-items:center;justify-content:center;flex-direction:column;line-height:1}
+.cell small{font-size:8.5px;font-weight:700;opacity:.9;margin-top:1px}
+.cell.unk{background:#fff;border:1.5px dashed var(--r-unk);color:var(--ink-3)}
+.cell.stale{opacity:.45}
+.legend{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:11px;color:var(--ink-2);margin:8px 2px 0}
+.legend span{display:inline-flex;align-items:center;gap:4px}
+.legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+
+/* ── CALENDAR ── */
+.cal-h{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.cal-h h2{font-size:19px;font-weight:900;flex:1;text-align:center}
+.cal-h button{border:1.5px solid var(--border);background:#fff;border-radius:20px;height:34px;min-width:34px;padding:0 10px;cursor:pointer;font-weight:800}
+.cal-opts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;align-items:center}
+.cal{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 1px 6px var(--shadow);overflow:hidden}
+.cal-dow{display:grid;grid-template-columns:26px repeat(7,1fr);background:var(--surface-2);font-size:11px;font-weight:800;text-align:center;color:var(--ink-2)}
+.cal-dow div{padding:5px 0}
+.cal-dow .sat{color:#3d7be0}.cal-dow .sun{color:var(--danger)}
+.wk{display:grid;grid-template-columns:26px 1fr;border-top:1px solid var(--border);cursor:pointer;min-height:64px}
+.wk.sel{box-shadow:inset 0 0 0 2px var(--pink)}
+.wk-no{font-size:10px;font-weight:800;color:var(--ink-3);writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;background:var(--surface-2);letter-spacing:1px}
+.wk-in{position:relative}
+.wk-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr)}
+.wk-bg div{border-left:1px solid #f6ebe2}
+.wk-bg div:first-child{border-left:none}
+.wk-bg .out{background:repeating-linear-gradient(135deg,#faf5f0 0 6px,#f6efe8 6px 12px)}
+.wk-bg .today{background:#fff1c9}
+.wk-fg{position:relative;display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:min-content;row-gap:2px;padding-bottom:4px}
+.dn{font-size:11.5px;font-weight:800;padding:2px 4px 0;color:var(--ink-2);grid-row:1}
+.dn.sat{color:#3d7be0}.dn.sun{color:var(--danger)}.dn.out{color:#cdbfc6}
+.dn.today span{background:var(--pink);color:#fff;border-radius:10px;padding:0 6px}
+.bar{font-size:10.5px;font-weight:800;line-height:17px;height:18px;margin:0 2px;padding:0 5px;border-radius:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  color:#fff;background:var(--bc);min-width:0}
+.bar.fz{background:repeating-linear-gradient(135deg,var(--bl) 0 5px,#fff 5px 9px);color:var(--bc);border:1.5px dashed var(--bc);line-height:14px}
+.bar.cl{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:0}
+.bar.cr{border-top-right-radius:0;border-bottom-right-radius:0;margin-right:0}
+.bar.got{background:var(--s-got-bg);color:var(--s-got);border:1.5px solid var(--s-got);line-height:14px}
+.bar.skip{background:#f1f1f1;color:#999;text-decoration:line-through;border:none}
+.bar.feed{background:#f3eef5;color:var(--ink-2);border:1px solid #e3d7e7;font-weight:600;line-height:15px}
+.more{font-size:10px;font-weight:800;color:var(--ink-2);padding:0 6px}
+.week-panel{margin-top:14px}
+.seg{display:inline-flex;background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:2px}
+.seg button{border:none;background:none;padding:5px 11px;border-radius:16px;font-size:12px;font-weight:800;cursor:pointer;color:var(--ink-2)}
+.seg button.on{background:var(--ink);color:#fff}
+
+/* ── FILTERS / PILLS ── */
+.bar-f{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+.search{flex:1 1 180px;min-width:0;height:36px;border:1.5px solid var(--border);border-radius:20px;padding:0 14px;font-size:14px;background:#fff;font-family:inherit}
+.pill{border:1.5px solid var(--border);background:#fff;border-radius:20px;padding:5px 11px;font-size:12px;font-weight:800;cursor:pointer;color:var(--ink-2);white-space:nowrap}
+.pill.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* lineup */
+.lu{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.lu-c{background:#fff;border-radius:var(--r);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px var(--shadow);position:relative}
+.lu-img{aspect-ratio:1;background:var(--surface-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lu-img img{width:100%;height:100%;object-fit:cover}
+.lu-img .cap{width:48px;height:48px;opacity:.6}
+.lu-b{padding:8px;flex:1;display:flex;flex-direction:column;gap:4px}
+.lu-n{font-size:12.5px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lu-m{font-size:11px;color:var(--ink-2)}
+.lu-badges{position:absolute;top:6px;left:6px;display:flex;gap:3px;flex-wrap:wrap}
+.star{position:absolute;top:6px;right:6px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.92);font-size:19px;cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,.18);color:var(--ink-3)}
+.star.on{color:#ffb400}
+.lu-month{font-size:14px;font-weight:900;margin:16px 2px 8px;display:flex;align-items:center;gap:8px}
+.lu-month::after{content:'';flex:1;height:2px;background:var(--border)}
+.src-st{font-size:12px;padding:10px 12px;margin-bottom:12px;display:grid;gap:4px}
+.src-st .ok{color:var(--s-got);font-weight:800}.src-st .ng{color:var(--danger);font-weight:800}
+
+/* stores */
+.st-c{padding:12px;margin-bottom:10px}
+.st-h{display:flex;align-items:center;gap:8px}
+.st-h b{font-size:15px;flex:1;min-width:0}
+.st-h small{color:var(--ink-2);font-size:11.5px;font-weight:600;margin-left:4px}
+.st-list{margin-top:8px;display:grid;gap:6px}
+.st-row{display:flex;align-items:center;gap:8px;font-size:13px;padding:6px 8px;background:var(--surface-2);border-radius:8px;cursor:pointer}
+.st-row .nm{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:38px;padding:0 16px;border-radius:20px;font-size:13.5px;font-weight:800;cursor:pointer;border:none;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--pink);color:#fff;box-shadow:0 2px 0 var(--pink-dk)}
+.btn-g{background:#fff;color:var(--ink);border:1.5px solid var(--border)}
+.btn-d{background:#fff;color:var(--danger);border:1.5px solid #f3c4c4}
+.btn-s{height:30px;padding:0 11px;font-size:12px}
+.fab{position:fixed;right:18px;bottom:calc(var(--nav) + var(--safe-b) + 16px);width:56px;height:56px;border-radius:50%;border:none;background:var(--pink);color:#fff;font-size:30px;
+  box-shadow:0 4px 14px rgba(226,61,95,.45);cursor:pointer;z-index:90;line-height:1}
+
+/* ── MODAL ── */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(40,25,45,.45);display:flex;align-items:flex-end;justify-content:center}
+.modal.hidden{display:none}
+.sheet{background:var(--bg);width:100%;max-width:620px;max-height:92vh;overflow-y:auto;border-radius:18px 18px 0 0;padding:0 0 calc(16px + var(--safe-b))}
+@media(min-width:700px){.modal{align-items:center}.sheet{border-radius:18px}}
+.sheet-h{position:sticky;top:0;background:var(--bg);display:flex;align-items:center;gap:8px;padding:14px 16px 10px;z-index:2;border-bottom:1px solid var(--border)}
+.sheet-h b{flex:1;font-size:16px;font-weight:900;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet-b{padding:14px 16px}
+.sheet-f{display:flex;gap:8px;justify-content:flex-end;padding:0 16px;flex-wrap:wrap}
+.x{width:32px;height:32px;border-radius:50%;border:none;background:var(--surface-2);font-size:16px;cursor:pointer}
+.f{margin-bottom:12px}
+.f label{display:block;font-size:12px;font-weight:800;color:var(--ink-2);margin-bottom:4px}
+.f input[type=text],.f input[type=url],.f input[type=number],.f input[type=date],.f input[type=password],.f textarea,.f select{
+  width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 11px;font-size:15px;background:#fff;font-family:inherit;color:var(--ink)}
+.f textarea{min-height:70px;resize:vertical}
+.f .hint2{font-size:11px;color:var(--ink-3);margin-top:3px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{display:flex;flex-wrap:wrap;gap:6px}
+.choice button{border:1.5px solid var(--border);background:#fff;border-radius:20px;padding:6px 12px;font-size:13px;font-weight:800;cursor:pointer;color:var(--ink-2)}
+.choice button.on{color:#fff;border-color:transparent;background:var(--cc,var(--ink))}
+.arr-prev{margin-top:6px;font-size:12.5px;font-weight:700;padding:7px 10px;border-radius:8px;background:var(--teal-lt);color:#0d6f64}
+.arr-prev.ng{background:#ffe9e9;color:var(--danger)}
+details.more-d summary{font-size:12px;color:var(--ink-2);cursor:pointer;margin-top:6px;font-weight:700}
+.det-top{display:flex;gap:12px}
+.det-img{width:110px;height:110px;border-radius:14px;overflow:hidden;flex-shrink:0;background:var(--surface-2);display:flex;align-items:center;justify-content:center}
+.det-img img{width:100%;height:100%;object-fit:cover}
+.det-img .cap{width:56px;height:56px}
+.det-name{font-size:17px;font-weight:900;line-height:1.35}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;margin-top:12px}
+.kv dt{color:var(--ink-2);font-weight:700}
+.kv dd{word-break:break-all}
+.cd{font-size:13px;font-weight:900;padding:8px 12px;border-radius:10px;margin-top:10px;text-align:center}
+.surv{margin-top:16px}
+.surv-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:6px}
+.surv-row .nm{flex:1;min-width:0;font-weight:800;font-size:13.5px}
+.surv-row .nm small{display:block;font-weight:600;font-size:11px;color:var(--ink-2)}
+.rbtns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.rbtns button{border:none;border-radius:12px;padding:12px 4px;font-size:13px;font-weight:900;cursor:pointer;color:#fff;display:flex;flex-direction:column;align-items:center;gap:2px}
+.rbtns button span{font-size:18px}
+.rbtns button.on{outline:3px solid var(--ink);outline-offset:2px}
+.hist{margin-top:12px;font-size:12.5px}
+.hist div{display:flex;gap:8px;align-items:center;padding:5px 0;border-bottom:1px dashed var(--border)}
+.hist .del{margin-left:auto;border:none;background:none;color:var(--ink-3);cursor:pointer;font-size:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin-top:12px}
+.check input{width:18px;height:18px}
+
+#toasts{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav) + var(--safe-b) + 18px);z-index:300;display:grid;gap:6px;width:min(92vw,420px)}
+.toast{background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.25);animation:tin .2s}
+.toast.ok{background:#0f8a63}.toast.err{background:var(--danger)}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#fff" stroke="#432c4a" stroke-width="3"/><path d="M3 24a21 21 0 0 1 42 0Z" fill="#18b5a4" stroke="#432c4a" stroke-width="3"/><path d="M3 24h42" stroke="#432c4a" stroke-width="3"/><circle cx="16" cy="14" r="3" fill="#fff" opacity=".7"/></svg>
+  <div class="brand"><b>ガチャ入荷カレンダー</b><small>CAPSULE TOY TRACKER</small></div>
+  <div class="sync" id="sync"></div>
+  <button class="iconbtn" onclick="toggleMenu(event)" aria-label="メニュー">⋯</button>
+  <div class="menu" id="menu">
+    <button onclick="manualSync()">🔄 最新データを取得</button>
+    <button onclick="openSync()">☁️ スマホと同期（GitHub）</button>
+    <button onclick="exportData()">💾 バックアップを書き出す</button>
+    <button onclick="$('import-file').click()">📂 バックアップから読み込む</button>
+  </div>
+  <input type="file" id="import-file" accept="application/json" class="hidden" onchange="importData(this)">
+</header>
+
+<main class="page">
+  <!-- ホーム -->
+  <section class="view" id="v-home">
+    <div class="tiles" id="tiles"></div>
+    <div id="home-body"></div>
+  </section>
+
+  <!-- カレンダー -->
+  <section class="view" id="v-cal">
+    <div class="cal-h">
+      <button onclick="calMove(-1)" aria-label="前の月">◀</button>
+      <h2 id="cal-title"></h2>
+      <button onclick="calMove(1)" aria-label="次の月">▶</button>
+      <button onclick="calToday()">今月</button>
+    </div>
+    <div class="cal-opts">
+      <div class="seg" id="cal-mode">
+        <button data-v="mine" onclick="setCalMode('mine')">回したい</button>
+        <button data-v="all" onclick="setCalMode('all')">＋ラインアップ</button>
+      </div>
+    </div>
+    <div class="cal" id="cal"></div>
+    <div class="legend">
+      <span><i style="background:var(--p-must)"></i>絶対</span>
+      <span><i style="background:var(--p-want)"></i>回したい</span>
+      <span><i style="background:var(--p-maybe)"></i>気になる</span>
+      <span><i style="background:repeating-linear-gradient(135deg,#ddd 0 3px,#fff 3px 6px);border:1.5px dashed #999"></i>めど（週・旬・月）</span>
+      <span><i style="background:#888"></i>日付確定</span>
+      <span><i style="background:var(--s-got-bg);border:1.5px solid var(--s-got)"></i>ゲット済</span>
+    </div>
+    <div class="week-panel" id="week-panel"></div>
+  </section>
+
+  <!-- マイリスト -->
+  <section class="view" id="v-list">
+    <div class="bar-f">
+      <input class="search" id="l-q" placeholder="🔍 商品名・メーカー・メモで検索" oninput="onListSearch(this.value)">
+    </div>
+    <div class="bar-f" id="l-pills"></div>
+    <div class="items two" id="l-items"></div>
+  </section>
+
+  <!-- ラインアップ（自動収集） -->
+  <section class="view" id="v-lineup">
+    <div class="card src-st" id="src-st"></div>
+    <div class="bar-f">
+      <input class="search" id="lu-q" placeholder="🔍 ラインアップを検索（作品名など）" oninput="onLuSearch(this.value)">
+    </div>
+    <div class="bar-f" id="lu-pills"></div>
+    <div id="lu-body"></div>
+  </section>
+
+  <!-- 店舗 -->
+  <section class="view" id="v-stores">
+    <div class="sec-h">🏪 よく行く店舗 <span class="sub"><button class="btn btn-p btn-s" onclick="openStoreForm()">＋ 店舗を追加</button></span></div>
+    <p class="hint">登録した店舗ごとに、いま探すべき商品と最新の調査結果を表示します。並び順は巡回する順にすると便利です。</p>
+    <div id="st-body"></div>
+  </section>
+</main>
+
+<button class="fab" id="fab" onclick="openItemForm()" aria-label="回したいガチャを追加">＋</button>
+
+<nav class="nav" id="nav">
+  <button data-v="home" onclick="go('home')"><span class="ic">🏠</span>ホーム<span class="badge hidden" id="nb-home"></span></button>
+  <button data-v="cal" onclick="go('cal')"><span class="ic">📅</span>カレンダー</button>
+  <button data-v="list" onclick="go('list')"><span class="ic">⭐</span>回したい</button>
+  <button data-v="lineup" onclick="go('lineup')"><span class="ic">🆕</span>ラインアップ<span class="badge hidden" id="nb-lineup"></span></button>
+  <button data-v="stores" onclick="go('stores')"><span class="ic">🏪</span>店舗</button>
+</nav>
+
+<!-- 商品フォーム -->
+<div class="modal hidden" id="m-item" onclick="if(event.target===this)closeModal('m-item')">
+  <div class="sheet">
+    <div class="sheet-h"><b id="if-title">回したいガチャを追加</b><button class="x" onclick="closeModal('m-item')">✕</button></div>
+    <div class="sheet-b">
+      <div class="f"><label for="if-name">商品名 *</label><input type="text" id="if-name" placeholder="例: mofusand めじるしアクセサリー2"></div>
+      <div class="row2">
+        <div class="f"><label for="if-maker">メーカー</label><input type="text" id="if-maker" list="makers" placeholder="バンダイ など"></div>
+        <div class="f"><label for="if-price">1回の価格（円）</label><input type="number" id="if-price" inputmode="numeric" min="0" step="100" placeholder="300"></div>
+      </div>
+      <div class="f">
+        <label for="if-arr">入荷めど *</label>
+        <input type="text" id="if-arr" placeholder="例: 10月第2週 / 11月上旬 / 12月 / 10/18" oninput="onArrText()">
+        <div class="arr-prev" id="if-arr-prev">「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます</div>
+        <details class="more-d" id="if-arr-more">
+          <summary>日付を直接指定する</summary>
+          <div class="row2" style="margin-top:6px">
+            <div class="f"><label for="if-from">開始</label><input type="date" id="if-from" onchange="onArrDates()"></div>
+            <div class="f"><label for="if-to">終了</label><input type="date" id="if-to" onchange="onArrDates()"></div>
+          </div>
+        </details>
+      </div>
+      <div class="f"><label>優先度</label><div class="choice" id="if-prio"></div></div>
+      <div class="f"><label>状態</label><div class="choice" id="if-status"></div></div>
+      <div class="f"><label for="if-target">狙い</label><input type="text" id="if-target" placeholder="例: シークレット、〇〇だけ欲しい、全種コンプ"></div>
+      <div class="f"><label for="if-url">公式ページURL</label><input type="url" id="if-url" placeholder="https://"></div>
+      <div class="f"><label for="if-image">画像URL</label><input type="url" id="if-image" placeholder="https://（空欄ならカプセルのアイコン）"></div>
+      <div class="f"><label for="if-note">メモ</label><textarea id="if-note" placeholder="入荷情報の出どころ、店員さんに聞いたことなど"></textarea></div>
+    </div>
+    <div class="sheet-f">
+      <button class="btn btn-d hidden" id="if-del" onclick="deleteItem()">削除</button>
+      <span style="flex:1"></span>
+      <button class="btn btn-g" onclick="closeModal('m-item')">キャンセル</button>
+      <button class="btn btn-p" onclick="saveItem()">保存</button>
+    </div>
+  </div>
+</div>
+<datalist id="makers">
+  <option value="バンダイ"><option value="タカラトミーアーツ"><option value="ケンエレファント"><option value="キタンクラブ">
+  <option value="ブシロードクリエイティブ"><option value="エール"><option value="クオリア"><option value="トイズキャビン">
+  <option value="SO-TA"><option value="スタンド・ストーンズ"><option value="アイピーフォー"><option value="ターリンインターナショナル">
+</datalist>
+
+<!-- 商品詳細 -->
+<div class="modal hidden" id="m-detail" onclick="if(event.target===this)closeModal('m-detail')">
+  <div class="sheet">
+    <div class="sheet-h"><b id="d-title">詳細</b><button class="x" onclick="closeModal('m-detail')">✕</button></div>
+    <div class="sheet-b" id="d-body"></div>
+    <div class="sheet-f">
+      <button class="btn btn-g" onclick="editFromDetail()">✏️ 編集</button>
+    </div>
+  </div>
+</div>
+
+<!-- 調査結果の記録 -->
+<div class="modal hidden" id="m-visit" onclick="if(event.target===this)closeModal('m-visit')">
+  <div class="sheet">
+    <div class="sheet-h"><b id="v-title">調査結果を記録</b><button class="x" onclick="closeModal('m-visit')">✕</button></div>
+    <div class="sheet-b">
+      <div id="v-sub" style="font-size:13px;color:var(--ink-2);margin-bottom:10px"></div>
+      <div class="rbtns" id="v-results"></div>
+      <div class="row2" style="margin-top:14px">
+        <div class="f"><label for="v-date">確認した日</label><input type="date" id="v-date"></div>
+        <div class="f"><label for="v-note">メモ</label><input type="text" id="v-note" placeholder="残り台数、場所など"></div>
+      </div>
+      <label class="check hidden" id="v-got-wrap"><input type="checkbox" id="v-got" checked> この商品を「ゲット済」にする</label>
+      <div class="hist" id="v-hist"></div>
+    </div>
+    <div class="sheet-f">
+      <button class="btn btn-g" onclick="closeModal('m-visit')">キャンセル</button>
+      <button class="btn btn-p" onclick="saveVisit()">記録する</button>
+    </div>
+  </div>
+</div>
+
+<!-- 店舗フォーム -->
+<div class="modal hidden" id="m-store" onclick="if(event.target===this)closeModal('m-store')">
+  <div class="sheet">
+    <div class="sheet-h"><b id="sf-title">店舗を追加</b><button class="x" onclick="closeModal('m-store')">✕</button></div>
+    <div class="sheet-b">
+      <div class="f"><label for="sf-name">店舗名 *</label><input type="text" id="sf-name" placeholder="例: ガシャポンバンダイオフィシャルショップ 池袋"></div>
+      <div class="f"><label for="sf-area">エリア</label><input type="text" id="sf-area" placeholder="例: 池袋 / 駅前 / 会社帰り"></div>
+      <div class="f"><label for="sf-map">住所 または 地図URL</label><input type="text" id="sf-map" placeholder="住所か Google マップのURL"></div>
+      <div class="f"><label for="sf-note">メモ</label><textarea id="sf-note" placeholder="入荷曜日の傾向、台数、強いメーカーなど"></textarea></div>
+    </div>
+    <div class="sheet-f">
+      <button class="btn btn-d hidden" id="sf-del" onclick="deleteStore()">削除</button>
+      <span style="flex:1"></span>
+      <button class="btn btn-g" onclick="closeModal('m-store')">キャンセル</button>
+      <button class="btn btn-p" onclick="saveStore()">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 同期設定 -->
+<div class="modal hidden" id="m-sync" onclick="if(event.target===this)closeModal('m-sync')">
+  <div class="sheet">
+    <div class="sheet-h"><b>スマホと同期（GitHub）</b><button class="x" onclick="closeModal('m-sync')">✕</button></div>
+    <div class="sheet-b">
+      <p style="font-size:12.5px;color:var(--ink-2);margin-bottom:12px;line-height:1.7">
+        ① <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">GitHub Fine-grained Tokens</a> でトークンを作成<br>
+        ② リポジトリ <code>bo0639/hijiri.github.io</code> を選択<br>
+        ③ Permissions → Contents を <b>Read and write</b> に設定<br>
+        ④ 下にトークンを貼り付けて保存（PC・スマホそれぞれで設定）
+      </p>
+      <div class="f"><label for="sy-token">Personal Access Token</label><input type="password" id="sy-token" placeholder="github_pat_…" autocomplete="off">
+        <div class="hint2">トークンはこの端末のlocalStorageにのみ保存され、GitHub以外には送信されません</div></div>
+      <div class="f"><label for="sy-repo">リポジトリ</label><input type="text" id="sy-repo" placeholder="bo0639/hijiri.github.io"></div>
+      <div class="hint2" id="sy-info"></div>
+    </div>
+    <div class="sheet-f">
+      <button class="btn btn-d" onclick="clearSync()">設定を削除</button>
+      <span style="flex:1"></span>
+      <button class="btn btn-p" onclick="saveSync()">保存して同期</button>
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script>
+'use strict';
+// ══════════ CONSTANTS ══════════
+const STORE      = 'gacha_cal_v1';
+const SYNC_STORE = 'gacha_sync_v1';
+const DEL_STORE  = 'gacha_deleted_v1';
+const UI_STORE   = 'gacha_ui_v1';
+const DEFAULT_REPO = 'bo0639/hijiri.github.io';
+const DATA_PATH    = 'gacha/data.json';
+
+const PRIOS = [
+  {v:'must',  label:'絶対',     color:'var(--p-must)',  light:'var(--p-must-bg)'},
+  {v:'want',  label:'回したい', color:'var(--p-want)',  light:'var(--p-want-bg)'},
+  {v:'maybe', label:'気になる', color:'var(--p-maybe)', light:'var(--p-maybe-bg)'},
+];
+const PRIO_ORDER = {must:0, want:1, maybe:2};
+const STATUSES = [
+  {v:'plan', label:'狙う',     color:'var(--pink)'},
+  {v:'got',  label:'ゲット済', color:'var(--s-got)'},
+  {v:'skip', label:'見送り',   color:'var(--s-skip)'},
+];
+const RESULTS = [
+  {v:'before',  label:'未入荷',     icon:'⏳', color:'var(--r-before)'},
+  {v:'stock',   label:'在庫あり',   icon:'◎',  color:'var(--r-stock)'},
+  {v:'low',     label:'残りわずか', icon:'△',  color:'var(--r-low)'},
+  {v:'soldout', label:'売切れ',     icon:'✕',  color:'var(--r-soldout)'},
+  {v:'none',    label:'取扱なし',   icon:'−',  color:'var(--r-none)'},
+  {v:'played',  label:'回した',     icon:'★',  color:'var(--r-played)'},
+];
+const RES = Object.fromEntries(RESULTS.map(r=>[r.v,r]));
+// この店ではもう探さなくてよい結果
+const DONE_RESULTS = ['soldout','none','played'];
+const RECHECK_DAYS = 3;   // 「未入荷」を確認してから、これ以上経ったら再確認をうながす
+const LATE_DAYS    = 21;  // 入荷めどの終わりからこの日数までは「探し時」に残す
+const SOON_DAYS    = 7;
+const VAGUE_DAYS   = 21;  // 月・旬のままの入荷めどが、この日数以内に迫ったら確認をうながす
+const NEW_DAYS     = 7;
+const KIND_LABEL = {date:'日付確定', week:'週単位', jun:'旬単位', month:'月単位', range:'期間'};
+
+// ══════════ STATE ══════════
+let db = {items:[], stores:[], visits:[]};
+let feed = {generated_at:'', sources:[], items:[]};
+let ui = {tab:'home', calMode:'mine', listStatus:'plan', listPrio:'', luMaker:'', luHideWatched:false, seenFeedAt:''};
+let calYM = null, selWeek = null;
+let editingItem = null, detailId = null, editingStore = null;
+let visitCtx = null, visitResult = null;
+let form = {prio:'want', status:'plan', arr:null, arrTouched:false};
+let syncConfig = null, fileSha = null, syncTimer = null;
+let deletedIds = [];
+let listQ = '', luQ = '', qTimer = null, luMakers = [];
+
+// ══════════ UTILS ══════════
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => (crypto?.randomUUID?.() || Date.now().toString(36) + Math.random().toString(36).slice(2));
+const nowIso = () => new Date().toISOString();
+const safeUrl = u => /^https?:\/\//i.test(u || '') ? u : '';
+const pad = n => String(n).padStart(2, '0');
+const ymd = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const pd = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const today = () => ymd(new Date());
+const addDays = (s, n) => { const d = pd(s); d.setDate(d.getDate()+n); return ymd(d); };
+const diffDays = (a, b) => Math.round((pd(a) - pd(b)) / 864e5);
+const WD = '日月火水木金土';
+const fmtMD = s => { const d = pd(s); return `${d.getMonth()+1}/${d.getDate()}(${WD[d.getDay()]})`; };
+const yen = n => (n || n === 0) && n !== '' ? `${Number(n).toLocaleString('ja-JP')}円` : '';
+const prioOf = v => PRIOS.find(p => p.v === v) || PRIOS[1];
+const statusOf = v => STATUSES.find(s => s.v === v) || STATUSES[0];
+const CAPSULE = c => `<svg class="cap" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#fff" stroke="#432c4a" stroke-width="2.5"/><path d="M4 24a20 20 0 0 1 40 0Z" fill="${c}" stroke="#432c4a" stroke-width="2.5"/><path d="M4 24h40" stroke="#432c4a" stroke-width="2.5"/></svg>`;
+function imgHTML(src, color){
+  const u = safeUrl(src);
+  if(!u) return CAPSULE(color || 'var(--pink)');
+  return `<img src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:CAPSULE('#ccc')}))">`;
+}
+function isIOS(){
+  const ua = navigator.userAgent || '';
+  return /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+}
+function mapLink(s){
+  if(safeUrl(s.map)) return s.map;
+  const q = encodeURIComponent(s.map || s.name);
+  return isIOS() ? `https://maps.apple.com/?q=${q}` : `https://www.google.com/maps/search/?api=1&query=${q}`;
+}
+function toast(msg, cls=''){
+  const t = document.createElement('div');
+  t.className = 'toast ' + cls; t.textContent = msg;
+  $('toasts').appendChild(t);
+  setTimeout(() => t.remove(), 3200);
+}
+
+// ══════════ 入荷めどの解釈 ══════════
+// scripts/update_gacha_lineup.py の parse_arrival() と同じ規則。片方を直したらもう片方も直す。
+const SEP = '\\s*(?:[~〜\\-ー－–・、]|から)\\s*';
+const RE_WEEK = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*第?\\s*([1-5])\\s*週?(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?第?\\s*([1-5])\\s*)?週');
+const RE_WEEK_ONLY = new RegExp('第\\s*([1-5])\\s*(?:' + SEP + '第?\\s*([1-5])\\s*)?週');
+const RE_JUN = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*(上|中|下)\\s*旬(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?(上|中|下)\\s*旬)?');
+const RE_YMD = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})(?!\d)/;
+const RE_MD = /(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日/;
+const RE_MD_SLASH = /(?<![\d/])(\d{1,2})\s*\/\s*(\d{1,2})(?![\d/])/;
+const RE_MONTH = /(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月(?!\s*\d)/;
+const JUN_DAYS = {'上':[1,10], '中':[11,20], '下':[21,31]};
+
+const monthEnd = (y, m) => new Date(y, m, 0).getDate();
+function guessYear(m, base){
+  const t = pd(base); let best = null;
+  for(const y of [t.getFullYear()-1, t.getFullYear(), t.getFullYear()+1]){
+    const diff = Math.round((new Date(y, m-1, 15) - t) / 864e5);
+    if(diff >= -125 && diff <= 260 && (!best || Math.abs(diff) < best[0])) best = [Math.abs(diff), y];
+  }
+  return best ? best[1] : t.getFullYear();
+}
+/** その月の第n週（月曜はじまり、1日を含む週が第1週）を月内に収めて返す。 */
+function weekRange(y, m, n){
+  const first = new Date(y, m-1, 1);
+  const start = new Date(y, m-1, 1 - ((first.getDay() + 6) % 7) + (n-1)*7);
+  const end = new Date(start); end.setDate(end.getDate() + 6);
+  const last = new Date(y, m-1, monthEnd(y, m));
+  return [ymd(start < first ? first : start), ymd(end > last ? last : end)];
+}
+function parseArrival(text, base = today(), ctx = null){
+  const t = (text || '').normalize('NFKC').replace(/\s+/g, ' ').trim();
+  if(!t) return null;
+  const ym = (y, m) => { m = +m; if(m < 1 || m > 12) return null; return [y ? +y : guessYear(m, base), m]; };
+  let m = t.match(RE_WEEK);
+  if(m){
+    const b = ym(m[1], m[2]);
+    if(b){
+      const [y, mo] = b, w1 = +m[3], w2 = m[5] ? +m[5] : w1, mo2 = m[4] ? +m[4] : mo, y2 = y + (mo2 < mo ? 1 : 0);
+      if(mo2 >= 1 && mo2 <= 12){
+        const a = weekRange(y, mo, w1)[0], z = weekRange(y2, mo2, w2)[1];
+        if(z >= a){
+          const label = (w1 === w2 && mo === mo2) ? `${mo}月第${w1}週` : mo === mo2 ? `${mo}月第${w1}〜${w2}週` : `${mo}月第${w1}週〜${mo2}月第${w2}週`;
+          return {kind:'week', label, from:a, to:z};
+        }
+      }
+    }
+  }
+  m = t.match(RE_JUN);
+  if(m){
+    const b = ym(m[1], m[2]);
+    if(b){
+      const [y, mo] = b, j1 = m[3], j2 = m[5] || m[3], mo2 = m[4] ? +m[4] : mo, y2 = y + (mo2 < mo ? 1 : 0);
+      if(mo2 >= 1 && mo2 <= 12){
+        const a = ymd(new Date(y, mo-1, JUN_DAYS[j1][0]));
+        const z = ymd(new Date(y2, mo2-1, Math.min(JUN_DAYS[j2][1], monthEnd(y2, mo2))));
+        if(z >= a){
+          const label = (j1 === j2 && mo === mo2) ? `${mo}月${j1}旬` : mo === mo2 ? `${mo}月${j1}旬〜${j2}旬` : `${mo}月${j1}旬〜${mo2}月${j2}旬`;
+          return {kind:'jun', label, from:a, to:z};
+        }
+      }
+    }
+  }
+  for(const [rx, hasYear] of [[RE_YMD, true], [RE_MD, false], [RE_MD_SLASH, false]]){
+    m = t.match(rx);
+    if(!m) continue;
+    let [y, mo, d] = hasYear ? [+m[1], +m[2], +m[3]] : [null, +m[1], +m[2]];
+    if(mo < 1 || mo > 12) continue;
+    y = y || guessYear(mo, base);
+    const dt = new Date(y, mo-1, d);
+    if(dt.getMonth() !== mo-1) continue;
+    return {kind:'date', label:`${mo}月${d}日`, from:ymd(dt), to:ymd(dt)};
+  }
+  if(ctx){
+    m = t.match(RE_WEEK_ONLY);
+    if(m){
+      const [y, mo] = ctx, w1 = +m[1], w2 = m[2] ? +m[2] : w1;
+      return {kind:'week', label: w1 === w2 ? `${mo}月第${w1}週` : `${mo}月第${w1}〜${w2}週`,
+              from:weekRange(y, mo, w1)[0], to:weekRange(y, mo, w2)[1]};
+    }
+  }
+  m = t.match(RE_MONTH);
+  if(m){
+    const b = ym(m[1], m[2]);
+    if(b){
+      const [y, mo] = b;
+      return {kind:'month', label:`${mo}月`, from:`${y}-${pad(mo)}-01`, to:`${y}-${pad(mo)}-${pad(monthEnd(y, mo))}`};
+    }
+  }
+  return null;
+}
+function arrText(a){
+  if(!a) return '未設定';
+  if(a.from === a.to) return `${a.label || ''}`.trim() || fmtMD(a.from);
+  return a.label || `${fmtMD(a.from)}〜${fmtMD(a.to)}`;
+}
+function arrRange(a){
+  if(!a) return '';
+  return a.from === a.to ? fmtMD(a.from) : `${fmtMD(a.from)}〜${fmtMD(a.to)}`;
+}
+const isFuzzy = a => a && a.kind !== 'date';
+
+// ══════════ 探し時の判定 ══════════
+/** future: まだ先 / soon: 1週間以内 / now: 入荷めど中 / late: めどを過ぎたが探し時 / over: 大きく過ぎた */
+function phase(it){
+  if(it.status === 'got') return 'got';
+  if(it.status === 'skip') return 'skip';
+  const a = it.arrival; if(!a) return 'future';
+  const t = today();
+  if(t < a.from) return diffDays(a.from, t) <= SOON_DAYS ? 'soon' : 'future';
+  if(t <= a.to) return 'now';
+  return diffDays(t, a.to) <= LATE_DAYS ? 'late' : 'over';
+}
+function phaseChip(it){
+  const p = phase(it), t = today(), a = it.arrival;
+  if(p === 'got')  return `<span class="chip c-got">✓ ゲット済</span>`;
+  if(p === 'skip') return `<span class="chip c-skip">見送り</span>`;
+  if(p === 'now')  return `<span class="chip c-now">🔥 入荷めど中</span>`;
+  if(p === 'late') return `<span class="chip c-late">めどから${diffDays(t, a.to)}日</span>`;
+  if(p === 'soon') return `<span class="chip c-soon">あと${diffDays(a.from, t)}日</span>`;
+  if(p === 'over') return `<span class="chip c-over">めど超過${diffDays(t, a.to)}日</span>`;
+  return a ? `<span class="chip c-future">あと${diffDays(a.from, t)}日</span>` : '';
+}
+const hunting = it => ['now','late'].includes(phase(it));
+
+/** 商品×店舗の最新の調査結果。古い「未入荷」は stale（再確認）扱い。 */
+function latestVisit(itemId, storeId){
+  let best = null;
+  for(const v of db.visits){
+    if(v.item_id !== itemId || v.store_id !== storeId) continue;
+    if(!best || v.date > best.date || (v.date === best.date && (v.updated_at||'') > (best.updated_at||''))) best = v;
+  }
+  return best;
+}
+function cellState(itemId, storeId){
+  const v = latestVisit(itemId, storeId);
+  if(!v) return {v:null, stale:false};
+  return {v, stale: v.result === 'before' && diffDays(today(), v.date) >= RECHECK_DAYS};
+}
+/** この店でまだ確認が必要か（未調査・未入荷の再確認・在庫あり＝まだ回していない）。 */
+function needsCheck(itemId, storeId){
+  const {v, stale} = cellState(itemId, storeId);
+  if(!v) return true;
+  if(DONE_RESULTS.includes(v.result)) return false;
+  if(v.result === 'before') return stale;
+  return true; // 在庫あり・残りわずか → 回しに行く
+}
+
+// ══════════ STORAGE ══════════
+function normalize(d){
+  const out = {items:[], stores:[], visits:[]};
+  if(d && typeof d === 'object'){
+    for(const k of Object.keys(out)) if(Array.isArray(d[k])) out[k] = d[k].filter(x => x && x.id);
+  }
+  out.items.forEach(it => { it.priority ||= 'want'; it.status ||= 'plan'; });
+  out.stores.forEach((s, i) => { if(s.order == null) s.order = i; });
+  return out;
+}
+function load(){
+  try{ db = normalize(JSON.parse(localStorage.getItem(STORE) || 'null')); }catch{ db = normalize(null); }
+  try{ deletedIds = JSON.parse(localStorage.getItem(DEL_STORE) || '[]'); }catch{ deletedIds = []; }
+  try{ ui = {...ui, ...JSON.parse(localStorage.getItem(UI_STORE) || '{}')}; }catch{}
+}
+function saveUI(){ try{ localStorage.setItem(UI_STORE, JSON.stringify(ui)); }catch{} }
+function persist(){
+  localStorage.setItem(STORE, JSON.stringify(db));
+  scheduleSync();
+}
+function markDeleted(id){ deletedIds.push(id); localStorage.setItem(DEL_STORE, JSON.stringify(deletedIds.slice(-1000))); }
+/** リポジトリの data.json を取り込む（idごとに、新しい方を採用。端末で消したものは戻さない）。 */
+async function mergeSeed(){
+  try{
+    const res = await fetch('./data.json', {cache:'no-store'});
+    if(!res.ok) return false;
+    const seed = normalize(await res.json());
+    let n = 0;
+    for(const k of ['items','stores','visits']){
+      for(const se of seed[k]){
+        if(deletedIds.includes(se.id)) continue;
+        const i = db[k].findIndex(x => x.id === se.id);
+        if(i < 0){ db[k].push(se); n++; }
+        else if((se.updated_at || '') > (db[k][i].updated_at || '')){ db[k][i] = se; n++; }
+      }
+    }
+    if(n){ localStorage.setItem(STORE, JSON.stringify(db)); return true; }
+  }catch(e){ console.error('seed merge error:', e); }
+  return false;
+}
+async function loadFeed(){
+  try{
+    const res = await fetch('./feed.json', {cache:'no-store'});
+    if(res.ok) feed = await res.json();
+  }catch(e){ console.error('feed load error:', e); }
+  feed.items ||= []; feed.sources ||= [];
+}
+/**
+ * ラインアップから登録した商品は、入荷めどを手で直していなければ
+ * 自動収集の最新の入荷めどに追従させる（週や日付が判明したら自動で反映）。
+ */
+function followFeed(){
+  const byId = Object.fromEntries(feed.items.map(f => [f.id, f]));
+  const changed = [];
+  for(const it of db.items){
+    if(!it.feed_id || it.arrival_manual || it.status !== 'plan') continue;
+    const f = byId[it.feed_id];
+    if(!f || !f.arrival) continue;
+    if(it.arrival?.from !== f.arrival.from || it.arrival?.to !== f.arrival.to){
+      it.arrival_prev = it.arrival ? arrText(it.arrival) : '';
+      it.arrival = {...f.arrival};
+      it.arrival_updated = today();
+      it.updated_at = nowIso();
+      changed.push(it);
+    }
+  }
+  if(changed.length){
+    persist();
+    toast(`入荷めどが更新されました：${changed.map(c => c.name).slice(0,2).join('、')}${changed.length > 2 ? ` ほか${changed.length-2}件` : ''}`, 'ok');
+  }
+}
+
+// ══════════ GITHUB SYNC ══════════
+function loadSyncConfig(){
+  try{ const c = JSON.parse(localStorage.getItem(SYNC_STORE) || 'null'); if(c){ syncConfig = c; fileSha = c.sha || null; } }catch{}
+}
+function saveSyncConfig(){
+  syncConfig ? localStorage.setItem(SYNC_STORE, JSON.stringify({...syncConfig, sha:fileSha})) : localStorage.removeItem(SYNC_STORE);
+}
+const b64enc = s => { const b = new TextEncoder().encode(s); let r = ''; for(let i = 0; i < b.length; i += 0x8000) r += String.fromCharCode(...b.subarray(i, i + 0x8000)); return btoa(r); };
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, '')), c => c.charCodeAt(0)));
+function syncStatus(state){
+  const el = $('sync');
+  const set = (txt) => { el.className = 'sync on'; el.innerHTML = txt; };
+  if(state === 'syncing') set('<span class="sdot spin"></span>同期中');
+  else if(state === 'ok'){ set('<span class="sdot"></span>同期済'); setTimeout(() => { el.className = 'sync'; }, 2500); }
+  else if(state === 'err') set('<span class="sdot"></span>同期失敗');
+  else el.className = 'sync';
+}
+function apiUrl(){
+  const [owner, repo] = (syncConfig?.repo || DEFAULT_REPO).split('/');
+  return `https://api.github.com/repos/${owner}/${repo}/contents/${DATA_PATH}`;
+}
+async function syncFrom(){
+  if(!syncConfig?.token) return false;
+  try{
+    syncStatus('syncing');
+    const res = await fetch(apiUrl(), {cache:'no-store', headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json'}});
+    if(res.status === 404){ syncStatus(''); return false; }
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const file = await res.json();
+    fileSha = file.sha; saveSyncConfig();
+    const data = normalize(JSON.parse(b64dec(file.content)));
+    if(data.items.length || data.stores.length || data.visits.length){
+      db = data; localStorage.setItem(STORE, JSON.stringify(db));
+      syncStatus('ok'); return true;
+    }
+    syncStatus(''); return false;
+  }catch(e){
+    console.error('sync error:', e); syncStatus('err');
+    toast('GitHubからの取得に失敗しました。トークンや権限を確認してください。', 'err');
+    return false;
+  }
+}
+async function syncTo(){
+  if(!syncConfig?.token) return;
+  try{
+    syncStatus('syncing');
+    const body = {
+      message: `ガチャ入荷カレンダー更新 (回したい${db.items.length}件・店舗${db.stores.length}件)`,
+      content: b64enc(JSON.stringify(db, null, 2) + '\n'),
+      ...(fileSha ? {sha:fileSha} : {})
+    };
+    const res = await fetch(apiUrl(), {method:'PUT',
+      headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json'},
+      body: JSON.stringify(body)});
+    if(!res.ok){ const j = await res.json().catch(() => ({})); throw new Error(j.message || 'HTTP ' + res.status); }
+    fileSha = (await res.json()).content.sha; saveSyncConfig(); syncStatus('ok');
+  }catch(e){
+    console.error('sync error:', e); syncStatus('err');
+    toast('GitHubへの保存に失敗しました。「最新データを取得」してから操作し直してください。', 'err');
+  }
+}
+function scheduleSync(){
+  if(!syncConfig?.token) return;
+  clearTimeout(syncTimer); syncTimer = setTimeout(syncTo, 2000);
+}
+async function manualSync(){
+  closeMenu();
+  await loadFeed();
+  const ok = syncConfig?.token ? await syncFrom() : await mergeSeed();
+  followFeed(); render();
+  toast(ok ? '最新データを取得しました' : 'ラインアップを再読み込みしました', ok ? 'ok' : '');
+}
+function openSync(){
+  closeMenu();
+  $('sy-token').value = syncConfig?.token || '';
+  $('sy-repo').value = syncConfig?.repo || DEFAULT_REPO;
+  $('sy-info').textContent = syncConfig?.token ? `設定済み — ${syncConfig.repo || DEFAULT_REPO}` : '未設定です（この端末の中だけに保存されています）';
+  openModal('m-sync');
+}
+async function saveSync(){
+  const token = $('sy-token').value.trim(), repo = $('sy-repo').value.trim() || DEFAULT_REPO;
+  if(!token){ toast('トークンを入力してください', 'err'); return; }
+  syncConfig = {token, repo}; fileSha = null; saveSyncConfig();
+  closeModal('m-sync'); toast('GitHubから取得中…');
+  const ok = await syncFrom();
+  if(ok){ followFeed(); render(); toast('GitHubからデータを読み込みました', 'ok'); }
+  else { await syncTo(); toast('現在のデータをGitHubに保存しました', 'ok'); }
+}
+function clearSync(){
+  if(!confirm('GitHub同期設定を削除しますか？この端末のデータは残ります。')) return;
+  syncConfig = null; fileSha = null; saveSyncConfig(); closeModal('m-sync'); syncStatus(''); toast('同期設定を削除しました');
+}
+function exportData(){
+  closeMenu();
+  const blob = new Blob([JSON.stringify(db, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = `gacha-backup-${today()}.json`; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function importData(input){
+  closeMenu();
+  const file = input.files?.[0]; input.value = '';
+  if(!file) return;
+  file.text().then(txt => {
+    const data = normalize(JSON.parse(txt));
+    if(!confirm(`バックアップを読み込みます（回したい${data.items.length}件・店舗${data.stores.length}件・記録${data.visits.length}件）。今のデータは置き換わります。よろしいですか？`)) return;
+    db = data; persist(); render(); toast('読み込みました', 'ok');
+  }).catch(() => toast('読み込めませんでした（JSONの形式を確認してください）', 'err'));
+}
+
+// ══════════ NAV / MODAL ══════════
+function go(tab){
+  ui.tab = tab; saveUI();
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + tab));
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === tab));
+  $('fab').classList.toggle('hidden', tab === 'stores' || tab === 'lineup');
+  if(tab === 'lineup' && feed.generated_at){ ui.seenFeedAt = feed.generated_at; saveUI(); }
+  render();
+  window.scrollTo(0, 0);
+}
+function openModal(id){ $(id).classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+function closeModal(id){
+  $(id).classList.add('hidden');
+  if(![...document.querySelectorAll('.modal')].some(m => !m.classList.contains('hidden'))) document.body.style.overflow = '';
+}
+function toggleMenu(e){ e.stopPropagation(); $('menu').classList.toggle('open'); }
+function closeMenu(){ $('menu').classList.remove('open'); }
+document.addEventListener('click', e => { if(!e.target.closest('#menu')) closeMenu(); });
+document.addEventListener('keydown', e => {
+  if(e.key !== 'Escape') return;
+  const open = [...document.querySelectorAll('.modal')].filter(m => !m.classList.contains('hidden')).pop();
+  if(open) closeModal(open.id);
+});
+
+// ══════════ RENDER ══════════
+function render(){
+  renderBadges();
+  if(ui.tab === 'home') renderHome();
+  else if(ui.tab === 'cal') renderCal();
+  else if(ui.tab === 'list') renderList();
+  else if(ui.tab === 'lineup') renderLineup();
+  else if(ui.tab === 'stores') renderStores();
+}
+const sortedStores = () => [...db.stores].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const byArrival = (a, b) => (a.arrival?.from || '9999').localeCompare(b.arrival?.from || '9999') || (PRIO_ORDER[a.priority] - PRIO_ORDER[b.priority]);
+const byPrioArrival = (a, b) => (PRIO_ORDER[a.priority] - PRIO_ORDER[b.priority]) || byArrival(a, b);
+const newFeedItems = () => feed.items.filter(f => f.first_seen && diffDays(today(), f.first_seen.slice(0,10)) <= NEW_DAYS && !watchedFeed(f.id));
+const watchedFeed = fid => db.items.find(it => it.feed_id === fid);
+function vagueSoon(){
+  const t = today();
+  return db.items.filter(it => it.status === 'plan' && it.arrival && ['month','jun'].includes(it.arrival.kind)
+    && t < it.arrival.from && diffDays(it.arrival.from, t) <= VAGUE_DAYS);
+}
+function renderBadges(){
+  const h = db.items.filter(hunting).length;
+  $('nb-home').textContent = h; $('nb-home').classList.toggle('hidden', !h);
+  const fresh = ui.seenFeedAt === feed.generated_at ? 0 : newFeedItems().length;
+  $('nb-lineup').textContent = fresh; $('nb-lineup').classList.toggle('hidden', !fresh);
+}
+
+function storeDots(it){
+  const st = sortedStores();
+  if(!st.length) return '';
+  return `<div class="dots">${st.map(s => {
+    const {v, stale} = cellState(it.id, s.id);
+    const r = v ? RES[v.result] : null;
+    const bg = r ? r.color : 'var(--r-unk)';
+    return `<span class="dot" style="${stale ? 'opacity:.55' : ''}" title="${esc(s.name)}：${r ? r.label : '未調査'}"><i style="background:${bg}">${r ? r.icon : '?'}</i>${esc(s.name.slice(0, 8))}</span>`;
+  }).join('')}</div>`;
+}
+function itemCard(it, opts = {}){
+  const p = prioOf(it.priority), ph = phase(it);
+  const chg = it.arrival_updated && diffDays(today(), it.arrival_updated) <= NEW_DAYS
+    ? `<span class="chip c-chg" title="${esc(it.arrival_prev || '')} から変更">めど更新</span>` : '';
+  return `<div class="card it ${ph}" style="--pc:${p.color}" onclick="openDetail('${it.id}')">
+    <div class="thumb">${imgHTML(it.image, p.color)}</div>
+    <div class="it-body">
+      <div class="it-name">${esc(it.name)}</div>
+      <div class="it-meta">
+        <span class="chip c-${p.v}">${p.label}</span>
+        ${phaseChip(it)}
+        <span class="chip c-arr${isFuzzy(it.arrival) ? ' c-fuzzy' : ''}">📅 ${esc(arrText(it.arrival))}</span>${chg}
+        ${it.maker ? `<span>${esc(it.maker)}</span>` : ''}${it.price ? `<span>${yen(it.price)}</span>` : ''}
+      </div>
+      ${it.target ? `<div class="it-meta">🎯 ${esc(it.target)}</div>` : ''}
+      ${opts.dots ? storeDots(it) : ''}
+    </div>
+  </div>`;
+}
+function section(title, list, opts = {}){
+  if(!list.length && !opts.showEmpty) return '';
+  return `<div class="sec">
+    <div class="sec-h">${title} <span class="cnt">${list.length}</span>${opts.sub ? `<span class="sub">${opts.sub}</span>` : ''}</div>
+    ${opts.hint ? `<p class="hint">${opts.hint}</p>` : ''}
+    ${list.length ? `<div class="items two">${list.map(it => itemCard(it, opts)).join('')}</div>` : `<div class="empty">${opts.empty || 'ありません'}</div>`}
+  </div>`;
+}
+
+// ── ホーム ──
+function renderHome(){
+  const plan = db.items.filter(it => it.status === 'plan');
+  const hunt = db.items.filter(hunting).sort(byPrioArrival);
+  const soon = plan.filter(it => phase(it) === 'soon').sort(byArrival);
+  const vague = vagueSoon().sort(byArrival);
+  const over = plan.filter(it => phase(it) === 'over').sort(byArrival);
+  const fresh = newFeedItems();
+
+  $('tiles').innerHTML = [
+    ['t-now', hunt.length, '今が探し時', "document.getElementById('sec-hunt')?.scrollIntoView({behavior:'smooth'})"],
+    ['t-soon', soon.length, '1週間以内に入荷', "document.getElementById('sec-soon')?.scrollIntoView({behavior:'smooth'})"],
+    ['t-vague', vague.length, 'めどの確認待ち', "document.getElementById('sec-vague')?.scrollIntoView({behavior:'smooth'})"],
+    ['t-new', fresh.length, '新着ラインアップ', "go('lineup')"],
+  ].map(([c, n, l, on]) => `<div class="tile ${c}" onclick="${on}"><b>${n}</b><span>${l}</span></div>`).join('');
+
+  let h = '';
+  if(!db.items.length){
+    h += `<div class="empty" style="margin-bottom:18px">まだ「回したい」ガチャがありません。<br>
+      <b>🆕 ラインアップ</b> で ☆ を押すか、右下の <b>＋</b> から登録してください。<br>
+      ${db.stores.length ? '' : '<b>🏪 店舗</b> によく行くお店を登録すると、店舗ごとの調査ができます。'}</div>`;
+  }
+  h += `<div id="sec-hunt">${hunt.length ? renderMatrix(hunt) : ''}</div>`;
+  h += `<div id="sec-hunt-list">${section('🔥 今が探し時', hunt, {dots:true, hint:'入荷めどの期間中か、めどを過ぎて3週間以内の「狙う」商品です。'})}</div>`;
+  h += `<div id="sec-soon">${section('⏰ 1週間以内に入荷めど', soon, {hint:'入荷が近い商品です。行く店舗の目星をつけておきましょう。'})}</div>`;
+  h += `<div id="sec-vague">${section('📌 入荷めどを確認しよう', vague, {hint:'入荷めどが「月」「旬」のまま近づいています。公式サイトで週・日付が出ていないか確認して、分かれば更新してください。'})}</div>`;
+  h += section('⚠ めどを大きく過ぎた（未入手）', over, {hint:'まだ探し続けるか、「見送り」にするか決めましょう。'});
+  if(hunt.length + soon.length + vague.length + over.length === 0 && db.items.length){
+    h += `<div class="empty">今すぐ動く必要のある商品はありません 🎉<br>次の入荷めどは📅カレンダーで確認できます。</div>`;
+  }
+  $('home-body').innerHTML = h;
+}
+function renderMatrix(list){
+  const st = sortedStores();
+  if(!st.length){
+    return `<div class="sec"><div class="sec-h">🗺 店舗の調査マップ</div>
+      <div class="empty">店舗を登録すると、「どの店をまだ見ていないか」が一目で分かる表が出ます。<br><br>
+      <button class="btn btn-p btn-s" onclick="go('stores');openStoreForm()">＋ 店舗を追加</button></div></div>`;
+  }
+  const todo = list.reduce((n, it) => n + st.filter(s => needsCheck(it.id, s.id)).length, 0);
+  return `<div class="sec"><div class="sec-h">🗺 店舗の調査マップ <span class="sub">要確認 ${todo}マス</span></div>
+    <p class="hint">マスをタップして調査結果を記録します。<b>?</b> は未調査、薄い ⏳ は${RECHECK_DAYS}日以上前に「未入荷」だった店（再確認）。</p>
+    <div class="mx-wrap card"><table class="mx">
+      <thead><tr><th class="nm">商品</th>${st.map(s => `<th title="${esc(s.name)}">${esc(s.name.slice(0, 7))}</th>`).join('')}</tr></thead>
+      <tbody>${list.map(it => `<tr>
+        <th class="nm" onclick="openDetail('${it.id}')" style="box-shadow:inset 4px 0 0 ${prioOf(it.priority).color}">
+          <span>${esc(it.name)}</span><small>${esc(arrText(it.arrival))}</small></th>
+        ${st.map(s => {
+          const {v, stale} = cellState(it.id, s.id);
+          if(!v) return `<td><button class="cell unk" onclick="openVisit('${it.id}','${s.id}')" aria-label="${esc(s.name)}：未調査">?</button></td>`;
+          const r = RES[v.result];
+          return `<td><button class="cell${stale ? ' stale' : ''}" style="background:${r.color}" onclick="openVisit('${it.id}','${s.id}')" aria-label="${esc(s.name)}：${r.label}">${r.icon}<small>${fmtMD(v.date).replace(/\(.\)/, '')}</small></button></td>`;
+        }).join('')}
+      </tr>`).join('')}</tbody>
+    </table></div>
+    <div class="legend">${RESULTS.map(r => `<span><i style="background:${r.color}"></i>${r.icon} ${r.label}</span>`).join('')}
+      <span><i style="border:1.5px dashed var(--r-unk);background:#fff"></i>? 未調査</span></div>
+  </div>`;
+}
+
+// ── カレンダー ──
+function calInit(){
+  if(!calYM){ const d = new Date(); calYM = [d.getFullYear(), d.getMonth()+1]; }
+}
+function calMove(n){ let [y, m] = calYM; m += n; if(m < 1){ m = 12; y--; } if(m > 12){ m = 1; y++; } calYM = [y, m]; selWeek = null; renderCal(); }
+function calToday(){ calYM = null; selWeek = null; calInit(); renderCal(); }
+function setCalMode(v){ ui.calMode = v; saveUI(); renderCal(); }
+function calEvents(){
+  const evs = db.items.filter(it => it.arrival).map(it => ({type:'item', it, from:it.arrival.from, to:it.arrival.to}));
+  if(ui.calMode === 'all'){
+    for(const f of feed.items){
+      if(!f.arrival || watchedFeed(f.id)) continue;
+      evs.push({type:'feed', f, from:f.arrival.from, to:f.arrival.to});
+    }
+  }
+  return evs;
+}
+function evRank(e){
+  if(e.type === 'feed') return 10;
+  if(e.it.status === 'skip') return 9;
+  if(e.it.status === 'got') return 8;
+  return PRIO_ORDER[e.it.priority];
+}
+function renderCal(){
+  calInit();
+  const [y, m] = calYM;
+  $('cal-title').textContent = `${y}年${m}月`;
+  document.querySelectorAll('#cal-mode button').forEach(b => b.classList.toggle('on', b.dataset.v === ui.calMode));
+  const first = new Date(y, m-1, 1);
+  let ws = ymd(new Date(y, m-1, 1 - ((first.getDay() + 6) % 7)));
+  const last = `${y}-${pad(m)}-${pad(monthEnd(y, m))}`;
+  const t = today();
+  if(!selWeek){
+    const cur = addDays(t, -((pd(t).getDay() + 6) % 7));
+    selWeek = (cur >= ws && cur <= last) ? cur : ws;
+  }
+  const evs = calEvents();
+  const maxLanes = window.innerWidth < 520 ? 4 : 6;
+  let html = `<div class="cal-dow"><div></div>${'月火水木金土日'.split('').map((d, i) => `<div class="${i === 5 ? 'sat' : i === 6 ? 'sun' : ''}">${d}</div>`).join('')}</div>`;
+  let n = 0;
+  while(ws <= last){
+    n++;
+    const we = addDays(ws, 6);
+    const days = [...Array(7)].map((_, i) => addDays(ws, i));
+    const segs = evs.filter(e => e.from <= we && e.to >= ws).map(e => ({
+      e, s: Math.max(0, diffDays(e.from, ws)), z: Math.min(6, diffDays(e.to, ws)), cl: e.from < ws, cr: e.to > we
+    })).sort((a, b) => evRank(a.e) - evRank(b.e) || a.s - b.s || (b.z - b.s) - (a.z - a.s));
+    // 重ならないように段（レーン）に詰める
+    const lanes = [];
+    const placed = [];
+    let hidden = 0;
+    for(const sg of segs){
+      let li = lanes.findIndex(l => l.every(o => o.z < sg.s || o.s > sg.z));
+      if(li < 0){ lanes.push([]); li = lanes.length - 1; }
+      if(li >= maxLanes){ hidden++; continue; }
+      lanes[li].push(sg); placed.push([sg, li]);
+    }
+    const bars = placed.map(([sg, li]) => {
+      const {e} = sg;
+      let cls = 'bar', style = '', title, label, on;
+      if(e.type === 'feed'){
+        cls += ' feed'; label = e.f.name; title = `${e.f.name}（${e.f.arrival.label}）`;
+        on = `openFeed('${e.f.id}')`;
+      }else{
+        const p = prioOf(e.it.priority);
+        style = `--bc:${p.color};--bl:${p.light};`;
+        if(e.it.status === 'got') cls += ' got';
+        else if(e.it.status === 'skip') cls += ' skip';
+        else if(isFuzzy(e.it.arrival)) cls += ' fz';
+        label = (e.it.status === 'got' ? '✓ ' : '') + e.it.name; title = `${e.it.name}（${arrText(e.it.arrival)}）`;
+        on = `openDetail('${e.it.id}')`;
+      }
+      if(sg.cl) cls += ' cl';
+      if(sg.cr) cls += ' cr';
+      return `<div class="${cls}" style="${style}grid-column:${sg.s+1}/${sg.z+2};grid-row:${li+2}" title="${esc(title)}" onclick="event.stopPropagation();${on}">${esc(label)}</div>`;
+    }).join('');
+    const inMonth = d => d.slice(0, 7) === `${y}-${pad(m)}`;
+    html += `<div class="wk${ws === selWeek ? ' sel' : ''}" onclick="selWeek='${ws}';renderCal()">
+      <div class="wk-no">第${n}週</div>
+      <div class="wk-in">
+        <div class="wk-bg">${days.map(d => `<div class="${!inMonth(d) ? 'out' : ''}${d === t ? ' today' : ''}"></div>`).join('')}</div>
+        <div class="wk-fg">
+          ${days.map((d, i) => `<div class="dn${i === 5 ? ' sat' : i === 6 ? ' sun' : ''}${!inMonth(d) ? ' out' : ''}${d === t ? ' today' : ''}" style="grid-column:${i+1}"><span>${pd(d).getDate()}</span></div>`).join('')}
+          ${bars}
+          ${hidden ? `<div class="more" style="grid-column:1/8;grid-row:${maxLanes+2}">＋${hidden}件（タップで一覧）</div>` : ''}
+        </div>
+      </div>
+    </div>`;
+    ws = addDays(ws, 7);
+  }
+  $('cal').innerHTML = html;
+  renderWeekPanel(evs);
+}
+function renderWeekPanel(evs){
+  const ws = selWeek, we = addDays(ws, 6);
+  const inWeek = evs.filter(e => e.from <= we && e.to >= ws);
+  const mine = inWeek.filter(e => e.type === 'item').map(e => e.it).sort(byPrioArrival);
+  const fd = inWeek.filter(e => e.type === 'feed').map(e => e.f);
+  let h = `<div class="sec-h">🗓 ${fmtMD(ws)}〜${fmtMD(we)} の入荷めど <span class="cnt">${mine.length}</span></div>`;
+  h += mine.length ? `<div class="items two">${mine.map(it => itemCard(it, {dots:true})).join('')}</div>`
+                   : `<div class="empty">この週に入荷めどがある「回したい」商品はありません</div>`;
+  if(fd.length){
+    h += `<div class="sec-h" style="margin-top:16px">🆕 同じ週のラインアップ <span class="cnt">${fd.length}</span></div>
+      <div class="lu">${fd.map(luCard).join('')}</div>`;
+  }
+  $('week-panel').innerHTML = h;
+}
+
+// ── マイリスト ──
+function onListSearch(v){ clearTimeout(qTimer); qTimer = setTimeout(() => { listQ = v.trim().toLowerCase(); renderList(); }, 150); }
+function setListFilter(k, v){ ui[k] = ui[k] === v ? '' : v; saveUI(); renderList(); }
+function renderList(){
+  const counts = Object.fromEntries(STATUSES.map(s => [s.v, db.items.filter(it => it.status === s.v).length]));
+  $('l-pills').innerHTML =
+    STATUSES.map(s => `<button class="pill${ui.listStatus === s.v ? ' on' : ''}" onclick="setListFilter('listStatus','${s.v}')">${s.label} ${counts[s.v]}</button>`).join('') +
+    '<span style="width:6px"></span>' +
+    PRIOS.map(p => `<button class="pill${ui.listPrio === p.v ? ' on' : ''}" onclick="setListFilter('listPrio','${p.v}')">${p.label}</button>`).join('');
+  let list = db.items.filter(it => (!ui.listStatus || it.status === ui.listStatus) && (!ui.listPrio || it.priority === ui.listPrio));
+  if(listQ) list = list.filter(it => [it.name, it.maker, it.note, it.target].join(' ').toLowerCase().includes(listQ));
+  list.sort(ui.listStatus === 'plan' ? byArrival : (a, b) => byArrival(b, a));
+  $('l-items').innerHTML = list.length ? list.map(it => itemCard(it, {dots: ui.listStatus === 'plan'})).join('')
+    : `<div class="empty">該当する商品はありません</div>`;
+}
+
+// ── ラインアップ ──
+function onLuSearch(v){ clearTimeout(qTimer); qTimer = setTimeout(() => { luQ = v.trim().toLowerCase(); renderLineup(); }, 150); }
+function setLu(k, v){ ui[k] = (k === 'luHideWatched') ? !ui[k] : (ui[k] === v ? '' : v); saveUI(); renderLineup(); }
+function luCard(f){
+  const w = watchedFeed(f.id);
+  const isNew = f.first_seen && diffDays(today(), f.first_seen.slice(0, 10)) <= NEW_DAYS;
+  const chg = f.arrival_changed && diffDays(today(), f.arrival_changed.slice(0, 10)) <= NEW_DAYS;
+  return `<div class="lu-c">
+    <div class="lu-img" onclick="openFeed('${f.id}')">${imgHTML(f.image, '#ddd')}</div>
+    <div class="lu-badges">${isNew ? '<span class="chip c-new">NEW</span>' : ''}${chg ? '<span class="chip c-chg">めど変更</span>' : ''}</div>
+    <button class="star${w ? ' on' : ''}" onclick="toggleWatch('${f.id}')" aria-label="${w ? '回したいから外す' : '回したいに追加'}">${w ? '★' : '☆'}</button>
+    <div class="lu-b" onclick="openFeed('${f.id}')">
+      <div class="lu-n">${esc(f.name)}</div>
+      <div class="lu-m">${esc(f.maker || '')}${f.price ? ` ・ ${yen(f.price)}` : ''}</div>
+      <div><span class="chip c-arr c-fuzzy">📅 ${esc(f.arrival?.label || '')}</span></div>
+    </div>
+  </div>`;
+}
+function renderLineup(){
+  const src = feed.sources || [];
+  // 収集時刻は日本時間の文字列（+09:00）のまま表示する
+  const gen = (feed.generated_at || '').match(/^\d{4}-(\d\d)-(\d\d)T(\d\d:\d\d)/);
+  $('src-st').innerHTML = gen
+    ? `<div><b>自動収集：</b>${+gen[1]}/${+gen[2]} ${gen[3]} 時点（月・木の朝に更新）</div>` +
+      src.map(s => `<div>${s.ok ? '<span class="ok">✓</span>' : '<span class="ng">✕</span>'}
+        <a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener">${esc(s.name)}</a> ${s.count}件
+        ${s.error ? `<span style="color:var(--ink-3)">— ${esc(s.error)}${s.kept ? `（前回の${s.kept}件を表示中）` : ''}</span>` : ''}</div>`).join('')
+    : `<div><b>自動収集はまだ実行されていません。</b> GitHub Actions「ガチャ発売ラインアップの自動収集」が動くと、ここにメーカー公式の発売予定が並びます。
+       <br>それまでは右下の＋（🏠/⭐画面）から手入力で登録できます。</div>`;
+  luMakers = [...new Set(feed.items.map(f => f.maker).filter(Boolean))];
+  $('lu-pills').innerHTML = luMakers.map((mk, i) => `<button class="pill${ui.luMaker === mk ? ' on' : ''}" onclick="setLu('luMaker',luMakers[${i}])">${esc(mk)}</button>`).join('') +
+    `<button class="pill${ui.luHideWatched ? ' on' : ''}" onclick="setLu('luHideWatched')">★登録済を隠す</button>`;
+  const t = today();
+  let list = feed.items.filter(f => f.arrival && f.arrival.to >= addDays(t, -14));
+  if(ui.luMaker) list = list.filter(f => f.maker === ui.luMaker);
+  if(ui.luHideWatched) list = list.filter(f => !watchedFeed(f.id));
+  if(luQ) list = list.filter(f => [f.name, f.maker].join(' ').toLowerCase().includes(luQ));
+  list.sort((a, b) => a.arrival.from.localeCompare(b.arrival.from) || a.name.localeCompare(b.name, 'ja'));
+  if(!list.length){ $('lu-body').innerHTML = `<div class="empty">${feed.items.length ? '条件に合うラインアップはありません' : 'ラインアップはまだありません'}</div>`; return; }
+  const groups = {};
+  for(const f of list){ const k = f.arrival.from.slice(0, 7); (groups[k] ||= []).push(f); }
+  $('lu-body').innerHTML = Object.entries(groups).map(([k, fs]) =>
+    `<div class="lu-month">${+k.slice(0, 4)}年${+k.slice(5)}月 <span class="chip c-arr">${fs.length}件</span></div><div class="lu">${fs.map(luCard).join('')}</div>`).join('');
+}
+function toggleWatch(fid){
+  const w = watchedFeed(fid);
+  if(w){
+    if(!confirm(`「${w.name}」を回したいリストから外しますか？（調査記録も削除されます）`)) return;
+    removeItem(w.id); toast('回したいリストから外しました'); render(); return;
+  }
+  const f = feed.items.find(x => x.id === fid); if(!f) return;
+  const it = {id:uid(), name:f.name, maker:f.maker || '', price:f.price || '', arrival:{...f.arrival}, priority:'want', status:'plan',
+    target:'', url:f.url || '', image:f.image || '', note:'', feed_id:f.id, created_at:nowIso(), updated_at:nowIso()};
+  db.items.push(it); persist(); render();
+  toast(`「${f.name}」を回したいに追加しました`, 'ok');
+}
+function openFeed(fid){
+  const w = watchedFeed(fid);
+  if(w){ openDetail(w.id); return; }
+  const f = feed.items.find(x => x.id === fid); if(!f) return;
+  detailId = null;
+  $('d-title').textContent = 'ラインアップ';
+  $('d-body').innerHTML = `<div class="det-top"><div class="det-img">${imgHTML(f.image, '#ddd')}</div>
+    <div><div class="det-name">${esc(f.name)}</div>
+    <div class="it-meta" style="margin-top:6px"><span class="chip c-arr c-fuzzy">📅 ${esc(f.arrival.label)}</span>${f.maker ? `<span>${esc(f.maker)}</span>` : ''}${f.price ? `<span>${yen(f.price)}</span>` : ''}</div></div></div>
+    <dl class="kv"><dt>入荷めど</dt><dd>${esc(f.arrival.label)}（${arrRange(f.arrival)}）</dd>
+    ${safeUrl(f.url) ? `<dt>公式</dt><dd><a href="${esc(f.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a></dd>` : ''}</dl>
+    <div style="margin-top:16px;text-align:center"><button class="btn btn-p" onclick="toggleWatch('${f.id}');closeModal('m-detail')">☆ 回したいに追加</button></div>`;
+  $('m-detail').querySelector('.sheet-f').classList.add('hidden');
+  openModal('m-detail');
+}
+
+// ── 店舗 ──
+function renderStores(){
+  const st = sortedStores();
+  if(!st.length){
+    $('st-body').innerHTML = `<div class="empty">店舗がまだありません。<br>よく行くガチャコーナーやショップを登録しましょう。</div>`;
+    return;
+  }
+  const targets = db.items.filter(it => hunting(it) || phase(it) === 'soon').sort(byPrioArrival);
+  $('st-body').innerHTML = st.map((s, i) => {
+    const rows = targets.map(it => {
+      const {v, stale} = cellState(it.id, s.id);
+      if(phase(it) === 'soon' && !v) return null;
+      if(v && DONE_RESULTS.includes(v.result)) return null;
+      const r = v ? RES[v.result] : null;
+      const tag = !v ? `<span class="chip c-skip">未調査</span>` : `<span class="chip" style="background:${r.color};color:#fff;${stale ? 'opacity:.55' : ''}">${r.icon} ${r.label} ${fmtMD(v.date)}</span>`;
+      return `<div class="st-row" onclick="openVisit('${it.id}','${s.id}')" style="box-shadow:inset 4px 0 0 ${prioOf(it.priority).color}">
+        <span class="nm">${esc(it.name)}</span>${tag}</div>`;
+    }).filter(Boolean);
+    return `<div class="card st-c">
+      <div class="st-h"><b>${esc(s.name)}${s.area ? `<small>${esc(s.area)}</small>` : ''}</b>
+        <button class="btn btn-g btn-s" onclick="moveStore('${s.id}',-1)" ${i === 0 ? 'disabled' : ''} aria-label="上へ">↑</button>
+        <button class="btn btn-g btn-s" onclick="moveStore('${s.id}',1)" ${i === st.length-1 ? 'disabled' : ''} aria-label="下へ">↓</button>
+        <a class="btn btn-g btn-s" href="${esc(mapLink(s))}" target="_blank" rel="noopener">🗺</a>
+        <button class="btn btn-g btn-s" onclick="openStoreForm('${s.id}')">✏️</button></div>
+      ${s.note ? `<div style="font-size:12px;color:var(--ink-2);margin-top:4px;white-space:pre-wrap">${esc(s.note)}</div>` : ''}
+      <div class="st-list">${rows.length ? `<div style="font-size:11.5px;font-weight:800;color:var(--ink-2)">ここで確認すること ${rows.length}件</div>` + rows.join('')
+        : '<div style="font-size:12px;color:var(--ink-3)">いま確認が必要な商品はありません</div>'}</div>
+    </div>`;
+  }).join('');
+}
+function moveStore(id, d){
+  const st = sortedStores(), i = st.findIndex(s => s.id === id), j = i + d;
+  if(j < 0 || j >= st.length) return;
+  [st[i], st[j]] = [st[j], st[i]];
+  st.forEach((s, k) => { if(s.order !== k){ s.order = k; s.updated_at = nowIso(); } });
+  persist(); renderStores();
+}
+function openStoreForm(id){
+  editingStore = id || null;
+  const s = db.stores.find(x => x.id === id) || {};
+  $('sf-title').textContent = id ? '店舗を編集' : '店舗を追加';
+  $('sf-name').value = s.name || ''; $('sf-area').value = s.area || ''; $('sf-map').value = s.map || ''; $('sf-note').value = s.note || '';
+  $('sf-del').classList.toggle('hidden', !id);
+  openModal('m-store');
+  setTimeout(() => $('sf-name').focus(), 50);
+}
+function saveStore(){
+  const name = $('sf-name').value.trim();
+  if(!name){ toast('店舗名を入力してください', 'err'); return; }
+  const vals = {name, area:$('sf-area').value.trim(), map:$('sf-map').value.trim(), note:$('sf-note').value.trim(), updated_at:nowIso()};
+  if(editingStore) Object.assign(db.stores.find(s => s.id === editingStore), vals);
+  else db.stores.push({id:uid(), order:db.stores.length, created_at:nowIso(), ...vals});
+  persist(); closeModal('m-store'); render(); toast('店舗を保存しました', 'ok');
+}
+function deleteStore(){
+  const s = db.stores.find(x => x.id === editingStore); if(!s) return;
+  if(!confirm(`「${s.name}」を削除しますか？この店舗の調査記録も削除されます。`)) return;
+  markDeleted(s.id);
+  db.visits.filter(v => v.store_id === s.id).forEach(v => markDeleted(v.id));
+  db.visits = db.visits.filter(v => v.store_id !== s.id);
+  db.stores = db.stores.filter(x => x.id !== s.id);
+  persist(); closeModal('m-store'); render(); toast('削除しました');
+}
+
+// ══════════ 商品フォーム ══════════
+function choiceHTML(list, cur, fn){
+  return list.map(o => `<button type="button" class="${o.v === cur ? 'on' : ''}" style="--cc:${o.color}" onclick="${fn}('${o.v}')">${o.label}</button>`).join('');
+}
+function setPrio(v){ form.prio = v; $('if-prio').innerHTML = choiceHTML(PRIOS, v, 'setPrio'); }
+function setStatus(v){ form.status = v; $('if-status').innerHTML = choiceHTML(STATUSES, v, 'setStatus'); }
+function showArrPrev(){
+  const el = $('if-arr-prev'), a = form.arr;
+  if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
+  el.className = 'arr-prev';
+  el.textContent = `📅 ${arrRange(a)}（${KIND_LABEL[a.kind] || ''}${a.kind === 'week' ? '・月曜はじまり' : ''}）`;
+  $('if-from').value = a.from; $('if-to').value = a.to;
+}
+function onArrText(){
+  form.arr = parseArrival($('if-arr').value); form.arrTouched = true; showArrPrev();
+}
+function onArrDates(){
+  let f = $('if-from').value, t = $('if-to').value;
+  if(!f && !t) return;
+  f ||= t; t ||= f;
+  if(t < f) [f, t] = [t, f];
+  const label = f === t ? `${pd(f).getMonth()+1}月${pd(f).getDate()}日` : `${fmtMD(f)}〜${fmtMD(t)}`;
+  form.arr = {kind: f === t ? 'date' : 'range', label, from:f, to:t}; form.arrTouched = true;
+  $('if-arr').value = label; showArrPrev();
+}
+function openItemForm(id){
+  editingItem = id || null;
+  const it = db.items.find(x => x.id === id) || {};
+  $('if-title').textContent = id ? '編集' : '回したいガチャを追加';
+  $('if-name').value = it.name || ''; $('if-maker').value = it.maker || ''; $('if-price').value = it.price || '';
+  $('if-arr').value = it.arrival?.label || ''; form.arr = it.arrival ? {...it.arrival} : null; form.arrTouched = false;
+  $('if-from').value = it.arrival?.from || ''; $('if-to').value = it.arrival?.to || '';
+  $('if-arr-more').open = false;
+  $('if-target').value = it.target || ''; $('if-url').value = it.url || ''; $('if-image').value = it.image || ''; $('if-note').value = it.note || '';
+  setPrio(it.priority || 'want'); setStatus(it.status || 'plan'); showArrPrev();
+  $('if-del').classList.toggle('hidden', !id);
+  openModal('m-item');
+  if(!id) setTimeout(() => $('if-name').focus(), 50);
+}
+function saveItem(){
+  const name = $('if-name').value.trim();
+  if(!name){ toast('商品名を入力してください', 'err'); return; }
+  if(!form.arr){ toast('入荷めどを入力してください（例: 10月第2週）', 'err'); $('if-arr').focus(); return; }
+  const price = $('if-price').value === '' ? '' : Number($('if-price').value);
+  const vals = {name, maker:$('if-maker').value.trim(), price, arrival:form.arr, priority:form.prio, status:form.status,
+    target:$('if-target').value.trim(), url:$('if-url').value.trim(), image:$('if-image').value.trim(), note:$('if-note').value.trim(), updated_at:nowIso()};
+  if(editingItem){
+    const it = db.items.find(x => x.id === editingItem);
+    // ラインアップ由来の商品で入荷めどを手で直したら、以後は自動更新しない
+    if(form.arrTouched && it.feed_id) vals.arrival_manual = true;
+    if(form.arrTouched){ delete it.arrival_updated; delete it.arrival_prev; }
+    Object.assign(it, vals);
+  }else{
+    db.items.push({id:uid(), created_at:nowIso(), ...vals});
+  }
+  persist(); closeModal('m-item'); render();
+  if(detailId && !$('m-detail').classList.contains('hidden')) openDetail(detailId);
+  toast('保存しました', 'ok');
+}
+function removeItem(id){
+  markDeleted(id);
+  db.visits.filter(v => v.item_id === id).forEach(v => markDeleted(v.id));
+  db.visits = db.visits.filter(v => v.item_id !== id);
+  db.items = db.items.filter(x => x.id !== id);
+  persist();
+}
+function deleteItem(){
+  const it = db.items.find(x => x.id === editingItem); if(!it) return;
+  if(!confirm(`「${it.name}」を削除しますか？調査記録も削除されます。`)) return;
+  removeItem(it.id); closeModal('m-item'); closeModal('m-detail'); render(); toast('削除しました');
+}
+
+// ══════════ 商品詳細 ══════════
+function openDetail(id){
+  const it = db.items.find(x => x.id === id); if(!it) return;
+  detailId = id;
+  const p = prioOf(it.priority), ph = phase(it), t = today(), a = it.arrival;
+  const cdTxt = {
+    now:`🔥 入荷めどの期間中です（${fmtMD(a.to)}まで）`, late:`入荷めどから${a ? diffDays(t, a.to) : 0}日経過 — 売り切れ前に探しましょう`,
+    soon:`⏰ 入荷めどまであと${a ? diffDays(a.from, t) : 0}日`, future:`入荷めどまであと${a ? diffDays(a.from, t) : 0}日`,
+    over:`めどから${a ? diffDays(t, a.to) : 0}日経過 — 続けるか見送るか決めましょう`, got:'✓ ゲット済', skip:'見送り'}[ph];
+  const cdBg = {now:'var(--pink);color:#fff', late:'#ffd2dc;color:var(--pink-dk)', soon:'#ffe9c2;color:#a65d00', future:'#eee6f0', over:'#e7e7e7', got:'var(--s-got-bg);color:var(--s-got)', skip:'#eee'}[ph];
+  const st = sortedStores();
+  $('d-title').textContent = it.name;
+  $('d-body').innerHTML = `<div class="det-top"><div class="det-img">${imgHTML(it.image, p.color)}</div>
+    <div style="min-width:0"><div class="det-name">${esc(it.name)}</div>
+      <div class="it-meta" style="margin-top:6px"><span class="chip c-${p.v}">${p.label}</span><span class="chip c-${it.status === 'plan' ? 'arr' : it.status}">${statusOf(it.status).label}</span>
+      ${it.maker ? `<span>${esc(it.maker)}</span>` : ''}${it.price ? `<span>${yen(it.price)}</span>` : ''}</div></div></div>
+    <div class="cd" style="background:${cdBg}">${cdTxt}</div>
+    <dl class="kv">
+      <dt>入荷めど</dt><dd>${esc(arrText(a))}（${arrRange(a)}）${isFuzzy(a) ? ' <span class="chip c-arr c-fuzzy">めど</span>' : ''}
+        ${it.arrival_updated ? `<br><small style="color:var(--ink-2)">${fmtMD(it.arrival_updated)} に自動更新（前: ${esc(it.arrival_prev || '-')}）</small>` : ''}
+        ${it.feed_id && !it.arrival_manual ? `<br><small style="color:var(--teal)">公式の発売予定に合わせて自動で更新されます</small>` : ''}</dd>
+      ${it.target ? `<dt>狙い</dt><dd>🎯 ${esc(it.target)}</dd>` : ''}
+      ${safeUrl(it.url) ? `<dt>公式</dt><dd><a href="${esc(it.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a></dd>` : ''}
+      ${it.note ? `<dt>メモ</dt><dd style="white-space:pre-wrap">${esc(it.note)}</dd>` : ''}
+    </dl>
+    <div class="choice" style="margin-top:12px">${STATUSES.map(s => `<button class="${it.status === s.v ? 'on' : ''}" style="--cc:${s.color}" onclick="quickStatus('${it.id}','${s.v}')">${s.label}</button>`).join('')}</div>
+    <div class="surv">
+      <div class="sec-h">🏪 店舗の調査状況</div>
+      ${st.length ? st.map(s => {
+        const {v, stale} = cellState(it.id, s.id);
+        const r = v ? RES[v.result] : null;
+        return `<div class="surv-row">
+          <div class="nm">${esc(s.name)}<small>${v ? `${fmtMD(v.date)} ${esc(v.note || '')}${stale ? ' ・再確認を' : ''}` : 'まだ調査していません'}</small></div>
+          ${r ? `<span class="chip" style="background:${r.color};color:#fff;${stale ? 'opacity:.55' : ''}">${r.icon} ${r.label}</span>` : '<span class="chip c-skip">? 未調査</span>'}
+          <button class="btn btn-p btn-s" onclick="openVisit('${it.id}','${s.id}')">記録</button>
+        </div>`;
+      }).join('') : `<div class="empty">店舗が未登録です。<button class="btn btn-g btn-s" onclick="closeModal('m-detail');go('stores');openStoreForm()">＋ 店舗を追加</button></div>`}
+    </div>`;
+  $('m-detail').querySelector('.sheet-f').classList.remove('hidden');
+  openModal('m-detail');
+}
+function editFromDetail(){ if(detailId) openItemForm(detailId); }
+function quickStatus(id, s){
+  const it = db.items.find(x => x.id === id); if(!it || it.status === s) return;
+  it.status = s; it.updated_at = nowIso(); persist(); render(); openDetail(id);
+  toast(`「${statusOf(s).label}」にしました`, 'ok');
+}
+
+// ══════════ 調査結果の記録 ══════════
+function openVisit(itemId, storeId){
+  const it = db.items.find(x => x.id === itemId), s = db.stores.find(x => x.id === storeId);
+  if(!it || !s) return;
+  visitCtx = {itemId, storeId}; visitResult = null;
+  $('v-title').textContent = s.name;
+  $('v-sub').innerHTML = `<b>${esc(it.name)}</b><br>入荷めど：${esc(arrText(it.arrival))}（${arrRange(it.arrival)}）`;
+  $('v-date').value = today(); $('v-note').value = '';
+  $('v-got').checked = true; $('v-got-wrap').classList.add('hidden');
+  renderVisitBtns();
+  const hist = db.visits.filter(v => v.item_id === itemId && v.store_id === storeId).sort((a, b) => b.date.localeCompare(a.date));
+  $('v-hist').innerHTML = hist.length ? `<div style="font-weight:800;color:var(--ink-2);border:none">これまでの記録</div>` + hist.map(v => {
+    const r = RES[v.result];
+    return `<div><span class="chip" style="background:${r.color};color:#fff">${r.icon} ${r.label}</span>${fmtMD(v.date)} <span style="color:var(--ink-2)">${esc(v.note || '')}</span>
+      <button class="del" onclick="deleteVisit('${v.id}')" aria-label="この記録を削除">🗑</button></div>`;
+  }).join('') : '';
+  openModal('m-visit');
+}
+function renderVisitBtns(){
+  $('v-results').innerHTML = RESULTS.map(r => `<button class="${visitResult === r.v ? 'on' : ''}" style="background:${r.color}" onclick="pickResult('${r.v}')"><span>${r.icon}</span>${r.label}</button>`).join('');
+}
+function pickResult(v){
+  visitResult = v; renderVisitBtns();
+  const it = db.items.find(x => x.id === visitCtx.itemId);
+  $('v-got-wrap').classList.toggle('hidden', !(v === 'played' && it?.status !== 'got'));
+}
+function saveVisit(){
+  if(!visitResult){ toast('結果を選んでください', 'err'); return; }
+  const date = $('v-date').value || today();
+  db.visits.push({id:uid(), item_id:visitCtx.itemId, store_id:visitCtx.storeId, date, result:visitResult, note:$('v-note').value.trim(), updated_at:nowIso()});
+  const it = db.items.find(x => x.id === visitCtx.itemId);
+  if(visitResult === 'played' && it && it.status !== 'got' && $('v-got').checked){ it.status = 'got'; it.updated_at = nowIso(); }
+  persist(); closeModal('m-visit'); render();
+  if(detailId === visitCtx.itemId && !$('m-detail').classList.contains('hidden')) openDetail(detailId);
+  toast(`記録しました：${RES[visitResult].label}`, 'ok');
+}
+function deleteVisit(id){
+  if(!confirm('この記録を削除しますか？')) return;
+  markDeleted(id);
+  db.visits = db.visits.filter(v => v.id !== id);
+  persist(); render();
+  openVisit(visitCtx.itemId, visitCtx.storeId);
+  if(detailId === visitCtx.itemId && !$('m-detail').classList.contains('hidden')) openDetail(detailId);
+}
+
+// ══════════ INIT ══════════
+(async function init(){
+  load(); loadSyncConfig();
+  go(ui.tab || 'home');
+  await loadFeed();
+  const ok = syncConfig?.token ? await syncFrom() : await mergeSeed();
+  followFeed();
+  render();
+  if(ok && !syncConfig?.token) toast('共有データを反映しました', 'ok');
+})();
+// 日付をまたいで開きっぱなしでも「今日」の表示がずれないようにする
+document.addEventListener('visibilitychange', () => { if(!document.hidden) render(); });
+</script>
+</body>
+</html>

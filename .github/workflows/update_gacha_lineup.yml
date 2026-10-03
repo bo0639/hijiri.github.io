@@ -1,0 +1,47 @@
+name: ガチャ発売ラインアップの自動収集
+
+on:
+  schedule:
+    # 月・木 7:00（JST）= 前日 22:00（UTC）
+    - cron: '0 22 * * 0,3'
+  push:
+    # 収集ソースや収集ロジックを変えたら、その場で収集し直す
+    branches: [main]
+    paths:
+      - 'gacha/sources.json'
+      - 'scripts/update_gacha_lineup.py'
+      - '.github/workflows/update_gacha_lineup.yml'
+  workflow_dispatch:
+    # 手動実行も可能
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: メーカー公式の発売スケジュールを収集
+        run: python scripts/update_gacha_lineup.py
+
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gacha/feed.json
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "🤖 ガチャ発売ラインアップの自動収集: $(TZ=Asia/Tokyo date '+%Y年%m月%d日 %H:%M')"
+            # 他のワークフローやアプリからの同期と重なっても失敗しないよう取り込んでから送る
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
