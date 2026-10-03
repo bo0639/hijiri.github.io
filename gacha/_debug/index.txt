@@ -1,0 +1,7 @@
+bandai-01.html	https://gashapon.jp/schedule/
+bandai-02.html	https://gashapon.jp/schedule/?ym=202605
+bandai-03.html	https://gashapon.jp/schedule/?ym=202606
+bandai-04.html	https://gashapon.jp/schedule/?ym=202607
+bandai-05.html	https://gashapon.jp/schedule/?ym=202608
+bandai-06.html	https://gashapon.jp/schedule/?ym=202609
+tta-01.html	https://www.takaratomy-arts.co.jp/items/gacha/calendar/
