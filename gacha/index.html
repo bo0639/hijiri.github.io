@@ -352,8 +352,8 @@ details.more-d summary{font-size:12px;color:var(--ink-2);cursor:pointer;margin-t
       </div>
       <div class="f">
         <label for="if-arr">入荷めど *</label>
-        <input type="text" id="if-arr" placeholder="例: 10月第2週 / 11月上旬 / 12月 / 10/18" oninput="onArrText()">
-        <div class="arr-prev" id="if-arr-prev">「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます</div>
+        <input type="text" id="if-arr" placeholder="例: 10月第2週 / 10月5日週 / 11月上旬 / 12月" oninput="onArrText()">
+        <div class="arr-prev" id="if-arr-prev">「10月第2週」「10月5日週」「11月中旬」「12月」「10/18」などの書き方が使えます</div>
         <details class="more-d" id="if-arr-more">
           <summary>日付を直接指定する</summary>
           <div class="row2" style="margin-top:6px">
@@ -556,6 +556,7 @@ const SEP = '\\s*(?:[~〜\\-ー－–・、]|から)\\s*';
 const RE_WEEK = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*第?\\s*([1-5])\\s*週?(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?第?\\s*([1-5])\\s*)?週');
 const RE_WEEK_ONLY = new RegExp('第\\s*([1-5])\\s*(?:' + SEP + '第?\\s*([1-5])\\s*)?週');
 const RE_JUN = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*(上|中|下)\\s*旬(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?(上|中|下)\\s*旬)?');
+const RE_DAY_WEEK = /(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日\s*週/;
 const RE_YMD = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})(?!\d)/;
 const RE_MD = /(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日/;
 const RE_MD_SLASH = /(?<![\d/])(\d{1,2})\s*\/\s*(\d{1,2})(?![\d/])/;
@@ -582,8 +583,21 @@ function weekRange(y, m, n){
 function parseArrival(text, base = today(), ctx = null){
   const t = (text || '').normalize('NFKC').replace(/\s+/g, ' ').trim();
   if(!t) return null;
-  const ym = (y, m) => { m = +m; if(m < 1 || m > 12) return null; return [y ? +y : guessYear(m, base), m]; };
-  let m = t.match(RE_WEEK);
+  const ym = (y, m) => {
+    m = +m; if(m < 1 || m > 12) return null;
+    if(y) return [+y, m];
+    if(ctx) return [ctx[0] + (m < ctx[1] - 6 ? 1 : m > ctx[1] + 6 ? -1 : 0), m];
+    return [guessYear(m, base), m];
+  };
+  let m = t.match(RE_DAY_WEEK);
+  if(m){
+    const b = ym(m[1], m[2]);
+    if(b){
+      const d = new Date(b[0], b[1]-1, +m[3]);
+      if(d.getMonth() === b[1]-1) return {kind:'week', label:`${b[1]}月${+m[3]}日週`, from:ymd(d), to:addDays(ymd(d), 6)};
+    }
+  }
+  m = t.match(RE_WEEK);
   if(m){
     const b = ym(m[1], m[2]);
     if(b){
@@ -1295,7 +1309,7 @@ function setPrio(v){ form.prio = v; $('if-prio').innerHTML = choiceHTML(PRIOS, v
 function setStatus(v){ form.status = v; $('if-status').innerHTML = choiceHTML(STATUSES, v, 'setStatus'); }
 function showArrPrev(){
   const el = $('if-arr-prev'), a = form.arr;
-  if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
+  if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月5日週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
   el.className = 'arr-prev';
   el.textContent = `📅 ${arrRange(a)}（${KIND_LABEL[a.kind] || ''}${a.kind === 'week' ? '・月曜はじまり' : ''}）`;
   $('if-from').value = a.from; $('if-to').value = a.to;
