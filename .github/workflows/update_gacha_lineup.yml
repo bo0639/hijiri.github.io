@@ -31,7 +31,7 @@ jobs:
 
       - name: メーカー公式の発売スケジュールを収集
         env:
-          GACHA_DUMP_DIR: ${{ runner.temp }}/gacha-pages
+          GACHA_DUMP_DIR: gacha/_debug  # TEMP: 調査用、マージ前に戻す
         run: python scripts/update_gacha_lineup.py
 
       - name: 取得したページを保存（抽出がうまくいかないときの調査用）
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add gacha/feed.json
+          git add gacha/feed.json gacha/_debug  # TEMP
           if git diff --cached --quiet; then
             echo "変更なし。コミットをスキップします。"
           else
