@@ -1,0 +1,29 @@
+{
+  "_comment": "ガチャ発売ラインアップの自動収集ソース。urls は最初に読むページ、follow はそのページ内で追加で辿るリンク（月切り替えタブなど）の正規表現、max_pages は1ソースで読む最大ページ数。item_href は商品ページへのリンクとみなすURLの正規表現（省略すると同じドメインの全リンクが対象）。url_templates を使うと {yyyy} {mm} {m} を今月〜months_ahead か月先で展開する。enabled を false にすると収集しない。",
+  "sources": [
+    {
+      "key": "bandai",
+      "name": "ガシャポン（バンダイ）",
+      "maker": "バンダイ",
+      "link": "https://gashapon.jp/schedule/",
+      "urls": ["https://gashapon.jp/schedule/"],
+      "follow": "gashapon\\.jp/schedule/?\\?",
+      "max_pages": 6,
+      "hosts": ["gashapon.jp", "www.gashapon.jp"],
+      "item_href": "/(?:products|item|detail)",
+      "enabled": true
+    },
+    {
+      "key": "tta",
+      "name": "ガチャ（タカラトミーアーツ）",
+      "maker": "タカラトミーアーツ",
+      "link": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
+      "urls": ["https://www.takaratomy-arts.co.jp/items/gacha/calendar/"],
+      "follow": "takaratomy-arts\\.co\\.jp/items/gacha/calendar/?\\?",
+      "max_pages": 6,
+      "hosts": ["www.takaratomy-arts.co.jp"],
+      "item_href": "/items/(?!gacha/calendar)",
+      "enabled": true
+    }
+  ]
+}
