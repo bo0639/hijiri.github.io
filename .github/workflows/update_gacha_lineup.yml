@@ -6,7 +6,7 @@ on:
     - cron: '0 22 * * 0,3'
   push:
     # 収集ソースや収集ロジックを変えたら、その場で収集し直す
-    branches: [main, 'claude/sweet-davinci-20t2oh']  # TEMP: 調査用、マージ前に戻す
+    branches: [main]
     paths:
       - 'gacha/sources.json'
       - 'scripts/update_gacha_lineup.py'
