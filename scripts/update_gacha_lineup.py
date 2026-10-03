@@ -36,6 +36,8 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES_PATH = os.path.join(ROOT, "gacha", "sources.json")
 FEED_PATH = os.path.join(ROOT, "gacha", "feed.json")
+# 設定すると取得したHTMLをここに保存する（ページ構造が変わったときの調査用。Actionsの成果物として残る）
+DUMP_DIR = os.environ.get("GACHA_DUMP_DIR", "")
 
 JST = dt.timezone(dt.timedelta(hours=9))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -515,6 +517,13 @@ def collect_source(src: dict, today: dt.date) -> tuple[list[dict], dict]:
         except Exception as exc:  # noqa: BLE001 - 収集失敗は status に記録して続行
             errors.append(f"{url}: {exc}")
             continue
+        if DUMP_DIR:
+            os.makedirs(DUMP_DIR, exist_ok=True)
+            name = f"{src['key']}-{len(seen):02d}.html"
+            with open(os.path.join(DUMP_DIR, name), "w", encoding="utf-8") as f:
+                f.write(body)
+            with open(os.path.join(DUMP_DIR, "index.txt"), "a", encoding="utf-8") as f:
+                f.write(f"{name}\t{url}\n")
         for it in extract_items(body, url, src, today):
             items.setdefault(it["id"], it)
         if follow:

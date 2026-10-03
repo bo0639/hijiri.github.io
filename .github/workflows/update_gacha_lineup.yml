@@ -30,7 +30,18 @@ jobs:
           python-version: '3.12'
 
       - name: メーカー公式の発売スケジュールを収集
+        env:
+          GACHA_DUMP_DIR: ${{ runner.temp }}/gacha-pages
         run: python scripts/update_gacha_lineup.py
+
+      - name: 取得したページを保存（抽出がうまくいかないときの調査用）
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gacha-pages
+          path: ${{ runner.temp }}/gacha-pages
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: 変更をコミット・プッシュ
         run: |
