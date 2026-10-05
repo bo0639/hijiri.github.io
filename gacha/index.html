@@ -771,7 +771,7 @@ function dataSig(d){
 /** リポジトリの data.json を取り込む（同期未設定の端末向け）。 */
 async function mergeSeed(){
   try{
-    const res = await fetch('./data.json', {cache:'no-store'});
+    const res = await fetch(`./data.json?t=${Date.now()}`, {cache:'no-store'});
     if(!res.ok) return false;
     const merged = mergeData(db, normalize(await res.json()));
     if(dataSig(merged) !== dataSig(db)){ db = merged; saveLocal(); return true; }
@@ -780,7 +780,7 @@ async function mergeSeed(){
 }
 async function loadFeed(){
   try{
-    const res = await fetch('./feed.json', {cache:'no-store'});
+    const res = await fetch(`./feed.json?t=${Date.now()}`, {cache:'no-store'});
     if(res.ok) feed = await res.json();
   }catch(e){ console.error('feed load error:', e); }
   feed.items ||= []; feed.sources ||= [];
@@ -894,7 +894,7 @@ async function manualSync(){
   await loadFeed();
   const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
   followFeed(); render();
-  toast(ok ? '他の端末の変更を取り込みました' : syncConfig?.token ? '最新の状態です' : 'ラインアップを再読み込みしました', ok ? 'ok' : '');
+  toast(ok ? '最新の共有データを反映しました' : '最新の状態です', ok ? 'ok' : '');
 }
 function openSync(){
   closeMenu();
@@ -902,7 +902,7 @@ function openSync(){
   $('sy-repo').value = syncConfig?.repo || DEFAULT_REPO;
   $('sy-info').textContent = syncConfig?.token
     ? `設定済み — ${syncConfig.repo || DEFAULT_REPO}${lastSyncAt ? `（最終同期 ${new Date(lastSyncAt).toLocaleTimeString('ja-JP', {hour:'2-digit', minute:'2-digit'})}）` : ''}`
-    : '未設定です（この端末の中だけに保存されています）';
+    : '未設定です（Claude Codeで更新した共有データは表示されます。この端末での編集は、この端末だけに保存されます）';
   openModal('m-sync');
 }
 async function saveSync(){
@@ -1042,11 +1042,6 @@ function renderHome(){
   ].map(([c, n, l, on]) => `<div class="tile ${c}" onclick="${on}"><b>${n}</b><span>${l}</span></div>`).join('');
 
   let h = '';
-  if(!syncConfig?.token){
-    h += `<div class="card" style="padding:10px 12px;margin-bottom:16px;font-size:12.5px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <span style="flex:1;min-width:200px">☁️ データは<b>この端末の中だけ</b>に保存されています。PCとスマホで同じ内容を見るには、両方の端末で同期を設定してください。</span>
-      <button class="btn btn-g btn-s" onclick="openSync()">同期を設定</button></div>`;
-  }
   if(!db.items.length){
     h += `<div class="empty" style="margin-bottom:18px">まだ「回したい」ガチャがありません。<br>
       <b>🆕 ラインアップ</b> で ☆ を押すか、右下の <b>＋</b> から登録してください。<br>
@@ -1523,7 +1518,8 @@ function deleteVisit(id){
   const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
   followFeed();
   render();
-  if(ok) toast(syncConfig?.token ? '他の端末の変更を取り込みました' : '共有データを反映しました', 'ok');
+  if(!syncConfig?.token) lastSyncAt = Date.now();
+  if(ok) toast('最新の共有データを反映しました', 'ok');
 })();
 document.addEventListener('visibilitychange', async () => {
   if(document.hidden){
@@ -1531,9 +1527,13 @@ document.addEventListener('visibilitychange', async () => {
     if(syncTimer) syncNow();
     return;
   }
-  // 戻ってきたら、他の端末の変更を取り込む（開きっぱなしのスマホでもPCの変更が反映される）
-  if(syncConfig?.token && Date.now() - lastSyncAt > 20000){
-    if(await syncNow()){ followFeed(); toast('他の端末の変更を取り込みました', 'ok'); }
+  // 戻ってきたら、共有データ（Claude Codeでの更新・他の端末の変更）を取り込む
+  if(Date.now() - lastSyncAt > 20000){
+    await loadFeed();
+    const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
+    if(!syncConfig?.token) lastSyncAt = Date.now();
+    followFeed();
+    if(ok) toast('最新の共有データを反映しました', 'ok');
   }
   render(); // 日付をまたいで開きっぱなしでも「今日」の表示がずれないようにする
 });

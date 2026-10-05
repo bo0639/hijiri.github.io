@@ -616,8 +616,29 @@ def main() -> int:
     ap.add_argument("--source", help="--file と一緒に使うソースのkey")
     ap.add_argument("--base", default="", help="--file のページURL（相対リンク解決用）")
     ap.add_argument("--today", help="基準日 YYYY-MM-DD（テスト用）")
+    ap.add_argument("--arrival", metavar="TEXT",
+                    help="入荷めどの文字（例: 10月第2週）を data.json の arrival 形式で表示する（Claude Codeでの更新用）")
+    ap.add_argument("--find", metavar="WORD",
+                    help="feed.json のラインアップを商品名で検索して表示する（Claude Codeでの更新用）")
     args = ap.parse_args()
     today = dt.date.fromisoformat(args.today) if args.today else dt.datetime.now(JST).date()
+
+    if args.arrival is not None:
+        arr = parse_arrival(args.arrival, today)
+        if not arr:
+            print(f"読み取れません: {args.arrival}", file=sys.stderr)
+            return 1
+        print(json.dumps(arr, ensure_ascii=False))
+        return 0
+
+    if args.find is not None:
+        words = norm(args.find).lower().split()
+        hits = [it for it in load_json(FEED_PATH, {}).get("items", [])
+                if all(w in norm(it["name"]).lower() for w in words)]
+        for it in hits:
+            print(json.dumps(it, ensure_ascii=False))
+        print(f"{len(hits)}件", file=sys.stderr)
+        return 0
 
     if args.file:
         cfg = load_json(SOURCES_PATH, {"sources": []})
