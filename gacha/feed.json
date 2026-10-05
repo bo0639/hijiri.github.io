@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T09:51:24+09:00",
+  "generated_at": "2026-10-05T09:27:23+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -7,7 +7,7 @@
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
       "ok": true,
-      "count": 883,
+      "count": 884,
       "error": ""
     },
     {
@@ -3943,6 +3943,22 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-c84b5b4fc4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【フラットガシャポン/ジャンボカードダス】アニメ『薬屋のひとりごと』 クリアポスター3",
+      "price": 200,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258637_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054934000",
+      "first_seen": "2026-10-05T09:27:23+09:00"
+    },
+    {
       "id": "bandai-4c81ba2262",
       "source": "bandai",
       "maker": "バンダイ",
@@ -7189,6 +7205,22 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255192_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095494000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-764068cf63",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "アニメ『薬屋のひとりごと』 カプセルラバーマスコット3",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258564_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054927000",
+      "first_seen": "2026-10-05T09:27:23+09:00"
     },
     {
       "id": "bandai-7aa2192cfa",
@@ -10804,22 +10836,6 @@
       },
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253610_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118202505000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-225bc5c513",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "プリキュアオールスターズ 変身ダイキャストチャーム＆パッケージ5",
-      "price": 400,
-      "arrival": {
-        "kind": "month",
-        "label": "10月",
-        "from": "2026-10-01",
-        "to": "2026-10-31"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258582_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026689000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
