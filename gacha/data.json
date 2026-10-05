@@ -1,5 +1,90 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": "i-20261005-sanrio-fuwafuwa-baby",
+      "name": "サンリオキャラクターズ ふわふわめじるしアクセサリー ～Baby～",
+      "maker": "バンダイ",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第2週",
+        "from": "2026-10-05",
+        "to": "2026-10-11"
+      },
+      "priority": "want",
+      "status": "plan",
+      "target": "",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186768000",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258588_1.jpg",
+      "note": "",
+      "feed_id": "bandai-b2e000152f",
+      "created_at": "2026-10-05T14:24:33.000Z",
+      "updated_at": "2026-10-05T14:24:33.000Z"
+    },
+    {
+      "id": "i-20261005-obungu-osozai",
+      "name": "お文具といっしょ お惣菜なりきりマスコットなのです",
+      "maker": "バンダイ",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第2週",
+        "from": "2026-10-05",
+        "to": "2026-10-11"
+      },
+      "priority": "want",
+      "status": "plan",
+      "target": "",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026528000",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258583_1.jpg",
+      "note": "",
+      "feed_id": "bandai-57d5cc6e66",
+      "created_at": "2026-10-05T14:24:33.000Z",
+      "updated_at": "2026-10-05T14:24:33.000Z"
+    },
+    {
+      "id": "i-20261005-chiikawa-mejirushi3",
+      "name": "ちいかわ めじるしアクセサリー3",
+      "maker": "バンダイ",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第4週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "priority": "want",
+      "status": "plan",
+      "target": "",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570117984075000",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000250113_1.jpg",
+      "note": "",
+      "feed_id": "bandai-7bca724ac0",
+      "created_at": "2026-10-05T14:24:33.000Z",
+      "updated_at": "2026-10-05T14:24:33.000Z"
+    },
+    {
+      "id": "i-20261005-sanrio-allstars-mejirushi3",
+      "name": "めじるしアクセサリー サンリオキャラクターズオールスターズ Part.3",
+      "maker": "バンダイ",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "priority": "want",
+      "status": "plan",
+      "target": "",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054705000",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258568_1.jpg",
+      "note": "",
+      "feed_id": "bandai-4c79d1fa19",
+      "created_at": "2026-10-05T14:24:33.000Z",
+      "updated_at": "2026-10-05T14:24:33.000Z"
+    }
+  ],
   "stores": [],
   "visits": [],
   "deleted": []
