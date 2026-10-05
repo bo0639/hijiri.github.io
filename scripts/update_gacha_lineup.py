@@ -36,6 +36,8 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES_PATH = os.path.join(ROOT, "gacha", "sources.json")
 FEED_PATH = os.path.join(ROOT, "gacha", "feed.json")
+# 設定すると取得したHTMLをここに保存する（ページ構造が変わったときの調査用。Actionsの成果物として残る）
+DUMP_DIR = os.environ.get("GACHA_DUMP_DIR", "")
 
 JST = dt.timezone(dt.timedelta(hours=9))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -57,10 +59,12 @@ RE_WEEK_ONLY = re.compile(r"第\s*([1-5])\s*(?:" + RANGE_SEP + r"第?\s*([1-5])\
 RE_JUN = re.compile(
     r"(?:(20\d{2})\s*年\s*)?(\d{1,2})\s*月\s*(上|中|下)\s*旬"
     r"(?:" + RANGE_SEP + r"(?:(\d{1,2})\s*月\s*)?(上|中|下)\s*旬)?")
+RE_DAY_WEEK = re.compile(r"(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日\s*週")
 RE_YMD = re.compile(r"(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})(?!\d)")
 RE_MD = re.compile(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日")
 RE_MD_SLASH = re.compile(r"(?<![\d/])(\d{1,2})\s*/\s*(\d{1,2})(?![\d/])")
 RE_MONTH = re.compile(r"(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月(?!\s*\d)")
+RE_YEAR_MONTH = re.compile(r"(20\d{2})\s*[./]\s*(\d{1,2})")
 RE_PRICE = re.compile(r"(?<![\d,])(\d{3,4}|\d,\d{3})\s*円")
 
 JUN_DAYS = {"上": (1, 10), "中": (11, 20), "下": (21, 31)}
@@ -100,9 +104,11 @@ def _iso(d: dt.date) -> str:
     return d.isoformat()
 
 
-def parse_arrival(text: str, today: dt.date, ctx_month: tuple[int, int] | None = None) -> dict | None:
+def parse_arrival(text: str, today: dt.date, ctx_month: tuple[int, int] | None = None,
+                  allow_slash: bool = True) -> dict | None:
     """「10月第2週」「10月第2〜3週」「11月上旬」「2026年12月」「10/18」などを
-    {kind, label, from, to} に変換する。読めなければ None。"""
+    {kind, label, from, to} に変換する。読めなければ None。
+    allow_slash=False にすると「10/18」形式を読まない（商品名の「らんま1/2」を日付と誤読しないため）。"""
     t = norm(text)
     if not t:
         return None
@@ -111,7 +117,24 @@ def parse_arrival(text: str, today: dt.date, ctx_month: tuple[int, int] | None =
         m = int(m)
         if not 1 <= m <= 12:
             return None
-        return (int(y) if y else guess_year(m, today)), m
+        if y:
+            return int(y), m
+        if ctx_month:  # ページの「2026.10」などの年月に寄せる
+            cy, cm = ctx_month
+            return cy + (1 if m < cm - 6 else -1 if m > cm + 6 else 0), m
+        return guess_year(m, today), m
+
+    m = RE_DAY_WEEK.search(t)
+    if m:
+        base = ym(m.group(1), m.group(2))
+        if base:
+            try:
+                a = dt.date(base[0], base[1], int(m.group(3)))
+            except ValueError:
+                a = None
+            if a:
+                return {"kind": "week", "label": f"{a.month}月{a.day}日週", "from": _iso(a),
+                        "to": _iso(a + dt.timedelta(days=6))}
 
     m = RE_WEEK.search(t)
     if m:
@@ -147,6 +170,8 @@ def parse_arrival(text: str, today: dt.date, ctx_month: tuple[int, int] | None =
                     return {"kind": "jun", "label": lab, "from": _iso(a), "to": _iso(b)}
 
     for rx, has_year in ((RE_YMD, True), (RE_MD, False), (RE_MD_SLASH, False)):
+        if rx is RE_MD_SLASH and not allow_slash:
+            continue
         m = rx.search(t)
         if not m:
             continue
@@ -187,6 +212,9 @@ def parse_month_heading(text: str, today: dt.date) -> tuple[int, int] | None:
     t = norm(text)
     if len(t) > 24:
         return None
+    m = RE_YEAR_MONTH.fullmatch(t)
+    if m and 1 <= int(m.group(2)) <= 12:
+        return int(m.group(1)), int(m.group(2))
     m = RE_MONTH.search(t)
     if not m or not 1 <= int(m.group(2)) <= 12:
         return None
@@ -208,9 +236,10 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "met
         "param", "source", "track", "wbr"}
 BLOCK = {"p", "div", "li", "ul", "ol", "dl", "dt", "dd", "tr", "td", "th", "table",
          "section", "article", "h1", "h2", "h3", "h4", "h5", "h6", "header", "footer",
-         "figure", "figcaption", "br", "span", "a"}
+         "figure", "figcaption", "br"}
 SKIP = {"script", "style", "noscript", "template", "svg", "head"}
-HEADINGS = {"h1", "h2", "h3", "h4", "h5", "h6", "dt", "th", "caption", "summary", "button"}
+# 月切り替えタブ・セレクトの選択肢などは見出しとして扱わない
+CONTEXT_SKIP = {"#root", "a", "option", "select", "button", "script", "style"}
 
 
 class Node:
@@ -398,28 +427,27 @@ def extract_items(body: str, base: str, src: dict, today: dt.date) -> list[dict]
         for n in c.iter():
             in_card.add(id(n))
     contexts: list[tuple[int, dict | None, tuple | None]] = []
+    cur_mh = None  # 直前に出てきたページの年月（「2026.10」など）
     for n in nodes:
-        if id(n) in in_card or n.tag in ("#root",):
+        if id(n) in in_card or n.tag in CONTEXT_SKIP or in_chrome(n):
             continue
-        own = norm("".join(c for c in n.children if isinstance(c, str)))
-        if n.tag in HEADINGS or (own and len(own) <= 30):
-            t = norm(n.text()) if n.tag in HEADINGS else own
-            if not t or len(t) > 40:
-                continue
-            mh = parse_month_heading(t, today)
-            arr = parse_arrival(t, today, mh)
-            if arr or mh:
-                contexts.append((n.idx, arr, mh))
+        t = norm(n.text())
+        if not t or len(t) > 80:
+            continue
+        mh = parse_month_heading(t, today)
+        cur_mh = mh or cur_mh
+        arr = parse_arrival(t, today, cur_mh, allow_slash=False)
+        if arr or mh:
+            contexts.append((n.idx, arr, mh))
 
     def context_for(idx: int):
+        """カードより前にある最も近い見出しの入荷めどと月。"""
         arr, mh = None, None
         for i, a, m in contexts:
             if i > idx:
                 break
-            if m:
-                mh, arr = m, (a if a and a["kind"] != "month" else None)
-            if a:
-                arr = a if a["kind"] != "month" or not arr else arr
+            arr = a or arr
+            mh = m or mh
         return arr, mh
 
     items = []
@@ -427,17 +455,19 @@ def extract_items(body: str, base: str, src: dict, today: dt.date) -> list[dict]
         text = card.text()
         price = parse_price(text)
         ctx_arr, ctx_month = context_for(card.idx)
+        name = pick_name(card, today)
         own_arr = None
         for line in text.split("\n"):
-            own_arr = parse_arrival(line, today, ctx_month)
+            if clean(line) == name:
+                continue  # 商品名の中の数字（「1/2」「12月の…」）を入荷めどと読まない
+            own_arr = parse_arrival(line, today, ctx_month, allow_slash=False)
             if own_arr:
                 break
-        if not price and not own_arr:
+        if not price and not own_arr and not src.get("item_href"):
             continue
         arr = own_arr or ctx_arr
         if not arr:
             continue
-        name = pick_name(card, today)
         if not name:
             continue
         frm, to = dt.date.fromisoformat(arr["from"]), dt.date.fromisoformat(arr["to"])
@@ -483,11 +513,14 @@ def fetch(url: str, retries: int = 1) -> str:
 
 
 def expand_urls(src: dict, today: dt.date) -> list[str]:
-    """url_templates の {yyyy} {mm} {m} を今月〜months_ahead か月先で展開する。"""
+    """url_templates の {yyyy} {mm} {m} を months_back か月前〜months_ahead か月先で展開する。"""
     urls = list(src.get("urls", []))
+    back = int(src.get("months_back", 0))
     for tpl in src.get("url_templates", []):
-        y, m = today.year, today.month
-        for _ in range(int(src.get("months_ahead", 3)) + 1):
+        y, m = today.year, today.month - back
+        while m < 1:
+            y, m = y - 1, m + 12
+        for _ in range(back + int(src.get("months_ahead", 3)) + 1):
             urls.append(tpl.format(yyyy=y, mm=f"{m:02d}", m=m))
             y, m = (y + 1, 1) if m == 12 else (y, m + 1)
     out = []
@@ -515,6 +548,13 @@ def collect_source(src: dict, today: dt.date) -> tuple[list[dict], dict]:
         except Exception as exc:  # noqa: BLE001 - 収集失敗は status に記録して続行
             errors.append(f"{url}: {exc}")
             continue
+        if DUMP_DIR:
+            os.makedirs(DUMP_DIR, exist_ok=True)
+            name = f"{src['key']}-{len(seen):02d}.html"
+            with open(os.path.join(DUMP_DIR, name), "w", encoding="utf-8") as f:
+                f.write(body)
+            with open(os.path.join(DUMP_DIR, "index.txt"), "a", encoding="utf-8") as f:
+                f.write(f"{name}\t{url}\n")
         for it in extract_items(body, url, src, today):
             items.setdefault(it["id"], it)
         if follow:
@@ -576,8 +616,29 @@ def main() -> int:
     ap.add_argument("--source", help="--file と一緒に使うソースのkey")
     ap.add_argument("--base", default="", help="--file のページURL（相対リンク解決用）")
     ap.add_argument("--today", help="基準日 YYYY-MM-DD（テスト用）")
+    ap.add_argument("--arrival", metavar="TEXT",
+                    help="入荷めどの文字（例: 10月第2週）を data.json の arrival 形式で表示する（Claude Codeでの更新用）")
+    ap.add_argument("--find", metavar="WORD",
+                    help="feed.json のラインアップを商品名で検索して表示する（Claude Codeでの更新用）")
     args = ap.parse_args()
     today = dt.date.fromisoformat(args.today) if args.today else dt.datetime.now(JST).date()
+
+    if args.arrival is not None:
+        arr = parse_arrival(args.arrival, today)
+        if not arr:
+            print(f"読み取れません: {args.arrival}", file=sys.stderr)
+            return 1
+        print(json.dumps(arr, ensure_ascii=False))
+        return 0
+
+    if args.find is not None:
+        words = norm(args.find).lower().split()
+        hits = [it for it in load_json(FEED_PATH, {}).get("items", [])
+                if all(w in norm(it["name"]).lower() for w in words)]
+        for it in hits:
+            print(json.dumps(it, ensure_ascii=False))
+        print(f"{len(hits)}件", file=sys.stderr)
+        return 0
 
     if args.file:
         cfg = load_json(SOURCES_PATH, {"sources": []})

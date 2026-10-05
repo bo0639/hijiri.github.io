@@ -352,8 +352,8 @@ details.more-d summary{font-size:12px;color:var(--ink-2);cursor:pointer;margin-t
       </div>
       <div class="f">
         <label for="if-arr">入荷めど *</label>
-        <input type="text" id="if-arr" placeholder="例: 10月第2週 / 11月上旬 / 12月 / 10/18" oninput="onArrText()">
-        <div class="arr-prev" id="if-arr-prev">「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます</div>
+        <input type="text" id="if-arr" placeholder="例: 10月第2週 / 10月5日週 / 11月上旬 / 12月" oninput="onArrText()">
+        <div class="arr-prev" id="if-arr-prev">「10月第2週」「10月5日週」「11月中旬」「12月」「10/18」などの書き方が使えます</div>
         <details class="more-d" id="if-arr-more">
           <summary>日付を直接指定する</summary>
           <div class="row2" style="margin-top:6px">
@@ -467,6 +467,8 @@ const STORE      = 'gacha_cal_v1';
 const SYNC_STORE = 'gacha_sync_v1';
 const DEL_STORE  = 'gacha_deleted_v1';
 const UI_STORE   = 'gacha_ui_v1';
+const COLLECTIONS = ['items', 'stores', 'visits'];
+const MAX_DELETED = 2000;
 const DEFAULT_REPO = 'bo0639/hijiri.github.io';
 const DATA_PATH    = 'gacha/data.json';
 
@@ -500,7 +502,7 @@ const NEW_DAYS     = 7;
 const KIND_LABEL = {date:'日付確定', week:'週単位', jun:'旬単位', month:'月単位', range:'期間'};
 
 // ══════════ STATE ══════════
-let db = {items:[], stores:[], visits:[]};
+let db = {items:[], stores:[], visits:[], deleted:[]};
 let feed = {generated_at:'', sources:[], items:[]};
 let ui = {tab:'home', calMode:'mine', listStatus:'plan', listPrio:'', luMaker:'', luHideWatched:false, seenFeedAt:''};
 let calYM = null, selWeek = null;
@@ -508,7 +510,7 @@ let editingItem = null, detailId = null, editingStore = null;
 let visitCtx = null, visitResult = null;
 let form = {prio:'want', status:'plan', arr:null, arrTouched:false};
 let syncConfig = null, fileSha = null, syncTimer = null;
-let deletedIds = [];
+let lastSyncAt = 0;
 let listQ = '', luQ = '', qTimer = null, luMakers = [];
 
 // ══════════ UTILS ══════════
@@ -556,6 +558,7 @@ const SEP = '\\s*(?:[~〜\\-ー－–・、]|から)\\s*';
 const RE_WEEK = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*第?\\s*([1-5])\\s*週?(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?第?\\s*([1-5])\\s*)?週');
 const RE_WEEK_ONLY = new RegExp('第\\s*([1-5])\\s*(?:' + SEP + '第?\\s*([1-5])\\s*)?週');
 const RE_JUN = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*(上|中|下)\\s*旬(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?(上|中|下)\\s*旬)?');
+const RE_DAY_WEEK = /(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日\s*週/;
 const RE_YMD = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})(?!\d)/;
 const RE_MD = /(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日/;
 const RE_MD_SLASH = /(?<![\d/])(\d{1,2})\s*\/\s*(\d{1,2})(?![\d/])/;
@@ -582,8 +585,21 @@ function weekRange(y, m, n){
 function parseArrival(text, base = today(), ctx = null){
   const t = (text || '').normalize('NFKC').replace(/\s+/g, ' ').trim();
   if(!t) return null;
-  const ym = (y, m) => { m = +m; if(m < 1 || m > 12) return null; return [y ? +y : guessYear(m, base), m]; };
-  let m = t.match(RE_WEEK);
+  const ym = (y, m) => {
+    m = +m; if(m < 1 || m > 12) return null;
+    if(y) return [+y, m];
+    if(ctx) return [ctx[0] + (m < ctx[1] - 6 ? 1 : m > ctx[1] + 6 ? -1 : 0), m];
+    return [guessYear(m, base), m];
+  };
+  let m = t.match(RE_DAY_WEEK);
+  if(m){
+    const b = ym(m[1], m[2]);
+    if(b){
+      const d = new Date(b[0], b[1]-1, +m[3]);
+      if(d.getMonth() === b[1]-1) return {kind:'week', label:`${b[1]}月${+m[3]}日週`, from:ymd(d), to:addDays(ymd(d), 6)};
+    }
+  }
+  m = t.match(RE_WEEK);
   if(m){
     const b = ym(m[1], m[2]);
     if(b){
@@ -699,9 +715,10 @@ function needsCheck(itemId, storeId){
 
 // ══════════ STORAGE ══════════
 function normalize(d){
-  const out = {items:[], stores:[], visits:[]};
+  const out = {items:[], stores:[], visits:[], deleted:[]};
   if(d && typeof d === 'object'){
-    for(const k of Object.keys(out)) if(Array.isArray(d[k])) out[k] = d[k].filter(x => x && x.id);
+    for(const k of COLLECTIONS) if(Array.isArray(d[k])) out[k] = d[k].filter(x => x && x.id);
+    if(Array.isArray(d.deleted)) out.deleted = d.deleted.filter(x => typeof x === 'string');
   }
   out.items.forEach(it => { it.priority ||= 'want'; it.status ||= 'plan'; });
   out.stores.forEach((s, i) => { if(s.order == null) s.order = i; });
@@ -709,37 +726,61 @@ function normalize(d){
 }
 function load(){
   try{ db = normalize(JSON.parse(localStorage.getItem(STORE) || 'null')); }catch{ db = normalize(null); }
-  try{ deletedIds = JSON.parse(localStorage.getItem(DEL_STORE) || '[]'); }catch{ deletedIds = []; }
+  // 旧版で端末にだけ記録していた削除済みidを、同期するデータ側へ移す
+  try{
+    const old = JSON.parse(localStorage.getItem(DEL_STORE) || '[]');
+    if(old.length){ db.deleted = [...new Set([...db.deleted, ...old])]; localStorage.setItem(STORE, JSON.stringify(db)); localStorage.removeItem(DEL_STORE); }
+  }catch{}
   try{ ui = {...ui, ...JSON.parse(localStorage.getItem(UI_STORE) || '{}')}; }catch{}
 }
 function saveUI(){ try{ localStorage.setItem(UI_STORE, JSON.stringify(ui)); }catch{} }
+function saveLocal(){ try{ localStorage.setItem(STORE, JSON.stringify(db)); }catch(e){ console.error('save error:', e); } }
 function persist(){
-  localStorage.setItem(STORE, JSON.stringify(db));
+  saveLocal();
   scheduleSync();
 }
-function markDeleted(id){ deletedIds.push(id); localStorage.setItem(DEL_STORE, JSON.stringify(deletedIds.slice(-1000))); }
-/** リポジトリの data.json を取り込む（idごとに、新しい方を採用。端末で消したものは戻さない）。 */
+/** 削除したidを記録する。同期先にも残し、他の端末で復活しないようにする。 */
+function markDeleted(id){
+  if(!db.deleted.includes(id)) db.deleted.push(id);
+  if(db.deleted.length > MAX_DELETED) db.deleted = db.deleted.slice(-MAX_DELETED);
+}
+/**
+ * 2つのデータを突き合わせる。idごとに更新日時が新しい方を採用し、
+ * どちらかで削除されたものは消す（PCとスマホで別々に編集しても両方の変更を残す）。
+ */
+function mergeData(a, b){
+  const out = {deleted:[...new Set([...a.deleted, ...b.deleted])].slice(-MAX_DELETED)};
+  const gone = new Set(out.deleted);
+  for(const k of COLLECTIONS){
+    const map = new Map();
+    for(const x of a[k]) map.set(x.id, x);
+    for(const x of b[k]){
+      const cur = map.get(x.id);
+      if(!cur || (x.updated_at || '') > (cur.updated_at || '')) map.set(x.id, x);
+    }
+    out[k] = [...map.values()].filter(x => !gone.has(x.id));
+  }
+  const items = new Set(out.items.map(x => x.id)), stores = new Set(out.stores.map(x => x.id));
+  out.visits = out.visits.filter(v => items.has(v.item_id) && stores.has(v.store_id));
+  return out;
+}
+/** 内容が同じかどうかを、idと更新日時の組で判定する。 */
+function dataSig(d){
+  return JSON.stringify([...COLLECTIONS.map(k => d[k].map(x => x.id + '@' + (x.updated_at || '')).sort()), [...d.deleted].sort()]);
+}
+/** リポジトリの data.json を取り込む（同期未設定の端末向け）。 */
 async function mergeSeed(){
   try{
-    const res = await fetch('./data.json', {cache:'no-store'});
+    const res = await fetch(`./data.json?t=${Date.now()}`, {cache:'no-store'});
     if(!res.ok) return false;
-    const seed = normalize(await res.json());
-    let n = 0;
-    for(const k of ['items','stores','visits']){
-      for(const se of seed[k]){
-        if(deletedIds.includes(se.id)) continue;
-        const i = db[k].findIndex(x => x.id === se.id);
-        if(i < 0){ db[k].push(se); n++; }
-        else if((se.updated_at || '') > (db[k][i].updated_at || '')){ db[k][i] = se; n++; }
-      }
-    }
-    if(n){ localStorage.setItem(STORE, JSON.stringify(db)); return true; }
+    const merged = mergeData(db, normalize(await res.json()));
+    if(dataSig(merged) !== dataSig(db)){ db = merged; saveLocal(); return true; }
   }catch(e){ console.error('seed merge error:', e); }
   return false;
 }
 async function loadFeed(){
   try{
-    const res = await fetch('./feed.json', {cache:'no-store'});
+    const res = await fetch(`./feed.json?t=${Date.now()}`, {cache:'no-store'});
     if(res.ok) feed = await res.json();
   }catch(e){ console.error('feed load error:', e); }
   feed.items ||= []; feed.sources ||= [];
@@ -790,72 +831,89 @@ function apiUrl(){
   const [owner, repo] = (syncConfig?.repo || DEFAULT_REPO).split('/');
   return `https://api.github.com/repos/${owner}/${repo}/contents/${DATA_PATH}`;
 }
-async function syncFrom(){
-  if(!syncConfig?.token) return false;
-  try{
-    syncStatus('syncing');
-    const res = await fetch(apiUrl(), {cache:'no-store', headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json'}});
-    if(res.status === 404){ syncStatus(''); return false; }
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    const file = await res.json();
-    fileSha = file.sha; saveSyncConfig();
-    const data = normalize(JSON.parse(b64dec(file.content)));
-    if(data.items.length || data.stores.length || data.visits.length){
-      db = data; localStorage.setItem(STORE, JSON.stringify(db));
-      syncStatus('ok'); return true;
-    }
-    syncStatus(''); return false;
-  }catch(e){
-    console.error('sync error:', e); syncStatus('err');
-    toast('GitHubからの取得に失敗しました。トークンや権限を確認してください。', 'err');
-    return false;
-  }
+/** GitHub上の data.json を読む。{data, sha}、まだ無ければ {data:null, sha:null}。 */
+async function fetchRemote(){
+  const res = await fetch(apiUrl(), {cache:'no-store', headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json'}});
+  if(res.status === 404) return {data:null, sha:null};
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  const file = await res.json();
+  return {data: normalize(JSON.parse(b64dec(file.content))), sha: file.sha};
 }
-async function syncTo(){
-  if(!syncConfig?.token) return;
-  try{
+async function putRemote(){
+  const body = {
+    message: `ガチャ入荷カレンダー更新 (回したい${db.items.length}件・店舗${db.stores.length}件)`,
+    content: b64enc(JSON.stringify(db, null, 2) + '\n'),
+    ...(fileSha ? {sha:fileSha} : {})
+  };
+  const res = await fetch(apiUrl(), {method:'PUT',
+    headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json'},
+    body: JSON.stringify(body)});
+  if(res.status === 409 || res.status === 422) return false; // 他の端末が先に保存していた
+  if(!res.ok){ const j = await res.json().catch(() => ({})); throw new Error(j.message || 'HTTP ' + res.status); }
+  fileSha = (await res.json()).content.sha; saveSyncConfig();
+  return true;
+}
+/**
+ * GitHubと突き合わせる。他の端末の変更を取り込み、この端末だけの変更があれば保存し返す。
+ * 他の端末の変更を取り込んだら true。
+ */
+let syncing = null;
+function syncNow(){
+  if(!syncConfig?.token) return Promise.resolve(false);
+  if(syncing) return syncing.then(() => syncNow());
+  clearTimeout(syncTimer); syncTimer = null;
+  syncing = (async () => {
     syncStatus('syncing');
-    const body = {
-      message: `ガチャ入荷カレンダー更新 (回したい${db.items.length}件・店舗${db.stores.length}件)`,
-      content: b64enc(JSON.stringify(db, null, 2) + '\n'),
-      ...(fileSha ? {sha:fileSha} : {})
-    };
-    const res = await fetch(apiUrl(), {method:'PUT',
-      headers:{'Authorization':`Bearer ${syncConfig.token}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json'},
-      body: JSON.stringify(body)});
-    if(!res.ok){ const j = await res.json().catch(() => ({})); throw new Error(j.message || 'HTTP ' + res.status); }
-    fileSha = (await res.json()).content.sha; saveSyncConfig(); syncStatus('ok');
-  }catch(e){
-    console.error('sync error:', e); syncStatus('err');
-    toast('GitHubへの保存に失敗しました。「最新データを取得」してから操作し直してください。', 'err');
-  }
+    try{
+      for(let attempt = 0; attempt < 3; attempt++){
+        const remote = await fetchRemote();
+        fileSha = remote.sha; saveSyncConfig();
+        const before = dataSig(db);
+        const merged = remote.data ? mergeData(db, remote.data) : db;
+        const pulled = dataSig(merged) !== before;
+        db = merged; saveLocal();
+        if(remote.data && dataSig(remote.data) === dataSig(db)){ lastSyncAt = Date.now(); syncStatus('ok'); return pulled; }
+        if(await putRemote()){ lastSyncAt = Date.now(); syncStatus('ok'); return pulled; }
+        // 保存の直前に他の端末が更新していた → もう一度取り込んでから保存する
+      }
+      throw new Error('他の端末と保存が重なりました');
+    }catch(e){
+      console.error('sync error:', e); syncStatus('err');
+      toast('GitHubとの同期に失敗しました。通信状態とトークンの権限を確認してください（この端末には保存されています）。', 'err');
+      return false;
+    }finally{ syncing = null; }
+  })();
+  return syncing;
 }
 function scheduleSync(){
   if(!syncConfig?.token) return;
-  clearTimeout(syncTimer); syncTimer = setTimeout(syncTo, 2000);
+  clearTimeout(syncTimer); syncTimer = setTimeout(syncNow, 1500);
 }
 async function manualSync(){
   closeMenu();
   await loadFeed();
-  const ok = syncConfig?.token ? await syncFrom() : await mergeSeed();
+  const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
   followFeed(); render();
-  toast(ok ? '最新データを取得しました' : 'ラインアップを再読み込みしました', ok ? 'ok' : '');
+  toast(ok ? '最新の共有データを反映しました' : '最新の状態です', ok ? 'ok' : '');
 }
 function openSync(){
   closeMenu();
   $('sy-token').value = syncConfig?.token || '';
   $('sy-repo').value = syncConfig?.repo || DEFAULT_REPO;
-  $('sy-info').textContent = syncConfig?.token ? `設定済み — ${syncConfig.repo || DEFAULT_REPO}` : '未設定です（この端末の中だけに保存されています）';
+  $('sy-info').textContent = syncConfig?.token
+    ? `設定済み — ${syncConfig.repo || DEFAULT_REPO}${lastSyncAt ? `（最終同期 ${new Date(lastSyncAt).toLocaleTimeString('ja-JP', {hour:'2-digit', minute:'2-digit'})}）` : ''}`
+    : '未設定です（Claude Codeで更新した共有データは表示されます。この端末での編集は、この端末だけに保存されます）';
   openModal('m-sync');
 }
 async function saveSync(){
   const token = $('sy-token').value.trim(), repo = $('sy-repo').value.trim() || DEFAULT_REPO;
   if(!token){ toast('トークンを入力してください', 'err'); return; }
   syncConfig = {token, repo}; fileSha = null; saveSyncConfig();
-  closeModal('m-sync'); toast('GitHubから取得中…');
-  const ok = await syncFrom();
-  if(ok){ followFeed(); render(); toast('GitHubからデータを読み込みました', 'ok'); }
-  else { await syncTo(); toast('現在のデータをGitHubに保存しました', 'ok'); }
+  closeModal('m-sync'); toast('GitHubと同期中…');
+  // この端末のデータとGitHub上のデータを合わせる（どちらも消さない）
+  const before = lastSyncAt;
+  await syncNow();
+  if(lastSyncAt !== before){ followFeed(); render(); toast(`同期しました（回したい${db.items.length}件・店舗${db.stores.length}件）`, 'ok'); }
 }
 function clearSync(){
   if(!confirm('GitHub同期設定を削除しますか？この端末のデータは残ります。')) return;
@@ -1295,7 +1353,7 @@ function setPrio(v){ form.prio = v; $('if-prio').innerHTML = choiceHTML(PRIOS, v
 function setStatus(v){ form.status = v; $('if-status').innerHTML = choiceHTML(STATUSES, v, 'setStatus'); }
 function showArrPrev(){
   const el = $('if-arr-prev'), a = form.arr;
-  if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月第2〜3週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
+  if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月5日週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
   el.className = 'arr-prev';
   el.textContent = `📅 ${arrRange(a)}（${KIND_LABEL[a.kind] || ''}${a.kind === 'week' ? '・月曜はじまり' : ''}）`;
   $('if-from').value = a.from; $('if-to').value = a.to;
@@ -1457,13 +1515,28 @@ function deleteVisit(id){
   load(); loadSyncConfig();
   go(ui.tab || 'home');
   await loadFeed();
-  const ok = syncConfig?.token ? await syncFrom() : await mergeSeed();
+  const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
   followFeed();
   render();
-  if(ok && !syncConfig?.token) toast('共有データを反映しました', 'ok');
+  if(!syncConfig?.token) lastSyncAt = Date.now();
+  if(ok) toast('最新の共有データを反映しました', 'ok');
 })();
-// 日付をまたいで開きっぱなしでも「今日」の表示がずれないようにする
-document.addEventListener('visibilitychange', () => { if(!document.hidden) render(); });
+document.addEventListener('visibilitychange', async () => {
+  if(document.hidden){
+    // 保存待ちの変更があれば、アプリを離れる前に送る
+    if(syncTimer) syncNow();
+    return;
+  }
+  // 戻ってきたら、共有データ（Claude Codeでの更新・他の端末の変更）を取り込む
+  if(Date.now() - lastSyncAt > 20000){
+    await loadFeed();
+    const ok = syncConfig?.token ? await syncNow() : await mergeSeed();
+    if(!syncConfig?.token) lastSyncAt = Date.now();
+    followFeed();
+    if(ok) toast('最新の共有データを反映しました', 'ok');
+  }
+  render(); // 日付をまたいで開きっぱなしでも「今日」の表示がずれないようにする
+});
 </script>
 </body>
 </html>
