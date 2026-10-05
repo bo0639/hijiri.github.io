@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T09:57:27+09:00",
+  "generated_at": "2026-10-05T23:12:22+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -7,7 +7,7 @@
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
       "ok": true,
-      "count": 334,
+      "count": 336,
       "error": ""
     },
     {
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 66,
+      "count": 67,
       "error": ""
     }
   ],
@@ -3702,6 +3702,22 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "tta-d6d5674c6c",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "UNO™ バラエティカードコレクション2",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906916_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906916",
+      "first_seen": "2026-10-05T23:12:22+09:00"
+    },
+    {
       "id": "tta-88f3249187",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -3908,6 +3924,23 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255532_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770069327000",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "bandai-225bc5c513",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "プリキュアオールスターズ 変身ダイキャストチャーム＆パッケージ5",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258582_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026689000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-05T23:12:22+09:00"
     },
     {
       "id": "bandai-3f75e246dc",
@@ -4771,22 +4804,6 @@
       },
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000198474_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4549660973492000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-225bc5c513",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "プリキュアオールスターズ 変身ダイキャストチャーム＆パッケージ5",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第3週",
-        "from": "2026-10-12",
-        "to": "2026-10-18"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258582_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026689000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
@@ -5942,6 +5959,22 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-c84b5b4fc4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【フラットガシャポン/ジャンボカードダス】アニメ『薬屋のひとりごと』 クリアポスター3",
+      "price": 200,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258637_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054934000",
+      "first_seen": "2026-10-05T23:12:22+09:00"
+    },
+    {
       "id": "bandai-b35d07e36a",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6132,6 +6165,22 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258616_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068559000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-764068cf63",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "アニメ『薬屋のひとりごと』 カプセルラバーマスコット3",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258564_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054927000",
+      "first_seen": "2026-10-05T23:12:22+09:00"
     },
     {
       "id": "bandai-58878050c0",
