@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T23:35:55+09:00",
+  "generated_at": "2026-10-06T04:07:32+09:00",
   "items": [
     {
       "app": "prospi",
@@ -264,6 +264,16 @@
     {
       "app": "smagro",
       "kind": "guide",
+      "title": "次回のスマグロレポートは、これまでの更新の傾向から見ると10/19(月)に更新される可能性が高いです。しかし、10/13(火)よりハーフアニバーサリーの前夜祭イベントが開催されるため、来週も何らかの情報が公開される可能性があります。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-10-19",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
       "title": "シーズン5ステージ1 開催期間 10/18(日) 11:59 まで 弱点 炎 風",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
       "date": "2026-10-18",
@@ -304,7 +314,7 @@
     {
       "app": "ggene",
       "kind": "guide",
-      "title": "強敵襲来 【開催期間】 ~10/16(金)11:59",
+      "title": "強敵襲来 【開催期間】 ~10/16(金)11:59 キャラ報酬 リグ・リング",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "date": "2026-10-16",
       "time": "11:59",
@@ -402,33 +412,43 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "GENERATION TOWER EAST 【開催期間】 ~10/5(月)11:59 キャラ報酬 ラクス ミオリネ",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
+      "app": "monst",
+      "kind": "youtube",
+      "title": "TVアニメ『Re:ゼロから始める異世界生活』コラボ記念！お久しぶり勢が、超究極「レイド」に挑戦！！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=v0uv5IWG8iY",
       "date": "2026-10-05",
-      "time": "11:59",
-      "source_label": "GameWith イベントスケジュール",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "EAST TOWER 【開催期間】 ~10/5(月)11:59 キャラ報酬 ラクス ミオリネ",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
+      "app": "monst",
+      "kind": "news",
+      "title": "【13周年感謝キャンペーン】「覇者の塔」「覇者の塔シーズンズ」10/7 12時より期間限定で登場！",
+      "url": "https://www.monster-strike.com/news/20261005_1.html",
       "date": "2026-10-05",
-      "time": "11:59",
-      "source_label": "GameWith イベントスケジュール",
+      "time": "",
+      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
       "app": "smagro",
-      "kind": "guide",
-      "title": "次回のスマグロレポートは、10/5(月)に更新される可能性が高いです。スマグロレポートでは新ガチャやイベント情報などが公開されるので、気になる方はチェックしましょう。",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "kind": "youtube",
+      "title": "#012 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=64CZxPEkB4k",
       "date": "2026-10-05",
       "time": "",
-      "source_label": "GameWith スマグロレポート",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "ジージェネエターナル1.5周年『機動戦士Vガンダム』参戦記念！お祝いですよ！カテジナさん！阪口大助アニバーサリーSP",
+      "url": "https://www.youtube.com/watch?v=JtpoBk0byCA",
+      "date": "2026-10-04",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -506,16 +526,6 @@
       "kind": "youtube",
       "title": "【音あり推奨】新BGM収録現場に、ゆかんさ〜が潜入してきました😳❣️#モンスト #裏側 #潜入 #新BGM",
       "url": "https://www.youtube.com/shorts/9AmbddHrBIU",
-      "date": "2026-10-02",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "TVアニメ『Re:ゼロから始める異世界生活』コラボ記念！お久しぶり勢が、超究極「レイド」に挑戦！！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=v0uv5IWG8iY",
       "date": "2026-10-02",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -664,16 +674,6 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "新轟絶クエスト（ルーズリップス）が10/2より初登場！",
-      "url": "https://www.monster-strike.com/news/20261001_4.html",
-      "date": "2026-10-01",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
       "title": "ガチャ「復刻♥祝宴！モンストブライダル」10/3より開催！",
       "url": "https://www.monster-strike.com/news/20261001_6.html",
       "date": "2026-10-01",
@@ -686,6 +686,16 @@
       "kind": "news",
       "title": "「パック」の獣神化・改が10/6に解禁！",
       "url": "https://www.monster-strike.com/news/20261001_5.html",
+      "date": "2026-10-01",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "新轟絶クエスト（ルーズリップス）が10/2より初登場！",
+      "url": "https://www.monster-strike.com/news/20261001_4.html",
       "date": "2026-10-01",
       "time": "",
       "source_label": "ゲーム情報",
@@ -734,16 +744,6 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "のモンストニュース内容はこちら",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-01",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
       "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-10-01",
@@ -759,16 +759,6 @@
       "date": "2026-10-01",
       "time": "",
       "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース内容はこちら",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
-      "date": "2026-10-01",
-      "time": "",
-      "source_label": "GameWith モンスト特番",
       "upcoming": false
     },
     {
@@ -952,26 +942,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「リアルタイム対戦 プロスピA リーグ 2026シーズン オンライン予選」ランキング報酬配布に関するお知らせ",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8933&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-09-28",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「MONST FREAK 2026」で発表した情報まとめ！",
-      "url": "https://www.monster-strike.com/news/20260927_7.html",
-      "date": "2026-09-27",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「天下五剣」獣神化・改を記念した新グッズなどが発売！ グッズ",
@@ -1039,6 +1009,16 @@
       "date": "2026-09-26",
       "time": "",
       "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "Ver.22.6.0公開と強制アップデート実施について(9月25日16:00追記)",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8991&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-09-25",
+      "time": "16:00",
+      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1179,6 +1159,16 @@
       "date": "2026-09-21",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "のスマグロレポート",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-09-21",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -1472,16 +1462,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "アニバーサリー総選挙",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2026-08-21",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「モンストア出張所 in 吉備SA（上り線）」が9月17日（木）より期間限定で開催！ イベント 2026.08.20 NEW 追加情報",
@@ -1700,16 +1680,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "#004 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
-      "url": "https://www.youtube.com/watch?v=3RqxiHILXpg",
-      "date": "2026-06-08",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
     }
   ],
   "status": [
@@ -1758,7 +1728,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 6,
+      "count": 5,
       "error": ""
     },
     {
@@ -1766,7 +1736,7 @@
       "label": "モンスト / GameWith モンスト特番",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
       "ok": true,
-      "count": 1,
+      "count": 0,
       "error": ""
     },
     {
@@ -1822,7 +1792,7 @@
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
       "ok": true,
-      "count": 2,
+      "count": 3,
       "error": ""
     },
     {
@@ -1846,7 +1816,7 @@
       "label": "ジージェネ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": true,
-      "count": 2,
+      "count": 3,
       "error": ""
     },
     {
@@ -1878,7 +1848,7 @@
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "ok": true,
-      "count": 9,
+      "count": 7,
       "error": ""
     },
     {
@@ -1918,7 +1888,7 @@
       "label": "プロスピ / Game8 イベントスケジュール",
       "url": "https://game8.jp/prospi_a/754177",
       "ok": true,
-      "count": 12,
+      "count": 11,
       "error": ""
     },
     {
