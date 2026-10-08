@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T23:12:22+09:00",
+  "generated_at": "2026-10-08T10:34:43+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -7,7 +7,7 @@
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
       "ok": true,
-      "count": 336,
+      "count": 433,
       "error": ""
     },
     {
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 67,
+      "count": 82,
       "error": ""
     }
   ],
@@ -3702,22 +3702,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "tta-d6d5674c6c",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "UNO™ バラエティカードコレクション2",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "10月",
-        "from": "2026-10-01",
-        "to": "2026-10-31"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906916_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906916",
-      "first_seen": "2026-10-05T23:12:22+09:00"
-    },
-    {
       "id": "tta-88f3249187",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -3748,6 +3732,102 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907722_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907722",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "tta-05802f38de",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ みんなでなっちゃお!-歯-2",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y904240_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y904240",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-2fb7699a97",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ みんなでなっちゃお！ -歯- ぬいぐるみ",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y904431_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y904431",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-d01de53411",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ トキメキステッキチャーム",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907524_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907524",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-dd30932cd0",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "パワーパフガールズ もふもふポーシェット",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y908781_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y908781",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-76243a58db",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ピクサーキャラクター ぺろちょこ",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907937_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907937",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-859564eb9a",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "プラレール ぷっくりドロップめじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907845_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907845",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "tta-132af28bd0",
@@ -3798,6 +3878,22 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "tta-e580b5a40b",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "肩ズンFig. アニメ『呪術廻戦』5周年 -弍-",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905933_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905933",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "tta-c2914772c3",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -3812,6 +3908,118 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907630_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907630",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "bandai-3acd49a494",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "From TV animation ONE PIECE ワンピの実 第一海戦",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000163684_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4549660664413000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-58c6b0c36c",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "From TV animation ONE PIECE ワンピの実 第二十七海戦",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259560_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055405000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-e04c978ed6",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "From TV animation ONE PIECE ワンピの実 第二海戦",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000168843_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4549660664437000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-a7a97c91e6",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "JRはたらく電車 カラフルマルチチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259573_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026610000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-42ffe151da",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "Lil ala mode スイングコレクション ～天使と悪魔～",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259533_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081596000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-2e396353c2",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "MINECRAFT カラフルキーボードチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000248531_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055764000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-e0a0c07570",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "MINITEEN ぷっくりめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000243173_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769809545000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-d8cfaa07fc",
@@ -3830,6 +4038,54 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "bandai-adf2950728",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "PEANUTS めじるしアクセサリー FUNNY ver.",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000241578_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769898327000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-b65b424f62",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "PROJECT R.E.D. まちぼうけ",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259525_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770098372000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7e24e7f4b4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "SIROCARA めじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259535_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081497000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-75a8b5a9ca",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3844,6 +4100,22 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253715_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026863000",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "bandai-8b7a5eab25",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "TOM and JERRY なりきりハンバーガーマスコットチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259574_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026504000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-66683e8a39",
@@ -3862,6 +4134,294 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "bandai-b0fc3dd2ed",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "beco+81 ライトマスコット",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259585_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118198471000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-5a2c4e87c7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "mofusand 宇宙飛行士にゃん",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259577_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995224000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-bcda915760",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "mojojojo めじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259546_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070446000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d9b886c8ad",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ディズニーキャラクター” Holidayオーナメントチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259552_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068276000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-9409a6d79b",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ディズニーキャラクター” なかよしペアスイング3",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259579_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118184450000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-0051f26f51",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ディズニーキャラクター” クリスタルめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259578_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118184474000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d8e9f0b87c",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ディズニーキャラクター” 雪だるまふわふわめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259551_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068313000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-dfdd0b1192",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ピクサーキャラクター” 手作りおやつチャーム #しぼりクッキー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259570_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026931000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-6828d25e29",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【CAP'in GALLERY】Mooney the Ghost by Koichi Yairi フィギュアコレクション",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259558_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055559000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-a685c40481",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【CAP'in GALLERY】SANRIO CHARACTERS Sugar & Spice",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259564_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054699000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-0e2570c3c9",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【CAP'in GALLERY】クマども FIGURE COLLECTION",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259565_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054583000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-ef61ec5c87",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【ガシャポンバンダイオフィシャルショップ限定再販】 たまごっち カラフルマルチチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000234106_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769889752000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-2c9310e121",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【ガシャポンバンダイオフィシャルショップ限定再販】たかはたまさお 木彫り風 FIGURE COLLECTION",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000245344_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769876028000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-217fd04c7b",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【ガシャポンバンダイオフィシャルショップ限定再販】サンリオキャラクターズ 夢みるエンジェルスイング2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000227905_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769769207000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-b92658a291",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【フラットガシャポン】キングダム ポスターコレクション",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259515_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770130454000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d18744a6bc",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "【フラットガシャポン】シュガーバニーズ クリアラバーコースター",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259519_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129199000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-b403fa76ed",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "いきもの大図鑑アドバンス クワガタ03",
+      "price": 1500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259536_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770076806000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-df0170af81",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "いちご100％ Comics Charm Collection02",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259569_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027587000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-2c8a28c9e4",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3876,6 +4436,118 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000251592_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968501000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-28d1ff6b67",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "おジャ魔女どれみ めじるしアクセサリー ポロンタップver.2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259587_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968518000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-dfc618c6f8",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "お文具といっしょ カプセルラバーマスコット～おでんであったまるんです～",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259567_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054026000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-bc3f59c489",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "きらりん☆レボリューション つまんでつなげてますこっと",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259589_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118202550000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-abc07d92f6",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "こんなこいるかな フォトフレームマスコット",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259541_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070897000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-fe43f11ea7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "さんりおきゃらくたぁず 和みの抹茶ふぃぎゅあ",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259549_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068368000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-cdc9573745",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ざわざわ森のがんこちゃん ミニチュアパッケージチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259555_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181701000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-bf6e8eadfc",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "じょせまる ミニチュアパッケージチャーム",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259571_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026795000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-4490f63fac",
@@ -3894,6 +4566,486 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "bandai-3037610ee4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "それいけ！アンパンマン くるりんフェイスアンパンマン",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259580_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118182043000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-dcbea8eb49",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "たまごっち めじるしアクセサリー 30th anniversary edition",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259540_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071023000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-a14a312174",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "たまごっち スイングケース",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000207031_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118121493000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-c6aa30bfc0",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ちびまる子ちゃん×クレヨンしんちゃん ラバーマスコット",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259514_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770140125000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-bc270c46e2",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "なめこ栽培キット ミニチュアパッケージチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259594_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071115000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-937cb83811",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "のびのび！ぼにゃる ねこちゃあぁぁん",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259537_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770076783000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-42226d8312",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "まちぼうけ ダイナーの場合",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259545_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070644000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-77ac820418",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "まちぼうけ 冬の場合 その2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259531_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094367000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-e2b86a2d3f",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "みいつけた！ カラフルマルチチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259548_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068450000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-32ee0da1b4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "よこみぞゆりのなんでもいきもの ふわふわめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259547_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068580000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-08e4bb1841",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "るかっぷミニチュアコレクション 銀魂",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259512_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4535123852138000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-114872f05e",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "アニメ「桜蘭高校ホスト部」 つまんでつなげてますこっと",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259591_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769935077000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-49d09832e0",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ウルトラマン ウルトラ怪獣ぽんちょめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259521_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770122527000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-44442ac9b1",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "カピバラさん めじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000209596_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118211132000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-18884802bc",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "カードキャプターさくら 桜マスコットチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259562_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054866000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-f7d1e4b096",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "キングダム Comics Charm Collection",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259516_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770130447000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-a09e719411",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "クレヨンしんちゃん まちぼうけ8 『映画クレヨンしんちゃん 暗黒タマタマ大追跡』",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259530_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094718000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d4be1b592e",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "クレヨンしんちゃん カラともマスコット",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259529_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094725000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7392a2ceb3",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "クレヨンしんちゃん ミニチュアパッケージコレクション２",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000241576_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769898525000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-94d9ca9599",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "グレムリン ぬいぐるみマスコット",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259556_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181589000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-99cc1a3abd",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ケアベア™ カラフルマルチチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259542_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070873000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-43b0da02d6",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ケロロ軍曹 ちびケロめじるしアクセサリーであります",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000243168_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769890260000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-4d7237c3f8",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ケロロ軍曹 つまんでつなげてマスコットであります",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000227900_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769752896000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-add4328d86",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "コンタック カラフルマルチチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259522_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770122138000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-274aab6d43",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ ジェリーデコバンド",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000250066_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769978005000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-236fda13c1",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ バレリーナめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259563_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054774000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7cd4026ca2",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ フロッキークリップ～ラテクマデザイン～",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259520_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129175000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-5ee28bc8d5",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ 星座スイングマスコットPART1",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259544_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070774000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-27257c73bc",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ 星座スイングマスコットPART2",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259543_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070781000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-02705d927a",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ 雪だるまふわふわめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259550_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068351000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-a3b518c6a1",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3908,6 +5060,70 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256981_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070675000",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "bandai-6ef61182fe",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ジュエルペット キラキラミラー風コレクション",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259581_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186904000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-9e8a3f00c7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "タコピーの原罪 めじるしアクセサリー ハッピーキラキラver.",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259518_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129786000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-878d483e5d",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "チロルチョコ めじるしアクセサリー2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259524_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121650000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7cca61f7db",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "テレタビーズ カラふるリングチャーム",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259586_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118198433000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-48553a00df",
@@ -3926,6 +5142,134 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "bandai-a8df1eed78",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ドラえもん ベーカリーチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259582_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118185587000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d2e124ff1f",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ナルミヤキャラクターズ めじるしアクセサリー2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259528_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094862000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-4e3d464c9e",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ニャンちゅう カラフルマルチチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259534_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081565000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-4e0e3b1461",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ハイキュー!! ねむらせ隊3",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259526_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095487000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-3fa9d62545",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ハリー・ポッター ディスプレイコレクション～魔法の杖～",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259590_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118201843000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-237f2b57ca",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "パワーパフ ガールズ めじるしアクセサリー3",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259557_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181541000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7ca2612e91",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ピクミン めじるしアクセサリー2",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000213903_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118211354000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-126c060a8c",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "プリキュアオールスターズ 変身めじるしアクセサリー２",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259554_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118206565000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-225bc5c513",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3937,10 +5281,170 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258582_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258582_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026689000",
       "first_seen": "2026-10-03T09:51:24+09:00",
       "arrival_changed": "2026-10-05T23:12:22+09:00"
+    },
+    {
+      "id": "bandai-5c976e2ac2",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ホロライブ カラフルカラビナもふしっぽマスコット",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259523_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121773000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-eaf7a4ee3f",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ポケットモンスター スイングコレクションType:Water",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259532_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081770000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-3d6e4ca923",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ポンデクルール ちいかわ マルチカラーパウダー",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259513_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770137750000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-795ce11381",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "メイドインアビス めじるしアクセサリー",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259561_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054996000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-d11620fd27",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "メゾピアノ グッズコレクション",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259517_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129830000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-e00e373c36",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "モンチッチ ふわふわカラともマスコット",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259568_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770053920000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-ca7edca8d7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "リメンバー・ミー スイングマスコット",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259553_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068269000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-9d111690da",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "初音ミク めじるしアクセサリー",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259575_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995750000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-12235612f5",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "勝利の女神：NIKKE まちぼうけ",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259584_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769979248000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-aab826a97a",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "名探偵コナン ぎゅーこっと2",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259566_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054187000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-3f75e246dc",
@@ -3957,6 +5461,150 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256572_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071108000",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "bandai-6c2f2af047",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "怒ったおおきいわんぴーすわんちゃあぁぁん2",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259588_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118206602000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-7254fff8a0",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "東野圭吾 『ガリレオ』シリーズ ブックチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259583_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118185099000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-152a28c370",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "機動戦士ガンダム CAPSULE INDEX 04",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259576_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995729000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-483bbe55aa",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "機動戦士ガンダム ROBOT魂 ミニチュアコレクション",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000240826_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769927607000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-4a370aebcd",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "牧場物語 スイングコレクション",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259538_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071160000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-c308cc1598",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "逆転裁判 つまんでつなげてますこっと",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259572_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026788000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-cc665cfdd5",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "銀魂 めじるしアクセサリー3 ～身に着けている物で趣味が大体分かる～",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259559_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055504000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-3bf1da4b49",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "＃ハッシュタグつける 葬送のフリーレン",
+      "price": 300,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259527_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095142000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-f9370ee1e4",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "めざましコラショ めじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月5日週",
+        "from": "2026-10-05",
+        "to": "2026-10-11"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910708_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910708",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "tta-f063c482e8",
@@ -4375,6 +6023,70 @@
       "first_seen": "2026-10-03T09:57:27+09:00"
     },
     {
+      "id": "tta-e21f2df54d",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "おさるのジョージ コスチュームめじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y900679_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y900679",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-ddb8de5d6e",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "とことこヨッシー",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910456_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910456",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-6f8e2f476c",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ ねぇだっこして〜",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y903908_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y903908",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-18cd8753bf",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "スター・ウォーズ プラプラマスコット PART3",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905810_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905810",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "tta-a48be5c9bc",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -4405,6 +6117,22 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910548_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910548",
       "first_seen": "2026-10-03T09:57:27+09:00"
+    },
+    {
+      "id": "tta-c713c8e1a8",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ブルーイ フロッキーフィギュア2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906220_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906220",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "tta-b90994f74a",
@@ -4567,22 +6295,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-720ecb1fb7",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "“ディズニーキャラクター” ふわふわめじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第3週",
-        "from": "2026-10-12",
-        "to": "2026-10-18"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258555_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068252000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-2f9ba94521",
       "source": "bandai",
       "maker": "バンダイ",
@@ -4610,7 +6322,7 @@
         "from": "2026-10-12",
         "to": "2026-10-18"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258599_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258599_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769823084000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -4791,22 +6503,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-9719639ca4",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "パンどろぼう めじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第3週",
-        "from": "2026-10-12",
-        "to": "2026-10-18"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000198474_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4549660973492000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-4be46ee70c",
       "source": "bandai",
       "maker": "バンダイ",
@@ -4869,6 +6565,55 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258526_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770139853000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "tta-d6d5674c6c",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "UNO™ バラエティカードコレクション2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月19日週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906916_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906916",
+      "first_seen": "2026-10-05T23:12:22+09:00",
+      "arrival_changed": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-21830df170",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ 夢見る魔女見習い",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月19日週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906008_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906008",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-39cad5e805",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "スパイダーマン ファッションリング",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月19日週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905834_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905834",
+      "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-260465bfbb",
@@ -5714,7 +7459,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258614_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258614_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769979293000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -5810,7 +7555,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258533_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258533_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770130188000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -5943,6 +7688,23 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-720ecb1fb7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "“ディズニーキャラクター” ふわふわめじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258555_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068252000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-bcdc7654bb",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5970,7 +7732,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258637_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258637_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054934000",
       "first_seen": "2026-10-05T23:12:22+09:00"
     },
@@ -6082,7 +7844,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256912_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256912_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118206206000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -6162,7 +7924,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258616_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258616_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068559000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -6194,7 +7956,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258622_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258622_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769979545000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -6279,6 +8041,22 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-67422fac4f",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "サンリオキャラクターズ がんばれないチャーム",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258578_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027051000",
+      "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
       "id": "bandai-992fdc7bef",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6309,6 +8087,23 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258569_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054682000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-9719639ca4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "パンどろぼう めじるしアクセサリー",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000198474_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4549660973492000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-08T10:34:43+09:00"
     },
     {
       "id": "bandai-67117ac675",
@@ -6386,7 +8181,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258532_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258532_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770131505000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
