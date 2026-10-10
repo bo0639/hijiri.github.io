@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T01:51:43+09:00",
+  "generated_at": "2026-10-11T00:46:40+09:00",
   "items": [
     {
       "app": "ggene",
@@ -422,6 +422,26 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "Aランク以上確定スカウト 10/10 15:00 〜 10/15 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-10",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "自チーム確定スカウト 10/10 15:00 〜 10/15 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-10",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
       "app": "ggene",
       "kind": "guide",
       "title": "0083スターダストメモリーイベント第2弾 【 開催期間 】 2025/10/10(金)12:00 〜 10/31(金)11:59",
@@ -429,6 +449,56 @@
       "date": "2026-10-10",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【耳福】梶裕貴と絆を深めろ！若手声優と4人でモンストしてみた【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/fuk5_uDu7cQ",
+      "date": "2026-10-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【耳福】梶裕貴と絆を深めろ！若手声優と4人でモンストしてみた【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=RfR7gw4QU8w",
+      "date": "2026-10-10",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "購入3回目、7回目、10回目はAランク以上確定！「自チーム確定スカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8963&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-10",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "5回目は自チーム選手確定！「Aランク以上確定スカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8975&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-10",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "Aランク以上確定スカウト 自チーム確定スカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-10",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -598,26 +668,6 @@
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8979&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-10-08",
       "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「ピックアップ選手育成キャンペーン」実施中！10月15日(木)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8966&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-08",
-      "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「オータムログインスタンプ」実施中！10月16日(金)2:59まで",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8973&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-08",
-      "time": "02:59",
       "source_label": "お知らせ",
       "upcoming": false
     },
@@ -932,16 +982,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【公式データ初公開】守護獣の使用回数ランキングTOP10まとめ！ #リゼロ #モンスト",
-      "url": "https://www.youtube.com/shorts/pajPh3h-H40",
-      "date": "2026-10-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "シーズン5ステージ③ 10/6(火) 12:00",
@@ -969,16 +1009,6 @@
       "date": "2026-10-05",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "TVアニメ『Re:ゼロから始める異世界生活』コラボ記念！お久しぶり勢が、超究極「レイド」に挑戦！！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=v0uv5IWG8iY",
-      "date": "2026-10-05",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -1079,16 +1109,6 @@
       "date": "2026-09-27",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "Aランク以上確定スカウト 自チーム確定スカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-09-27",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1232,16 +1252,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "Sランク限界突破コーチつきスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-09-22",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "youtube",
       "title": "#011 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
@@ -1279,16 +1289,6 @@
       "date": "2026-09-18",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ダウンロード記念福袋【9月】 超自チームS狙い打ち",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-09-18",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1399,16 +1399,6 @@
       "date": "2026-09-08",
       "time": "",
       "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ダルビッシュセレクション グレードアップスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-09-08",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
