@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T00:46:40+09:00",
+  "generated_at": "2026-10-13T04:40:40+09:00",
   "items": [
     {
       "app": "ggene",
@@ -369,6 +369,16 @@
       "date": "2026-10-16",
       "time": "11:59",
       "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "リゼロコラボの終了に伴い、次回のニュースでは10月後半のイベント情報が発表されそうだ。基本的にはコラボ終了と入れ替わりなので、 10/16(金)12時から新イベント開始となるだろう。",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-16",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
       "upcoming": false
     },
     {
@@ -854,7 +864,7 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "の注目ニュース",
+      "title": "のモンストニュース内容 41708",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-10-08",
       "time": "",
@@ -1708,7 +1718,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 4,
+      "count": 5,
       "error": ""
     },
     {
@@ -1724,7 +1734,7 @@
       "label": "モンスト / Game8 モンストニュース速報",
       "url": "https://game8.jp/monst/110254",
       "ok": true,
-      "count": 6,
+      "count": 5,
       "error": ""
     },
     {
