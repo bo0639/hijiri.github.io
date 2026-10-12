@@ -787,5 +787,33 @@
     "product": "30th CELEBRATION カードセット9種セット ／ 拡張パック 30th CELEBRATION BOX",
     "applied_at": "",
     "note": "【申込完了】Googleフォームで申込（申込日時は未確認）\nカードセット9種セットと BOX の2点を応募\n当選発表：10/16(金)・メールにて連絡\nGoogleフォームでの応募のため受付番号の発行なし"
+  },
+  {
+    "id": "mogiry-pokecen-tokyodx-2026",
+    "shop": "ポケモンセンタートウキョーDX",
+    "apply_method": "公式アプリ",
+    "apply_method_name": "モギリーlite",
+    "product": "30th CELEBRATION カードセット各種（購入整理券）",
+    "applied_at": "",
+    "no": "",
+    "qty": 1,
+    "price": null,
+    "url": "",
+    "result_from": "2026-10-14",
+    "result_to": "2026-10-14",
+    "result_method": "アプリ",
+    "result_method_note": "10/14(水) 12:00頃にモギリーliteの「マイチケット」で結果公開",
+    "result_url": "",
+    "pickup_from": "2026-10-16T18:30",
+    "pickup_to": "",
+    "pickup_method": "店舗受取",
+    "pickup_method_note": "来店日時 10/16(金) 18:30・1名。購入整理券での来店枠",
+    "address": "ポケモンセンタートウキョーDX",
+    "bou": true,
+    "zou": false,
+    "status": "抽選中",
+    "note": "【申込完了】モギリーliteのマイチケットで整理券を確認（画面に申込日時の記載なし）\n受付期間：10/08(木) 14:00 〜 10/12(月) 23:59\n結果公開：10/14(水) 12:00頃\n来店枠：10/16(金) 18:30・1名\n種別：購入整理券\n整理券はモギリーliteの「整理券をキャンセルする」から取消可能",
+    "created_at": "2026-10-12T09:00:00.000Z",
+    "updated_at": "2026-10-12T09:00:00.000Z"
   }
 ]
