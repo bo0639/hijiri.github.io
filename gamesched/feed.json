@@ -1,16 +1,6 @@
 {
-  "generated_at": "2026-10-13T04:40:40+09:00",
+  "generated_at": "2026-10-14T23:55:58+09:00",
   "items": [
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "MS IGLOOイベント 【 開催期間 】 2026/1/16(金)12:00 〜 2026/1/31(土)11:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2027-01-16",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -59,16 +49,6 @@
       "date": "2027-01-02",
       "time": "",
       "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "ガンタンクの日イベント 【 開催期間 】 2026/1/1(木)0:00 〜 2026/1/9(金)11:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2027-01-01",
-      "time": "00:00",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -149,6 +129,36 @@
       "date": "2026-11-11",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "ドラゴン 開催期間 11/10(火) 11:59 まで 弱点 雷 氷 主な報酬 ドラゴン",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-10",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "あくまのきし 開催期間 11/10(火) 11:59 まで 弱点 雷 炎 光 主な報酬 あくまのきし",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-10",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "メルキド防衛戦 開催期間 11/10(火) 11:59 まで 弱点 雷 炎 光 主な報酬 あくまのきし軍",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-10",
+      "time": "11:59",
+      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -354,6 +364,26 @@
     {
       "app": "ggene",
       "kind": "guide",
+      "title": "ストーリーイベント「機動戦士ガンダム外伝 コロニーの落ちた地で…」が開催されます。限定のSSRユニットやキャラクターを入手できる貴重な機会となっているため、開始後は優先してイベントを進めましょう。",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-16",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "機動戦士ガンダム外伝 コロニーの落ちた地で 【 開催期間 】 2026/10/16(金)12:00 〜",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-16",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
       "title": "強敵襲来 【開催期間】 ~10/16(金)11:59 キャラ報酬 リグ・リング",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "date": "2026-10-16",
@@ -394,6 +424,16 @@
     {
       "app": "ggene",
       "kind": "guide",
+      "title": "コロニーの落ちた地でイベント開催",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-16",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
       "title": "「コロニーの落ちた地で」イベントが開催 ・機動戦士ガンダムOOチャレンジ追加",
       "url": "https://game8.jp/ggene-eternal/684154",
       "date": "2026-10-16",
@@ -422,6 +462,36 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "あの頃のメンバーで超究極「大黒天」に挑む！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=LM-lHedSZLI",
+      "date": "2026-10-14",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "お久しぶり勢、まさかの神引き！？ #モンスト #リゼロ",
+      "url": "https://www.youtube.com/shorts/9FqihxXxrhI",
+      "date": "2026-10-14",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "いろんな3000集めてみた。【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/AP1aNC25hfA",
+      "date": "2026-10-14",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
       "app": "prospi",
       "kind": "guide",
       "title": "ルーレットヒッター 2023年 10/13 15:00 〜 10/16 14:59",
@@ -429,6 +499,66 @@
       "date": "2026-10-13",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦全国大会 セ・リーグ杯 / パ・リーグ杯 / タイブレーク杯 / ハイスピード杯」開催！10月20日(火)14:59まで！！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9006&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-13",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦」第15回勝ち星ランキング開始！10月26日(月)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8999&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-13",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "▶︎ハーフアニバーサリーイベントの攻略情報 開催期間：2026/10/13(火)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-13",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "ハーフアニバーサリー 2026/10/13(火)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-13",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンスト社員も参戦！運の良さでドラフト会議！「13周年轟絶感謝マルチガチャ」を神引きするのはどっちのチーム！？【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=KlrpsQcC1oc",
+      "date": "2026-10-13",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "期間限定イベント「未開の幻洞」が10/14より登場！",
+      "url": "https://www.monster-strike.com/news/20261013_1.html",
+      "date": "2026-10-13",
+      "time": "",
+      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -449,16 +579,6 @@
       "date": "2026-10-10",
       "time": "15:00",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "0083スターダストメモリーイベント第2弾 【 開催期間 】 2025/10/10(金)12:00 〜 10/31(金)11:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-10-10",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -672,16 +792,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「2026 OB第2弾」獲得のチャンス！「必勝アリーナ」開催！10月15日(木)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8979&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-08",
-      "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "youtube",
       "title": "みんなで引くと★6キャラを最大5体ゲット！「13周年轟絶感謝マルチガチャ」を解説！",
@@ -696,36 +806,6 @@
       "kind": "youtube",
       "title": "【獣神化】大黒天 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
       "url": "https://www.youtube.com/shorts/7GZOXPb4yYI",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【新キャラ】大黒天 獣神化！黎絶「エンべズラー」に行ける！闇属性キラーが乗る強力なSSに注目！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=rTWlFuNMtfw",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンストニュース[10/8]超究極「ボルカニカ」登場！獣神化「大黒天」の詳細発表！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=aFEl2rGOGQA",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "[10/8]TVアニメ『Re:ゼロから始める異世界生活』コラボ第2弾に超究極「ボルカニカ」登場！そして獣神化「大黒天」詳細発表も〜！ #とにかくみじかくモンストニュース",
-      "url": "https://www.youtube.com/shorts/nUJ0jxPKyIU",
       "date": "2026-10-08",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -774,7 +854,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "超究極クエスト（大黒天）が10/9 19時より期間限定で登場！クリアで獣神化が解放！",
+      "title": "超究極クエスト（大黒天）が10/9 19時より期間限定で登場！クリアで獣神化が解放！ イベント 2026.10.08 NEW 追記",
       "url": "https://www.monster-strike.com/news/20261008_6.html",
       "date": "2026-10-08",
       "time": "",
@@ -804,7 +884,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "Ver.33.0アップデート情報を公開！",
+      "title": "Ver.33.0アップデート情報を公開！ アップデート 2026.10.08 NEW 追記",
       "url": "https://www.monster-strike.com/news/20261008_3.html",
       "date": "2026-10-08",
       "time": "",
@@ -816,16 +896,6 @@
       "kind": "news",
       "title": "※重要※Ver.33.0アップデートメンテナンスの実施について",
       "url": "https://www.monster-strike.com/news/20261008_2.html",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「グリーンファンタジー」10/9より開催！",
-      "url": "https://www.monster-strike.com/news/20261008_1.html",
       "date": "2026-10-08",
       "time": "",
       "source_label": "ゲーム情報",
@@ -963,52 +1033,12 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "購入回数に応じてSランク選手の登場確率がアップ！スカウト「6連ライジングスカウト」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9001&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "OBセレクション 戦力強化スカウト ライジングスカウト",
       "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-10-08",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【大黒天】10月8日 16:00 詳細発表【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/WkhhYJRxKjo",
-      "date": "2026-10-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "シーズン5ステージ③ 10/6(火) 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-06",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "のドムの日を記念したスペシャルステージが追加されました。 クリア報酬で「ダイヤ×100」「ドムタグ専用SP化チップ×100」が入手できる ので、忘れずに挑戦しておきましょう。",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
-      "date": "2026-10-06",
-      "time": "",
-      "source_label": "GameWith イベントスケジュール",
       "upcoming": false
     },
     {
@@ -1159,16 +1189,6 @@
       "date": "2026-09-25",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "シーズン5ステージ② 9/25(金) 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-09-25",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -1362,16 +1382,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "シーズン5ステージ① 9/11(金) 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-09-11",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "guide",
       "title": "のモンストニュース振り返り",
@@ -1472,16 +1482,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "スイカ防衛戦 2026/8/25(火)〜9/22(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-08-25",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「モンストア出張所 in 吉備SA（上り線）」が9月17日（木）より期間限定で開催！ イベント 2026.08.20 NEW 追加情報",
@@ -1499,16 +1499,6 @@
       "date": "2026-08-19",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "スマグロサマー 2026/8/18(火)12:00〜9/22(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-08-18",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
@@ -1838,7 +1828,7 @@
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "ok": true,
-      "count": 10,
+      "count": 9,
       "error": ""
     },
     {
