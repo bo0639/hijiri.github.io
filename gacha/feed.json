@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T09:18:06+09:00",
+  "generated_at": "2026-10-19T08:55:23+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -7,7 +7,7 @@
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
       "ok": true,
-      "count": 434,
+      "count": 435,
       "error": ""
     },
     {
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 94,
+      "count": 99,
       "error": ""
     }
   ],
@@ -3729,7 +3729,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259560_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259560_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055405000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -3750,6 +3750,23 @@
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
     {
+      "id": "bandai-3a72b95c23",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "HG レジェンドライダーvol.6",
+      "price": 500,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258559_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055627000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-19T08:55:23+09:00"
+    },
+    {
       "id": "bandai-a7a97c91e6",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3761,7 +3778,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259573_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259573_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026610000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -3777,7 +3794,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259533_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259533_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081596000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -3857,7 +3874,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259525_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259525_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770098372000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -3922,9 +3939,26 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259574_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259574_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026504000",
       "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "bandai-ad761a8511",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ZETT（ゼット） 野球グローブコレクション",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "10月",
+        "from": "2026-10-01",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258538_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095357000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "bandai-66683e8a39",
@@ -3986,7 +4020,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259546_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259546_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070446000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4114,7 +4148,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259565_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259565_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054583000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4178,7 +4212,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259515_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259515_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770130454000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4194,7 +4228,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259519_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259519_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129199000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4226,7 +4260,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259569_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259569_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027587000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4306,7 +4340,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259541_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259541_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070897000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4338,7 +4372,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259555_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259555_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181701000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4402,7 +4436,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259540_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259540_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071023000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4482,7 +4516,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259545_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259545_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070644000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4498,7 +4532,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259531_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259531_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094367000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4530,7 +4564,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259547_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259547_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068580000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4562,7 +4596,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259591_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259591_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769935077000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4642,7 +4676,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259530_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259530_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094718000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4658,7 +4692,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259529_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259529_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770094725000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4690,7 +4724,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259556_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259556_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181589000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4802,7 +4836,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259520_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259520_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129175000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4850,7 +4884,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259550_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259550_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068351000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4898,7 +4932,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259518_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259518_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129786000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4914,7 +4948,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259524_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259524_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121650000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -4994,7 +5028,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259534_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259534_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770081565000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5010,7 +5044,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259526_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259526_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095487000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5026,7 +5060,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259590_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259590_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118201843000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5042,7 +5076,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259557_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259557_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118181541000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5155,7 +5189,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259561_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259561_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054996000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5187,7 +5221,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259568_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259568_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770053920000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5251,7 +5285,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259566_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259566_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054187000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5299,7 +5333,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259583_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259583_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118185099000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5347,7 +5381,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259538_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259538_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071160000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5395,7 +5429,7 @@
         "from": "2026-10-01",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259527_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259527_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095142000",
       "first_seen": "2026-10-08T10:34:43+09:00"
     },
@@ -5896,6 +5930,22 @@
       "first_seen": "2026-10-12T10:01:14+09:00"
     },
     {
+      "id": "tta-f795b28a74",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "でふぉラバ! とんがり帽子のアトリエ キーホルダー",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y908941_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y908941",
+      "first_seen": "2026-10-19T08:55:23+09:00"
+    },
+    {
       "id": "tta-ddb8de5d6e",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -5942,6 +5992,22 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905810_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905810",
       "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-66ac08d2af",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "スポンジ・ボブ Funny scene コレクション2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月12日週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905445_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905445",
+      "first_seen": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "tta-a48be5c9bc",
@@ -6088,6 +6154,22 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-bf1fb49e9c",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "BT21 ベーカリーチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第3週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258601_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121841000",
+      "first_seen": "2026-10-19T08:55:23+09:00"
+    },
+    {
       "id": "bandai-9957ecae39",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6118,6 +6200,23 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258546_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070392000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-9e86d13415",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "RIIZE ぷくっとリング",
+      "price": 400,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第3週",
+        "from": "2026-10-12",
+        "to": "2026-10-18"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253293_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186324000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "bandai-ecf4a451e7",
@@ -6474,6 +6573,22 @@
       "first_seen": "2026-10-15T09:18:06+09:00"
     },
     {
+      "id": "tta-e21be5695b",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "つながリングチャーム 爬虫類",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月19日週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y908750_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y908750",
+      "first_seen": "2026-10-19T08:55:23+09:00"
+    },
+    {
       "id": "tta-f772519955",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -6538,6 +6653,22 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905834_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905834",
       "first_seen": "2026-10-08T10:34:43+09:00"
+    },
+    {
+      "id": "tta-46c0089b7a",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ダンダダン あっぷりけポーチ",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月19日週",
+        "from": "2026-10-19",
+        "to": "2026-10-25"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y911880_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y911880",
+      "first_seen": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "tta-50eff0e136",
@@ -7022,22 +7153,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-1eaab820b7",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "きらちゅるした めじるしリンクチャーム ちっちゃなおばけさん",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第4週",
-        "from": "2026-10-19",
-        "to": "2026-10-25"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000257652_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095616000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-620f01a491",
       "source": "bandai",
       "maker": "バンダイ",
@@ -7246,22 +7361,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-748c3efef7",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "モンスターハンター めじるしアクセサリー",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第4週",
-        "from": "2026-10-19",
-        "to": "2026-10-25"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258592_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769979514000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-ac8ac59fd5",
       "source": "bandai",
       "maker": "バンダイ",
@@ -7401,7 +7500,7 @@
         "from": "2026-10-19",
         "to": "2026-10-25"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258597_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258597_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769911262000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -7502,22 +7601,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-3a72b95c23",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "HG レジェンドライダーvol.6",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第5週",
-        "from": "2026-10-26",
-        "to": "2026-10-31"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258559_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055627000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-ada32cb3f5",
       "source": "bandai",
       "maker": "バンダイ",
@@ -7582,22 +7665,6 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
-      "id": "bandai-9e86d13415",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "RIIZE ぷくっとリング",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第5週",
-        "from": "2026-10-26",
-        "to": "2026-10-31"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253293_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186324000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
       "id": "bandai-705dd4709b",
       "source": "bandai",
       "maker": "バンダイ",
@@ -7627,22 +7694,6 @@
       },
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258557_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770013382000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-ad761a8511",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ZETT（ゼット） 野球グローブコレクション",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第5週",
-        "from": "2026-10-26",
-        "to": "2026-10-31"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258538_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095357000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
@@ -7773,6 +7824,23 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000234136_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769866340000",
       "first_seen": "2026-10-03T09:51:24+09:00"
+    },
+    {
+      "id": "bandai-1eaab820b7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "きらちゅるした めじるしリンクチャーム ちっちゃなおばけさん",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000257652_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095616000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "bandai-bc2c58f462",
@@ -7914,7 +7982,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258564_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258564_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054927000",
       "first_seen": "2026-10-05T23:12:22+09:00"
     },
@@ -8027,7 +8095,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258619_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258619_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055979000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -8130,6 +8198,23 @@
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
     {
+      "id": "bandai-748c3efef7",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "モンスターハンター めじるしアクセサリー",
+      "price": 400,
+      "arrival": {
+        "kind": "week",
+        "label": "10月第5週",
+        "from": "2026-10-26",
+        "to": "2026-10-31"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258592_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769979514000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-10-19T08:55:23+09:00"
+    },
+    {
       "id": "bandai-5ebf318bc0",
       "source": "bandai",
       "maker": "バンダイ",
@@ -8221,7 +8306,7 @@
         "from": "2026-10-26",
         "to": "2026-10-31"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258552_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258552_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068955000",
       "first_seen": "2026-10-03T09:51:24+09:00"
     },
@@ -8323,6 +8408,22 @@
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906268",
       "first_seen": "2026-10-12T10:01:14+09:00",
       "arrival_changed": "2026-10-15T09:18:06+09:00"
+    },
+    {
+      "id": "tta-df773c09c1",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ちっちゃなふあふあえあ〜遊具",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "10月26日週",
+        "from": "2026-10-26",
+        "to": "2026-11-01"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907043_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907043",
+      "first_seen": "2026-10-19T08:55:23+09:00"
     },
     {
       "id": "tta-88f3249187",
