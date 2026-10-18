@@ -253,6 +253,8 @@ textarea.finput{min-height:64px;resize:vertical;font-size:14px}
 .imgedit .pimg{width:84px;font-size:14px}
 .imgedit .ie-r{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
 .imgedit .ie-btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn-g8{background:#fff;color:#0b7a55;border:1.5px solid #8fd3b8}
+a.btn{text-decoration:none}
 
 /* ── DETAIL ──────────────────────────────────────────── */
 .dhero{display:flex;gap:14px;background:#fff;border-radius:var(--r-lg);padding:12px;border-left:6px solid var(--team,#889);margin-bottom:12px}
@@ -442,11 +444,13 @@ textarea.finput{min-height:64px;resize:vertical;font-size:14px}
           <div class="ie-r">
             <input class="finput" id="p-image" placeholder="画像URL（https://…）" oninput="onImageUrl('p')">
             <div class="ie-btns">
+              <button class="btn btn-g8 btn-sm" onclick="openGame8('p')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.2" y2="16.2"/></svg>Game8で探す</button>
+              <button class="btn btn-ghost btn-sm" onclick="pasteImageUrl('p')">URLを貼り付け</button>
               <button class="btn btn-ghost btn-sm" onclick="$('p-image-file').click()">端末の画像を選ぶ</button>
-              <button class="btn btn-ghost btn-sm" onclick="clearImage('p')">画像をはずす</button>
+              <button class="btn btn-ghost btn-sm" onclick="clearImage('p')">はずす</button>
             </div>
             <input type="file" id="p-image-file" accept="image/*" style="display:none" onchange="pickImage(event,'p')">
-            <span class="fhint">スクショは縦長（3:4）に縮小して保存します。未設定ならチーム色＋背番号で表示。シリーズごとの画像は各シリーズ側で設定できます。</span>
+            <span class="fhint">Game8の選手画像を長押し（PCは右クリック）→「画像アドレスをコピー」→「URLを貼り付け」。スクショは縦長（3:4）に縮小して保存します。未設定ならチーム色＋背番号で表示。</span>
           </div>
         </div>
       </div>
@@ -507,12 +511,17 @@ textarea.finput{min-height:64px;resize:vertical;font-size:14px}
           <div class="ie-r">
             <input class="finput" id="c-image" placeholder="画像URL（未設定なら選手画像を使用）" oninput="onImageUrl('c')">
             <div class="ie-btns">
+              <button class="btn btn-g8 btn-sm" onclick="openGame8('c')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.2" y2="16.2"/></svg>Game8で探す</button>
+              <button class="btn btn-ghost btn-sm" onclick="pasteImageUrl('c')">URLを貼り付け</button>
               <button class="btn btn-ghost btn-sm" onclick="$('c-image-file').click()">端末の画像を選ぶ</button>
-              <button class="btn btn-ghost btn-sm" onclick="clearImage('c')">画像をはずす</button>
+              <button class="btn btn-ghost btn-sm" onclick="clearImage('c')">はずす</button>
             </div>
             <input type="file" id="c-image-file" accept="image/*" style="display:none" onchange="pickImage(event,'c')">
+            <span class="fhint">Game8のカード画像を長押し（PCは右クリック）→「画像アドレスをコピー」→「URLを貼り付け」。</span>
           </div>
         </div>
+        <div class="fg"><label class="flabel" for="c-ref">参考ページ（Game8の選手ページなど）</label>
+          <input class="finput" id="c-ref" inputmode="url" placeholder="https://game8.jp/prospi_a/…"></div>
       </div>
       <div class="fsec">
         <div class="fg"><label class="flabel" for="c-note">メモ</label><textarea class="finput" id="c-note" placeholder="必要エナジー・交換条件など"></textarea></div>
@@ -613,19 +622,19 @@ const METHODS = ['スカウト（ガチャ）','イベント報酬','交換・�
 
 // シリーズ。名前は自由入力で、よく使うものだけ色と略称を決めておく
 const SERIES_PRESETS = [
-  {name:'シリーズ1',       ab:'S1', c:'#2f7de1'},
-  {name:'シリーズ2',       ab:'S2', c:'#e0482f'},
-  {name:'シリーズ3',       ab:'S3', c:'#16a36a'},
-  {name:'タイムスリップ',   ab:'TS', c:'#8e44ad'},
+  {name:'シリーズ1',       ab:'S1', c:'#2f7de1', re:/(シリーズ|series)\s*1$/i},
+  {name:'シリーズ2',       ab:'S2', c:'#e0482f', re:/(シリーズ|series)\s*2$/i},
+  {name:'シリーズ3',       ab:'S3', c:'#16a36a', re:/(シリーズ|series)\s*3$/i},
+  {name:'タイムスリップ',   ab:'TS', c:'#8e44ad', re:/タイムスリップ/},
   {name:'OB',              ab:'OB', c:'#8a6d3b'},
-  {name:'ワールドスター',   ab:'WS', c:'#0aa0b5'},
-  {name:'エキサイティングプレイヤー', ab:'EX', c:'#e67e22'},
-  {name:'セレクション',     ab:'SEL',c:'#c2185b'},
-  {name:'日本代表',         ab:'JPN',c:'#1a237e'}
+  {name:'ワールドスター',   ab:'WS', c:'#0aa0b5', re:/ワールドスター/},
+  {name:'エキサイティングプレイヤー', ab:'EX', c:'#e67e22', re:/エキサイティング/},
+  {name:'セレクション',     ab:'SEL',c:'#c2185b', re:/セレクション/},
+  {name:'日本代表',         ab:'JPN',c:'#1a237e', re:/日本代表/}
 ];
 function seriesInfo(name){
   const n = String(name||'').trim();
-  const idx = SERIES_PRESETS.findIndex(s => s.name===n || s.ab===n.toUpperCase());
+  const idx = SERIES_PRESETS.findIndex(s => s.name===n || s.ab===n.toUpperCase() || s.re?.test(n));
   if(idx>=0) return {...SERIES_PRESETS[idx], idx};
   // 登録外のシリーズは名前から色を決めて、毎回同じ色になるようにする
   let h = 0; for(const ch of n) h = (h*31 + ch.charCodeAt(0)) % 360;
@@ -657,6 +666,7 @@ const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;'
 const uid = () => (crypto?.randomUUID?.() || Date.now().toString(36)+Math.random().toString(36).slice(2));
 const nowISO = () => new Date().toISOString();
 const safeSrc = s => /^(https?:\/\/|data:image\/)/i.test(String(s||'').trim()) ? String(s).trim() : '';
+const safeLink = s => /^https?:\/\//i.test(String(s||'').trim()) ? String(s).trim() : '';
 const num = v => (v===''||v===null||v===undefined||isNaN(Number(v))) ? null : Number(v);
 
 function fmtD(v){
@@ -739,7 +749,7 @@ function imgHTML(p, c, extra=''){
   const rk = c?.rank ? `<span class="rk rk-${esc(c.rank)}">${esc(c.rank)}</span>` : '';
   return `<div class="pimg" style="--ava:${t.c1};--ava-fg:${t.fg}" ${extra}>
     <div class="ava">${p.number!==''&&p.number!=null?`<span class="no">${esc(p.number)}</span>`:''}<span class="nm">${esc(family)}</span></div>
-    ${src?`<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">`:''}${rk}</div>`;
+    ${src?`<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}${rk}</div>`;
 }
 function teamChip(p){
   const t = teamOf(p.team);
@@ -1245,6 +1255,7 @@ function cardBlockHTML(p, c, sel){
     <div class="cb-acts">
       <div class="seg st">${STATUSES.map(s=>`<button data-v="${s.v}" class="${c.status===s.v?'on':''}" onclick="setCardStatus('${p.id}','${c.id}','${s.v}')">${s.label}</button>`).join('')}</div>
       <button class="btn btn-ghost btn-sm" onclick="openCardForm('${p.id}','${c.id}')">編集</button>
+      <a class="btn btn-g8 btn-sm" href="${esc(safeLink(c.ref_url) || game8SearchUrl(p.name, c.series))}" target="_blank" rel="noopener">${safeLink(c.ref_url)?'参考ページ':'Game8で探す'}</a>
       <button class="btn btn-ghost btn-sm" onclick="duplicateCard('${p.id}','${c.id}')" title="能力をコピーして別シリーズを作る">複製</button>
       <button class="btn btn-ghost btn-sm" style="color:var(--danger)" onclick="deleteCard('${p.id}','${c.id}')">削除</button>
     </div>
@@ -1305,6 +1316,31 @@ async function pickImage(ev, which){
 function onImageUrl(which){
   (which==='p'?pform:cform).image = $(which+'-image').value.trim();
   which==='p' ? refreshPlayerPreview() : refreshCardPreview();
+}
+/** Game8内を選手名（＋シリーズ）で検索する。Game8自体には検索URLがないため検索エンジン経由で開く */
+function game8SearchUrl(name, series){
+  const q = ['site:game8.jp/prospi_a', name, series].filter(Boolean).join(' ');
+  return 'https://www.google.com/search?q=' + encodeURIComponent(q);
+}
+function openGame8(which){
+  const name = which==='p' ? $('p-name').value.trim() : (players.find(x=>x.id===cform.pid)?.name || '');
+  if(!name){ toast('先に選手名を入力してください','err'); return; }
+  const ref = which==='c' ? safeLink($('c-ref').value) : '';
+  window.open(ref || game8SearchUrl(name, which==='c' ? $('c-series').value.trim() : ''), '_blank', 'noopener');
+}
+/** コピーした画像URLを貼り付ける。ページのURLだった場合は参考ページ欄へ回す */
+async function pasteImageUrl(which){
+  let text = '';
+  try{ text = (await navigator.clipboard.readText()).trim(); }
+  catch{ toast('貼り付けできませんでした。URL欄に直接貼り付けてください','err'); $(which+'-image').focus(); return; }
+  if(!/^https?:\/\//i.test(text)){ toast('コピーされているのがURLではありません','err'); return; }
+  if(/game8\.jp\/prospi_a\//i.test(text) && !/\.(jpe?g|png|webp|gif)(\?|$)/i.test(text)){
+    if(which==='c'){ $('c-ref').value = text; toast('ページのURLなので参考ページ欄に入れました。画像は長押し→「画像アドレスをコピー」です'); }
+    else toast('ページのURLです。画像を長押し→「画像アドレスをコピー」してください','err');
+    return;
+  }
+  $(which+'-image').value = text; onImageUrl(which);
+  toast('画像URLを設定しました','ok');
 }
 function clearImage(which){
   (which==='p'?pform:cform).image = ''; $(which+'-image').value = '';
@@ -1409,6 +1445,7 @@ function openCardForm(pid, cid, copyFrom){
   $('c-start').value    = c?.start || '';
   $('c-end').value      = c?.end || '';
   $('c-note').value     = c?.note || '';
+  $('c-ref').value      = c?.ref_url || '';
   $('c-image').value    = safeSrc(c?.image)&&!String(c.image).startsWith('data:') ? c.image : '';
   const others = sortCards(p.cards).filter(x=>x.id!==c?.id);
   $('c-copy-wrap').classList.toggle('hidden', !others.length);
@@ -1437,7 +1474,7 @@ function saveCard(){
     series, year:$('c-year').value.trim(), rank:cform.rank, status:cform.status, stats,
     pitches:p.role==='pitcher' ? $('c-pitches').value.trim() : '', specials:$('c-specials').value.trim(),
     method:$('c-method').value, source:$('c-source').value.trim(), start, end,
-    image:cform.image, note:$('c-note').value.trim(), updated_at:nowISO()
+    image:cform.image, ref_url:safeLink($('c-ref').value), note:$('c-note').value.trim(), updated_at:nowISO()
   };
   let c;
   if(cform.id){ c = p.cards.find(x=>x.id===cform.id); Object.assign(c, data); }
