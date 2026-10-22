@@ -1,234 +1,28 @@
 {
-  "generated_at": "2026-10-19T08:55:23+09:00",
+  "generated_at": "2026-10-22T09:26:38+09:00",
   "sources": [
     {
       "key": "bandai",
       "name": "ガシャポン（バンダイ）",
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
-      "ok": true,
-      "count": 435,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "商品を抽出できませんでした（ページ構造が変わった可能性）",
+      "kept": 422
     },
     {
       "key": "tta",
       "name": "ガチャ（タカラトミーアーツ）",
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
-      "ok": true,
-      "count": 99,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/: HTTP Error 503: Service Unavailable; https://www.takaratomy-arts.co.jp/items/gacha/calendar/?ym=202609: HTTP Error 503: Service Unavailable; https://www.takaratomy-arts.co.jp/items/gacha/calendar/?ym=202610: HTTP Error 503: Service Unavailable",
+      "kept": 99
     }
   ],
   "items": [
-    {
-      "id": "bandai-69c2c0dfe0",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "MOOMIN つまんでつなげてマスコット2",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255265_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118187086000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-69ec1b6c27",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "Polly Pocket ミニチュアコレクション",
-      "price": 600,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256884_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769934766000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-5cd6808216",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "Richell ミニチュアチャーム",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256873_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118196347000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-ed742d8497",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "【ジャンボカードダス/フラットガシャポン】初音ミク クリアビジュアルポスター～マジカルミライ 2026～",
-      "price": 200,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256889_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055962000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-1d1c2b0590",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "カーケシGP MAZDAセレクション01",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255527_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995569000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-25bcf10047",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "カーケシGP NISSANセレクション01",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255528_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995552000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-7e1ceacaf8",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "カードキャプターさくら スタッフコレクション",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256824_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027167000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-000a2dd77c",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "クッピーラムネ めじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000245310_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769935398000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-585b760fc3",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ブルーハムハム ミニチュアパッケージチャーム",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000246966_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769935053000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-191ad2741d",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "仮面ライダーマイス GPライダーエグズ01",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256772_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770139181000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-aa80d25854",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "富江 アソートコレクション",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256834_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995286000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-08ef9a06cb",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "最強ガシャステーション特製 『ハイキュー!!』 アクリルスタンド2026",
-      "price": 800,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256886_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770140897000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-58542a0528",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "角醒ハンター オメガホーン GP変形合体なりきり オメガホーン",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "9月第1週",
-        "from": "2026-09-01",
-        "to": "2026-09-06"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000255191_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770096040000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
     {
       "id": "tta-046cdb86c1",
       "source": "tta",
