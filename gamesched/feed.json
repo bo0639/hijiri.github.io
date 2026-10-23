@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-10-21T23:55:35+09:00",
+  "generated_at": "2026-10-23T23:43:24+09:00",
   "items": [
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ベースボールマネージャー",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2027-01-30",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ベストナイン第2弾 ベストナイン第3弾 自チームOB狙い打ち グレードアップスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2027-01-30",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -129,8 +149,7 @@
       "date": "2026-12-23",
       "time": "",
       "source_label": "GameWith 生放送まとめ",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -173,6 +192,16 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ④ 11/17(火)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
       "app": "ggene",
       "kind": "guide",
       "title": "ブルーディスティニーイベント 【 開催期間 】 2025/11/11(火)12:00 〜 11/30(日)11:59",
@@ -190,8 +219,7 @@
       "date": "2026-11-10",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -201,8 +229,7 @@
       "date": "2026-11-10",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -212,8 +239,7 @@
       "date": "2026-11-10",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -223,8 +249,7 @@
       "date": "2026-11-10",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -234,8 +259,7 @@
       "date": "2026-11-10",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -245,8 +269,27 @@
       "date": "2026-11-07",
       "time": "11:59",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ3 11/6 12:00",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-06",
+      "time": "12:00",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ③ 11/6(金)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-11-06",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -256,8 +299,7 @@
       "date": "2026-11-06",
       "time": "12:00",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -282,13 +324,12 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "ほこらメダル増量期間 開催中～11/3(火) 11:59",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-11-03",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "title": "次回のスマグロレポートは、これまでの更新の傾向から見ると11/2(月)に更新される可能性が高いです。DQIVイベントの後半やメモリアスキルなどの続報が公開されると予想されます。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-11-02",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
+      "upcoming": false
     },
     {
       "app": "monst",
@@ -308,8 +349,7 @@
       "date": "2026-10-31",
       "time": "12:00",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -319,8 +359,7 @@
       "date": "2026-10-31",
       "time": "10:59",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -330,8 +369,7 @@
       "date": "2026-10-31",
       "time": "10:59",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -341,8 +379,7 @@
       "date": "2026-10-31",
       "time": "10:59",
       "source_label": "GameWith イベントスケジュール",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "ggene",
@@ -357,13 +394,52 @@
     {
       "app": "smagro",
       "kind": "guide",
+      "title": "シーズン6 ステージ2 10/30 12:00",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-10-30",
+      "time": "12:00",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ② 10/30(金)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-30",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回ニュース日 10/29(木)16:00〜",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-29",
+      "time": "16:00",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回のモンストニュースの配信日時は10/29(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-10-29",
+      "time": "16:00",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
       "title": "巨大魔物の遺跡 開催期間 10/27(火) 11:59 まで 弱点 土 闇 主な報酬 ギガンテス",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
       "date": "2026-10-27",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -373,8 +449,7 @@
       "date": "2026-10-27",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -384,8 +459,7 @@
       "date": "2026-10-27",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
     },
     {
       "app": "smagro",
@@ -395,29 +469,407 @@
       "date": "2026-10-27",
       "time": "11:59",
       "source_label": "GameWith イベント一覧",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "、DQIVイベントのマルチクエストが開催されます。登場するボスは判明していませんが、 スマグロレポート内ではキングレオらしき魔物の姿が確認 できています。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-10-27",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ1 10/23 12:00",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-10-23",
+      "time": "12:00",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スーパーまものラッシュのシーズン6が開催されます。期間中にハイスコアを目指してメダルを集め、交換所で報酬と交換しましょう。",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-23",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ① 10/23(金)12:00〜",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-23",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "イベント「調子くん・ザ・ワールド」開催！2026年11月16日(月)2:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9019&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-23",
+      "time": "02:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「11周年記念ログインボーナス」実施中！11月3日(火)2:59まで",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9011&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-23",
+      "time": "02:59",
+      "source_label": "お知らせ",
+      "upcoming": false
     },
     {
       "app": "monst",
+      "kind": "youtube",
+      "title": "超究極「イワン」登場！【モンスト×TVアニメ「黄泉のツガイ」 】",
+      "url": "https://www.youtube.com/shorts/EOQ9Ac8W4aE",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新超究極キャラ】ミザリー 登場！黎絶「セレボラ」、轟絶「ディジェン」に行ける！降臨キャラでは貴重な「ハイプラズマ」が強力！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=dJIM9aDlX_o",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "あの頃のメンバーが超究極「大黒天」に挑戦した結果 #モンスト",
+      "url": "https://www.youtube.com/shorts/7ElXOf6gP3Q",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「モンコレDX」10/26より開催！",
+      "url": "https://www.monster-strike.com/news/20261023_3.html",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「ミッドナイト・パーティー」10/25より開催！",
+      "url": "https://www.monster-strike.com/news/20261023_2.html",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「絶級トーナメント」が10/26 12時より期間限定で登場！",
+      "url": "https://www.monster-strike.com/news/20261023_1.html",
+      "date": "2026-10-23",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
       "kind": "guide",
-      "title": "次回のモンストニュースの配信日時は10/22(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
-      "url": "https://game8.jp/monst/110254",
+      "title": "スターロード 10/22 15:00 〜 10/29 14:59",
+      "url": "https://game8.jp/prospi_a/754177",
       "date": "2026-10-22",
-      "time": "16:00",
-      "source_label": "Game8 モンストニュース速報",
+      "time": "15:00",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "スターロード 10/22 15:00 〜 10/29 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2026-10-22",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ヒストリカルモーメント 10/22 15:00 〜 11/04 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-22",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "新選手一本釣りスカウト 10/22 15:00 〜 11/04 14:59",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-22",
+      "time": "15:00",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "イベント「スターロード ヒストリカルモーメント編」開催！10月29日(木)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9016&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「友だち招待キャンペーン」開催！11月18日(水)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9043&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "11周年記念！スペシャルプレゼント実施中！2027年3月25日(木)8:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8983&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "08:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "メダルを集めて豪華ガチャが引ける！「よりどりガチャマーケット」を解説！",
+      "url": "https://www.youtube.com/shorts/kghN3uAEn-4",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【モンスト×TVアニメ「黄泉のツガイ」】イワン 登場！降臨キャラでは貴重な「超強チェイススフィア」が強力！アビリティやオリジナルSSによるHP管理面も優秀！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=HHNfnSCkQFo",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[10/22]TVアニメ「黄泉のツガイ」コラボに超究極「イワン」登場！4種の戦型の書が手に入る「日替わり誠くんガチャ」も！ #とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/ZyK77JRpQCs",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[10/22]マイベストテンガチャがひける！「よりどりガチャマーケット」開催！超究極「イワン」登場！「破界の星墓 みんなで突破チャレンジ」 開催！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=5beI-9RBWx4",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "超究極・兵クエスト（ミザリー）が10/30より期間限定で出現！",
+      "url": "https://www.monster-strike.com/news/20261022_4.html",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「破界の星墓」が10/27より期間限定で登場！みんなで突破数を積み重ねるチャレンジも実施！",
+      "url": "https://www.monster-strike.com/news/20261022_3.html",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「三千院ホトリ」の獣神化・改が10/27に解禁！",
+      "url": "https://www.monster-strike.com/news/20261022_5.html",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【13周年感謝キャンペーン】「よりどりガチャマーケット」が10/24より開催！",
+      "url": "https://www.monster-strike.com/news/20261022_2.html",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「RED STARS」10/23より開催！",
+      "url": "https://www.monster-strike.com/news/20261022_1.html",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
       "app": "monst",
       "kind": "guide",
-      "title": "次回ニュース日 10/22(木)16:00〜",
+      "title": "のモンストニュース内容はこちら",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-10-22",
-      "time": "16:00",
+      "time": "",
       "source_label": "GameWith モンストニュース速報",
-      "upcoming": false,
-      "stale": true
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "の注目ニュース",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース内容はこちら",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "GameWith モンスト特番",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース最新情報",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「2026 OB「ヒストリカルモーメント」」新登場！期間限定で配出中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9015&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「2026 Series2」選手が新登場！追加ポジションはSランク【中継ぎ】＆ Aランク【中堅手】！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9007&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「2026 OB「ヒストリカルモーメント」」GETのチャンス！「2026 OBセレクションSP」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9014&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "自チーム新選手GETの大チャンス！「自チーム新選手一本釣りスカウト」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9000&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "連携済みの人も対象！パワスピ・ポイントクラブと連携し、Sランク契約書をGETしよう！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8981&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "期間限定パワスピ・ポイントクラブコラボ「エナジー販売キャンペーン」実施中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9013&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "期間限定パワスピ・ポイントクラブコラボ「エナジー販売キャンペーン」実施中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9005&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-22",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
     },
     {
       "app": "prospi",
@@ -430,35 +882,13 @@
       "upcoming": false
     },
     {
-      "app": "monst",
+      "app": "prospi",
       "kind": "guide",
-      "title": "モンフリ2026（13周年イベント） で発表された新難易度「滅絶」も、そろそろ詳細が明かされる頃だろう。10月下旬にお知らせする、とのことなので、 10/22(木)に発表→翌週に滅絶が降臨する可能性がありそうだ。",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "title": "ヒストリカルモーメント 新選手一本釣りスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
       "date": "2026-10-22",
       "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "モンストニュースの概要欄、もしくは公式Xに記載されたURLからモンストWebショップにログインすると、オーブ1個を入手できる。 配布期間はニュース終了後〜10/21(水)23:59までの間となる。",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-21",
-      "time": "23:59",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "メンテナンス実施：10月22日(木)13:00～14:59予定",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9054&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-21",
-      "time": "13:00",
-      "source_label": "お知らせ",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -474,7 +904,7 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "▶︎天空シリーズ装備ガチャは引くべき？ 開催期間：2026/10/21(水)12:00〜",
+      "title": "▶︎天空シリーズ装備ガチャは引くべき？ 開催期間：2026/10/21(水)12:00〜12/22(火)11:59",
       "url": "https://game8.jp/dqsmashgrow/729660",
       "date": "2026-10-21",
       "time": "12:00",
@@ -485,6 +915,16 @@
       "app": "smagro",
       "kind": "guide",
       "title": "ドラクエ4 2026/10/21(火)12:00〜12/15(火)11:59",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-10-21",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スーパーまものラッシュ6 2026/10/21(水)12:00〜12/22(火)11:59",
       "url": "https://game8.jp/dqsmashgrow/729660",
       "date": "2026-10-21",
       "time": "12:00",
@@ -513,12 +953,12 @@
     },
     {
       "app": "smagro",
-      "kind": "news",
-      "title": "レーティング制度について",
-      "url": "https://www.square-enix.com/jp/cero/",
+      "kind": "guide",
+      "title": "スマグロレポートで最新のアップデート情報が公開されました。10/21(水)のアップデートでハーフアニバーサリーとドラゴンクエストIVイベントが始まり、新上級職のバトルマスターや天空シリーズ装備も登場します。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
       "date": "2026-10-21",
       "time": "",
-      "source_label": "お知らせ",
+      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -529,16 +969,6 @@
       "date": "2026-10-21",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【イチロー・ダルビッシュ・大谷登場！】11周年特別スカウト選手先行公開！イチローも驚愕したプロ野球レジェンドたちの偉業とは？ YouTubeにて公開中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9056&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-21",
-      "time": "",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -592,16 +1022,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "Sランク限界突破コーチつきスカウト 10/19 15:00 〜 10/22 12:59",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-19",
-      "time": "15:00",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "youtube",
       "title": "座れるのは一人だけ！ガチャを神引きしてくれそうな運が良い人は誰？！ #モンスト",
@@ -643,16 +1063,6 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "お1人様1回限り！「Sランク限界突破コーチつき10連スカウト」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8970&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-19",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "Sランク限界突破コーチつきスカウト",
       "url": "https://game8.jp/prospi_a/754178",
@@ -660,17 +1070,6 @@
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "次回のスマグロレポートは、これまでの更新の傾向から見ると10/19(月)に更新される可能性が高いです。しかし、10/13(火)よりハーフアニバーサリーの前夜祭イベントが開催されるため、来週も何らかの情報が公開される可能性があります。",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-10-19",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
-      "upcoming": false,
-      "stale": true
     },
     {
       "app": "monst",
@@ -693,46 +1092,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【Part2】ツガイなら別々に撮影してもコントは成立する!? ザ・たっちで検証! #モンスト #黄泉のツガイ",
-      "url": "https://www.youtube.com/shorts/jyo_3NW4EUc",
-      "date": "2026-10-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【Part1】ツガイなら別々に撮影してもコントは成立する!? ザ・たっちで検証! #モンスト #黄泉のツガイ",
-      "url": "https://www.youtube.com/shorts/8T0SqcDRFM0",
-      "date": "2026-10-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【13周年CM】13周年大カーン謝祭で快カンカーン篇｜13周年スクラッチくじ【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=aYKw7f2mvZo",
-      "date": "2026-10-17",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "プロスピAニュース 11周年記念スペシャル配信！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9047&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-17",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "ggene",
       "kind": "guide",
       "title": "ストーリーイベント「機動戦士ガンダム外伝 コロニーの落ちた地で…」が開催しています。限定のSSRユニットやキャラクターを入手できる貴重な機会となっているため、開始後は優先してイベントを進めましょう。",
@@ -740,56 +1099,6 @@
       "date": "2026-10-16",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「11周年記念カウントダウンログインボーナス」実施中！10月23日(金)2:59まで",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8969&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-16",
-      "time": "02:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "現金100万円など豪華賞品が当たるチャンス！「13周年スクラッチくじ」を解説！",
-      "url": "https://www.youtube.com/shorts/P8xV26mLttI",
-      "date": "2026-10-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【モンスト×TVアニメ「黄泉のツガイ」】新郷ハヤト 登場！ザコキラーが乗る強力な「全敵超絶落雷」が友情コンボ×2で発動可能！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=9Z1324hxMXM",
-      "date": "2026-10-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンスト×TVアニメ「黄泉のツガイ」 コラボ開催中！【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/x3jPv8YIVjI",
-      "date": "2026-10-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【13周年CM】TVアニメ「黄泉のツガイ」コラボ｜アサのお願い篇【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=hd0bZv9VMDs",
-      "date": "2026-10-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -816,16 +1125,6 @@
       "app": "prospi",
       "kind": "guide",
       "title": "プロスピパーク 10/15 15:00 〜 10/22 12:59",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2026-10-15",
-      "time": "15:00",
-      "source_label": "Game8 イベントスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピパーク 10/15 15:00 〜 10/22 12:59",
       "url": "https://game8.jp/prospi_a/37363",
       "date": "2026-10-15",
       "time": "15:00",
@@ -833,100 +1132,10 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "チャレンジスカウト 10/15 15:00 〜 10/21 14:59",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-15",
-      "time": "15:00",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ドラフトスカウト 10/15 15:00 〜 10/22 12:59",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-15",
-      "time": "15:00",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "小盛！ドラフトスカウト 10/15 15:00 〜 10/22 12:59",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-15",
-      "time": "15:00",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "自チームOB狙い打ち 10/15 15:00 〜 10/22 12:59",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-15",
-      "time": "15:00",
-      "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「スピードボーラー」が登場！「プロスピパーク」開催！10月22日(木)12:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9033&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "12:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "「ルイス・フロイス 」の獣神化・改が10/20に解禁！",
       "url": "https://www.monster-strike.com/news/20261015_5.html",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【13周年感謝キャンペーン】2つのコースから選べる「13周年スクラッチくじ」開催！現金最大100万円やオーブ最大100個が当たるチャンス！",
-      "url": "https://www.monster-strike.com/news/20261015_4.html",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【モンスト×黄泉のツガイ】コラボイベント開催記念キャンペーンを実施！",
-      "url": "https://www.monster-strike.com/news/20261015_3.html",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【モンスト×黄泉のツガイ】コラボイベントが10/16より開催！ コラボ 2026.10.15 NEW 追記",
-      "url": "https://www.monster-strike.com/news/20261015_2.html",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "みんなの銀行の期間限定キャンペーンを10/15より開催！ Webショップ",
-      "url": "https://www.monster-strike.com/news/20261015_1.html",
       "date": "2026-10-15",
       "time": "",
       "source_label": "ゲーム情報",
@@ -955,61 +1164,11 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "のモンストニュース最新情報",
+      "title": "のモンストニュース振り返り",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-10-15",
       "time": "",
       "source_label": "Game8 モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「2026 Series2」選手が新登場！追加ポジションはSランク【抑え】＆ Aランク【右翼手】！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9018&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「2026覚醒選手(スピードボーラー)」新登場！期間限定で配出中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9034&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「自チームOB狙い打ちスカウト」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8976&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "新選手を狙え！「ドラフトスカウト」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8968&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "新選手を狙え！「小盛！ドラフトスカウト」開催中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8998&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1033,28 +1192,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "guide",
-      "title": "の注目ニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false,
-      "stale": true
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false,
-      "stale": true
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "ルーレットヒッター 2023年 10/13 15:00 〜 10/16 14:59",
@@ -1062,16 +1199,6 @@
       "date": "2026-10-13",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「リアルタイム対戦」第15回勝ち星ランキング開始！10月26日(月)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8999&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-13",
-      "time": "14:59",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1095,16 +1222,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "期間限定イベント「未開の幻洞」が10/14より登場！",
-      "url": "https://www.monster-strike.com/news/20261013_1.html",
-      "date": "2026-10-13",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "Aランク以上確定スカウト 自チーム確定スカウト",
@@ -1112,26 +1229,6 @@
       "date": "2026-10-10",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「激・獣神祭」10/10より開催！第1～3弾の初回は★5以上キャラの排出確率が24％に！",
-      "url": "https://www.monster-strike.com/news/20261009_2.html",
-      "date": "2026-10-09",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「STARLIGHT MIRAGE」10/13より開催！",
-      "url": "https://www.monster-strike.com/news/20261009_1.html",
-      "date": "2026-10-09",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1152,16 +1249,6 @@
       "date": "2026-10-08",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "守護獣「叫喚」が10/14より初登場！",
-      "url": "https://www.monster-strike.com/news/20261008_10.html",
-      "date": "2026-10-08",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1215,13 +1302,13 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
+      "app": "prospi",
       "kind": "guide",
-      "title": "▶︎闇騎士シリーズ装備ガチャは引くべき？ 開催期間：2026/10/5(火)12:00〜",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-10-05",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
+      "title": "OBセレクション 戦力強化スカウト ライジングスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2026-10-08",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1232,6 +1319,16 @@
       "date": "2026-10-05",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "のスマグロレポート",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-10-05",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -1266,26 +1363,6 @@
     },
     {
       "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース振り返り",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-10-01",
-      "time": "",
-      "source_label": "Game8 モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "ギガンテス軍 2026/9/29(火)〜10/27(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-29",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
       "title": "「天下五剣」獣神化・改を記念した新グッズなどが発売！ グッズ",
       "url": "https://www.monster-strike.com/entertainment-news/20260927_3.html",
@@ -1307,7 +1384,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「メタスト」のオンラインライブ「メタストフェス SYNC WAVE」が11/1に開催！ メタスト",
+      "title": "「メタスト」のオンラインライブ「メタストフェス SYNC WAVE」が11/1に開催！ メタスト 2026.09.27 NEW 追加情報",
       "url": "https://www.monster-strike.com/entertainment-news/20260927_1.html",
       "date": "2026-09-27",
       "time": "",
@@ -1327,7 +1404,7 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "【文化放送×モンスト】初の地上波ラジオが10/2より放送決定！",
+      "title": "【文化放送×モンスト】初の地上波ラジオが10/2より放送決定！ その他 2026.09.26 NEW 追記",
       "url": "https://www.monster-strike.com/entertainment-news/20260926_1.html",
       "date": "2026-09-26",
       "time": "",
@@ -1375,46 +1452,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "▶︎遺跡に潜む巨大魔物の謎イベントの攻略情報 開催期間：2026/9/22(火)12:00〜10/27(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-22",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "▶︎神技シリーズ装備ガチャは引くべき？ 開催期間：2026/9/22(火)12:00〜11/3(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-22",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "遺跡に潜む巨大魔物の謎 2026/9/22(火)12:00〜10/27(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-22",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "ガルーダ 2026/9/22(火)〜10/27(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-09-22",
-      "time": "11:59",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "スペシャルミッション",
@@ -1433,17 +1470,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "のスマグロレポート",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-09-21",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
-      "upcoming": false,
-      "stale": true
     },
     {
       "app": "prospi",
@@ -1466,16 +1492,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ピースをねらえ 2023年 09/16 15:00 〜 09/20 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-16",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "youtube",
       "title": "#010 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
@@ -1494,17 +1510,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "のマル秘レポート",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-09-07",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
-      "upcoming": false,
-      "stale": true
     },
     {
       "app": "prospi",
@@ -1645,16 +1650,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "news",
-      "title": "DMM GAMES版公式サイト公開！",
-      "url": "https://gget.ggame.jp/jp/dmg/",
-      "date": "2026-06-24",
-      "time": "",
-      "source_label": "ニュース",
-      "upcoming": false
     }
   ],
   "status": [
@@ -1702,18 +1697,17 @@
       "app": "monst",
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error / 前回の結果を表示中",
-      "kept": 5
+      "ok": true,
+      "count": 5,
+      "error": ""
     },
     {
       "app": "monst",
       "label": "モンスト / GameWith モンスト特番",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error"
+      "ok": true,
+      "count": 1,
+      "error": ""
     },
     {
       "app": "monst",
@@ -1750,9 +1744,9 @@
     {
       "app": "smagro",
       "label": "スマグロ / お知らせ",
-      "url": "https://smashgrow.dragonquest.jp/news/",
+      "url": "https://smashgrow.dragonquest.jp/",
       "ok": true,
-      "count": 1,
+      "count": 0,
       "error": ""
     },
     {
@@ -1767,19 +1761,17 @@
       "app": "smagro",
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error / 前回の結果を表示中",
-      "kept": 3
+      "ok": true,
+      "count": 5,
+      "error": ""
     },
     {
       "app": "smagro",
       "label": "スマグロ / GameWith イベント一覧",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error / 前回の結果を表示中",
-      "kept": 10
+      "ok": true,
+      "count": 12,
+      "error": ""
     },
     {
       "app": "smagro",
@@ -1810,26 +1802,24 @@
       "label": "ジージェネ / ニュース",
       "url": "https://gget.ggame.jp/jp/",
       "ok": true,
-      "count": 3,
+      "count": 2,
       "error": ""
     },
     {
       "app": "ggene",
       "label": "ジージェネ / GameWith 生放送まとめ",
       "url": "https://gamewith.jp/ggene-eternal/519980",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error / 前回の結果を表示中",
-      "kept": 1
+      "ok": true,
+      "count": 1,
+      "error": ""
     },
     {
       "app": "ggene",
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
-      "ok": false,
-      "count": 0,
-      "error": "HTTP Error 500: Internal Server Error / 前回の結果を表示中",
-      "kept": 6
+      "ok": true,
+      "count": 6,
+      "error": ""
     },
     {
       "app": "ggene",
