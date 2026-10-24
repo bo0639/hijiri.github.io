@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T23:43:24+09:00",
+  "generated_at": "2026-10-24T22:52:38+09:00",
   "items": [
     {
       "app": "prospi",
@@ -189,6 +189,16 @@
       "date": "2026-11-28",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6 ステージ4 11/17 12:00",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -482,13 +492,33 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
+      "app": "ggene",
       "kind": "guide",
-      "title": "シーズン6 ステージ1 10/23 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-10-23",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
+      "title": "マスターリーグseason17が開催",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-24",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "マスターリーグのシーズン17が開催しました。今大会では、「重撃」タグと「試作機」タグを持つユニットのステータスが強化され、地形は「地上」となっています。",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-10-24",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "リアルプロ野球連動のイベント「リアルタイム予想」開催！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9038&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-24",
+      "time": "",
+      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -648,16 +678,6 @@
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9043&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-10-22",
       "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "11周年記念！スペシャルプレゼント実施中！2027年3月25日(木)8:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8983&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-22",
-      "time": "08:59",
       "source_label": "お知らせ",
       "upcoming": false
     },
@@ -1093,32 +1113,12 @@
     },
     {
       "app": "ggene",
-      "kind": "guide",
-      "title": "ストーリーイベント「機動戦士ガンダム外伝 コロニーの落ちた地で…」が開催しています。限定のSSRユニットやキャラクターを入手できる貴重な機会となっているため、開始後は優先してイベントを進めましょう。",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-10-16",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
       "kind": "news",
       "title": "TITLES 更新！",
       "url": "https://gget.ggame.jp/jp/titles/",
       "date": "2026-10-16",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "コロニーの落ちた地でイベント開催",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-10-16",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
       "upcoming": false
     },
     {
