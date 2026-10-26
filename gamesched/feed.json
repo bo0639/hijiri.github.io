@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T22:52:38+09:00",
+  "generated_at": "2026-10-27T01:36:58+09:00",
   "items": [
     {
       "app": "prospi",
@@ -442,6 +442,16 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンフリ2026（13周年イベント） で発表された新難易度「滅絶」も、そろそろ詳細が明かされる頃だろう。10月下旬にお知らせする、とのことなので、 10/29(木)に発表→近日中に滅絶が降臨する可能性がありそうだ。",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-10-29",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
       "app": "smagro",
       "kind": "guide",
       "title": "巨大魔物の遺跡 開催期間 10/27(火) 11:59 まで 弱点 土 闇 主な報酬 ギガンテス",
@@ -489,6 +499,46 @@
       "date": "2026-10-27",
       "time": "",
       "source_label": "GameWith スマグロレポート",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "プロスピAニュース 11周年記念スペシャル配信！(10月26日15:00追記)",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9047&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-26",
+      "time": "15:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦」第16回勝ち星ランキング開始！11月9日(月)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9039&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-10-26",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "てつナイスゥショット3連発！しんじ○う監督もご満悦 #モンスト #神獣",
+      "url": "https://www.youtube.com/shorts/crRy51GNLO0",
+      "date": "2026-10-26",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「破界に響く星歌」10/27より開催！",
+      "url": "https://www.monster-strike.com/news/20261026_1.html",
+      "date": "2026-10-26",
+      "time": "",
+      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -774,16 +824,6 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "のモンストニュース内容はこちら",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
       "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-10-22",
@@ -799,16 +839,6 @@
       "date": "2026-10-22",
       "time": "",
       "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース内容はこちら",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "GameWith モンスト特番",
       "upcoming": false
     },
     {
@@ -866,26 +896,6 @@
       "kind": "news",
       "title": "連携済みの人も対象！パワスピ・ポイントクラブと連携し、Sランク契約書をGETしよう！",
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8981&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "期間限定パワスピ・ポイントクラブコラボ「エナジー販売キャンペーン」実施中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9013&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "期間限定パワスピ・ポイントクラブコラボ「エナジー販売キャンペーン」実施中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9005&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-10-22",
       "time": "",
       "source_label": "お知らせ",
@@ -1092,16 +1102,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "超究極「新郷ハヤト」登場！【モンスト×TVアニメ「黄泉のツガイ」 】",
-      "url": "https://www.youtube.com/shorts/GwaVWM31GJg",
-      "date": "2026-10-18",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "11周年新情報発表！プロスピAニュース 11周年記念スペシャル【プロスピA】",
@@ -1129,16 +1129,6 @@
       "date": "2026-10-15",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「ルイス・フロイス 」の獣神化・改が10/20に解禁！",
-      "url": "https://www.monster-strike.com/news/20261015_5.html",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1706,7 +1696,7 @@
       "label": "モンスト / GameWith モンスト特番",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
       "ok": true,
-      "count": 1,
+      "count": 0,
       "error": ""
     },
     {
