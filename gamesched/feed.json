@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T02:50:28+09:00",
+  "generated_at": "2026-11-07T02:14:14+09:00",
   "items": [
     {
       "app": "prospi",
@@ -234,26 +234,6 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "防衛線キングレオ軍 開催期間 12/15(火) 11:59 まで 弱点 氷 主な報酬 キングレオ軍",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-12-15",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "キングレオ 開催期間 12/15(火) 11:59 まで 弱点 氷 主な報酬 キングレオ",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-12-15",
-      "time": "11:59",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
       "title": "ドラクエ4コラボ 開催期間 12/15(火) まで 主な報酬 おおめだま いたずらもぐら ライアン アリーナ クリフト ブライ トルネコ ミネア マーニャ",
       "url": "https://gamewith.jp/dq-smashgrow/559152",
       "date": "2026-12-15",
@@ -279,6 +259,46 @@
       "date": "2026-11-30",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "GENERATION TOWER SOUTH 【開催期間】 ~11/30(月)10:59 キャラ報酬 オードリー",
+      "url": "https://gamewith.jp/ggene-eternal/522839",
+      "date": "2026-11-30",
+      "time": "10:59",
+      "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6ステージ1 開催期間 11/29(日) 23:59 まで 弱点 風",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-29",
+      "time": "23:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6ステージ2 開催期間 11/29(日) 23:59 まで 弱点 雷 風",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-29",
+      "time": "23:59",
+      "source_label": "GameWith イベント一覧",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "シーズン6ステージ3 開催期間 11/29(日) 23:59 まで 弱点 氷 風 炎 光",
+      "url": "https://gamewith.jp/dq-smashgrow/559152",
+      "date": "2026-11-29",
+      "time": "23:59",
+      "source_label": "GameWith イベント一覧",
       "upcoming": false
     },
     {
@@ -349,6 +369,26 @@
       "date": "2026-11-17",
       "time": "11:59",
       "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回ニュース日 11/12(木)16:00〜",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-12",
+      "time": "16:00",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回のモンストニュースの配信日時は11/12(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-11-12",
+      "time": "16:00",
+      "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
     {
@@ -424,31 +464,11 @@
     {
       "app": "smagro",
       "kind": "guide",
-      "title": "シーズン6 ステージ3 11/6 12:00",
-      "url": "https://gamewith.jp/dq-smashgrow/559152",
-      "date": "2026-11-06",
-      "time": "12:00",
-      "source_label": "GameWith イベント一覧",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
       "title": "シーズン6 ステージ③ 11/6(金)12:00〜",
       "url": "https://game8.jp/dqsmashgrow/729660",
       "date": "2026-11-06",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "GENERATION TOWER SOUTH 【開催予定日】 11/6(金)12:00~ 【イベント内容】 ・タワーイベント",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
-      "date": "2026-11-06",
-      "time": "12:00",
-      "source_label": "GameWith イベントスケジュール",
       "upcoming": false
     },
     {
@@ -464,11 +484,41 @@
     {
       "app": "ggene",
       "kind": "guide",
-      "title": "SOUTHタワーイベント 【 開催期間 】 2026/11/6(金)12:00 〜",
+      "title": "SOUTHタワーイベント 【 開催期間 】 2026/11/6(金)12:00 〜 2026/11/30(月)10:59",
       "url": "https://game8.jp/ggene-eternal/684154",
       "date": "2026-11-06",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【新キャラ】蒲公英 真獣神化！魔封じLの効果が乗る新友情コンボ「超強フェロートライアングルボム」の威力に注目！アシストスキルで味方の火力サポートもできる！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=zdGTWxdaY10",
+      "date": "2026-11-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜りあぐー編〜【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/xt0MW1g-tpQ",
+      "date": "2026-11-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜エルニーTOSSY編〜【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/81nHemRga_I",
+      "date": "2026-11-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -492,22 +542,142 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "youtube",
+      "title": "#巨人 #松本剛 選手 自分についていそうなプロスピAの特殊能力は？ #プロスピA11周年アニバーサリー #プロスピA",
+      "url": "https://www.youtube.com/shorts/ou5C5KeO9ik",
+      "date": "2026-11-06",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "アニバーサリーセレクション第2弾開催目前！選手のアンケート回答を予想してAmazonギフトコードが当たるXキャンペーン第2弾を実施中",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9100&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-06",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【彩・獣神祭新限定キャラ】マクスウェル 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/6GWUR7u_I6c",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【彩・獣神祭新限定キャラ】マクスウェル 使ってみた！滅絶「フィロソフィア」で活躍！ショットスキルで自身での攻撃、SSとアシストスキルで味方の火力サポートができ優秀！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=yyQgmziedJo",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[11/5]彩・獣神祭に3体目の新キャラが登場！あの滅絶「フィロソフィア」にめっぽう強い！「オラゴンナビ」が登場するアップデート情報にも注目！ #とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/jY-fAXIZOSE",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[11/5]彩・獣神祭に新限定キャラクター「マクスウェル」が登場！Ver.33.1アップデート情報や真獣神化などモンストの最新情報をお届けします！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=uMjvMMLThQk",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「蒲公英」の真獣神化が11/10に解禁！バレンタイン仕様の真獣神化も！",
+      "url": "https://www.monster-strike.com/news/20261105_5.html",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「覇者の塔」「覇者の塔シーズンズ」11/7 12時より期間限定で登場！本開催より「4thシーズン」が追加！",
+      "url": "https://www.monster-strike.com/news/20261105_4.html",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「彩・獣神祭」11/7より開催！新限定キャラ「マクスウェル」登場！",
+      "url": "https://www.monster-strike.com/news/20261105_3.html",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "Ver.33.1アップデート情報を公開！",
+      "url": "https://www.monster-strike.com/news/20261105_2.html",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "※重要※Ver.33.1アップデートメンテナンスの実施について",
+      "url": "https://www.monster-strike.com/news/20261105_1.html",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "guide",
-      "title": "次回ニュース日 11/5(木)16:00〜",
+      "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-11-05",
-      "time": "16:00",
+      "time": "",
       "source_label": "GameWith モンストニュース速報",
       "upcoming": false
     },
     {
       "app": "monst",
       "kind": "guide",
-      "title": "次回のモンストニュースの配信日時は11/5(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
+      "title": "のモンストニュースおさらい",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース最新情報",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-11-05",
-      "time": "16:00",
+      "time": "",
       "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
@@ -702,16 +872,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "guide",
-      "title": "十三支再競争のライブ配信が11/3にあります。",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-11-03",
-      "time": "",
-      "source_label": "Game8 モンストニュース速報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "スマグロレポートで最新のアップデート情報が公開されました。11/03(火)のアップデートでドラゴンクエストIVイベント中編が始まり、 新ほこらクエスト「キングレオ」 やキングレオシリーズ装備も登場します。",
@@ -813,29 +973,9 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "【新キャラ】鄭和、伊能忠敬、ヴァスコ・ダ・ガマ 使ってみた！貴重なアビリティセットを所持！キラーが乗る友情コンボやSSの威力に注目！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=ML5n-Pxco4E",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【超・獣神祭】新限定キャラクター「カグヤ」登場！【モンスト公式】CV：青山吉能　#モンスト #超獣神祭 #コミュ障姫",
-      "url": "https://www.youtube.com/shorts/X5ZU6JEaTLE",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
-      "title": "メンテナンスの実施について メンテナンス 2026.10.30 NEW 追記",
-      "url": "https://www.monster-strike.com/news/20261030_3.html",
+      "title": "ストライカー応援キャンペーン開催！",
+      "url": "https://www.monster-strike.com/news/20261030_2.html",
       "date": "2026-10-30",
       "time": "",
       "source_label": "ゲーム情報",
@@ -844,8 +984,8 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "ストライカー応援キャンペーン開催！",
-      "url": "https://www.monster-strike.com/news/20261030_2.html",
+      "title": "メンテナンスの実施について メンテナンス 2026.10.30 NEW 追記",
+      "url": "https://www.monster-strike.com/news/20261030_3.html",
       "date": "2026-10-30",
       "time": "",
       "source_label": "ゲーム情報",
@@ -873,16 +1013,6 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "【一括配布完了】「リアルタイム対戦全国大会 セ・リーグ杯/パ・リーグ杯/タイブレーク杯/ハイスピード杯」ランキング報酬配布に関するお知らせ",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9089&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "対決カーニバル 10/29 15:00 〜 11/04 14:59",
       "url": "https://game8.jp/prospi_a/37363",
@@ -893,58 +1023,8 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "【超・獣神祭 新限定キャラクター「カグヤ」登場！】モンストWebショップ限定でガチャの先行販売開始！【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/5sGJr07skWc",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【超・獣神祭登場！】カグヤ SPECIAL MOVIE【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=y0B9-1Us_hk",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【新滅絶キャラ】フィロソフィア 登場！破界の星墓「メラン＆コリンの星墓」、禁忌の獄〜深淵〜「闇獄の那由他」で活躍！2種のキラーの効果が乗る新友情コンボにも注目！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=ILQoak6IVHQ",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "新難易度「#滅絶」クエストが11/3より初登場！【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/B3noKWjK828",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンストニュース[10/29]「超・獣神祭」 新限定キャラクター「カグヤ」登場！新難易度クエスト「滅絶」で登場するキャラやクエスト詳細発表！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=LnZJHaCrefw",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
-      "title": "「ルシファーさんの堕落ごはん」コミックス1巻が発売！限定グッジョブやストライクシールなどの購入特典も！",
+      "title": "「ルシファーさんの堕落ごはん」コミックス1巻が発売！限定グッジョブやストライクシールなどの購入特典も！ その他 2026.10.29 NEW 追加情報",
       "url": "https://www.monster-strike.com/news/20261029_6.html",
       "date": "2026-10-29",
       "time": "",
@@ -973,58 +1053,8 @@
     },
     {
       "app": "monst",
-      "kind": "news",
-      "title": "「レグルス」の獣神化・改が11/3に解禁！",
-      "url": "https://www.monster-strike.com/news/20261029_4.html",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "お得なパックが再度購入可能！「もう1回！期間限定！13周年記念パック」が11/1 より再登場！",
-      "url": "https://www.monster-strike.com/news/20261029_2.html",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「超・獣神祭」10/30より開催！新限定キャラ「カグヤ」登場！10/29よりモンストWebショップで先行販売！",
-      "url": "https://www.monster-strike.com/news/20261029_1.html",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "guide",
-      "title": "のモンストニュース内容 41836",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "の注目ニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース最新情報",
+      "title": "のモンストニュース振り返り",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-10-29",
       "time": "",
@@ -1072,16 +1102,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「破界に響く星歌」10/27より開催！",
-      "url": "https://www.monster-strike.com/news/20261026_1.html",
-      "date": "2026-10-26",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "スーパーまものラッシュのシーズン6が開催されます。期間中にハイスコアを目指してメダルを集め、交換所で報酬と交換しましょう。",
@@ -1102,16 +1122,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「モンコレDX」10/26より開催！",
-      "url": "https://www.monster-strike.com/news/20261023_3.html",
-      "date": "2026-10-23",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "guide",
       "title": "スターロード 10/22 15:00 〜 10/29 14:59",
@@ -1119,26 +1129,6 @@
       "date": "2026-10-22",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース振り返り",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
     {
@@ -1602,16 +1592,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "youtube",
-      "title": "シーズン50HRも可能だった！？ナゴヤドームで31HRを記録した福留孝介のHRの打ち方とは #プロスピa #プロ野球",
-      "url": "https://www.youtube.com/shorts/Xj9OJvTRgQs",
-      "date": "2026-07-16",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！",
@@ -1668,7 +1648,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 4,
+      "count": 3,
       "error": ""
     },
     {
@@ -1684,7 +1664,7 @@
       "label": "モンスト / Game8 モンストニュース速報",
       "url": "https://game8.jp/monst/110254",
       "ok": true,
-      "count": 6,
+      "count": 5,
       "error": ""
     },
     {
@@ -1732,7 +1712,7 @@
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
       "ok": true,
-      "count": 4,
+      "count": 3,
       "error": ""
     },
     {
