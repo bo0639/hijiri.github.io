@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-11-07T02:14:14+09:00",
+  "generated_at": "2026-11-08T01:09:01+09:00",
   "items": [
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "チャレンジスカウト",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2027-02-16",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -452,13 +462,53 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "最大47連無料ガチャ 【開催期間】 ~11/7(土)11:59",
-      "url": "https://gamewith.jp/ggene-eternal/522839",
+      "app": "prospi",
+      "kind": "news",
+      "title": "WBSC U-23野球ワールドカップ2026応援プレゼント実施中！2026年11月17日(火)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9036&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-11-07",
-      "time": "11:59",
-      "source_label": "GameWith イベントスケジュール",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜みるくてぃ。編〜【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/nxD-v8gqSeI",
+      "date": "2026-11-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜ろこた編〜【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/kCCZXawRToc",
+      "date": "2026-11-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【彩・獣神祭】新限定キャラクター「マクスウェル」登場！【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/wSTc4aX3zh8",
+      "date": "2026-11-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【彩・獣神祭登場！】 マクスウェル SPECIAL MOVIE【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=6zVuD62A8Mk",
+      "date": "2026-11-07",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -862,16 +912,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【ライブ配信】集めて使って！オーブバックチャレンジ｜『赤ちゃん版 十三支再競争』【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=3yiOTLaLZPM",
-      "date": "2026-11-03",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "スマグロレポートで最新のアップデート情報が公開されました。11/03(火)のアップデートでドラゴンクエストIVイベント中編が始まり、 新ほこらクエスト「キングレオ」 やキングレオシリーズ装備も登場します。",
@@ -879,16 +919,6 @@
       "date": "2026-11-03",
       "time": "",
       "source_label": "GameWith スマグロレポート",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "かわいすぎる赤ちゃん犬猫TOP4",
-      "url": "https://www.youtube.com/shorts/vcE9Ssapi6E",
-      "date": "2026-11-02",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -923,32 +953,12 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "コミュ障カグヤの七転八倒【モンスト公式】#モンスト #超獣神祭 #コミュ障姫",
-      "url": "https://www.youtube.com/shorts/AIh7Hbf2VZk",
-      "date": "2026-11-01",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
       "title": "チケット情報",
       "url": "https://www.zan-live.com/ja/live/detail/10894",
       "date": "2026-11-01",
       "time": "",
       "source_label": "イベント",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「リアルタイム対戦 ダルビッシュジェネレーションカップ 2026シーズン オンライン予選」開催中！11月7日(土)14:59まで！！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9003&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-10-31",
-      "time": "14:59",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -959,16 +969,6 @@
       "date": "2026-10-30",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "珍回答続出！？ #モンスト #黄泉のツガイ #ヨミツガ",
-      "url": "https://www.youtube.com/shorts/hmXY_xaS5Jo",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -1279,16 +1279,6 @@
       "date": "2026-10-15",
       "time": "",
       "source_label": "エンタメ情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "ドラフトスカウト 小盛！ドラフトスカウト 自チームOB狙い打ち",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-15",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1768,7 +1758,7 @@
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "ok": true,
-      "count": 6,
+      "count": 5,
       "error": ""
     },
     {
