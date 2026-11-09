@@ -134,8 +134,7 @@
         },
         {
           "label": "エール",
-          "url": "https://yell-world.jp/category/figure/",
-          "source": "m-yell"
+          "url": "https://yell-world.jp/category/figure/"
         },
         {
           "label": "ターリン・インターナショナル",
@@ -156,8 +155,7 @@
         },
         {
           "label": "フクヤ",
-          "url": "https://www.fancy-fukuya.co.jp/topics/c/cat06/",
-          "source": "m-fukuya"
+          "url": "https://www.fancy-fukuya.co.jp/topics/c/cat06/"
         },
         {
           "label": "パレード",
@@ -175,9 +173,7 @@
         "m-kitan",
         "m-bushiroad",
         "m-toyscabin",
-        "m-yell",
         "m-brightlink",
-        "m-fukuya",
         "m-parade",
         "m-skjapan"
       ]
@@ -480,22 +476,9 @@
       ],
       "item_href": "/product/\\d+_\\d+\\.php$",
       "detail": true,
-      "max_details": 15
-    },
-    {
-      "key": "m-yell",
-      "name": "エール",
-      "maker": "エール",
-      "check": "makers",
-      "priority": 2,
-      "interval_days": 15,
-      "link": "https://yell-world.jp/category/figure/",
-      "urls": [
-        "https://yell-world.jp/category/figure/"
-      ],
-      "item_href": "yell-world\\.jp/figure/[^/]+/$",
-      "detail": true,
-      "max_details": 15
+      "max_details": 15,
+      "name_label": "Project",
+      "date_label": "Client"
     },
     {
       "key": "m-brightlink",
@@ -510,21 +493,6 @@
       ],
       "item_href": "/capsultoy/\\d+/$",
       "detail": true
-    },
-    {
-      "key": "m-fukuya",
-      "name": "フクヤ",
-      "maker": "フクヤ",
-      "check": "makers",
-      "priority": 2,
-      "interval_days": 15,
-      "link": "https://www.fancy-fukuya.co.jp/topics/c/cat06/",
-      "urls": [
-        "https://www.fancy-fukuya.co.jp/topics/c/cat06/"
-      ],
-      "item_href": "/topics/\\d{6}[A-Za-z0-9_\\-]+/$",
-      "detail": true,
-      "max_details": 15
     },
     {
       "key": "m-parade",

@@ -630,12 +630,18 @@ def parse_detail(body: str, url: str, src: dict, today: dt.date) -> dict | None:
     if src.get("name_class"):
         name = next((clean(n.text()) for n in main.iter()
                      if src["name_class"] in n.attrs.get("class", "").split() and clean(n.text())), name)
+    lines = [clean(x) for x in main.text().split("\n") if clean(x)]
+    # サイト独自の見出し（例: トイズキャビンの「Project：商品名 500円」「Client：2027年1月」）
+    if src.get("name_label"):
+        line = next((x for x in lines if re.match(src["name_label"] + r"\s*[:：]", x)), "")
+        if line:
+            name = re.sub(r"\s*[\d,]+\s*円.*$", "", re.sub(src["name_label"] + r"\s*[:：]\s*", "", line, count=1))
     if not name:
         return None
-    lines = [clean(x) for x in main.text().split("\n") if clean(x)]
+    label_re = re.compile(r"^(?:" + src["date_label"] + r")\s*[:：]?\s*(.*)$") if src.get("date_label") else DETAIL_LABEL_RE
     arrival, arr_line = None, ""
     for i, line in enumerate(lines):
-        m = DETAIL_LABEL_RE.match(line)
+        m = label_re.match(line)
         if not m:
             continue
         for cand in [m.group(1)] + lines[i + 1:i + 3]:
@@ -656,7 +662,8 @@ def parse_detail(body: str, url: str, src: dict, today: dt.date) -> dict | None:
         return None
     price = None
     for i, line in enumerate(lines):
-        if re.match(r"^(?:価格|単品価格|カプセル価格|販売価格)", line) or re.match(r"^1回", line):
+        if re.match(r"^(?:価格|単品価格|カプセル価格|販売価格)", line) or re.match(r"^1回", line) or \
+                (src.get("name_label") and re.match(src["name_label"], line)):
             price = parse_price(" ".join(lines[i:i + 2]))
             if price:
                 break
