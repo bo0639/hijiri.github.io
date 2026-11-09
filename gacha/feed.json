@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T10:59:48+09:00",
+  "generated_at": "2026-11-09T10:27:16+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 101,
+      "count": 103,
       "error": ""
     }
   ],
@@ -3536,6 +3536,23 @@
       "arrival_changed": "2026-10-15T09:18:06+09:00"
     },
     {
+      "id": "bandai-3a72b95c23",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "HG レジェンドライダーvol.6",
+      "price": 500,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第1週",
+        "from": "2026-11-01",
+        "to": "2026-11-01"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258559_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055627000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-11-09T10:27:16+09:00"
+    },
+    {
       "id": "bandai-ca7a185705",
       "source": "bandai",
       "maker": "バンダイ",
@@ -3551,6 +3568,23 @@
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770069136000",
       "first_seen": "2026-10-03T09:51:24+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
+    },
+    {
+      "id": "bandai-ad761a8511",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ZETT（ゼット） 野球グローブコレクション",
+      "price": 400,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第1週",
+        "from": "2026-11-01",
+        "to": "2026-11-01"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258538_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095357000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-11-09T10:27:16+09:00"
     },
     {
       "id": "bandai-94b9a5f6cd",
@@ -3601,6 +3635,22 @@
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026689000",
       "first_seen": "2026-10-03T09:51:24+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
+    },
+    {
+      "id": "tta-6284b39f81",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "Disney ツイステッドワンダーランド 寮章リングコレクション",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "11月",
+        "from": "2026-11-01",
+        "to": "2026-11-30"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y912375_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y912375",
+      "first_seen": "2026-11-09T10:27:16+09:00"
     },
     {
       "id": "tta-39656f1ac6",
@@ -4106,6 +4156,23 @@
       "arrival_changed": "2026-11-05T10:59:48+09:00"
     },
     {
+      "id": "bandai-e844c6e202",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "STAR WARS ボトルキャップコレクション マンダロリアン・アンド・グローグー",
+      "price": 500,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第2週",
+        "from": "2026-11-02",
+        "to": "2026-11-08"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258609_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055931000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-11-09T10:27:16+09:00"
+    },
+    {
       "id": "bandai-2c9310e121",
       "source": "bandai",
       "maker": "バンダイ",
@@ -4169,6 +4236,23 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260537_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055498000",
       "first_seen": "2026-11-02T10:17:20+09:00"
+    },
+    {
+      "id": "bandai-2c8a28c9e4",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "おジャ魔女どれみ めじるしアクセサリー ポロンタップver.1",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第2週",
+        "from": "2026-11-02",
+        "to": "2026-11-08"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000251592_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968501000",
+      "first_seen": "2026-10-03T09:51:24+09:00",
+      "arrival_changed": "2026-11-09T10:27:16+09:00"
     },
     {
       "id": "bandai-dfc618c6f8",
@@ -4984,23 +5068,6 @@
       "arrival_changed": "2026-11-05T10:59:48+09:00"
     },
     {
-      "id": "bandai-b403fa76ed",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "いきもの大図鑑アドバンス クワガタ03",
-      "price": 1500,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第3週",
-        "from": "2026-11-09",
-        "to": "2026-11-15"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259536_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770076806000",
-      "first_seen": "2026-10-08T10:34:43+09:00",
-      "arrival_changed": "2026-11-05T10:59:48+09:00"
-    },
-    {
       "id": "bandai-28d1ff6b67",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5012,7 +5079,7 @@
         "from": "2026-11-09",
         "to": "2026-11-15"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259587_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259587_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968518000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
@@ -5130,7 +5197,7 @@
         "from": "2026-11-09",
         "to": "2026-11-15"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259537_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259537_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770076783000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
@@ -5198,7 +5265,7 @@
         "from": "2026-11-09",
         "to": "2026-11-15"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259516_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259516_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770130447000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
@@ -5349,7 +5416,7 @@
         "from": "2026-11-09",
         "to": "2026-11-15"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260514_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260514_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770068917000",
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
@@ -5532,7 +5599,7 @@
         "from": "2026-11-09",
         "to": "2026-11-15"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259517_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259517_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770129830000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-05T10:59:48+09:00"
@@ -5852,6 +5919,22 @@
       "arrival_changed": "2026-11-05T10:59:48+09:00"
     },
     {
+      "id": "tta-387e7a7507",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "肩ズンFig. 忍たま乱太郎 五年生の段",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月16日週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907098_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907098",
+      "first_seen": "2026-11-09T10:27:16+09:00"
+    },
+    {
       "id": "bandai-0efddc0c6c",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5882,23 +5965,6 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260511_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071634000",
       "first_seen": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "bandai-3a72b95c23",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "HG レジェンドライダーvol.6",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258559_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055627000",
-      "first_seen": "2026-10-03T09:51:24+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
     },
     {
       "id": "bandai-f98da5f98d",
@@ -6017,40 +6083,6 @@
       "arrival_changed": "2026-11-02T10:17:20+09:00"
     },
     {
-      "id": "bandai-e844c6e202",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "STAR WARS ボトルキャップコレクション マンダロリアン・アンド・グローグー",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258609_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055931000",
-      "first_seen": "2026-10-03T09:51:24+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "bandai-ad761a8511",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ZETT（ゼット） 野球グローブコレクション",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258538_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770095357000",
-      "first_seen": "2026-10-03T09:51:24+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
-    },
-    {
       "id": "bandai-66683e8a39",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6096,7 +6128,7 @@
         "from": "2026-11-16",
         "to": "2026-11-22"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259577_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259577_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995224000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-02T10:17:20+09:00"
@@ -6185,6 +6217,23 @@
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
     {
+      "id": "bandai-b403fa76ed",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "いきもの大図鑑アドバンス クワガタ03",
+      "price": 1500,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第4週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259536_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770076806000",
+      "first_seen": "2026-10-08T10:34:43+09:00",
+      "arrival_changed": "2026-11-09T10:27:16+09:00"
+    },
+    {
       "id": "bandai-df0170af81",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6216,23 +6265,6 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260527_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770070613000",
       "first_seen": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "bandai-2c8a28c9e4",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "おジャ魔女どれみ めじるしアクセサリー ポロンタップver.1",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000251592_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968501000",
-      "first_seen": "2026-10-03T09:51:24+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
     },
     {
       "id": "bandai-fe43f11ea7",
