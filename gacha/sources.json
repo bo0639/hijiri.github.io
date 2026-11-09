@@ -1,5 +1,222 @@
 {
-  "_comment": "ガチャ発売ラインアップの自動収集ソース。urls は最初に読むページ、url_templates は {yyyy} {mm} {m} を months_back か月前〜months_ahead か月先で展開して読むページ、max_pages は1ソースで読む最大ページ数。item_href は商品ページへのリンクとみなすURLの正規表現（指定すると、価格のないカードも直前の見出しの入荷めどで拾う）。follow を書くとページ内のリンクのうち一致するものも辿る。enabled を false にすると収集しない。",
+  "_comment": "確認先（checks）と自動収集のソース（sources）。checks は画面の『確認先と更新頻度』に出す一覧で、importance（重要度）・frequency（推奨頻度）・interval_days（この日数を過ぎたら期限切れ）・links・sources（自動収集するソースのkey）を持つ。sources の interval_days は自動収集の間隔（月・水・金の実行のうち、この日数に達したものだけ読む）。priority は同じ商品が複数サイトにあるときの優先度（小さいほど優先。入荷めどは細かい方を採用）。urls は最初に読むページ、url_templates は {yyyy} {mm} {m} を months_back か月前〜months_ahead か月先で展開して読むページ、item_href は商品ページへのリンクとみなすURLの正規表現。detail を true にすると、一覧ページで見つけた商品ページを読みに行く（新しいものだけ、max_details 件まで）。release_type を resale にすると、そのページの商品はすべてメーカー再販として扱う。maker_class は『作品 / メーカー』が書かれた要素のクラス名、maker_from_image は画像URLの社名とメーカー名の対応。enabled を false にすると収集しない。",
+  "checks": [
+    {
+      "key": "zukan",
+      "name": "ガチャ図鑑・月別一覧",
+      "importance": "最優先",
+      "frequency": "週2〜3回",
+      "interval_days": 3,
+      "links": [
+        {
+          "label": "発売スケジュール",
+          "url": "https://gacha-zukan.com/schedule/"
+        },
+        {
+          "label": "再販情報",
+          "url": "https://gacha-zukan.com/resale/"
+        },
+        {
+          "label": "メーカー別",
+          "url": "https://gacha-zukan.com/maker/bandai/"
+        }
+      ],
+      "sources": [
+        "zukan",
+        "zukan_resale",
+        "zukan_makers"
+      ]
+    },
+    {
+      "key": "island",
+      "name": "ガチャガチャアイランド",
+      "importance": "高",
+      "frequency": "週1回",
+      "interval_days": 7,
+      "links": [
+        {
+          "label": "発売スケジュール",
+          "url": "https://gacha-island.jp/gacha-release-schedule/"
+        }
+      ],
+      "sources": [
+        "island"
+      ]
+    },
+    {
+      "key": "charagoo",
+      "name": "キャラグー・月別一覧／再販",
+      "importance": "高",
+      "frequency": "週1回",
+      "interval_days": 7,
+      "links": [
+        {
+          "label": "月別発売予定",
+          "url": "https://charagoo.jp/gacha/release/"
+        },
+        {
+          "label": "再販",
+          "url": "https://charagoo.jp/gacha/resale/"
+        }
+      ],
+      "sources": [
+        "charagoo",
+        "charagoo_resale"
+      ]
+    },
+    {
+      "key": "official",
+      "name": "バンダイ・タカラトミーアーツ公式",
+      "importance": "最優先",
+      "frequency": "週1回",
+      "interval_days": 7,
+      "links": [
+        {
+          "label": "ガシャポン公式",
+          "url": "https://gashapon.jp/schedule/"
+        },
+        {
+          "label": "タカラトミーアーツ公式",
+          "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/"
+        }
+      ],
+      "sources": [
+        "bandai",
+        "tta"
+      ]
+    },
+    {
+      "key": "makers",
+      "name": "その他17メーカーの公式サイト",
+      "importance": "高",
+      "frequency": "月1〜2回",
+      "interval_days": 15,
+      "links": [
+        {
+          "label": "クオリア",
+          "url": "https://www.qualia-45.jp/",
+          "source": "m-qualia"
+        },
+        {
+          "label": "アイピーフォー",
+          "url": "https://www.ip4.co.jp/cupsuletoy_top/"
+        },
+        {
+          "label": "キタンクラブ",
+          "url": "https://kitan.jp/products/",
+          "source": "m-kitan"
+        },
+        {
+          "label": "夢屋（X）",
+          "url": "https://x.com/yumeyagotochiho"
+        },
+        {
+          "label": "ブシロードクリエイティブ",
+          "url": "https://capsule.bushiroad-creative.com/product/",
+          "source": "m-bushiroad"
+        },
+        {
+          "label": "トイズキャビン",
+          "url": "https://toyscabin.com/product/",
+          "source": "m-toyscabin"
+        },
+        {
+          "label": "スタンド・ストーンズ",
+          "url": "https://stasto.co.jp/latest_release/"
+        },
+        {
+          "label": "ケンエレファント",
+          "url": "https://prtimes.jp/main/html/searchrlp/company_id/166988"
+        },
+        {
+          "label": "SO-TA（スタジオソータ）",
+          "url": "https://www.so-ta.com/products/capsuletoy/"
+        },
+        {
+          "label": "エール",
+          "url": "https://yell-world.jp/category/figure/",
+          "source": "m-yell"
+        },
+        {
+          "label": "ターリン・インターナショナル",
+          "url": "https://tarlin-capsule.jp/"
+        },
+        {
+          "label": "トイズスピリッツ（X）",
+          "url": "https://x.com/toysspirits"
+        },
+        {
+          "label": "J.DREAM（X）",
+          "url": "https://x.com/Jdream_k"
+        },
+        {
+          "label": "ブライトリンク",
+          "url": "https://brightlink.co.jp/capsultoy/",
+          "source": "m-brightlink"
+        },
+        {
+          "label": "フクヤ",
+          "url": "https://www.fancy-fukuya.co.jp/topics/c/cat06/",
+          "source": "m-fukuya"
+        },
+        {
+          "label": "パレード",
+          "url": "https://www.parade-inc.net/products",
+          "source": "m-parade"
+        },
+        {
+          "label": "エスケイジャパン",
+          "url": "https://www.sk-japan.co.jp/capsule-toy",
+          "source": "m-skjapan"
+        }
+      ],
+      "sources": [
+        "m-qualia",
+        "m-kitan",
+        "m-bushiroad",
+        "m-toyscabin",
+        "m-yell",
+        "m-brightlink",
+        "m-fukuya",
+        "m-parade",
+        "m-skjapan"
+      ]
+    },
+    {
+      "key": "gashacoco_mori",
+      "name": "gashacoco・ガチャガチャの森X",
+      "importance": "高",
+      "frequency": "週2〜3回",
+      "interval_days": 3,
+      "links": [
+        {
+          "label": "gashacoco 発売スケジュール",
+          "url": "https://gashacoco.jp/items/"
+        },
+        {
+          "label": "ガチャガチャの森 商品部（X）",
+          "url": "https://x.com/gacha_product"
+        },
+        {
+          "label": "ガチャガチャの森（X）",
+          "url": "https://x.com/gachanomori"
+        }
+      ],
+      "sources": [
+        "gashacoco"
+      ],
+      "note": "Xは自動取得できないため、手動で確認する（Claude Code に確認・反映を頼む）"
+    },
+    {
+      "key": "stores",
+      "name": "店舗の入荷・完売情報",
+      "importance": "必要に応じて",
+      "frequency": "発売週に随時",
+      "interval_days": null,
+      "links": [],
+      "sources": []
+    }
+  ],
   "sources": [
     {
       "key": "bandai",
@@ -20,7 +237,10 @@
         "https://gashapon.jp/schedule/?ym={yyyy}{mm}"
       ],
       "months_back": 1,
-      "months_ahead": 2
+      "months_ahead": 2,
+      "check": "official",
+      "priority": 1,
+      "interval_days": 7
     },
     {
       "key": "tta",
@@ -40,7 +260,302 @@
         "https://www.takaratomy-arts.co.jp/items/gacha/calendar/?ym={yyyy}{mm}"
       ],
       "months_back": 1,
-      "months_ahead": 2
+      "months_ahead": 2,
+      "check": "official",
+      "priority": 1,
+      "interval_days": 7
+    },
+    {
+      "key": "zukan",
+      "name": "ガチャ図鑑",
+      "check": "zukan",
+      "priority": 3,
+      "interval_days": 3,
+      "link": "https://gacha-zukan.com/schedule/",
+      "urls": [
+        "https://gacha-zukan.com/schedule/"
+      ],
+      "url_templates": [
+        "https://gacha-zukan.com/schedule/{yyyy}-{mm}/"
+      ],
+      "months_back": 0,
+      "months_ahead": 3,
+      "max_pages": 6,
+      "item_href": "gacha-zukan\\.com/item/",
+      "maker_from_image": {
+        "gashapon": "バンダイ",
+        "takaratomy": "タカラトミーアーツ",
+        "bushiroad": "ブシロードクリエイティブ",
+        "blue-mountain": "ブルーマウンテン"
+      }
+    },
+    {
+      "key": "zukan_resale",
+      "name": "ガチャ図鑑（再販情報）",
+      "check": "zukan",
+      "priority": 3,
+      "interval_days": 3,
+      "link": "https://gacha-zukan.com/resale/",
+      "urls": [
+        "https://gacha-zukan.com/resale/"
+      ],
+      "max_pages": 1,
+      "item_href": "gacha-zukan\\.com/item/",
+      "release_type": "resale",
+      "maker_from_image": {
+        "gashapon": "バンダイ",
+        "takaratomy": "タカラトミーアーツ",
+        "bushiroad": "ブシロードクリエイティブ",
+        "blue-mountain": "ブルーマウンテン"
+      }
+    },
+    {
+      "key": "zukan_makers",
+      "name": "ガチャ図鑑（メーカー別）",
+      "check": "zukan",
+      "priority": 3,
+      "interval_days": 7,
+      "link": "https://gacha-zukan.com/",
+      "urls": [
+        "https://gacha-zukan.com/maker/bandai/",
+        "https://gacha-zukan.com/maker/takaratomy-arts/",
+        "https://gacha-zukan.com/maker/qualia/",
+        "https://gacha-zukan.com/maker/ip4/",
+        "https://gacha-zukan.com/maker/kitan-club/",
+        "https://gacha-zukan.com/maker/yumeya/",
+        "https://gacha-zukan.com/maker/bushiroad/",
+        "https://gacha-zukan.com/maker/toys-cabin/",
+        "https://gacha-zukan.com/maker/stasto/",
+        "https://gacha-zukan.com/maker/kenelephant/",
+        "https://gacha-zukan.com/maker/studio-sota/",
+        "https://gacha-zukan.com/maker/yell/",
+        "https://gacha-zukan.com/maker/tarlin/",
+        "https://gacha-zukan.com/maker/toys-spirits/",
+        "https://gacha-zukan.com/maker/jdream/",
+        "https://gacha-zukan.com/maker/brightlink/",
+        "https://gacha-zukan.com/maker/fukuya/",
+        "https://gacha-zukan.com/maker/parade/",
+        "https://gacha-zukan.com/maker/sk-japan/"
+      ],
+      "url_makers": {
+        "https://gacha-zukan.com/maker/bandai/": "バンダイ",
+        "https://gacha-zukan.com/maker/takaratomy-arts/": "タカラトミーアーツ",
+        "https://gacha-zukan.com/maker/qualia/": "クオリア",
+        "https://gacha-zukan.com/maker/ip4/": "アイピーフォー",
+        "https://gacha-zukan.com/maker/kitan-club/": "キタンクラブ",
+        "https://gacha-zukan.com/maker/yumeya/": "夢屋",
+        "https://gacha-zukan.com/maker/bushiroad/": "ブシロードクリエイティブ",
+        "https://gacha-zukan.com/maker/toys-cabin/": "トイズキャビン",
+        "https://gacha-zukan.com/maker/stasto/": "スタンド・ストーンズ",
+        "https://gacha-zukan.com/maker/kenelephant/": "ケンエレファント",
+        "https://gacha-zukan.com/maker/studio-sota/": "SO-TA",
+        "https://gacha-zukan.com/maker/yell/": "エール",
+        "https://gacha-zukan.com/maker/tarlin/": "ターリン・インターナショナル",
+        "https://gacha-zukan.com/maker/toys-spirits/": "トイズスピリッツ",
+        "https://gacha-zukan.com/maker/jdream/": "J.DREAM",
+        "https://gacha-zukan.com/maker/brightlink/": "ブライトリンク",
+        "https://gacha-zukan.com/maker/fukuya/": "フクヤ",
+        "https://gacha-zukan.com/maker/parade/": "パレード",
+        "https://gacha-zukan.com/maker/sk-japan/": "エスケイジャパン"
+      },
+      "max_pages": 19,
+      "item_href": "gacha-zukan\\.com/item/"
+    },
+    {
+      "key": "gashacoco",
+      "name": "gashacoco",
+      "check": "gashacoco_mori",
+      "priority": 4,
+      "interval_days": 3,
+      "link": "https://gashacoco.jp/items/",
+      "urls": [
+        "https://gashacoco.jp/items/"
+      ],
+      "max_pages": 1,
+      "item_href": "gashacoco\\.jp/items/\\d+$"
+    },
+    {
+      "key": "island",
+      "name": "ガチャガチャアイランド",
+      "check": "island",
+      "priority": 5,
+      "interval_days": 7,
+      "link": "https://gacha-island.jp/gacha-release-schedule/",
+      "url_templates": [
+        "https://gacha-island.jp/gacha-release-schedule/release{yyyy}{mm}/"
+      ],
+      "months_back": 0,
+      "months_ahead": 2,
+      "max_pages": 3,
+      "item_href": "gacha-island\\.jp/\\d+/$"
+    },
+    {
+      "key": "charagoo",
+      "name": "キャラグー",
+      "check": "charagoo",
+      "priority": 6,
+      "interval_days": 7,
+      "link": "https://charagoo.jp/gacha/release/",
+      "url_templates": [
+        "https://charagoo.jp/gacha/release/{yyyy}-{mm}/"
+      ],
+      "months_back": 0,
+      "months_ahead": 2,
+      "max_pages": 3,
+      "item_href": "charagoo\\.jp/gacha/item/",
+      "maker_class": "sub"
+    },
+    {
+      "key": "charagoo_resale",
+      "name": "キャラグー（再販）",
+      "check": "charagoo",
+      "priority": 6,
+      "interval_days": 7,
+      "link": "https://charagoo.jp/gacha/resale/",
+      "urls": [
+        "https://charagoo.jp/gacha/resale/"
+      ],
+      "max_pages": 1,
+      "item_href": "charagoo\\.jp/gacha/item/",
+      "maker_class": "sub",
+      "release_type": "resale"
+    },
+    {
+      "key": "m-qualia",
+      "name": "クオリア",
+      "maker": "クオリア",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://www.qualia-45.jp/",
+      "urls": [
+        "https://www.qualia-45.jp/"
+      ],
+      "item_href": "/product/view/\\d+$",
+      "hosts": [
+        "www.qualia-45.jp",
+        "qualia-45.jp"
+      ],
+      "detail": true,
+      "name_class": "title-1"
+    },
+    {
+      "key": "m-kitan",
+      "name": "キタンクラブ",
+      "maker": "キタンクラブ",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://kitan.jp/products/",
+      "urls": [
+        "https://kitan.jp/products/"
+      ],
+      "item_href": "kitan\\.jp/products/(?!page/|feed/)[A-Za-z0-9_\\-]+/$",
+      "detail": true
+    },
+    {
+      "key": "m-bushiroad",
+      "name": "ブシロードクリエイティブ",
+      "maker": "ブシロードクリエイティブ",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://capsule.bushiroad-creative.com/product/",
+      "urls": [
+        "https://capsule.bushiroad-creative.com/product/"
+      ],
+      "item_href": "/product/\\d+/$",
+      "detail": true
+    },
+    {
+      "key": "m-toyscabin",
+      "name": "トイズキャビン",
+      "maker": "トイズキャビン",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://toyscabin.com/product/",
+      "urls": [
+        "https://toyscabin.com/product/"
+      ],
+      "item_href": "/product/\\d+_\\d+\\.php$",
+      "detail": true,
+      "max_details": 15
+    },
+    {
+      "key": "m-yell",
+      "name": "エール",
+      "maker": "エール",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://yell-world.jp/category/figure/",
+      "urls": [
+        "https://yell-world.jp/category/figure/"
+      ],
+      "item_href": "yell-world\\.jp/figure/[^/]+/$",
+      "detail": true,
+      "max_details": 15
+    },
+    {
+      "key": "m-brightlink",
+      "name": "ブライトリンク",
+      "maker": "ブライトリンク",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://brightlink.co.jp/capsultoy/",
+      "urls": [
+        "https://brightlink.co.jp/capsultoy/"
+      ],
+      "item_href": "/capsultoy/\\d+/$",
+      "detail": true
+    },
+    {
+      "key": "m-fukuya",
+      "name": "フクヤ",
+      "maker": "フクヤ",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://www.fancy-fukuya.co.jp/topics/c/cat06/",
+      "urls": [
+        "https://www.fancy-fukuya.co.jp/topics/c/cat06/"
+      ],
+      "item_href": "/topics/\\d{6}[A-Za-z0-9_\\-]+/$",
+      "detail": true,
+      "max_details": 15
+    },
+    {
+      "key": "m-parade",
+      "name": "パレード",
+      "maker": "パレード",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://www.parade-inc.net/products",
+      "urls": [
+        "https://www.parade-inc.net/products",
+        "https://www.parade-inc.net/products/page/2"
+      ],
+      "item_href": "/products/c\\d+$",
+      "hosts": [
+        "www.parade-inc.net",
+        "parade-inc.net"
+      ]
+    },
+    {
+      "key": "m-skjapan",
+      "name": "エスケイジャパン",
+      "maker": "エスケイジャパン",
+      "check": "makers",
+      "priority": 2,
+      "interval_days": 15,
+      "link": "https://www.sk-japan.co.jp/capsule-toy",
+      "urls": [
+        "https://www.sk-japan.co.jp/capsule-toy"
+      ],
+      "item_href": "/capsule-toy/archive/\\d{4}-[a-z]"
     }
   ]
 }

@@ -1,9 +1,9 @@
-# 一時: 確認先候補のページ構造の調査用（マージ前に削除）
+# 一時: 新しい収集処理を実サイトで試す（マージ前に削除）
 name: tmp gacha probe
 on:
   push:
     branches: ['claude/sweet-davinci-20t2oh']
-    paths: ['gacha/_probe/urls.txt', '.github/workflows/tmp_gacha_probe.yml']
+    paths: ['gacha/_probe/trigger.txt', '.github/workflows/tmp_gacha_probe.yml']
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -14,9 +14,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python gacha/_probe/probe.py
+      - run: python scripts/update_gacha_lineup.py --force 2>&1 | tee gacha/_probe/run_log.txt
+        env:
+          GACHA_DUMP_DIR: ${{ runner.temp }}/pages
       - run: |
+          mkdir -p gacha/_probe/run
+          cp ${{ runner.temp }}/pages/index.txt gacha/_probe/run/ || true
+          cp ${{ runner.temp }}/pages/m-*.html ${{ runner.temp }}/pages/zukan_makers-0[12].html gacha/_probe/run/ 2>/dev/null || true
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add gacha/_probe
-          git commit -m "一時: 確認先候補のページを取得" && git push || true
+          git add gacha/_probe gacha/feed.json gacha/feed_cache.json
+          git commit -m "一時: 新しい収集処理の試験結果" && git push || true
