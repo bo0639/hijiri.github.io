@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-11-08T01:09:01+09:00",
+  "generated_at": "2026-11-10T05:30:28+09:00",
   "items": [
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "スペシャルミッション",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2027-02-17",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -154,6 +164,16 @@
     {
       "app": "prospi",
       "kind": "guide",
+      "title": "★ アニバーサリー第1弾当たりランキング ★ 【暫定版】アニバーサリー第2弾当たりランキング ★ 2026アニバ第1・2弾の選手徹底比較 ★ プロスピ道場 / スタミナ1/2 ★【B9&THユーザー投票結果】 セリーグ / パリーグ",
+      "url": "https://game8.jp/prospi_a/754177",
+      "date": "2027-01-02",
+      "time": "",
+      "source_label": "Game8 イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
       "title": "ホームランダービー",
       "url": "https://game8.jp/prospi_a/754177",
       "date": "2027-01-02",
@@ -164,11 +184,31 @@
     {
       "app": "prospi",
       "kind": "guide",
+      "title": "★ アニバーサリー第1弾当たりランキング ★ 【暫定版】アニバーサリー第2弾当たりランキング ★ 2026アニバ第1・2弾の選手徹底比較 ★ プロスピ道場 / スタミナ1/2 ★【B9&THユーザー投票結果】 セリーグ / パリーグ",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2027-01-02",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
       "title": "確定 スタミナ1/2",
       "url": "https://game8.jp/prospi_a/37363",
       "date": "2027-01-02",
       "time": "",
       "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "★ アニバーサリー第1弾当たりランキング ★ 【暫定版】アニバーサリー第2弾当たりランキング ★ 2026アニバ第1・2弾の選手徹底比較 ★ プロスピ道場 / スタミナ1/2 ★【B9&THユーザー投票結果】 セリーグ / パリーグ",
+      "url": "https://game8.jp/prospi_a/754178",
+      "date": "2027-01-02",
+      "time": "",
+      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -464,6 +504,46 @@
     {
       "app": "prospi",
       "kind": "news",
+      "title": "【予告】グループ変更受付期間中は所属グループ変更可能！「消費スタミナ1/2キャンペーン・スイッチ」11月13日(金)15:00より開始！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9071&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-09",
+      "time": "15:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦」第17回勝ち星ランキング開始！11月24日(火)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9029&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-09",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【我、堕落の王なり】ルシファーさんの堕落ごはん コミックス1巻発売！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=6qbpsk1zMIs",
+      "date": "2026-11-09",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「モンストジェネレーション」11/10より開催！",
+      "url": "https://www.monster-strike.com/news/20261109_1.html",
+      "date": "2026-11-09",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
       "title": "WBSC U-23野球ワールドカップ2026応援プレゼント実施中！2026年11月17日(火)14:59まで！",
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9036&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-11-07",
@@ -704,6 +784,16 @@
     {
       "app": "monst",
       "kind": "guide",
+      "title": "のニュース内容",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-05",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
       "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-11-05",
@@ -892,26 +982,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「今日の調子くん占い」開催中！11月14日(土)2:59まで",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8987&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-03",
-      "time": "02:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【2026.11.3】M4 RAID BATTLE -滅絶- vs フィロソフィア【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=viQH-LxPpiU",
-      "date": "2026-11-03",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "スマグロレポートで最新のアップデート情報が公開されました。11/03(火)のアップデートでドラゴンクエストIVイベント中編が始まり、 新ほこらクエスト「キングレオ」 やキングレオシリーズ装備も登場します。",
@@ -939,16 +1009,6 @@
       "date": "2026-11-02",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "2026年11月度「マンスリーパス」開催中！12月1日(火)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9040&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-01",
-      "time": "14:59",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -1043,16 +1103,6 @@
     },
     {
       "app": "monst",
-      "kind": "news",
-      "title": "新イベント「ギャラクシーアドベンチャー II」11/2より開催！",
-      "url": "https://www.monster-strike.com/news/20261029_3.html",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "guide",
       "title": "のモンストニュース振り返り",
       "url": "https://game8.jp/monst/110254",
@@ -1129,16 +1179,6 @@
       "date": "2026-10-22",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "スターロード",
-      "url": "https://game8.jp/prospi_a/754177",
-      "date": "2026-10-22",
-      "time": "",
-      "source_label": "Game8 イベントスケジュール",
       "upcoming": false
     },
     {
@@ -1229,16 +1269,6 @@
       "date": "2026-10-19",
       "time": "",
       "source_label": "GameWith スマグロレポート",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "Sランク限界突破コーチつきスカウト",
-      "url": "https://game8.jp/prospi_a/754178",
-      "date": "2026-10-19",
-      "time": "",
-      "source_label": "Game8 ガチャスケジュール",
       "upcoming": false
     },
     {
@@ -1432,26 +1462,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピ無双 09/25 15:00 〜 10/02 12:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-25",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピ応援団 09/25 15:00 〜 10/02 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-09-25",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "youtube",
       "title": "#011 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
@@ -1638,7 +1648,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 3,
+      "count": 4,
       "error": ""
     },
     {
@@ -1806,7 +1816,7 @@
       "label": "プロスピ / Game8 イベント最新情報",
       "url": "https://game8.jp/prospi_a/37363",
       "ok": true,
-      "count": 12,
+      "count": 11,
       "error": ""
     },
     {
