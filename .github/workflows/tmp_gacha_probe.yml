@@ -1,0 +1,22 @@
+# 一時: 確認先候補のページ構造の調査用（マージ前に削除）
+name: tmp gacha probe
+on:
+  push:
+    branches: ['claude/sweet-davinci-20t2oh']
+    paths: ['gacha/_probe/urls.txt', '.github/workflows/tmp_gacha_probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python gacha/_probe/probe.py
+      - run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gacha/_probe
+          git commit -m "一時: 確認先候補のページを取得" && git push || true
