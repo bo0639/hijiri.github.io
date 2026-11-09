@@ -1,0 +1,25 @@
+zukan	OK	89058	https://gacha-zukan.com/schedule/
+zukan2	OK	175931	https://gacha-zukan.com/
+island	OK	345329	https://gacha-island.jp/gacha-release-schedule/
+island2	OK	541305	https://gacha-island.jp/
+charagoo	OK	157266	https://charagoo.jp/gacha/
+charagoo2	OK	553661	https://charagoo.jp/genre-capsuletoy/
+gashacoco	OK	51666	https://gashacoco.jp/items/
+kitan	OK	178313	https://kitan.jp/
+bushiroad	OK	34273	https://capsule.bushiroad-creative.com/
+toyscabin	OK	9698	https://toyscabin.com/
+sota	OK	104386	https://www.so-ta.com/
+yell	OK	48659	https://yell-world.jp/
+tarlin	NG	<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)>	https://tarlin-capsule.jp/
+brightlink	OK	44826	https://brightlink.co.jp/capsultoy/
+fukuya	OK	33867	https://www.fancy-fukuya.co.jp/topics/c/cat06/
+skjapan	OK	57926	https://www.sk-japan.co.jp/capsule-toy
+parade	OK	51511	https://parade-inc.net/
+ip4	OK	25186	https://www.ip4.co.jp/
+kenelephant	OK	242945	https://kenelephant.co.jp/
+qualia	OK	41287	https://qualia-45.jp/
+toysspirits	NG	<urlopen error [Errno -2] Name or service not known>	https://www.toysspirits.co.jp/
+jdream	NG	<urlopen error [Errno -2] Name or service not known>	https://www.j-dream.co.jp/
+standstones	OK	76951	https://www.stasto.co.jp/
+yumeya	NG	<urlopen error [Errno -2] Name or service not known>	https://www.yumeya-net.co.jp/
+island_parade	OK	449251	https://gacha-island.jp/manufacturer/parade/
