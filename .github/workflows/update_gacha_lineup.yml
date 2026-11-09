@@ -2,8 +2,10 @@ name: ガチャ発売ラインアップの自動収集
 
 on:
   schedule:
-    # 月・木 7:00（JST）= 前日 22:00（UTC）
-    - cron: '0 22 * * 0,3'
+    # 月・水・金 7:00（JST）= 前日 22:00（UTC）。
+    # 各確認先は gacha/sources.json の interval_days（推奨頻度）に達したものだけ読む
+    #   週2〜3回: 毎回 / 週1回: 月曜 / 月1〜2回: 隔週の月曜
+    - cron: '0 22 * * 0,2,4'
   push:
     # 収集ソースや収集ロジックを変えたら、その場で収集し直す
     branches: [main]
@@ -32,7 +34,8 @@ jobs:
       - name: メーカー公式の発売スケジュールを収集
         env:
           GACHA_DUMP_DIR: ${{ runner.temp }}/gacha-pages
-        run: python scripts/update_gacha_lineup.py
+        # 収集の設定を変えたとき・手動実行のときは、推奨頻度に関係なくすべて読み直す
+        run: python scripts/update_gacha_lineup.py ${{ github.event_name != 'schedule' && '--force' || '' }}
 
       - name: 取得したページを保存（抽出がうまくいかないときの調査用）
         if: always()
@@ -47,7 +50,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add gacha/feed.json
+          git add gacha/feed.json gacha/feed_cache.json
           if git diff --cached --quiet; then
             echo "変更なし。コミットをスキップします。"
           else

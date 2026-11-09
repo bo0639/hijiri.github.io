@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """ガチャガチャ（カプセルトイ）の発売ラインアップ自動収集スクリプト。
 
-gacha/sources.json に定義した各メーカー公式の発売スケジュールページから
-  商品名 / 価格 / 入荷めど（日付・第N週・上中下旬・月内）/ 画像 / 商品ページURL
-を抜き出し、gacha/feed.json に書き出す。
+gacha/sources.json に定義した確認先（メーカー公式・ガチャ図鑑・キャラグーなど）の
+発売スケジュールページから
+  商品名 / メーカー / 価格 / 入荷めど（日付・第N週・上中下旬・月内）/ 新商品・再販 / 画像 / URL
+を抜き出し、同じ商品を1件にまとめて gacha/feed.json に書き出す。
 
-GitHub Actions（.github/workflows/update_gacha_lineup.yml）から週2回実行される。
+GitHub Actions（.github/workflows/update_gacha_lineup.yml）から月・水・金に実行され、
+各ソースは sources.json の interval_days（推奨頻度）に達したものだけを読みに行く。
+前回の取得結果は gacha/feed_cache.json に残し、読まなかったソースはそれを使う。
 標準ライブラリのみで動作する。
 
 ページのHTML構造はメーカーごとに異なり、予告なく変わるため、特定のクラス名には頼らず
@@ -13,7 +16,8 @@ GitHub Actions（.github/workflows/update_gacha_lineup.yml）から週2回実行
   その中の価格・入荷めど、無ければ直前の見出し（例: 「10月第2週」）を採用する
 という汎用的な抽出を行う。取得に失敗したソースは status に理由を残し、他は続行する。
 
-  python scripts/update_gacha_lineup.py               # 収集して feed.json を更新
+  python scripts/update_gacha_lineup.py               # 期限の来たソースを収集して feed.json を更新
+  python scripts/update_gacha_lineup.py --force       # 推奨頻度に関係なく、すべてのソースを収集
   python scripts/update_gacha_lineup.py --file x.html --source bandai   # 保存済みHTMLで抽出を試す
 """
 
@@ -36,6 +40,7 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES_PATH = os.path.join(ROOT, "gacha", "sources.json")
 FEED_PATH = os.path.join(ROOT, "gacha", "feed.json")
+CACHE_PATH = os.path.join(ROOT, "gacha", "feed_cache.json")
 # 設定すると取得したHTMLをここに保存する（ページ構造が変わったときの調査用。Actionsの成果物として残る）
 DUMP_DIR = os.environ.get("GACHA_DUMP_DIR", "")
 
@@ -47,15 +52,17 @@ PAUSE = 2                 # 同じサイトへの連続アクセスを避ける�
 CARD_MAX_TEXT = 360       # これより文字数の多いまとまりは「カード」とみなさない
 KEEP_PAST_DAYS = 45       # 入荷めどの終わりがこれより前の商品は捨てる
 KEEP_FUTURE_DAYS = 300    # 誤抽出の遠い未来を弾く
+DETAIL_REFRESH_DAYS = 30  # メーカー公式の商品ページは、これより古い取得結果だけ読み直す
+FEED_VERSION = 2
 
 # ── 入荷めど（日付・週・旬・月）の解釈 ────────────────────────────
 # index.html の parseArrival() と同じ規則。片方を直したらもう片方も直す。
 
 RANGE_SEP = r"\s*(?:[~〜\-ー－–・、]|から)\s*"
 RE_WEEK = re.compile(
-    r"(?:(20\d{2})\s*年\s*)?(\d{1,2})\s*月\s*第?\s*([1-5])\s*週?"
-    r"(?:" + RANGE_SEP + r"(?:(\d{1,2})\s*月\s*)?第?\s*([1-5])\s*)?週")
-RE_WEEK_ONLY = re.compile(r"第\s*([1-5])\s*(?:" + RANGE_SEP + r"第?\s*([1-5])\s*)?週")
+    r"(?:(20\d{2})\s*年\s*)?(\d{1,2})\s*月\s*第?\s*([1-6])\s*週?"
+    r"(?:" + RANGE_SEP + r"(?:(\d{1,2})\s*月\s*)?第?\s*([1-6])\s*)?週")
+RE_WEEK_ONLY = re.compile(r"第\s*([1-6])\s*(?:" + RANGE_SEP + r"第?\s*([1-6])\s*)?週")
 RE_JUN = re.compile(
     r"(?:(20\d{2})\s*年\s*)?(\d{1,2})\s*月\s*(上|中|下)\s*旬"
     r"(?:" + RANGE_SEP + r"(?:(\d{1,2})\s*月\s*)?(上|中|下)\s*旬)?")
@@ -319,7 +326,7 @@ def build_tree(body: str) -> Node:
 # ── ページからの商品抽出 ───────────────────────────────────────
 
 JUNK_LINE = re.compile(
-    r"^(?:new|NEW!?|再販|再登場|詳細|詳しく|もっと見る|more|一覧|発売(?:予定|日)?|価格|"
+    r"^(?:new|NEW!?|再販|再入荷|再登場|今週発売|詳細|商品詳細|詳しく|もっと見る|more|一覧|発売(?:予定|日)?|価格|"
     r"\d+(?:種|個)|全\d+種.*|税込.*|[\d,]+\s*円.*|※.*|>|›|»)$", re.I)
 
 
@@ -348,13 +355,79 @@ CHROME_RE = re.compile(r"(?:^|[\s_-])(?:header|footer|nav|navi|gnav|menu|breadcr
 def in_chrome(node: Node) -> bool:
     """ヘッダー・フッター・メニュー・パンくずなど、商品一覧ではない部分か。"""
     n = node
-    while n is not None:
+    while n is not None and n.tag not in ("body", "html"):
+        if n.tag in ("main", "article"):
+            return False  # 本文の中にある一覧は、クラス名にmenu等が含まれていても商品一覧とみなす
         if n.tag in ("header", "footer", "nav", "aside"):
             return True
         if CHROME_RE.search(n.attrs.get("class", "") + " " + n.attrs.get("id", "")):
             return True
         n = n.parent
     return False
+
+
+# 再販（メーカーが作り直して再発売）を示す語。店舗への再入荷とは別で、こちらは商品単位の情報
+RESALE_RE = re.compile(r"再販|再入荷|再登場|再納品|再生産|復刻|初回発売")
+RESALE_PREFIX_RE = re.compile(r"^\s*(?:[【\[（(][^】\]）)]*(?:再販|再入荷|再登場|再生産)[^】\]）)]*[】\]）)]\s*)+")
+# サイトごとの表記ゆれをそろえる
+MAKER_ALIASES = {
+    "バンダイガシャポン": "バンダイ", "ガシャポン": "バンダイ", "BANDAI": "バンダイ", "バンダイナムコ": "バンダイ",
+    "ファンシーフクヤ": "フクヤ", "株式会社フクヤ": "フクヤ",
+    "ブシロード": "ブシロードクリエイティブ", "ブシカプ!": "ブシロードクリエイティブ",
+    "スタジオソータ": "SO-TA", "SO-TA(スタジオソータ)": "SO-TA",
+    "Jドリーム": "J.DREAM", "J・ドリーム": "J.DREAM", "ジェイドリーム": "J.DREAM",
+    "ターリンインターナショナル": "ターリン・インターナショナル", "ターリン": "ターリン・インターナショナル",
+    "Qualia": "クオリア", "クオリア(Qualia)": "クオリア",
+    "スタンドストーンズ": "スタンド・ストーンズ", "エスケイ・ジャパン": "エスケイジャパン",
+}
+
+
+def norm_maker(text: str) -> str:
+    t = clean(unicodedata.normalize("NFKC", text or ""))
+    return MAKER_ALIASES.get(t, t)
+
+
+def strip_resale_prefix(name: str) -> str:
+    """「【再販】〇〇」「〇〇 再販」の印や、名前全体を囲む【】を外した表示名（再販かどうかは release_type で持つ）。"""
+    t = RESALE_PREFIX_RE.sub("", name).strip()
+    t = re.sub(r"\s*[（(]?(?:再販|再入荷)[）)]?$", "", t).strip()
+    t = re.sub(r"^【([^【】]+)】$", r"\1", t).strip()
+    return t or name
+
+
+def name_key(name: str) -> str:
+    """サイトをまたいで同じ商品を見分けるための名前（空白・記号・再販の印・全角半角の違いを無視）。"""
+    t = unicodedata.normalize("NFKC", name or "").lower()
+    t = RESALE_PREFIX_RE.sub("", t)
+    return re.sub(r"[\s・･·\-‐―〜~!?「」『』()\[\]【】&＆.,、。:：/'\"’”♪☆★]", "", t)
+
+
+def pick_maker(card: Node, src: dict) -> str:
+    """カードの中のメーカー名（「メーカー」欄、指定クラスの「作品 / メーカー」、画像URLの社名）。"""
+    if src.get("maker"):
+        return src["maker"]
+    cls = src.get("maker_class")
+    if cls:
+        for n in card.iter():
+            if cls in n.attrs.get("class", "").split():
+                parts = [p for p in re.split(r"\s*/\s*", clean(n.text())) if p]
+                if len(parts) >= 2 and not parse_arrival(parts[-1], dt.date.today()):
+                    return norm_maker(parts[-1])
+                return ""
+    lines = [clean(x) for x in card.text().split("\n") if clean(x)]
+    for i, line in enumerate(lines):
+        m = re.match(r"^(?:メーカー|発売元)\s*[:：]?\s*(.*)$", line)
+        if m:
+            val = m.group(1) or (lines[i + 1] if i + 1 < len(lines) else "")
+            if val:
+                return norm_maker(val)
+    slugs = src.get("maker_from_image") or {}
+    if slugs:
+        img = img_src(card, "")
+        m = re.search(r"/items/([^/]+)/", img)
+        if m and m.group(1) in slugs:
+            return slugs[m.group(1)]
+    return ""
 
 
 def pick_name(card: Node, today: dt.date) -> str:
@@ -473,13 +546,15 @@ def extract_items(body: str, base: str, src: dict, today: dt.date) -> list[dict]
         frm, to = dt.date.fromisoformat(arr["from"]), dt.date.fromisoformat(arr["to"])
         if to < today - dt.timedelta(days=KEEP_PAST_DAYS) or frm > today + dt.timedelta(days=KEEP_FUTURE_DAYS):
             continue
+        resale = src.get("release_type") == "resale" or bool(RESALE_RE.search(text))
         items.append({
             "id": src["key"] + "-" + hashlib.sha1(url.encode()).hexdigest()[:10],
             "source": src["key"],
-            "maker": src.get("maker", ""),
-            "name": name,
+            "maker": pick_maker(card, src),
+            "name": strip_resale_prefix(name),
             "price": price,
             "arrival": arr,
+            "release_type": "resale" if resale else "new",
             "image": img_src(card, base),
             "url": url,
         })
@@ -530,14 +605,113 @@ def expand_urls(src: dict, today: dt.date) -> list[str]:
     return out
 
 
-def collect_source(src: dict, today: dt.date) -> tuple[list[dict], dict]:
+DETAIL_LABEL_RE = re.compile(r"^(?:発売日|発売時期|発売予定日?|発売月|発売年月|販売予定|販売時期|販売開始日?|展開時期)\s*[:：]?\s*(.*)$")
+TITLE_SPLIT_RE = re.compile(r"\s*(?:[｜|]|\s[-–—]\s)\s*")
+
+
+def meta_content(body: str, prop: str) -> str:
+    m = re.search(r"<meta[^>]+(?:property|name)=[\"']" + re.escape(prop) + r"[\"'][^>]*content=[\"']([^\"']*)", body, re.I) or \
+        re.search(r"<meta[^>]+content=[\"']([^\"']*)[\"'][^>]*(?:property|name)=[\"']" + re.escape(prop) + r"[\"']", body, re.I)
+    return html.unescape(m.group(1)).strip() if m else ""
+
+
+def parse_detail(body: str, url: str, src: dict, today: dt.date) -> dict | None:
+    """メーカー公式の商品ページ1件から、商品名・発売時期・価格・画像を読む。発売時期が無ければ None。"""
+    root = build_tree(body)
+    main = next((n for n in root.iter() if n.tag in ("main", "article")), root)
+    h1 = next((clean(n.text()) for n in main.iter() if n.tag == "h1" and 2 < len(clean(n.text())) <= 90), "")
+    title = meta_content(body, "og:title")
+    if not title:
+        m = re.search(r"<title[^>]*>(.*?)</title>", body, re.I | re.S)
+        title = clean(html.unescape(m.group(1))) if m else ""
+    name = clean(TITLE_SPLIT_RE.split(title)[0]) if title else ""
+    if h1 and (not name or len(name) < 3):
+        name = h1
+    if src.get("name_class"):
+        name = next((clean(n.text()) for n in main.iter()
+                     if src["name_class"] in n.attrs.get("class", "").split() and clean(n.text())), name)
+    lines = [clean(x) for x in main.text().split("\n") if clean(x)]
+    # サイト独自の見出し（例: トイズキャビンの「Project：商品名 500円」「Client：2027年1月」）
+    if src.get("name_label"):
+        line = next((x for x in lines if re.match(src["name_label"] + r"\s*[:：]", x)), "")
+        if line:
+            name = re.sub(r"\s*[\d,]+\s*円.*$", "", re.sub(src["name_label"] + r"\s*[:：]\s*", "", line, count=1))
+    if not name:
+        return None
+    label_re = re.compile(r"^(?:" + src["date_label"] + r")\s*[:：]?\s*(.*)$") if src.get("date_label") else DETAIL_LABEL_RE
+    arrival, arr_line = None, ""
+    for i, line in enumerate(lines):
+        m = label_re.match(line)
+        if not m:
+            continue
+        for cand in [m.group(1)] + lines[i + 1:i + 3]:
+            arrival = parse_arrival(cand, today, None, allow_slash=True) if cand else None
+            if arrival:
+                arr_line = cand
+                break
+        if arrival:
+            break
+    if not arrival:
+        for line in lines:
+            if re.search(r"発売|順次|展開予定|販売予定", line) and len(line) <= 60:
+                arrival = parse_arrival(line, today, None, allow_slash=False)
+                if arrival:
+                    arr_line = line
+                    break
+    if not arrival:
+        return None
+    price = None
+    for i, line in enumerate(lines):
+        if re.match(r"^(?:価格|単品価格|カプセル価格|販売価格)", line) or re.match(r"^1回", line) or \
+                (src.get("name_label") and re.match(src["name_label"], line)):
+            price = parse_price(" ".join(lines[i:i + 2]))
+            if price:
+                break
+    resale = bool(RESALE_RE.search(name) or RESALE_RE.search(arr_line))
+    return {
+        "maker": src.get("maker", ""),
+        "name": strip_resale_prefix(name),
+        "price": price,
+        "arrival": arrival,
+        "release_type": "resale" if resale else "new",
+        "image": urllib.parse.urljoin(url, meta_content(body, "og:image")) if meta_content(body, "og:image") else "",
+        "url": url,
+    }
+
+
+def list_links(body: str, base: str, src: dict) -> list[str]:
+    """一覧ページの中の商品ページへのリンク（ページ内の順）。"""
+    out = []
+    for n in build_tree(body).iter():
+        if n.tag == "a" and not in_chrome(n):
+            u = link_ok(n.attrs.get("href", ""), base, src)
+            if u and u not in out:
+                out.append(u)
+    return out
+
+
+def dump_page(src: dict, n: int, url: str, body: str) -> None:
+    if not DUMP_DIR:
+        return
+    os.makedirs(DUMP_DIR, exist_ok=True)
+    name = f"{src['key']}-{n:02d}.html"
+    with open(os.path.join(DUMP_DIR, name), "w", encoding="utf-8") as f:
+        f.write(body)
+    with open(os.path.join(DUMP_DIR, "index.txt"), "a", encoding="utf-8") as f:
+        f.write(f"{name}\t{url}\n")
+
+
+def collect_source(src: dict, today: dt.date, details: dict, now: str) -> tuple[list[dict], dict]:
+    """1つのソースを読む。details はメーカー公式の商品ページの取得結果（url→結果）で、読み直しを減らす。"""
     status = {"key": src["key"], "name": src.get("name", src["key"]), "maker": src.get("maker", ""),
+              "check": src.get("check", ""),
               "url": src.get("link") or (src.get("urls") or [""])[0], "ok": False, "count": 0, "error": ""}
     items: dict[str, dict] = {}
     errors = []
     pages = expand_urls(src, today)
     follow = re.compile(src["follow"]) if src.get("follow") else None
     seen = set()
+    candidates: list[str] = []
     while pages and len(seen) < int(src.get("max_pages", 6)):
         url = pages.pop(0)
         if url in seen:
@@ -548,24 +722,54 @@ def collect_source(src: dict, today: dt.date) -> tuple[list[dict], dict]:
         except Exception as exc:  # noqa: BLE001 - 収集失敗は status に記録して続行
             errors.append(f"{url}: {exc}")
             continue
-        if DUMP_DIR:
-            os.makedirs(DUMP_DIR, exist_ok=True)
-            name = f"{src['key']}-{len(seen):02d}.html"
-            with open(os.path.join(DUMP_DIR, name), "w", encoding="utf-8") as f:
-                f.write(body)
-            with open(os.path.join(DUMP_DIR, "index.txt"), "a", encoding="utf-8") as f:
-                f.write(f"{name}\t{url}\n")
-        for it in extract_items(body, url, src, today):
-            items.setdefault(it["id"], it)
+        dump_page(src, len(seen), url, body)
+        if src.get("detail"):
+            candidates += [u for u in list_links(body, url, src) if u not in candidates]
+        else:
+            page_src = {**src, "maker": src.get("url_makers", {}).get(url, src.get("maker", ""))}
+            for it in extract_items(body, url, page_src, today):
+                items.setdefault(it["id"], it)
         if follow:
             for href in re.findall(r"href=[\"']([^\"'#]+)[\"']", body):
                 nu = urllib.parse.urljoin(url, html.unescape(href))
                 if follow.search(nu) and nu not in seen and nu not in pages:
                     pages.append(nu)
         time.sleep(PAUSE)
+
+    if src.get("detail"):
+        # 新しく見つかった商品（または古い取得結果）だけ商品ページを読む
+        fetched = 0
+        for url in candidates[:int(src.get("max_list", 40))]:
+            cached = details.get(url)
+            fresh = cached and (dt.date.fromisoformat(cached["fetched_at"][:10]) >
+                                today - dt.timedelta(days=DETAIL_REFRESH_DAYS))
+            if not fresh:
+                if fetched >= int(src.get("max_details", 20)):
+                    continue
+                fetched += 1
+                try:
+                    body = fetch(url)
+                    dump_page(src, 50 + fetched, url, body)
+                    cached = {"fetched_at": now, "item": parse_detail(body, url, src, today)}
+                    details[url] = cached
+                except Exception as exc:  # noqa: BLE001
+                    errors.append(f"{url}: {exc}")
+                    continue
+                time.sleep(PAUSE)
+            rec = (cached or {}).get("item")
+            if not rec:
+                continue
+            frm, to = dt.date.fromisoformat(rec["arrival"]["from"]), dt.date.fromisoformat(rec["arrival"]["to"])
+            if to < today - dt.timedelta(days=KEEP_PAST_DAYS) or frm > today + dt.timedelta(days=KEEP_FUTURE_DAYS):
+                continue
+            rid = src["key"] + "-" + hashlib.sha1(url.encode()).hexdigest()[:10]
+            items[rid] = {"id": rid, "source": src["key"], **rec}
+        status["candidates"] = len(candidates)
+
     status["count"] = len(items)
-    status["ok"] = bool(items)
-    if not items:
+    # メーカー公式は「いま発売予定の商品がない」こともあるので、ページが読めていれば成功とする
+    status["ok"] = bool(items) or (bool(src.get("detail")) and bool(seen) and not errors)
+    if not status["ok"]:
         status["error"] = "; ".join(errors)[:300] or "商品を抽出できませんでした（ページ構造が変わった可能性）"
     elif errors:
         status["error"] = f"一部ページの取得に失敗: {len(errors)}件"
@@ -580,34 +784,119 @@ def load_json(path: str, default):
         return default
 
 
-def collect(today: dt.date) -> dict:
+KIND_RANK = {"date": 0, "week": 1, "range": 2, "jun": 3, "month": 4}
+
+
+def is_due(meta: dict, src: dict, now: dt.datetime) -> bool:
+    """推奨頻度（interval_days）に達したか。月水金の実行に合わせ、1日半の余裕をみる。"""
+    last = meta.get("fetched_at")
+    if not last:
+        return True
+    days = (now - dt.datetime.fromisoformat(last)).total_seconds() / 86400
+    return days >= float(src.get("interval_days", 3)) - 1.5
+
+
+def merge_items(raws: list[dict], prio: dict[str, int]) -> list[dict]:
+    """サイトをまたいで同じ商品を1件にまとめる。入荷めどは最新の発売月の中で細かい方、それ以外は優先度の高いソースを採用する。"""
+    groups: dict[str, list[dict]] = {}
+    for r in raws:
+        k = name_key(r["name"])
+        if k:
+            groups.setdefault(k, []).append(r)
+    out = []
+    for k, g in groups.items():
+        g.sort(key=lambda r: (prio.get(r["source"], 9), r["source"]))
+        # 再販で同じ商品が別の月にまた出ることがあるので、いちばん新しい発売月の中で、いちばん細かい入荷めどを採る
+        latest = max(r["arrival"]["from"][:7] for r in g)
+        best_arr = min((r for r in g if r["arrival"]["from"][:7] == latest),
+                       key=lambda r: (KIND_RANK.get(r["arrival"]["kind"], 9), prio.get(r["source"], 9)))["arrival"]
+        links, srcs = [], []
+        for r in g:
+            if r["source"] not in srcs:
+                srcs.append(r["source"])
+                links.append({"source": r["source"], "url": r["url"]})
+        out.append({
+            "id": "g-" + hashlib.sha1(k.encode()).hexdigest()[:10],
+            "alt_ids": sorted({r["id"] for r in g}),
+            "name": g[0]["name"],
+            "maker": next((r["maker"] for r in g if r.get("maker")), ""),
+            "price": next((r["price"] for r in g if r.get("price")), None),
+            "arrival": dict(best_arr),
+            "release_type": "resale" if any(r.get("release_type") == "resale" for r in g) else "new",
+            "image": next((r["image"] for r in g if r.get("image")), ""),
+            "url": g[0]["url"],
+            "links": links,
+            "last_seen": max(r.get("seen_at", "") for r in g),
+        })
+    return out
+
+
+def collect(today: dt.date, force: bool = False) -> tuple[dict, dict]:
     cfg = load_json(SOURCES_PATH, {"sources": []})
     prev = load_json(FEED_PATH, {})
-    prev_items = {it["id"]: it for it in prev.get("items", [])}
-    now = dt.datetime.now(JST).isoformat(timespec="seconds")
+    cache = load_json(CACHE_PATH, {})
+    cache.setdefault("sources", {})
+    cache.setdefault("details", {})
+    migrating = prev.get("version") != FEED_VERSION
+    prev_by = {}
+    for it in prev.get("items", []):
+        for k in [it["id"], *it.get("alt_ids", [])]:
+            prev_by[k] = it
+    now_dt = dt.datetime.now(JST)
+    now = now_dt.isoformat(timespec="seconds")
+    keep_from = (today - dt.timedelta(days=KEEP_PAST_DAYS)).isoformat()
 
-    items, statuses = [], []
+    raws, statuses, prio = [], [], {}
     for src in cfg.get("sources", []):
         if src.get("enabled") is False:
             continue
-        got, st = collect_source(src, today)
+        key = src["key"]
+        prio[key] = int(src.get("priority", 5))
+        meta = cache["sources"].get(key, {})
+        if not meta and migrating:
+            old = [{k: v for k, v in it.items() if k not in ("first_seen", "arrival_changed")}
+                   for it in prev.get("items", []) if it.get("source") == key]
+            if old:
+                meta = {"fetched_at": prev.get("generated_at", ""), "items": old}
+        if force or is_due(meta, src, now_dt):
+            got, st = collect_source(src, today, cache["details"], now)
+            if st["ok"]:
+                meta = {"fetched_at": now, "items": got}
+            else:
+                # 取得に失敗したら前回分を残し、ラインアップから消えないようにする
+                st["kept"] = len(meta.get("items", []))
+                meta = {**meta, "last_error": st["error"]}
+            st["fetched_at"] = meta.get("fetched_at", "")
+        else:
+            st = {"key": key, "name": src.get("name", key), "maker": src.get("maker", ""),
+                  "check": src.get("check", ""), "url": src.get("link") or (src.get("urls") or [""])[0],
+                  "ok": bool(meta.get("fetched_at")), "count": len(meta.get("items", [])), "error": "",
+                  "skipped": True, "fetched_at": meta.get("fetched_at", "")}
+        cache["sources"][key] = meta
         statuses.append(st)
-        if not got and st["error"]:
-            # 取得に失敗したソースは前回分を残し、カレンダーから消えないようにする
-            got = [it for it in prev_items.values() if it.get("source") == src["key"]
-                   and it["arrival"]["to"] >= (today - dt.timedelta(days=KEEP_PAST_DAYS)).isoformat()]
-            st["kept"] = len(got)
-        for it in got:
-            old = prev_items.get(it["id"])
-            it["first_seen"] = (old or {}).get("first_seen") or now
-            if old and old.get("arrival") != it["arrival"]:
-                it["arrival_changed"] = now
-            elif old and old.get("arrival_changed"):
-                it["arrival_changed"] = old["arrival_changed"]
-        items.extend(got)
+        for r in meta.get("items", []):
+            if r["arrival"]["to"] >= keep_from:
+                raws.append({**r, "seen_at": meta.get("fetched_at", now)})
 
+    items = merge_items(raws, prio)
+    for it in items:
+        old = next((prev_by[k] for k in [it["id"], *it["alt_ids"]] if k in prev_by), None)
+        # 新しい形式に切り替えた初回は、既存の商品をすべて「NEW」「めど変更」にしないよう記録を引き継ぐだけにする
+        if old is not None and "first_seen" in old:
+            it["first_seen"] = old["first_seen"]  # 空欄＝既存の商品（NEWを付けない）
+        else:
+            it["first_seen"] = "" if migrating else now
+        if old and not migrating and old.get("arrival") != it["arrival"]:
+            it["arrival_changed"] = now
+        elif old and old.get("arrival_changed"):
+            it["arrival_changed"] = old["arrival_changed"]
     items.sort(key=lambda x: (x["arrival"]["from"], x["arrival"]["to"], x["maker"], x["name"]))
-    return {"generated_at": now, "sources": statuses, "items": items}
+    # 商品ページの取得結果は、古すぎるものを捨てる
+    limit = (today - dt.timedelta(days=120)).isoformat()
+    cache["details"] = {u: d for u, d in cache["details"].items() if d.get("fetched_at", "")[:10] >= limit}
+    feed = {"version": FEED_VERSION, "generated_at": now, "checks": cfg.get("checks", []),
+            "sources": statuses, "items": items}
+    return feed, cache
 
 
 def main() -> int:
@@ -616,6 +905,7 @@ def main() -> int:
     ap.add_argument("--source", help="--file と一緒に使うソースのkey")
     ap.add_argument("--base", default="", help="--file のページURL（相対リンク解決用）")
     ap.add_argument("--today", help="基準日 YYYY-MM-DD（テスト用）")
+    ap.add_argument("--force", action="store_true", help="推奨頻度に関係なく、すべてのソースを読む")
     ap.add_argument("--arrival", metavar="TEXT",
                     help="入荷めどの文字（例: 10月第2週）を data.json の arrival 形式で表示する（Claude Codeでの更新用）")
     ap.add_argument("--find", metavar="WORD",
@@ -651,14 +941,17 @@ def main() -> int:
         print(f"{len(items)}件", file=sys.stderr)
         return 0
 
-    feed = collect(today)
+    feed, cache = collect(today, force=args.force)
     with open(FEED_PATH, "w", encoding="utf-8") as f:
-        json.dump(feed, f, ensure_ascii=False, indent=2)
+        json.dump(feed, f, ensure_ascii=False, separators=(",", ":"))
+        f.write("\n")
+    with open(CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
     print(f"収集完了: {len(feed['items'])}件")
-    for s in feed["sources"]:
-        mark = "OK " if s["ok"] else "NG "
-        print(f"  {mark}{s['name']}: {s['count']}件 {s['error']}")
+    for st in feed["sources"]:
+        mark = "-- " if st.get("skipped") else ("OK " if st["ok"] else "NG ")
+        print(f"  {mark}{st['name']}: {st['count']}件 {st['error']}")
     return 0
 
 

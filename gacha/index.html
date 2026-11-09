@@ -179,8 +179,33 @@ a{color:var(--pink-dk)}
 .star.on{color:#ffb400}
 .lu-month{font-size:14px;font-weight:900;margin:16px 2px 8px;display:flex;align-items:center;gap:8px}
 .lu-month::after{content:'';flex:1;height:2px;background:var(--border)}
-.src-st{font-size:12px;padding:10px 12px;margin-bottom:12px;display:grid;gap:4px}
-.src-st .ok{color:var(--s-got);font-weight:800}.src-st .ng{color:var(--danger);font-weight:800}
+/* 確認先（定期更新の対象サイト） */
+.ck{padding:4px 12px;margin-bottom:12px}
+.ck summary{cursor:pointer;font-size:13px;font-weight:900;padding:8px 0;display:flex;gap:8px;align-items:center;list-style:none}
+.ck summary::-webkit-details-marker{display:none}
+.ck summary::before{content:'▸';color:var(--ink-3)}
+.ck[open] summary::before{content:'▾'}
+.ck summary .sub{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--ink-2)}
+.ck-row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 0;border-top:1px solid var(--border);font-size:12px;align-items:center}
+.ck-row .nm{font-weight:800;font-size:13px;min-width:0}
+.ck-row .nm a{color:inherit}
+.ck-row .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;color:var(--ink-2)}
+.ck-row .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px}
+.ck-row details{grid-column:1/-1;font-size:11.5px}
+.ck-row details summary{font-size:11.5px;font-weight:700;padding:2px 0;color:var(--ink-2)}
+.ck-mk{display:flex;flex-wrap:wrap;gap:4px 10px;padding:4px 0}
+.c-imp1{background:var(--pink);color:#fff}.c-imp2{background:#ffe3c2;color:#a65d00}.c-imp3{background:#eee6f0;color:var(--ink-2)}
+.c-ok{background:var(--s-got-bg);color:var(--s-got)}.c-due{background:#ffe0e0;color:var(--danger)}.c-warn{background:#fff1a8;color:#7a5b00}
+.c-resale{background:#e4dcff;color:#5a3dc2}
+/* ラインアップの月タブ */
+.mtabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:2px 0 8px;margin-bottom:6px;scrollbar-width:thin}
+.mtab{flex:0 0 auto;border:1.5px solid var(--border);background:#fff;border-radius:12px;padding:6px 12px;cursor:pointer;text-align:center;line-height:1.2;color:var(--ink-2)}
+.mtab b{display:block;font-size:14px;font-weight:900;color:var(--ink)}
+.mtab small{font-size:10.5px;font-weight:700}
+.mtab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.mtab.on b{color:#fff}
+.mtab.cur{border-color:var(--pink)}
+.lu-week{font-size:12.5px;font-weight:900;margin:14px 2px 8px;color:var(--ink-2);display:flex;gap:6px;align-items:center}
 
 /* stores */
 .st-c{padding:12px;margin-bottom:10px}
@@ -314,10 +339,11 @@ details.more-d summary{font-size:12px;color:var(--ink-2);cursor:pointer;margin-t
 
   <!-- ラインアップ（自動収集） -->
   <section class="view" id="v-lineup">
-    <div class="card src-st" id="src-st"></div>
+    <details class="card ck" id="ck-panel"></details>
     <div class="bar-f">
       <input class="search" id="lu-q" placeholder="🔍 ラインアップを検索（作品名など）" oninput="onLuSearch(this.value)">
     </div>
+    <div class="mtabs" id="lu-months" role="tablist" aria-label="発売予定月"></div>
     <div class="bar-f" id="lu-pills"></div>
     <div id="lu-body"></div>
   </section>
@@ -362,12 +388,16 @@ details.more-d summary{font-size:12px;color:var(--ink-2);cursor:pointer;margin-t
           </div>
         </details>
       </div>
+      <div class="f"><label>新商品／再販</label><div class="choice" id="if-rtype"></div>
+        <div class="hint2">「メーカー再販」はメーカーが作り直して再発売するもの。お店に再び入った「店舗への再入荷」は、店舗の調査記録で「再入荷」を選びます</div></div>
       <div class="f"><label>優先度</label><div class="choice" id="if-prio"></div></div>
       <div class="f"><label>状態</label><div class="choice" id="if-status"></div></div>
       <div class="f"><label for="if-target">狙い</label><input type="text" id="if-target" placeholder="例: シークレット、〇〇だけ欲しい、全種コンプ"></div>
       <div class="f"><label for="if-url">公式ページURL</label><input type="url" id="if-url" placeholder="https://"></div>
       <div class="f"><label for="if-image">画像URL</label><input type="url" id="if-image" placeholder="https://（空欄ならカプセルのアイコン）"></div>
-      <div class="f"><label for="if-note">メモ</label><textarea id="if-note" placeholder="入荷情報の出どころ、店員さんに聞いたことなど"></textarea></div>
+      <div class="f"><label for="if-checked">最終確認日</label><input type="date" id="if-checked">
+        <div class="hint2">発売予定などを最後に確かめた日。公式ラインアップから登録した商品は、自動収集の日付も合わせて表示します</div></div>
+      <div class="f"><label for="if-note">備考</label><textarea id="if-note" placeholder="入荷情報の出どころ、店員さんに聞いたことなど"></textarea></div>
     </div>
     <div class="sheet-f">
       <button class="btn btn-d hidden" id="if-del" onclick="deleteItem()">削除</button>
@@ -467,7 +497,7 @@ const STORE      = 'gacha_cal_v1';
 const SYNC_STORE = 'gacha_sync_v1';
 const DEL_STORE  = 'gacha_deleted_v1';
 const UI_STORE   = 'gacha_ui_v1';
-const COLLECTIONS = ['items', 'stores', 'visits'];
+const COLLECTIONS = ['items', 'stores', 'visits', 'checks'];
 const MAX_DELETED = 2000;
 const DEFAULT_REPO = 'bo0639/hijiri.github.io';
 const DATA_PATH    = 'gacha/data.json';
@@ -478,6 +508,11 @@ const PRIOS = [
   {v:'maybe', label:'気になる', color:'var(--p-maybe)', light:'var(--p-maybe-bg)'},
 ];
 const PRIO_ORDER = {must:0, want:1, maybe:2};
+// 新商品／メーカー再販（店舗への再入荷は調査記録の「再入荷」で別に管理する）
+const RELEASE_TYPES = [
+  {v:'new',    label:'新商品',       color:'var(--teal)'},
+  {v:'resale', label:'メーカー再販', color:'#7b5be0'},
+];
 const STATUSES = [
   {v:'plan', label:'狙う',     color:'var(--pink)'},
   {v:'got',  label:'ゲット済', color:'var(--s-got)'},
@@ -486,6 +521,7 @@ const STATUSES = [
 const RESULTS = [
   {v:'before',  label:'未入荷',     icon:'⏳', color:'var(--r-before)'},
   {v:'stock',   label:'在庫あり',   icon:'◎',  color:'var(--r-stock)'},
+  {v:'restock', label:'再入荷',     icon:'↻',  color:'var(--teal)'},  // 店舗への再入荷（メーカー再販とは別）
   {v:'low',     label:'残りわずか', icon:'△',  color:'var(--r-low)'},
   {v:'soldout', label:'売切れ',     icon:'✕',  color:'var(--r-soldout)'},
   {v:'none',    label:'取扱なし',   icon:'−',  color:'var(--r-none)'},
@@ -502,16 +538,16 @@ const NEW_DAYS     = 7;
 const KIND_LABEL = {date:'日付確定', week:'週単位', jun:'旬単位', month:'月単位', range:'期間'};
 
 // ══════════ STATE ══════════
-let db = {items:[], stores:[], visits:[], deleted:[]};
-let feed = {generated_at:'', sources:[], items:[]};
-let ui = {tab:'home', calMode:'mine', listStatus:'plan', listPrio:'', luMaker:'', luHideWatched:false, seenFeedAt:''};
+let db = {items:[], stores:[], visits:[], checks:[], deleted:[]};
+let feed = {generated_at:'', sources:[], items:[], checks:[]};
+let ui = {tab:'home', calMode:'mine', listStatus:'plan', listPrio:'', luMaker:'', luType:'', luMonth:'', luHideWatched:false, seenFeedAt:''};
 let calYM = null, selWeek = null;
 let editingItem = null, detailId = null, editingStore = null;
 let visitCtx = null, visitResult = null;
-let form = {prio:'want', status:'plan', arr:null, arrTouched:false};
+let form = {prio:'want', status:'plan', rtype:'new', arr:null, arrTouched:false};
 let syncConfig = null, fileSha = null, syncTimer = null;
 let lastSyncAt = 0;
-let listQ = '', luQ = '', qTimer = null, luMakers = [];
+let listQ = '', luQ = '', qTimer = null, luMakers = [], feedAlias = {};
 
 // ══════════ UTILS ══════════
 const $ = id => document.getElementById(id);
@@ -555,8 +591,8 @@ function toast(msg, cls=''){
 // ══════════ 入荷めどの解釈 ══════════
 // scripts/update_gacha_lineup.py の parse_arrival() と同じ規則。片方を直したらもう片方も直す。
 const SEP = '\\s*(?:[~〜\\-ー－–・、]|から)\\s*';
-const RE_WEEK = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*第?\\s*([1-5])\\s*週?(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?第?\\s*([1-5])\\s*)?週');
-const RE_WEEK_ONLY = new RegExp('第\\s*([1-5])\\s*(?:' + SEP + '第?\\s*([1-5])\\s*)?週');
+const RE_WEEK = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*第?\\s*([1-6])\\s*週?(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?第?\\s*([1-6])\\s*)?週');
+const RE_WEEK_ONLY = new RegExp('第\\s*([1-6])\\s*(?:' + SEP + '第?\\s*([1-6])\\s*)?週');
 const RE_JUN = new RegExp('(?:(20\\d{2})\\s*年\\s*)?(\\d{1,2})\\s*月\\s*(上|中|下)\\s*旬(?:' + SEP + '(?:(\\d{1,2})\\s*月\\s*)?(上|中|下)\\s*旬)?');
 const RE_DAY_WEEK = /(?:(20\d{2})\s*年\s*)?(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日\s*週/;
 const RE_YMD = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})(?!\d)/;
@@ -715,7 +751,7 @@ function needsCheck(itemId, storeId){
 
 // ══════════ STORAGE ══════════
 function normalize(d){
-  const out = {items:[], stores:[], visits:[], deleted:[]};
+  const out = {items:[], stores:[], visits:[], checks:[], deleted:[]};
   if(d && typeof d === 'object'){
     for(const k of COLLECTIONS) if(Array.isArray(d[k])) out[k] = d[k].filter(x => x && x.id);
     if(Array.isArray(d.deleted)) out.deleted = d.deleted.filter(x => typeof x === 'string');
@@ -783,18 +819,35 @@ async function loadFeed(){
     const res = await fetch(`./feed.json?t=${Date.now()}`, {cache:'no-store'});
     if(res.ok) feed = await res.json();
   }catch(e){ console.error('feed load error:', e); }
-  feed.items ||= []; feed.sources ||= [];
+  feed.items ||= []; feed.sources ||= []; feed.checks ||= [];
+  feedAlias = {};
+  for(const f of feed.items){ for(const k of [f.id, ...(f.alt_ids || [])]) feedAlias[k] = f; }
+}
+/** 回したい商品に紐づく公式ラインアップの商品（なければ null）。 */
+const feedOf = it => (it.feed_id && feedAlias[it.feed_id]) || null;
+const releaseTypeOf = it => it.release_type || feedOf(it)?.release_type || 'new';
+const rtypeOf = v => RELEASE_TYPES.find(r => r.v === v) || RELEASE_TYPES[0];
+/** 最終確認日：手で記録した日と、自動収集で公式情報を最後に確認した日の新しい方。 */
+function lastCheckedOf(it){
+  const a = it.last_checked || '', b = (feedOf(it)?.last_seen || '').slice(0, 10);
+  return a > b ? a : b;
+}
+const monthOf = a => a ? `${+a.from.slice(0, 4)}年${+a.from.slice(5, 7)}月` : '未定';
+/** 発売予定週・日（月だけ分かっているときは「未定」）。 */
+function weekDayOf(a){
+  if(!a) return '未定';
+  if(a.kind === 'month') return '未定（月内）';
+  return `${(a.label || '').replace(/^\d{1,2}月/, '') || arrRange(a)}（${arrRange(a)}）`;
 }
 /**
  * ラインアップから登録した商品は、入荷めどを手で直していなければ
  * 自動収集の最新の入荷めどに追従させる（週や日付が判明したら自動で反映）。
  */
 function followFeed(){
-  const byId = Object.fromEntries(feed.items.map(f => [f.id, f]));
   const changed = [];
   for(const it of db.items){
     if(!it.feed_id || it.arrival_manual || it.status !== 'plan') continue;
-    const f = byId[it.feed_id];
+    const f = feedOf(it);
     if(!f || !f.arrival) continue;
     if(it.arrival?.from !== f.arrival.from || it.arrival?.to !== f.arrival.to){
       it.arrival_prev = it.arrival ? arrText(it.arrival) : '';
@@ -974,7 +1027,7 @@ const sortedStores = () => [...db.stores].sort((a, b) => (a.order ?? 0) - (b.ord
 const byArrival = (a, b) => (a.arrival?.from || '9999').localeCompare(b.arrival?.from || '9999') || (PRIO_ORDER[a.priority] - PRIO_ORDER[b.priority]);
 const byPrioArrival = (a, b) => (PRIO_ORDER[a.priority] - PRIO_ORDER[b.priority]) || byArrival(a, b);
 const newFeedItems = () => feed.items.filter(f => f.first_seen && diffDays(today(), f.first_seen.slice(0,10)) <= NEW_DAYS && !watchedFeed(f.id));
-const watchedFeed = fid => db.items.find(it => it.feed_id === fid);
+const watchedFeed = fid => db.items.find(it => feedOf(it)?.id === fid);
 function vagueSoon(){
   const t = today();
   return db.items.filter(it => it.status === 'plan' && it.arrival && ['month','jun'].includes(it.arrival.kind)
@@ -1009,6 +1062,7 @@ function itemCard(it, opts = {}){
         <span class="chip c-${p.v}">${p.label}</span>
         ${phaseChip(it)}
         <span class="chip c-arr${isFuzzy(it.arrival) ? ' c-fuzzy' : ''}">📅 ${esc(arrText(it.arrival))}</span>${chg}
+        ${releaseTypeOf(it) === 'resale' ? '<span class="chip c-resale">メーカー再販</span>' : ''}
         ${it.maker ? `<span>${esc(it.maker)}</span>` : ''}${it.price ? `<span>${yen(it.price)}</span>` : ''}
       </div>
       ${it.target ? `<div class="it-meta">🎯 ${esc(it.target)}</div>` : ''}
@@ -1052,6 +1106,19 @@ function renderHome(){
   h += `<div id="sec-soon">${section('⏰ 1週間以内に入荷めど', soon, {hint:'入荷が近い商品です。行く店舗の目星をつけておきましょう。'})}</div>`;
   h += `<div id="sec-vague">${section('📌 入荷めどを確認しよう', vague, {hint:'入荷めどが「月」「旬」のまま近づいています。公式サイトで週・日付が出ていないか確認して、分かれば更新してください。'})}</div>`;
   h += section('⚠ めどを大きく過ぎた（未入手）', over, {hint:'まだ探し続けるか、「見送り」にするか決めましょう。'});
+  const dueChecks = overdueChecks().filter(c => c.key !== 'stores');
+  if(dueChecks.length){
+    h += `<div class="sec"><div class="sec-h">📋 確認先の期限切れ <span class="cnt">${dueChecks.length}</span>
+        <span class="sub"><button class="btn btn-g btn-s" onclick="go('lineup');$('ck-panel').open=true">一覧を開く</button></span></div>
+      <p class="hint">推奨頻度を過ぎた確認先です。自動取得できない分は、自分で見るか Claude Code に「〇〇を確認して反映して」と頼んでください。</p>
+      <div class="card ck" style="padding:4px 12px">${dueChecks.map(c => {
+        const st = checkStatus(c);
+        return `<div class="ck-row"><div class="nm">${esc(c.name)}</div><div><span class="chip ${IMPORTANCE_CLS[c.importance] || 'c-imp3'}">${esc(c.importance)}</span></div>
+          <div class="meta"><span>🔁 ${esc(c.frequency)}</span><span>最終確認 ${st.last ? fmtMD(st.last) : '—'}</span>
+          ${(c.links || []).slice(0, 3).map(l => `<a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}
+          <button class="btn btn-g btn-s" onclick="markChecked('${esc(c.key)}')">確認した</button></div></div>`;
+      }).join('')}</div></div>`;
+  }
   if(hunt.length + soon.length + vague.length + over.length === 0 && db.items.length){
     h += `<div class="empty">今すぐ動く必要のある商品はありません 🎉<br>次の入荷めどは📅カレンダーで確認できます。</div>`;
   }
@@ -1080,7 +1147,7 @@ function renderMatrix(list){
         }).join('')}
       </tr>`).join('')}</tbody>
     </table></div>
-    <div class="legend">${RESULTS.map(r => `<span><i style="background:${r.color}"></i>${r.icon} ${r.label}</span>`).join('')}
+    <div class="legend">${RESULTS.map(r => `<span><i style="background:${r.color}"></i>${r.icon} ${r.label}${r.v === 'restock' ? '（店舗）' : ''}</span>`).join('')}
       <span><i style="border:1.5px dashed var(--r-unk);background:#fff"></i>? 未調査</span></div>
   </div>`;
 }
@@ -1211,47 +1278,124 @@ function renderList(){
 
 // ── ラインアップ ──
 function onLuSearch(v){ clearTimeout(qTimer); qTimer = setTimeout(() => { luQ = v.trim().toLowerCase(); renderLineup(); }, 150); }
-function setLu(k, v){ ui[k] = (k === 'luHideWatched') ? !ui[k] : (ui[k] === v ? '' : v); saveUI(); renderLineup(); }
+function setLu(k, v){ ui[k] = (k === 'luHideWatched') ? !ui[k] : (k === 'luMaker' ? v : (ui[k] === v ? '' : v)); saveUI(); renderLineup(); }
 function luCard(f){
   const w = watchedFeed(f.id);
   const isNew = f.first_seen && diffDays(today(), f.first_seen.slice(0, 10)) <= NEW_DAYS;
   const chg = f.arrival_changed && diffDays(today(), f.arrival_changed.slice(0, 10)) <= NEW_DAYS;
   return `<div class="lu-c">
     <div class="lu-img" onclick="openFeed('${f.id}')">${imgHTML(f.image, '#ddd')}</div>
-    <div class="lu-badges">${isNew ? '<span class="chip c-new">NEW</span>' : ''}${chg ? '<span class="chip c-chg">めど変更</span>' : ''}</div>
+    <div class="lu-badges">${isNew ? '<span class="chip c-new">NEW</span>' : ''}${f.release_type === 'resale' ? '<span class="chip c-resale">再販</span>' : ''}${chg ? '<span class="chip c-chg">めど変更</span>' : ''}</div>
     <button class="star${w ? ' on' : ''}" onclick="toggleWatch('${f.id}')" aria-label="${w ? '回したいから外す' : '回したいに追加'}">${w ? '★' : '☆'}</button>
     <div class="lu-b" onclick="openFeed('${f.id}')">
       <div class="lu-n">${esc(f.name)}</div>
-      <div class="lu-m">${esc(f.maker || '')}${f.price ? ` ・ ${yen(f.price)}` : ''}</div>
-      <div><span class="chip c-arr c-fuzzy">📅 ${esc(f.arrival?.label || '')}</span></div>
+      <div class="lu-m">${esc(f.maker || 'メーカー不明')}${f.price ? ` ・ ${yen(f.price)}` : ''}</div>
+      <div><span class="chip c-arr${isFuzzy(f.arrival) ? ' c-fuzzy' : ''}">📅 ${esc(f.arrival?.label || '')}</span></div>
     </div>
   </div>`;
 }
-function renderLineup(){
-  const src = feed.sources || [];
-  // 収集時刻は日本時間の文字列（+09:00）のまま表示する
-  const gen = (feed.generated_at || '').match(/^\d{4}-(\d\d)-(\d\d)T(\d\d:\d\d)/);
-  $('src-st').innerHTML = gen
-    ? `<div><b>自動収集：</b>${+gen[1]}/${+gen[2]} ${gen[3]} 時点（月・木の朝に更新）</div>` +
-      src.map(s => `<div>${s.ok ? '<span class="ok">✓</span>' : '<span class="ng">✕</span>'}
-        <a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener">${esc(s.name)}</a> ${s.count}件
-        ${s.error ? `<span style="color:var(--ink-3)">— ${esc(s.error)}${s.kept ? `（前回の${s.kept}件を表示中）` : ''}</span>` : ''}</div>`).join('')
-    : `<div><b>自動収集はまだ実行されていません。</b> GitHub Actions「ガチャ発売ラインアップの自動収集」が動くと、ここにメーカー公式の発売予定が並びます。
-       <br>それまでは右下の＋（🏠/⭐画面）から手入力で登録できます。</div>`;
-  luMakers = [...new Set(feed.items.map(f => f.maker).filter(Boolean))];
-  $('lu-pills').innerHTML = luMakers.map((mk, i) => `<button class="pill${ui.luMaker === mk ? ' on' : ''}" onclick="setLu('luMaker',luMakers[${i}])">${esc(mk)}</button>`).join('') +
-    `<button class="pill${ui.luHideWatched ? ' on' : ''}" onclick="setLu('luHideWatched')">★登録済を隠す</button>`;
-  const t = today();
-  let list = feed.items.filter(f => f.arrival && f.arrival.to >= addDays(t, -14));
+function setLuMonth(m){ ui.luMonth = m; saveUI(); renderLineup(); }
+/** ラインアップを、絞り込み（月以外）に合わせて返す。 */
+function lineupFiltered(){
+  let list = feed.items.filter(f => f.arrival);
   if(ui.luMaker) list = list.filter(f => f.maker === ui.luMaker);
+  if(ui.luType) list = list.filter(f => (f.release_type || 'new') === ui.luType);
   if(ui.luHideWatched) list = list.filter(f => !watchedFeed(f.id));
   if(luQ) list = list.filter(f => [f.name, f.maker].join(' ').toLowerCase().includes(luQ));
-  list.sort((a, b) => a.arrival.from.localeCompare(b.arrival.from) || a.name.localeCompare(b.name, 'ja'));
-  if(!list.length){ $('lu-body').innerHTML = `<div class="empty">${feed.items.length ? '条件に合うラインアップはありません' : 'ラインアップはまだありません'}</div>`; return; }
-  const groups = {};
-  for(const f of list){ const k = f.arrival.from.slice(0, 7); (groups[k] ||= []).push(f); }
-  $('lu-body').innerHTML = Object.entries(groups).map(([k, fs]) =>
-    `<div class="lu-month">${+k.slice(0, 4)}年${+k.slice(5)}月 <span class="chip c-arr">${fs.length}件</span></div><div class="lu">${fs.map(luCard).join('')}</div>`).join('');
+  return list;
+}
+/** 週ごとの見出し（月しか分からない商品は「発売週未定」にまとめる）。 */
+const weekGroupOf = f => f.arrival.kind === 'month' ? '発売週・日 未定' : f.arrival.label;
+function renderLineup(){
+  renderChecks();
+  luMakers = [...new Set(feed.items.map(f => f.maker).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
+  $('lu-pills').innerHTML =
+    RELEASE_TYPES.map(r => `<button class="pill${ui.luType === r.v ? ' on' : ''}" onclick="setLu('luType','${r.v}')">${r.label}</button>`).join('') +
+    `<button class="pill${ui.luHideWatched ? ' on' : ''}" onclick="setLu('luHideWatched')">★登録済を隠す</button>` +
+    `<select class="pill" onchange="setLu('luMaker',this.value)" aria-label="メーカーで絞り込む"><option value="">メーカー：すべて</option>${
+      luMakers.map(mk => `<option value="${esc(mk)}"${ui.luMaker === mk ? ' selected' : ''}>${esc(mk)}</option>`).join('')}</select>`;
+  const list = lineupFiltered();
+  // 発売予定月ごとに分け、選んだ月だけ表示する
+  const byMonth = {};
+  for(const f of list) (byMonth[f.arrival.from.slice(0, 7)] ||= []).push(f);
+  const months = Object.keys(byMonth).sort();
+  const cur = today().slice(0, 7);
+  if(!months.includes(ui.luMonth)) ui.luMonth = months.find(m => m >= cur) || months[months.length - 1] || '';
+  $('lu-months').innerHTML = months.map(m => `<button class="mtab${m === ui.luMonth ? ' on' : ''}${m === cur ? ' cur' : ''}" role="tab" aria-selected="${m === ui.luMonth}" onclick="setLuMonth('${m}')">
+      <small>${m.slice(0, 4)}年${m === cur ? '・今月' : ''}</small><b>${+m.slice(5)}月</b><small>${byMonth[m].length}件</small></button>`).join('');
+  setTimeout(() => $('lu-months').querySelector('.on')?.scrollIntoView({inline:'center', block:'nearest'}), 0);
+  if(!months.length){ $('lu-body').innerHTML = `<div class="empty">${feed.items.length ? '条件に合うラインアップはありません' : 'ラインアップはまだありません'}</div>`; return; }
+  const fs = byMonth[ui.luMonth].sort((a, b) => (a.arrival.kind === 'month') - (b.arrival.kind === 'month')
+    || a.arrival.from.localeCompare(b.arrival.from) || a.name.localeCompare(b.name, 'ja'));
+  const groups = new Map();
+  for(const f of fs){ const k = weekGroupOf(f); if(!groups.has(k)) groups.set(k, []); groups.get(k).push(f); }
+  $('lu-body').innerHTML = `<div class="lu-month">${+ui.luMonth.slice(0, 4)}年${+ui.luMonth.slice(5)}月発売予定 <span class="chip c-arr">${fs.length}件</span></div>` +
+    [...groups].map(([k, g]) => `<div class="lu-week">📅 ${esc(k)}${g[0].arrival.kind !== 'month' ? `<span style="font-weight:600">（${arrRange(g[0].arrival)}）</span>` : ''} <span class="chip c-arr">${g.length}件</span></div>
+      <div class="lu">${g.map(luCard).join('')}</div>`).join('');
+}
+
+// ── 確認先（定期更新の対象サイト）──
+const IMPORTANCE_CLS = {'最優先':'c-imp1', '高':'c-imp2'};
+const sourceName = key => feed.sources.find(s => s.key === key)?.name || key;
+const jstDate = iso => (iso || '').slice(0, 10);
+/** 確認先ごとの最終確認日・期限・取得失敗をまとめる。 */
+function checkStatus(c){
+  const srcs = feed.sources.filter(s => (c.sources || []).includes(s.key));
+  const okDates = srcs.filter(s => s.ok).map(s => jstDate(s.fetched_at || feed.generated_at)).sort();
+  const manual = db.checks.find(x => x.id === c.key)?.last_checked || '';
+  const auto = okDates[okDates.length - 1] || '';
+  const last = manual > auto ? manual : auto;
+  const failed = srcs.filter(s => !s.ok && !s.skipped);
+  const res = {srcs, last, manual, auto, failed, due:false, todo:0};
+  if(c.key === 'stores'){
+    // 店舗の入荷・完売情報：探し時の商品に、まだ確認していない店がある間は「要確認」
+    const hunt = db.items.filter(hunting);
+    res.todo = hunt.reduce((n, it) => n + db.stores.filter(st => needsCheck(it.id, st.id)).length, 0);
+    res.due = res.todo > 0;
+  }else if(c.interval_days){
+    res.due = !last || diffDays(today(), last) > c.interval_days;
+  }
+  return res;
+}
+function markChecked(key){
+  const now = nowIso(), x = db.checks.find(c => c.id === key);
+  if(x){ x.last_checked = today(); x.updated_at = now; }
+  else db.checks.push({id:key, last_checked:today(), updated_at:now});
+  persist(); render(); toast('確認日を記録しました', 'ok');
+}
+function overdueChecks(){ return feed.checks.filter(c => checkStatus(c).due); }
+function renderChecks(){
+  const el = $('ck-panel');
+  const gen = (feed.generated_at || '').match(/^\d{4}-(\d\d)-(\d\d)T(\d\d:\d\d)/);
+  const due = overdueChecks().length;
+  const wasOpen = el.open;
+  el.innerHTML = `<summary>📋 確認先と更新頻度 ${due ? `<span class="chip c-due">期限切れ ${due}</span>` : '<span class="chip c-ok">すべて期限内</span>'}
+      <span class="sub">${gen ? `自動収集 ${+gen[1]}/${+gen[2]} ${gen[3]}` : '自動収集は未実行'}</span></summary>` +
+    (feed.checks.length ? feed.checks.map(c => {
+      const st = checkStatus(c);
+      const state = c.key === 'stores'
+        ? (st.due ? `<span class="chip c-due">要確認 ${st.todo}マス</span>` : '<span class="chip c-ok">対象なし</span>')
+        : (st.due ? '<span class="chip c-due">期限切れ</span>' : '<span class="chip c-ok">期限内</span>');
+      const next = c.interval_days && st.last ? `次回目安 ${fmtMD(addDays(st.last, c.interval_days))}` : '';
+      const ok = st.srcs.filter(x => x.ok).length;
+      const many = st.srcs.length > 3;
+      return `<div class="ck-row">
+        <div class="nm">${esc(c.name)}</div>
+        <div>${state}</div>
+        <div class="meta"><span class="chip ${IMPORTANCE_CLS[c.importance] || 'c-imp3'}">${esc(c.importance)}</span><span>🔁 ${esc(c.frequency)}</span>
+          <span>最終確認 ${st.last ? fmtMD(st.last) : '—'}</span>${next ? `<span>${next}</span>` : ''}
+          ${st.srcs.length ? `<span>自動取得 ${ok}/${st.srcs.length}${many ? '' : ''}</span>` : '<span>手動で確認</span>'}
+          ${c.key !== 'stores' ? `<button class="btn btn-g btn-s" onclick="markChecked('${esc(c.key)}')">確認した</button>` : `<button class="btn btn-g btn-s" onclick="go('home')">調査マップへ</button>`}</div>
+        ${(c.links || []).length && !many ? `<div class="links">${c.links.map(l => `<a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div>` : ''}
+        ${!many && st.failed.length ? `<div class="meta" style="color:var(--danger)">取得失敗: ${st.failed.map(f => esc(f.name)).join('、')}</div>` : ''}
+        ${many ? `<details><summary>各社の状況を見る</summary><div class="ck-mk">${(c.links || []).map(l => {
+            const src = st.srcs.find(x => x.key === l.source);
+            const mark = !src ? '<span title="手動で確認">✋</span>' : src.ok ? `<span style="color:var(--s-got)">✓${src.count}</span>` : src.skipped ? '<span title="今回は対象外">…</span>' : '<span style="color:var(--danger)" title="取得失敗">✕</span>';
+            return `<span>${mark} <a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(l.label)}</a></span>`;
+          }).join('')}</div></details>` : ''}
+      </div>`;
+    }).join('') : `<div class="ck-row"><div class="meta">自動収集の実行後に、確認先の一覧が表示されます。</div></div>`);
+  el.open = wasOpen || due > 0;
 }
 function toggleWatch(fid){
   const w = watchedFeed(fid);
@@ -1261,7 +1405,8 @@ function toggleWatch(fid){
   }
   const f = feed.items.find(x => x.id === fid); if(!f) return;
   const it = {id:uid(), name:f.name, maker:f.maker || '', price:f.price || '', arrival:{...f.arrival}, priority:'want', status:'plan',
-    target:'', url:f.url || '', image:f.image || '', note:'', feed_id:f.id, created_at:nowIso(), updated_at:nowIso()};
+    release_type:f.release_type || 'new', target:'', url:f.url || '', image:f.image || '', note:'', feed_id:f.id,
+    created_at:nowIso(), updated_at:nowIso()};
   db.items.push(it); persist(); render();
   toast(`「${f.name}」を回したいに追加しました`, 'ok');
 }
@@ -1273,9 +1418,17 @@ function openFeed(fid){
   $('d-title').textContent = 'ラインアップ';
   $('d-body').innerHTML = `<div class="det-top"><div class="det-img">${imgHTML(f.image, '#ddd')}</div>
     <div><div class="det-name">${esc(f.name)}</div>
-    <div class="it-meta" style="margin-top:6px"><span class="chip c-arr c-fuzzy">📅 ${esc(f.arrival.label)}</span>${f.maker ? `<span>${esc(f.maker)}</span>` : ''}${f.price ? `<span>${yen(f.price)}</span>` : ''}</div></div></div>
-    <dl class="kv"><dt>入荷めど</dt><dd>${esc(f.arrival.label)}（${arrRange(f.arrival)}）</dd>
-    ${safeUrl(f.url) ? `<dt>公式</dt><dd><a href="${esc(f.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a></dd>` : ''}</dl>
+    <div class="it-meta" style="margin-top:6px"><span class="chip c-arr c-fuzzy">📅 ${esc(f.arrival.label)}</span>${f.release_type === 'resale' ? '<span class="chip c-resale">メーカー再販</span>' : ''}</div></div></div>
+    <dl class="kv">
+      <dt>メーカー</dt><dd>${esc(f.maker || '不明')}</dd>
+      <dt>発売予定月</dt><dd>${monthOf(f.arrival)}</dd>
+      <dt>発売予定週・日</dt><dd>${esc(weekDayOf(f.arrival))}</dd>
+      <dt>新商品／再販</dt><dd>${rtypeOf(f.release_type).label}</dd>
+      <dt>価格</dt><dd>${f.price ? yen(f.price) : '不明'}</dd>
+      <dt>公式URL</dt><dd>${safeUrl(f.url) ? `<a href="${esc(f.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a>` : '—'}</dd>
+      <dt>最終確認日</dt><dd>${f.last_seen ? fmtMD(f.last_seen.slice(0, 10)) + '（自動収集）' : '—'}</dd>
+      <dt>情報元</dt><dd>${(f.links || []).map(l => `<a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(sourceName(l.source))}</a>`).join('、') || '—'}</dd>
+    </dl>
     <div style="margin-top:16px;text-align:center"><button class="btn btn-p" onclick="toggleWatch('${f.id}');closeModal('m-detail')">☆ 回したいに追加</button></div>`;
   $('m-detail').querySelector('.sheet-f').classList.add('hidden');
   openModal('m-detail');
@@ -1351,6 +1504,7 @@ function choiceHTML(list, cur, fn){
 }
 function setPrio(v){ form.prio = v; $('if-prio').innerHTML = choiceHTML(PRIOS, v, 'setPrio'); }
 function setStatus(v){ form.status = v; $('if-status').innerHTML = choiceHTML(STATUSES, v, 'setStatus'); }
+function setRtype(v){ form.rtype = v; $('if-rtype').innerHTML = choiceHTML(RELEASE_TYPES, v, 'setRtype'); }
 function showArrPrev(){
   const el = $('if-arr-prev'), a = form.arr;
   if(!a){ el.className = 'arr-prev ng'; el.textContent = $('if-arr').value.trim() ? '読み取れませんでした。「10月第2週」「11月上旬」「12月」「10/18」のように入力してください' : '「10月第2週」「10月5日週」「11月中旬」「12月」「10/18」などの書き方が使えます'; return; }
@@ -1379,7 +1533,8 @@ function openItemForm(id){
   $('if-from').value = it.arrival?.from || ''; $('if-to').value = it.arrival?.to || '';
   $('if-arr-more').open = false;
   $('if-target').value = it.target || ''; $('if-url').value = it.url || ''; $('if-image').value = it.image || ''; $('if-note').value = it.note || '';
-  setPrio(it.priority || 'want'); setStatus(it.status || 'plan'); showArrPrev();
+  $('if-checked').value = it.last_checked || '';
+  setPrio(it.priority || 'want'); setStatus(it.status || 'plan'); setRtype(id ? releaseTypeOf(it) : 'new'); showArrPrev();
   $('if-del').classList.toggle('hidden', !id);
   openModal('m-item');
   if(!id) setTimeout(() => $('if-name').focus(), 50);
@@ -1390,6 +1545,7 @@ function saveItem(){
   if(!form.arr){ toast('入荷めどを入力してください（例: 10月第2週）', 'err'); $('if-arr').focus(); return; }
   const price = $('if-price').value === '' ? '' : Number($('if-price').value);
   const vals = {name, maker:$('if-maker').value.trim(), price, arrival:form.arr, priority:form.prio, status:form.status,
+    release_type:form.rtype, last_checked:$('if-checked').value || '',
     target:$('if-target').value.trim(), url:$('if-url').value.trim(), image:$('if-image').value.trim(), note:$('if-note').value.trim(), updated_at:nowIso()};
   if(editingItem){
     const it = db.items.find(x => x.id === editingItem);
@@ -1435,12 +1591,17 @@ function openDetail(id){
       ${it.maker ? `<span>${esc(it.maker)}</span>` : ''}${it.price ? `<span>${yen(it.price)}</span>` : ''}</div></div></div>
     <div class="cd" style="background:${cdBg}">${cdTxt}</div>
     <dl class="kv">
-      <dt>入荷めど</dt><dd>${esc(arrText(a))}（${arrRange(a)}）${isFuzzy(a) ? ' <span class="chip c-arr c-fuzzy">めど</span>' : ''}
+      <dt>メーカー</dt><dd>${esc(it.maker || '不明')}</dd>
+      <dt>発売予定月</dt><dd>${monthOf(a)}</dd>
+      <dt>発売予定週・日</dt><dd>${esc(weekDayOf(a))}${isFuzzy(a) ? ' <span class="chip c-arr c-fuzzy">めど</span>' : ''}
         ${it.arrival_updated ? `<br><small style="color:var(--ink-2)">${fmtMD(it.arrival_updated)} に自動更新（前: ${esc(it.arrival_prev || '-')}）</small>` : ''}
         ${it.feed_id && !it.arrival_manual ? `<br><small style="color:var(--teal)">公式の発売予定に合わせて自動で更新されます</small>` : ''}</dd>
+      <dt>新商品／再販</dt><dd>${rtypeOf(releaseTypeOf(it)).label}</dd>
+      <dt>価格</dt><dd>${it.price ? yen(it.price) : '不明'}</dd>
+      <dt>公式URL</dt><dd>${safeUrl(it.url) ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a>` : '—'}</dd>
+      <dt>最終確認日</dt><dd>${lastCheckedOf(it) ? fmtMD(lastCheckedOf(it)) + (lastCheckedOf(it) !== it.last_checked ? '（自動収集）' : '') : '—'}</dd>
       ${it.target ? `<dt>狙い</dt><dd>🎯 ${esc(it.target)}</dd>` : ''}
-      ${safeUrl(it.url) ? `<dt>公式</dt><dd><a href="${esc(it.url)}" target="_blank" rel="noopener">商品ページを開く ↗</a></dd>` : ''}
-      ${it.note ? `<dt>メモ</dt><dd style="white-space:pre-wrap">${esc(it.note)}</dd>` : ''}
+      <dt>備考</dt><dd style="white-space:pre-wrap">${it.note ? esc(it.note) : '—'}</dd>
     </dl>
     <div class="choice" style="margin-top:12px">${STATUSES.map(s => `<button class="${it.status === s.v ? 'on' : ''}" style="--cc:${s.color}" onclick="quickStatus('${it.id}','${s.v}')">${s.label}</button>`).join('')}</div>
     <div class="surv">
