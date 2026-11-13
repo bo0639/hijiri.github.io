@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-11-12T02:45:09+09:00",
+  "generated_at": "2026-11-14T02:33:42+09:00",
   "items": [
+    {
+      "app": "prospi",
+      "kind": "guide",
+      "title": "ターニングポイント 2024年 02/22 15:00 〜 02/29 14:59",
+      "url": "https://game8.jp/prospi_a/37363",
+      "date": "2027-02-22",
+      "time": "15:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
     {
       "app": "prospi",
       "kind": "guide",
@@ -179,6 +189,16 @@
       "date": "2027-01-09",
       "time": "",
       "source_label": "Game8 ガチャスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンスターストライクのTVアニメ「メラ×デス 死神と僕の異常な恋」が2027/1/5(火)より放送開始されます。ヒロイン「サーティーン」役は若山詩音さんに決定しました。",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2027-01-05",
+      "time": "",
+      "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
     {
@@ -452,6 +472,46 @@
       "upcoming": false
     },
     {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回ニュース日 11/19(木)16:00〜",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-19",
+      "time": "16:00",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "次回のモンストニュースの配信日時は11/19(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-11-19",
+      "time": "16:00",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュースの概要欄、もしくは公式Xに記載されたURLからモンストWebショップにログインすると、オーブ1個を入手できる。 配布期間はニュース終了後〜11/18(水)23:59までの間となる。",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-18",
+      "time": "23:59",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュース終了後〜11/18(水)23:59の期間中、モンストWebショップにログインするとオーブ1個がプレゼントされます（おひとり様1回限り）。",
+      "url": "https://game8.jp/monst/110254",
+      "date": "2026-11-18",
+      "time": "23:59",
+      "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
       "app": "smagro",
       "kind": "guide",
       "title": "シーズン6 ステージ4 11/17 12:00",
@@ -466,6 +526,46 @@
       "kind": "guide",
       "title": "シーズン6 ステージ④ 11/17(火)12:00〜",
       "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "新機動戦記ガンダムW デュアルストーリー G-UNIT 【開催予定日】 11/17(火)12:00~ 【イベント内容】 ・ストーリーイベント",
+      "url": "https://gamewith.jp/ggene-eternal/522839",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "GameWith イベントスケジュール",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "イベントが開催",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "ストーリーイベント「G-UNIT」は、2026/11/17(火)12:00から開催します。 限定のSSRユニットやキャラクターを入手できる貴重な機会 となっているため、開始後は優先してイベントを進めましょう。",
+      "url": "https://game8.jp/ggene-eternal/684154",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "guide",
+      "title": "G-UNITイベント 【 開催期間 】 2026/11/17(火)12:00 〜",
+      "url": "https://game8.jp/ggene-eternal/684154",
       "date": "2026-11-17",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
@@ -492,23 +592,293 @@
       "upcoming": false
     },
     {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【完了】緊急メンテナンス実施：11月14日(土)0:15頃～1:15(11月14日1:15追記)",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9122&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-14",
+      "time": "00:15",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【予告】Sランク選手を交換！「プロスピ交換会」12月9日(水)15:00より開始！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9093&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-13",
+      "time": "15:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「消費スタミナ1/2キャンペーン・スイッチ」実施中！11月15日(日)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9070&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-13",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【「無職転生」×モンスト】オルステッド 登場！全属性キラーの乗る「エナジースパーク」を所持！超強力なSSにも注目！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=9GKBqW6HfQU",
+      "date": "2026-11-13",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」先輩M4の頭脳も光る！【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/2nmTJuczNvo",
+      "date": "2026-11-13",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【予告】「リアルタイム対戦全国大会 チーム魂杯 ・ テクニカル杯」12月12日(土)15:00より開催！！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9106&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-12",
+      "time": "15:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【予告】「第64回 最強決定戦 ～セ・リーグ限定リーグ&パ・リーグ限定リーグ&コスト730リーグ～」12月10日(木)15:00よりエントリー開始！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9105&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-12",
+      "time": "15:00",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【「無職転生」×モンスト】フィッツ 登場！砲撃型×友情ブーストの「爆絶貫通ホーミング 8」が超強力！オリジナルSSの威力と演出にも注目！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=zibaFf3WNJM",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【TVアニメ「無職転生 ～異世界行ったら本気だす～」×モンスト】エリス 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/EhyWaknt4aU",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【TVアニメ「無職転生 ～異世界行ったら本気だす～」×モンスト】ロキシー 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/AfoGgL0V2dg",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【TVアニメ「無職転生 ～異世界行ったら本気だす～」×モンスト】ルーデウス 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
+      "url": "https://www.youtube.com/shorts/X9bD39rMBi0",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【「無職転生」×モンスト】ルーデウス、ロキシー、エリス、エリナリーゼ、ルイジェルド 登場！黎絶「フォギルエ」、「アフェレデイン」で活躍！【新キャラ使ってみた｜モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=5j94wbChk5g",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "[11/12]TVアニメ「無職転生 ～異世界行ったら本気だす～」コラボ開催決定〜！高難易度クエストで活躍できるコラボキャラ登場！ #とにかくみじかくモンストニュース",
+      "url": "https://www.youtube.com/shorts/UdNyxEPfax8",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "モンストニュース[11/12]TVアニメ「無職転生 〜異世界行ったら本気だす〜」コラボ開催決定！超究極「オルステッド」も登場！その他獣神化・改など、モンストの最新情報をお届けします！【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=CpHmw2XkLrg",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "「ウボ＝サスラ」の獣神化・改が11/17に解禁！",
+      "url": "https://www.monster-strike.com/news/20261112_5.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "期間限定イベント「未開の幻洞」が11/14より登場！",
+      "url": "https://www.monster-strike.com/news/20261112_4.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【無職転生×モンスト】コラボイベント開催記念キャンペーンを実施！",
+      "url": "https://www.monster-strike.com/news/20261112_3.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "【無職転生×モンスト】コラボイベントが11/15より開催！ コラボ",
+      "url": "https://www.monster-strike.com/news/20261112_2.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「ミッドナイト・パーティー」11/13より開催！",
+      "url": "https://www.monster-strike.com/news/20261112_1.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "描き下ろし「コルティーナ＆ウリエル winter ver.」のグッズがモンストアに登場！ グッズ",
+      "url": "https://www.monster-strike.com/entertainment-news/20261112_1.html",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "エンタメ情報",
+      "upcoming": false
+    },
+    {
       "app": "monst",
       "kind": "guide",
-      "title": "次回ニュース日 11/12(木)16:00〜",
+      "title": "のモンストニュース内容はこちら",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-11-12",
-      "time": "16:00",
+      "time": "",
       "source_label": "GameWith モンストニュース速報",
       "upcoming": false
     },
     {
       "app": "monst",
       "kind": "guide",
-      "title": "次回のモンストニュースの配信日時は11/12(木)16:00〜モンスト公式YouTubeにて配信が決定しています。",
+      "title": "の注目ニュース",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のニュース内容",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュース速報まとめ【11/12(木)更新】 5",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "GameWith モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース内容はこちら",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "GameWith モンスト特番",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "モンストニュース速報まとめ【11/12(木)更新】 5",
+      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "GameWith モンスト特番",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "guide",
+      "title": "のモンストニュース最新情報",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-11-12",
-      "time": "16:00",
+      "time": "",
       "source_label": "Game8 モンストニュース速報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「リアルタイム対戦 ダルビッシュジェネレーションカップ 2026シーズン オンライン予選」ランキング報酬配布に関するお知らせ",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9067&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「第63回 最強決定戦 ダルビッシュ大会」事前エントリー受付中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9044&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-12",
+      "time": "",
+      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -623,16 +993,6 @@
     },
     {
       "app": "prospi",
-      "kind": "news",
-      "title": "期間限定パワスピ・ポイントクラブコラボ「エナジー販売キャンペーン」実施中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9009&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-11",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
       "kind": "guide",
       "title": "ドリームキャラバン",
       "url": "https://game8.jp/prospi_a/754177",
@@ -662,46 +1022,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "引退・退団・移籍にともなう対応について：11月25日(水)予定",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9102&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-10",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【重要】「2026 Series1」 の配出停止について：11月25日(水)13時頃予定",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9010&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-10",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "【予告】グループ変更受付期間中は所属グループ変更可能！「消費スタミナ1/2キャンペーン・スイッチ」11月13日(金)15:00より開始！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9071&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-09",
-      "time": "15:00",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「リアルタイム対戦」第17回勝ち星ランキング開始！11月24日(火)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9029&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-09",
-      "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "youtube",
       "title": "【我、堕落の王なり】ルシファーさんの堕落ごはん コミックス1巻発売！【モンスト公式】",
@@ -722,16 +1042,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "WBSC U-23野球ワールドカップ2026応援プレゼント実施中！2026年11月17日(火)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9036&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-07",
-      "time": "14:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "youtube",
       "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜みるくてぃ。編〜【モンスト公式】",
@@ -746,26 +1056,6 @@
       "kind": "youtube",
       "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜ろこた編〜【モンスト公式】",
       "url": "https://www.youtube.com/shorts/kCCZXawRToc",
-      "date": "2026-11-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【彩・獣神祭】新限定キャラクター「マクスウェル」登場！【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/wSTc4aX3zh8",
-      "date": "2026-11-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【彩・獣神祭登場！】 マクスウェル SPECIAL MOVIE【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=6zVuD62A8Mk",
       "date": "2026-11-07",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
@@ -792,66 +1082,6 @@
       "upcoming": false
     },
     {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "SOUTHタワーイベント 【 開催期間 】 2026/11/6(金)12:00 〜 2026/11/30(月)10:59",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-11-06",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【新キャラ】蒲公英 真獣神化！魔封じLの効果が乗る新友情コンボ「超強フェロートライアングルボム」の威力に注目！アシストスキルで味方の火力サポートもできる！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=zdGTWxdaY10",
-      "date": "2026-11-06",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜りあぐー編〜【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/xt0MW1g-tpQ",
-      "date": "2026-11-06",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜エルニーTOSSY編〜【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/81nHemRga_I",
-      "date": "2026-11-06",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "ジェネレーションタワーSOUTHが開催",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-11-06",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "ggene",
-      "kind": "guide",
-      "title": "「SOUTHタワーイベント」の開催が決定しました。これまでのタワーイベントでは「 ラクス・クライン 」などのURキャラを獲得できたため、今回の開催でも期待できるでしょう。",
-      "url": "https://game8.jp/ggene-eternal/684154",
-      "date": "2026-11-06",
-      "time": "",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "#巨人 #松本剛 選手 自分についていそうなプロスピAの特殊能力は？ #プロスピA11周年アニバーサリー #プロスピA",
@@ -863,49 +1093,9 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "【彩・獣神祭新限定キャラ】マクスウェル 使ってみた！【新キャラ使ってみた #Shorts｜モンスト公式】",
-      "url": "https://www.youtube.com/shorts/6GWUR7u_I6c",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【彩・獣神祭新限定キャラ】マクスウェル 使ってみた！滅絶「フィロソフィア」で活躍！ショットスキルで自身での攻撃、SSとアシストスキルで味方の火力サポートができ優秀！【新キャラ使ってみた｜モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=yyQgmziedJo",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "[11/5]彩・獣神祭に3体目の新キャラが登場！あの滅絶「フィロソフィア」にめっぽう強い！「オラゴンナビ」が登場するアップデート情報にも注目！ #とにかくみじかくモンストニュース",
-      "url": "https://www.youtube.com/shorts/jY-fAXIZOSE",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "モンストニュース[11/5]彩・獣神祭に新限定キャラクター「マクスウェル」が登場！Ver.33.1アップデート情報や真獣神化などモンストの最新情報をお届けします！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=uMjvMMLThQk",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
-      "title": "「蒲公英」の真獣神化が11/10に解禁！バレンタイン仕様の真獣神化も！",
-      "url": "https://www.monster-strike.com/news/20261105_5.html",
+      "title": "「覇者の塔」「覇者の塔シーズンズ」11/7 12時より期間限定で登場！本開催より「4thシーズン」が追加！",
+      "url": "https://www.monster-strike.com/news/20261105_4.html",
       "date": "2026-11-05",
       "time": "",
       "source_label": "ゲーム情報",
@@ -914,8 +1104,8 @@
     {
       "app": "monst",
       "kind": "news",
-      "title": "「覇者の塔」「覇者の塔シーズンズ」11/7 12時より期間限定で登場！本開催より「4thシーズン」が追加！",
-      "url": "https://www.monster-strike.com/news/20261105_4.html",
+      "title": "「蒲公英」の真獣神化が11/10に解禁！バレンタイン仕様の真獣神化も！",
+      "url": "https://www.monster-strike.com/news/20261105_5.html",
       "date": "2026-11-05",
       "time": "",
       "source_label": "ゲーム情報",
@@ -954,37 +1144,7 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "のニュース内容",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "の注目ニュース",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュースおさらい",
-      "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "GameWith モンストニュース速報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース最新情報",
+      "title": "のモンストニュース振り返り",
       "url": "https://game8.jp/monst/110254",
       "date": "2026-11-05",
       "time": "",
@@ -999,16 +1159,6 @@
       "date": "2026-11-04",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ガチャ「グリーンファンタジー」11/5より開催！",
-      "url": "https://www.monster-strike.com/news/20261104_1.html",
-      "date": "2026-11-04",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1042,16 +1192,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「今日の調子くん占い」開催中！11月14日(土)2:59まで",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=8987&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-03",
-      "time": "02:59",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "スマグロレポートで最新のアップデート情報が公開されました。11/03(火)のアップデートでドラゴンクエストIVイベント中編が始まり、 新ほこらクエスト「キングレオ」 やキングレオシリーズ装備も登場します。",
@@ -1082,16 +1222,6 @@
       "upcoming": false
     },
     {
-      "app": "monst",
-      "kind": "news",
-      "title": "チケット情報",
-      "url": "https://www.zan-live.com/ja/live/detail/10894",
-      "date": "2026-11-01",
-      "time": "",
-      "source_label": "イベント",
-      "upcoming": false
-    },
-    {
       "app": "smagro",
       "kind": "guide",
       "title": "シーズン6 ステージ② 10/30(金)12:00〜",
@@ -1099,36 +1229,6 @@
       "date": "2026-10-30",
       "time": "12:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "メンテナンスの実施について メンテナンス 2026.10.30 NEW 追記",
-      "url": "https://www.monster-strike.com/news/20261030_3.html",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "ストライカー応援キャンペーン開催！",
-      "url": "https://www.monster-strike.com/news/20261030_2.html",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【2026年11月のガチャギフト】★6キャラ1体確定10連ガチャがフレンドに贈れる！",
-      "url": "https://www.monster-strike.com/news/20261030_1.html",
-      "date": "2026-10-30",
-      "time": "",
-      "source_label": "ゲーム情報",
       "upcoming": false
     },
     {
@@ -1149,26 +1249,6 @@
       "date": "2026-10-29",
       "time": "15:00",
       "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "「ルシファーさんの堕落ごはん」コミックス1巻が発売！限定グッジョブやストライクシールなどの購入特典も！ その他 2026.10.29 NEW 追加情報",
-      "url": "https://www.monster-strike.com/news/20261029_6.html",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "guide",
-      "title": "のモンストニュース振り返り",
-      "url": "https://game8.jp/monst/110254",
-      "date": "2026-10-29",
-      "time": "",
-      "source_label": "Game8 モンストニュース速報",
       "upcoming": false
     },
     {
@@ -1412,16 +1492,6 @@
       "upcoming": false
     },
     {
-      "app": "prospi",
-      "kind": "guide",
-      "title": "プロスピ交流戦 10/02 15:00 〜 10/08 14:59",
-      "url": "https://game8.jp/prospi_a/37363",
-      "date": "2026-10-02",
-      "time": "15:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "monst",
       "kind": "news",
       "title": "10月9日よりプロテイン「MY ROUTINE」とモンストのコラボ商品が発売開始！ タイアップ 2026.10.01 NEW 追記",
@@ -1469,16 +1539,6 @@
       "date": "2026-09-26",
       "time": "",
       "source_label": "イベント",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【文化放送×モンスト】初の地上波ラジオが10/2より放送決定！ その他 2026.09.26 NEW 追記",
-      "url": "https://www.monster-strike.com/entertainment-news/20260926_1.html",
-      "date": "2026-09-26",
-      "time": "",
-      "source_label": "エンタメ情報",
       "upcoming": false
     },
     {
@@ -1600,16 +1660,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "news",
-      "title": "【呪術廻戦×モンスト】コラボ第3弾記念イベント『レジィ・スター顕現！リアル再契象チャレンジ』を渋谷で開催！",
-      "url": "https://www.monster-strike.com/entertainment-news/20260715_1.html",
-      "date": "2026-07-15",
-      "time": "",
-      "source_label": "イベント",
-      "upcoming": false
     }
   ],
   "status": [
@@ -1642,7 +1692,7 @@
       "label": "モンスト / イベント",
       "url": "https://www.monster-strike.com/event/",
       "ok": true,
-      "count": 5,
+      "count": 3,
       "error": ""
     },
     {
@@ -1658,7 +1708,7 @@
       "label": "モンスト / GameWith モンストニュース速報",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "ok": true,
-      "count": 4,
+      "count": 7,
       "error": ""
     },
     {
@@ -1666,7 +1716,7 @@
       "label": "モンスト / GameWith モンスト特番",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/551444",
       "ok": true,
-      "count": 0,
+      "count": 2,
       "error": ""
     },
     {
@@ -1674,7 +1724,7 @@
       "label": "モンスト / Game8 モンストニュース速報",
       "url": "https://game8.jp/monst/110254",
       "ok": true,
-      "count": 5,
+      "count": 7,
       "error": ""
     },
     {
@@ -1778,7 +1828,7 @@
       "label": "ジージェネ / GameWith イベントスケジュール",
       "url": "https://gamewith.jp/ggene-eternal/522839",
       "ok": true,
-      "count": 5,
+      "count": 6,
       "error": ""
     },
     {
