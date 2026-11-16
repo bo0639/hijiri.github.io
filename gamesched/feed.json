@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:25:34+09:00",
+  "generated_at": "2026-11-17T05:02:22+09:00",
   "items": [
     {
       "app": "prospi",
@@ -592,6 +592,116 @@
       "upcoming": false
     },
     {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "スマグロレポートで最新のアップデート情報が公開されました。11/17(火)のアップデートでドラゴンクエストIVイベント後編が始まり、新ほこらクエスト「デスピサロ」やデスピサロシリーズ装備も登場します。",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-11-17",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "、「デスピサロシリーズガチャ」が開催されます。今回新登場の「デスピサロの魔槍」は炎属性のやりで、必殺技による10秒間持続する炎属性の広範囲ビームが非常に強力です。",
+      "url": "https://game8.jp/dqsmashgrow/729660",
+      "date": "2026-11-17",
+      "time": "",
+      "source_label": "Game8 イベント最新情報",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "【抽選結果発表！】「11周年記念！ありがとう大抽選会Special」の抽選結果を確認しよう！賞品の受け取りは11月30日(月)14:59まで！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9104&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-16",
+      "time": "14:59",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "news",
+      "title": "ガチャ「STARLIGHT MIRAGE」11/17より開催！",
+      "url": "https://www.monster-strike.com/news/20261116_1.html",
+      "date": "2026-11-16",
+      "time": "",
+      "source_label": "ゲーム情報",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "youtube",
+      "title": "#015 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
+      "url": "https://www.youtube.com/watch?v=OIkl42gz4DU",
+      "date": "2026-11-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "ggene",
+      "kind": "youtube",
+      "title": "『新機動戦記ガンダムW デュアルストーリー G-UNIT』ジージェネエターナル PLAY to WATCH‼【SDガンダム ジージェネレーション エターナル】",
+      "url": "https://www.youtube.com/watch?v=VtSHIs8BRCI",
+      "date": "2026-11-16",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「WBSC eBaseball™ シリーズ 2026 ワールドファイナル」配信キャンペーン開催！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9101&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-16",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "prospi",
+      "kind": "news",
+      "title": "「第63回 最強決定戦 ダルビッシュ大会」開催中！",
+      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9045&dpid=&user_id1=&user_id2=&user_id3=",
+      "date": "2026-11-16",
+      "time": "",
+      "source_label": "お知らせ",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【TVアニメ「無職転生 ～異世界行ったら本気だす～」×モンスト】11/15（日）よりコラボ開催！【モンスト公式】",
+      "url": "https://www.youtube.com/shorts/fdRjxlBJcmo",
+      "date": "2026-11-15",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "TVアニメ「無職転生 ～異世界行ったら本気だす～」コラボCM【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=dweFeVVnN0w",
+      "date": "2026-11-15",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "monst",
+      "kind": "youtube",
+      "title": "【ヒロインたちと遊べる】TVアニメ「無職転生」コラボ『はじめてのモンストを、三人と一緒に。』【モンスト公式】",
+      "url": "https://www.youtube.com/watch?v=mKQMCfJaS18",
+      "date": "2026-11-15",
+      "time": "",
+      "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
       "app": "prospi",
       "kind": "news",
       "title": "「温泉ログインスタンプ」実施中！11月19日(木)2:59まで",
@@ -628,16 +738,6 @@
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9093&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-11-13",
       "time": "15:00",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「消費スタミナ1/2キャンペーン・スイッチ」実施中！11月15日(日)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9070&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-13",
-      "time": "14:59",
       "source_label": "お知らせ",
       "upcoming": false
     },
@@ -743,16 +843,6 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "モンストニュース[11/12]TVアニメ「無職転生 〜異世界行ったら本気だす〜」コラボ開催決定！超究極「オルステッド」も登場！その他獣神化・改など、モンストの最新情報をお届けします！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=CpHmw2XkLrg",
-      "date": "2026-11-12",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
       "title": "「ウボ＝サスラ」の獣神化・改が11/17に解禁！",
       "url": "https://www.monster-strike.com/news/20261112_5.html",
@@ -814,7 +904,7 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "の注目ニュース",
+      "title": "のニュース内容",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-11-12",
       "time": "",
@@ -824,7 +914,7 @@
     {
       "app": "monst",
       "kind": "guide",
-      "title": "のニュース内容",
+      "title": "の注目ニュース",
       "url": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/18926",
       "date": "2026-11-12",
       "time": "",
@@ -846,16 +936,6 @@
       "kind": "news",
       "title": "「リアルタイム対戦 ダルビッシュジェネレーションカップ 2026シーズン オンライン予選」ランキング報酬配布に関するお知らせ",
       "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9067&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-12",
-      "time": "",
-      "source_label": "お知らせ",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「第63回 最強決定戦 ダルビッシュ大会」事前エントリー受付中！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9044&dpid=&user_id1=&user_id2=&user_id3=",
       "date": "2026-11-12",
       "time": "",
       "source_label": "お知らせ",
@@ -889,16 +969,6 @@
       "date": "2026-11-11",
       "time": "15:00",
       "source_label": "Game8 ガチャスケジュール",
-      "upcoming": false
-    },
-    {
-      "app": "prospi",
-      "kind": "news",
-      "title": "「日本縦断！ドリームキャラバン」開催！11月18日(水)14:59まで！",
-      "url": "https://prospia.konami.net/arb/main/news/detail.php?id=9048&dpid=&user_id1=&user_id2=&user_id3=",
-      "date": "2026-11-11",
-      "time": "14:59",
-      "source_label": "お知らせ",
       "upcoming": false
     },
     {
@@ -993,32 +1063,12 @@
     },
     {
       "app": "monst",
-      "kind": "youtube",
-      "title": "【我、堕落の王なり】ルシファーさんの堕落ごはん コミックス1巻発売！【モンスト公式】",
-      "url": "https://www.youtube.com/watch?v=6qbpsk1zMIs",
-      "date": "2026-11-09",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "news",
       "title": "ガチャ「モンストジェネレーション」11/10より開催！",
       "url": "https://www.monster-strike.com/news/20261109_1.html",
       "date": "2026-11-09",
       "time": "",
       "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
-      "kind": "youtube",
-      "title": "【M4 RAID BATTLE -滅絶-】滅絶「フィロソフィア」M4新メンバー初陣！〜みるくてぃ。編〜【モンスト公式】",
-      "url": "https://www.youtube.com/shorts/nxD-v8gqSeI",
-      "date": "2026-11-07",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
       "upcoming": false
     },
     {
@@ -1093,16 +1143,6 @@
     },
     {
       "app": "monst",
-      "kind": "news",
-      "title": "※重要※Ver.33.1アップデートメンテナンスの実施について",
-      "url": "https://www.monster-strike.com/news/20261105_1.html",
-      "date": "2026-11-05",
-      "time": "",
-      "source_label": "ゲーム情報",
-      "upcoming": false
-    },
-    {
-      "app": "monst",
       "kind": "guide",
       "title": "のモンストニュース振り返り",
       "url": "https://game8.jp/monst/110254",
@@ -1153,22 +1193,22 @@
     },
     {
       "app": "smagro",
-      "kind": "guide",
-      "title": "スマグロレポートで最新のアップデート情報が公開されました。11/03(火)のアップデートでドラゴンクエストIVイベント中編が始まり、 新ほこらクエスト「キングレオ」 やキングレオシリーズ装備も登場します。",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-11-03",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
       "kind": "youtube",
       "title": "#014『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
       "url": "https://www.youtube.com/watch?v=q4PUTEsSAcI",
       "date": "2026-11-02",
       "time": "",
       "source_label": "公式YouTube（最新動画）",
+      "upcoming": false
+    },
+    {
+      "app": "smagro",
+      "kind": "guide",
+      "title": "のスマグロレポート",
+      "url": "https://gamewith.jp/dq-smashgrow/558661",
+      "date": "2026-11-02",
+      "time": "",
+      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -1282,16 +1322,6 @@
       "upcoming": false
     },
     {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "スーパーまものラッシュ6 2026/10/21(水)12:00〜12/22(火)11:59",
-      "url": "https://game8.jp/dqsmashgrow/729660",
-      "date": "2026-10-21",
-      "time": "12:00",
-      "source_label": "Game8 イベント最新情報",
-      "upcoming": false
-    },
-    {
       "app": "prospi",
       "kind": "youtube",
       "title": "【イチロー・ダルビッシュ・大谷登場！】11周年特別スカウト選手先行公開！イチローも驚愕したプロ野球レジェンドたちの偉業とは？【プロスピA】",
@@ -1319,16 +1349,6 @@
       "date": "2026-10-20",
       "time": "",
       "source_label": "ニュース",
-      "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "guide",
-      "title": "のスマグロレポート",
-      "url": "https://gamewith.jp/dq-smashgrow/558661",
-      "date": "2026-10-19",
-      "time": "",
-      "source_label": "GameWith スマグロレポート",
       "upcoming": false
     },
     {
@@ -1610,16 +1630,6 @@
       "time": "",
       "source_label": "公式YouTube（最新動画）",
       "upcoming": false
-    },
-    {
-      "app": "smagro",
-      "kind": "youtube",
-      "title": "#007 『ドラゴンクエストスマッシュグロウ』の新情報を「マル」がお届け！「スマグロ マル秘 レポート」",
-      "url": "https://www.youtube.com/watch?v=jE3IpqDEAMY",
-      "date": "2026-07-20",
-      "time": "",
-      "source_label": "公式YouTube（最新動画）",
-      "upcoming": false
     }
   ],
   "status": [
@@ -1732,7 +1742,7 @@
       "label": "スマグロ / GameWith スマグロレポート",
       "url": "https://gamewith.jp/dq-smashgrow/558661",
       "ok": true,
-      "count": 3,
+      "count": 4,
       "error": ""
     },
     {
@@ -1756,7 +1766,7 @@
       "label": "ジージェネ / 公式YouTube（最新動画）",
       "url": "https://www.youtube.com/channel/UC7wu64jFsV02bbu6UHUd7JA",
       "ok": true,
-      "count": 0,
+      "count": 1,
       "error": ""
     },
     {
