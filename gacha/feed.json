@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T11:42:14+09:00",
+  "generated_at": "2026-11-16T10:35:18+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 115,
+      "count": 116,
       "error": ""
     }
   ],
@@ -3902,6 +3902,23 @@
       "arrival_changed": "2026-11-09T10:27:16+09:00"
     },
     {
+      "id": "bandai-66683e8a39",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "aespa ぷくっとリング",
+      "price": 400,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第2週",
+        "from": "2026-11-02",
+        "to": "2026-11-08"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000254802_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186485000",
+      "first_seen": "2026-10-03T09:57:27+09:00",
+      "arrival_changed": "2026-11-16T10:35:18+09:00"
+    },
+    {
       "id": "bandai-2c9310e121",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5580,6 +5597,22 @@
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
     {
+      "id": "tta-509d1aebf5",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "Spookiz めじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月16日週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907760_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907760",
+      "first_seen": "2026-11-16T10:35:18+09:00"
+    },
+    {
       "id": "tta-5348b3d9c9",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -5888,23 +5921,6 @@
       },
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253715_2.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026863000",
-      "first_seen": "2026-10-03T09:57:27+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "bandai-66683e8a39",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "aespa ぷくっとリング",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000254802_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186485000",
       "first_seen": "2026-10-03T09:57:27+09:00",
       "arrival_changed": "2026-11-02T10:17:20+09:00"
     },
@@ -6766,7 +6782,7 @@
         "from": "2026-11-16",
         "to": "2026-11-22"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259572_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259572_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026788000",
       "first_seen": "2026-10-08T10:34:43+09:00",
       "arrival_changed": "2026-11-02T10:17:20+09:00"
