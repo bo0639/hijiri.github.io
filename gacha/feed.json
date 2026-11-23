@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T11:56:23+09:00",
+  "generated_at": "2026-11-23T11:16:24+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -16,7 +16,7 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 121,
+      "count": 125,
       "error": ""
     }
   ],
@@ -3493,86 +3493,6 @@
       "arrival_changed": "2026-11-05T10:59:48+09:00"
     },
     {
-      "id": "tta-77fa13e85a",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "お部屋ぐまルーミー ほのぼのマスコット",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "11月",
-        "from": "2026-11-01",
-        "to": "2026-11-30"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905001_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905001",
-      "first_seen": "2026-11-05T10:59:48+09:00"
-    },
-    {
-      "id": "tta-203e53f80b",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "スター・ウォーズ グローグーいっぱいコレクション3",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "11月",
-        "from": "2026-11-01",
-        "to": "2026-11-30"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906527_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906527",
-      "first_seen": "2026-11-05T10:59:48+09:00"
-    },
-    {
-      "id": "tta-51996a6730",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "トイ・ストーリー5 ゆらゆらつながるマスコット Part2",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "11月",
-        "from": "2026-11-01",
-        "to": "2026-11-30"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y903618_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y903618",
-      "first_seen": "2026-11-12T11:42:14+09:00"
-    },
-    {
-      "id": "tta-5dca41ac5b",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "バレバレ化け狐〈ばけぎつね〉",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "11月",
-        "from": "2026-11-01",
-        "to": "2026-11-30"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906503_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906503",
-      "first_seen": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "tta-5a0191182d",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "ポケットトミカ はたらく現場!建設編",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "11月",
-        "from": "2026-11-01",
-        "to": "2026-11-30"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905711_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905711",
-      "first_seen": "2026-10-26T08:50:10+09:00"
-    },
-    {
       "id": "bandai-51332fe7fe",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5154,6 +5074,23 @@
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
     {
+      "id": "bandai-5c976e2ac2",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "ホロライブ カラフルカラビナもふしっぽマスコット",
+      "price": 500,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第3週",
+        "from": "2026-11-09",
+        "to": "2026-11-15"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259523_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121773000",
+      "first_seen": "2026-10-08T10:34:43+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
       "id": "bandai-68e071c3d8",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5452,6 +5389,22 @@
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
     {
+      "id": "tta-ba094dc91d",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "BRANDALISED ナップサックコレクション",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月16日週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y912030_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y912030",
+      "first_seen": "2026-11-23T11:16:24+09:00"
+    },
+    {
       "id": "tta-509d1aebf5",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -5466,6 +5419,22 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907760_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907760",
       "first_seen": "2026-11-16T10:35:18+09:00"
+    },
+    {
+      "id": "tta-60291ccdca",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "miffy きらきら星空の めじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月16日週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y912016_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y912016",
+      "first_seen": "2026-11-23T11:16:24+09:00"
     },
     {
       "id": "tta-5348b3d9c9",
@@ -6479,23 +6448,6 @@
       "first_seen": "2026-11-02T10:17:20+09:00"
     },
     {
-      "id": "bandai-5c976e2ac2",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ホロライブ カラフルカラビナもふしっぽマスコット",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259523_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770121773000",
-      "first_seen": "2026-10-08T10:34:43+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
-    },
-    {
       "id": "bandai-9657a45a36",
       "source": "bandai",
       "maker": "バンダイ",
@@ -6710,23 +6662,6 @@
       "arrival_changed": "2026-11-12T11:42:14+09:00"
     },
     {
-      "id": "tta-39656f1ac6",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "MOOMIN もふもふポーシェット2",
-      "price": null,
-      "arrival": {
-        "kind": "week",
-        "label": "11月23日週",
-        "from": "2026-11-23",
-        "to": "2026-11-29"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910975_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910975",
-      "first_seen": "2026-10-26T08:50:10+09:00",
-      "arrival_changed": "2026-11-12T11:42:14+09:00"
-    },
-    {
       "id": "tta-8f4d74595c",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -6742,6 +6677,22 @@
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y908835",
       "first_seen": "2026-11-02T10:17:20+09:00",
       "arrival_changed": "2026-11-12T11:42:14+09:00"
+    },
+    {
+      "id": "tta-12bf14f25a",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "STRANGER THINGS メタルチャームマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月23日週",
+        "from": "2026-11-23",
+        "to": "2026-11-29"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910555_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910555",
+      "first_seen": "2026-11-23T11:16:24+09:00"
     },
     {
       "id": "tta-1a2fa54968",
@@ -7093,6 +7044,124 @@
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y099403",
       "first_seen": "2026-11-02T10:17:20+09:00",
       "arrival_changed": "2026-11-12T11:42:14+09:00"
+    },
+    {
+      "id": "tta-77fa13e85a",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "お部屋ぐまルーミー ほのぼのマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905001_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905001",
+      "first_seen": "2026-11-05T10:59:48+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-0c56eac27b",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "サンリオキャラクターズ ふわわフロッキーマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y901614_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y901614",
+      "first_seen": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-203e53f80b",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "スター・ウォーズ グローグーいっぱいコレクション3",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906527_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906527",
+      "first_seen": "2026-11-05T10:59:48+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-51996a6730",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "トイ・ストーリー5 ゆらゆらつながるマスコット Part2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y903618_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y903618",
+      "first_seen": "2026-11-12T11:42:14+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-5dca41ac5b",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "バレバレ化け狐〈ばけぎつね〉",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906503_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906503",
+      "first_seen": "2026-11-02T10:17:20+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-5a0191182d",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ポケットトミカ はたらく現場!建設編",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905711_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905711",
+      "first_seen": "2026-10-26T08:50:10+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
+    },
+    {
+      "id": "tta-39656f1ac6",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "MOOMIN もふもふポーシェット2",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "12月",
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910975_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910975",
+      "first_seen": "2026-10-26T08:50:10+09:00",
+      "arrival_changed": "2026-11-23T11:16:24+09:00"
     },
     {
       "id": "tta-9acd578a61",
