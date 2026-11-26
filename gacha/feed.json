@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T11:16:24+09:00",
+  "generated_at": "2026-11-26T12:57:35+09:00",
   "sources": [
     {
       "key": "bandai",
@@ -7,7 +7,7 @@
       "maker": "バンダイ",
       "url": "https://gashapon.jp/schedule/",
       "ok": true,
-      "count": 322,
+      "count": 299,
       "error": ""
     },
     {
@@ -16,443 +16,11 @@
       "maker": "タカラトミーアーツ",
       "url": "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
       "ok": true,
-      "count": 125,
+      "count": 136,
       "error": ""
     }
   ],
   "items": [
-    {
-      "id": "tta-f9370ee1e4",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "めざましコラショ めじるしガチャマスコット",
-      "price": null,
-      "arrival": {
-        "kind": "week",
-        "label": "10月5日週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910708_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910708",
-      "first_seen": "2026-10-08T10:34:43+09:00"
-    },
-    {
-      "id": "tta-f063c482e8",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "ジュラシック・ワールド すってんころりんフィギュア",
-      "price": null,
-      "arrival": {
-        "kind": "week",
-        "label": "10月5日週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907104_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907104",
-      "first_seen": "2026-10-03T09:57:27+09:00"
-    },
-    {
-      "id": "tta-7b50dffa36",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "劇場版『TOKYO MER～走る緊急救命室～CAPITAL CRISIS』 もふもふポーシェット",
-      "price": null,
-      "arrival": {
-        "kind": "week",
-        "label": "10月5日週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y907944_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y907944",
-      "first_seen": "2026-10-03T09:57:27+09:00"
-    },
-    {
-      "id": "bandai-d4025c4c3a",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "CRAZY RACCOON キーボード風クリッカー",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000257437_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118202222000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-57c0514dd5",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "KPOPガールズ！ デーモン・ハンターズ ミニCDコレクション",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258626_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118184191000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-9e050e4e24",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "Novelbright ならぶんです。",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258584_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995545000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-28c9351975",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "SKZOO ぷくっとバースデークリアリング ～PuppyM＆Wolf Chan＆Leebit～",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000250257_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118184276000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-57d5cc6e66",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "お文具といっしょ お惣菜なりきりマスコットなのです",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258583_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026528000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-be79ef7547",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ぜんまいざむらい まちぼうけ",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258611_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995316000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-2c42d36965",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "たまごっち UFOスイング ～オーロラver.～",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258544_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770071016000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-476cbc6dab",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "はなかっぱ まちぼうけ",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258577_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027150000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-0fc98c61a0",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "まちぼうけ スーパーマーケットの場合",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258556_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770033618000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-05c94bce97",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "カラフルビーズべこ しゃかしゃかめじるしアクセサリー",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000251528_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995828000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-ce5d497cc0",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ガシャポンメンバーズ景品ガシャポン(アソートコレクション)",
-      "price": null,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://gashapon.jp/images/prize_gashapon/アソートコレクションDP.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=2026100900000000",
-      "first_seen": "2026-10-12T10:01:14+09:00"
-    },
-    {
-      "id": "bandai-a04ba26488",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ギャルネコ めじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256777_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770122848000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-afaeb6f1ae",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "クレヨンしんちゃん おべんとうマスコット",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258575_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027242000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-935e32b735",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "クレヨンしんちゃん ぶりぶりざえもん着ぐるみ めじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258625_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769995118000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-3107ca24c2",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "コジコジ BIGカプキャラ",
-      "price": 500,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258595_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118197733000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-b2e000152f",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "サンリオキャラクターズ ふわふわめじるしアクセサリー ～Baby～",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258588_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118186768000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-f59fc371d5",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "サンリオキャラクターズ ボンボンドロップミニチュアチャーム2",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258620_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027020000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-a738175639",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "サンリオキャラクターズ モノトーンマスコット",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256812_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770054712000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-bf92115030",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ジャージカップル ぷっくりめじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258642_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770027211000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-a4e0545ddb",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "スーパー戦隊シリーズ めじるしアクセサリー",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000245279_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769968280000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-aaabd3a147",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "ナルミヤキャラクターズ ペンケースチャーム",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000256807_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770055313000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-c74ce8bbe3",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "パワーパフ ガールズ CAPSULE APARTMENT",
-      "price": 800,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258630_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118201928000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-3dc91591b8",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "モーニング娘。 コスチュームチャーム",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000257840_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4570118206442000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
-    {
-      "id": "bandai-3f225815cc",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "雪印メグミルク ミニチュアチャーム ～ゼリー＆プリンシリーズ～",
-      "price": 300,
-      "arrival": {
-        "kind": "week",
-        "label": "10月第2週",
-        "from": "2026-10-05",
-        "to": "2026-10-11"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000258629_1.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582769927409000",
-      "first_seen": "2026-10-03T09:51:24+09:00"
-    },
     {
       "id": "tta-815fff1b84",
       "source": "tta",
@@ -3493,6 +3061,23 @@
       "arrival_changed": "2026-11-05T10:59:48+09:00"
     },
     {
+      "id": "bandai-75a8b5a9ca",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "SKZOO ミニチュアパッケージチャーム",
+      "price": 400,
+      "arrival": {
+        "kind": "month",
+        "label": "11月",
+        "from": "2026-11-01",
+        "to": "2026-11-30"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253715_2.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026863000",
+      "first_seen": "2026-10-03T09:57:27+09:00",
+      "arrival_changed": "2026-11-26T12:57:35+09:00"
+    },
+    {
       "id": "bandai-51332fe7fe",
       "source": "bandai",
       "maker": "バンダイ",
@@ -5694,7 +5279,7 @@
         "from": "2026-11-16",
         "to": "2026-11-22"
       },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000254803_2.jpg",
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000254803_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4582769777059000",
       "first_seen": "2026-10-03T09:57:27+09:00",
       "arrival_changed": "2026-11-02T10:17:20+09:00"
@@ -5730,23 +5315,6 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260532_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118184993000",
       "first_seen": "2026-11-02T10:17:20+09:00"
-    },
-    {
-      "id": "bandai-75a8b5a9ca",
-      "source": "bandai",
-      "maker": "バンダイ",
-      "name": "SKZOO ミニチュアパッケージチャーム",
-      "price": 400,
-      "arrival": {
-        "kind": "week",
-        "label": "11月第4週",
-        "from": "2026-11-16",
-        "to": "2026-11-22"
-      },
-      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000253715_2.jpg",
-      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770026863000",
-      "first_seen": "2026-10-03T09:57:27+09:00",
-      "arrival_changed": "2026-11-02T10:17:20+09:00"
     },
     {
       "id": "bandai-b0fc3dd2ed",
@@ -6048,6 +5616,22 @@
       "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000260530_1.jpg",
       "url": "https://gashapon.jp/products/detail.php?jan_code=4570118185273000",
       "first_seen": "2026-11-02T10:17:20+09:00"
+    },
+    {
+      "id": "bandai-9d989014c0",
+      "source": "bandai",
+      "maker": "バンダイ",
+      "name": "とっとこハム太郎 スイングマスコット～スペシャルカラーver.～",
+      "price": 300,
+      "arrival": {
+        "kind": "week",
+        "label": "11月第4週",
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "image": "https://bandai-a.akamaihd.net/bc/img/model/b/1000259511_1.jpg",
+      "url": "https://gashapon.jp/products/detail.php?jan_code=4582770149159000",
+      "first_seen": "2026-11-26T12:57:35+09:00"
     },
     {
       "id": "bandai-fe010a251f",
@@ -6662,6 +6246,22 @@
       "arrival_changed": "2026-11-12T11:42:14+09:00"
     },
     {
+      "id": "tta-3d6ab7d005",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "LOVE像",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月23日週",
+        "from": "2026-11-23",
+        "to": "2026-11-29"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y908675_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y908675",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
       "id": "tta-8f4d74595c",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -6744,6 +6344,38 @@
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y901393",
       "first_seen": "2026-11-02T10:17:20+09:00",
       "arrival_changed": "2026-11-12T11:42:14+09:00"
+    },
+    {
+      "id": "tta-33ff117a47",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "でふぉラバ! とんでもスキルで異世界放浪メシ2 キーホルダーvol.2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月23日週",
+        "from": "2026-11-23",
+        "to": "2026-11-29"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909726_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909726",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-4b3dbb0615",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "でふぉラバ! アニメ「グロウアップショウ ～ひまわりのサーカス団～」キーホルダー",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月23日週",
+        "from": "2026-11-23",
+        "to": "2026-11-29"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909788_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909788",
+      "first_seen": "2026-11-26T12:57:35+09:00"
     },
     {
       "id": "tta-a63071e027",
@@ -6981,6 +6613,22 @@
       "arrival_changed": "2026-11-12T11:42:14+09:00"
     },
     {
+      "id": "tta-09f7b8862c",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "劇場版『チェンソーマン レゼ篇』 ポチタいっぱいコレクション ～Dnacing Edition～",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月23日週",
+        "from": "2026-11-23",
+        "to": "2026-11-29"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909474_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909474",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
       "id": "tta-1692bdd6aa",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -7130,6 +6778,38 @@
       "arrival_changed": "2026-11-23T11:16:24+09:00"
     },
     {
+      "id": "tta-9992e00600",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "パンダの穴 アニべこ めじるしガチャマスコット",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y912238_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y912238",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-918d662637",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "パンダの穴 ミニチュアねこ SPECIAL COLOR Ver.",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "11月30日週",
+        "from": "2026-11-30",
+        "to": "2026-12-06"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y911248_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y911248",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
       "id": "tta-5a0191182d",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -7147,10 +6827,10 @@
       "arrival_changed": "2026-11-23T11:16:24+09:00"
     },
     {
-      "id": "tta-39656f1ac6",
+      "id": "tta-b8e87003cb",
       "source": "tta",
       "maker": "タカラトミーアーツ",
-      "name": "MOOMIN もふもふポーシェット2",
+      "name": "きかんしゃトーマス クリッカーマスコット",
       "price": null,
       "arrival": {
         "kind": "month",
@@ -7158,26 +6838,9 @@
         "from": "2026-12-01",
         "to": "2026-12-31"
       },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910975_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910975",
-      "first_seen": "2026-10-26T08:50:10+09:00",
-      "arrival_changed": "2026-11-23T11:16:24+09:00"
-    },
-    {
-      "id": "tta-9acd578a61",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "〈BEAMS BOY〉ミニチュアコレクション -リカちゃんコラボレーション-",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "12月",
-        "from": "2026-12-01",
-        "to": "2026-12-31"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909436_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909436",
-      "first_seen": "2026-11-02T10:17:20+09:00"
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909313_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909313",
+      "first_seen": "2026-11-26T12:57:35+09:00"
     },
     {
       "id": "tta-734fb5c5ee",
@@ -7244,22 +6907,6 @@
       "first_seen": "2026-11-05T10:59:48+09:00"
     },
     {
-      "id": "tta-4b81a4d07d",
-      "source": "tta",
-      "maker": "タカラトミーアーツ",
-      "name": "パワーパフガールズ ぬいぐるみといっしょフィギュア",
-      "price": null,
-      "arrival": {
-        "kind": "month",
-        "label": "12月",
-        "from": "2026-12-01",
-        "to": "2026-12-31"
-      },
-      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y096457_b.jpg",
-      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y096457",
-      "first_seen": "2026-11-05T10:59:48+09:00"
-    },
-    {
       "id": "tta-3f2b841d78",
       "source": "tta",
       "maker": "タカラトミーアーツ",
@@ -7274,6 +6921,153 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y912153_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y912153",
       "first_seen": "2026-11-02T10:17:20+09:00"
+    },
+    {
+      "id": "tta-53d60e0625",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "肩ズンFig. ズートピア ガラパーティ編",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "12月",
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909344_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909344",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-39656f1ac6",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "MOOMIN もふもふポーシェット2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y910975_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y910975",
+      "first_seen": "2026-10-26T08:50:10+09:00",
+      "arrival_changed": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-9acd578a61",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "〈BEAMS BOY〉ミニチュアコレクション -リカちゃんコラボレーション-",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909436_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909436",
+      "first_seen": "2026-11-02T10:17:20+09:00",
+      "arrival_changed": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-4a76182f92",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "コスチュームエイリアン ゆらゆらつながるマスコット Part1",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906275_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906275",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-f0e03c01a4",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "トムとジェリー タフィーいっぱいコレクション2",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y900129_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y900129",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-17ce9e675d",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "ドラえもん つながリングチャーム",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y099687_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y099687",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-4b81a4d07d",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "パワーパフガールズ ぬいぐるみといっしょフィギュア",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y096457_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y096457",
+      "first_seen": "2026-11-05T10:59:48+09:00",
+      "arrival_changed": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-8c3cfdefd5",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "プレイバック・ムービー リロ＆スティッチ",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y906626_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y906626",
+      "first_seen": "2026-11-26T12:57:35+09:00"
+    },
+    {
+      "id": "tta-ccf83ca846",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "夏目友人帳 フェイス型シリコンケース",
+      "price": null,
+      "arrival": {
+        "kind": "week",
+        "label": "12月7日週",
+        "from": "2026-12-07",
+        "to": "2026-12-13"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909078_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909078",
+      "first_seen": "2026-11-26T12:57:35+09:00"
     },
     {
       "id": "bandai-9978783e2f",
@@ -7322,6 +7116,22 @@
       "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y905032_b.jpg",
       "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y905032",
       "first_seen": "2026-11-05T10:59:48+09:00"
+    },
+    {
+      "id": "tta-0be52ff595",
+      "source": "tta",
+      "maker": "タカラトミーアーツ",
+      "name": "バック・トゥ・ザ・フューチャー -ムービーアイテムコレクションDX-",
+      "price": null,
+      "arrival": {
+        "kind": "month",
+        "label": "1月",
+        "from": "2027-01-01",
+        "to": "2027-01-31"
+      },
+      "image": "https://www.takaratomy-arts.co.jp/upfiles/products/Y909375_b.jpg",
+      "url": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y909375",
+      "first_seen": "2026-11-26T12:57:35+09:00"
     },
     {
       "id": "tta-5eff395eec",
